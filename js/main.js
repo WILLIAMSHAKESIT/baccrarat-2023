@@ -251,7 +251,7 @@ $(document).ready(function(){
     functions.tableTimer()
     functions.createGrid()
     functions.timer();
-    functions.timerRoom();
+    // functions.timerRoom();
     $(window).on('resize',function(){
         functions.createGrid()
     })
@@ -307,10 +307,11 @@ $(document).ready(function(){
             $('.bottom-menu').removeClass('animate__animated animate__fadeInRight')
         }
     })
-
+    console.log('test')
     //filter table
-    $('.table-grid button').on('click',function(){
+    $('.table-filter button').on('click',function(){
         let el = $(this).data('tval')
+        console.log('test')
         switch(el){
             case 'two':
                 $('.table-grid').removeClass('col-three')

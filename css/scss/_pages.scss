@@ -8,7 +8,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        .table-grid{
+        .table-filter{
             display: flex;
             gap: 5px;
             align-items: center;
@@ -29,6 +29,11 @@
                     }
                 }
             }
+        }
+    }
+    .subhead-inputs{
+        select{
+            width: 170px;
         }
     }
 }
