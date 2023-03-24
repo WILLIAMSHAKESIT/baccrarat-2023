@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter Casino</title>
+    <link href="css/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <header class="p-5">
+        <div class="user-info flex  gap-5">
+            <div class="user-name font-bold">
+                <i class="fa-solid fa-user  mr-1"></i>
+                John Doe
+            </div>
+            <div class="user-name font-bold">
+                <i class="fa-solid fa-won-sign  mr-1"></i>
+                100,000,000
+            </div>
+        </div>
+        <div class="logo">
+            <h1 class="animate__animated animate__flipInX">Hilton Casino</h1>
+        </div>
+        <div class="top-menu">
+            <button class="btn primary" id="toggle-history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </button>
+            <button class="btn primary toggleFull">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+            <button class="btn primary" id="toggle-contact">
+                <i class="fa-solid fa-phone"></i>
+            </button>
+            <button class="btn primary" id="toggle-settings">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <button class="btn primary">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </div>
+    </header>
+    <div class="sub-header container">
+        <a href="multi-betting.html" class="btn primary font-bold">
+            <i class="fa-solid fa-box mr-1"></i>
+            Multiple Bet
+        </a>
+        <div class="table-filters">
+            <span>Total Tables: <span class="font-bold text-yellow-300">50</span></span>
+            <div class="table-grid mr-4">
+                <button class="btn normal p-0 no-outlines" data-tval="two"> 
+                    <img src="img/icons/grid-two.svg" class="inactive">
+                </button>
+                <button class="btn normal p-0 no-outlines" data-tval="three">
+                    <img src="img/icons/grid-three.svg" class="inactive">
+                </button>
+                <button class="btn normal p-0 no-outlines mt-1" data-tval="four">
+                    <img src="img/icons/grid-four.svg">
+                </button>
+            </div>
+            <select class="input">
+                <option>All Casino</option>
+                <option>Solaire Casino</option>
+                <option>D'Heights Casino</option>
+            </select>
+            <select class="input">
+                <option>Any Limit</option>
+                <option>High To low</option>
+                <option>Low to high</option>
+            </select>
+        </div>
+    </div>
+    <div class="table-grid container col-two">
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#F70849" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">0</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-status close">
+                    <div class="content">
+                        <div></div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-status shuffling">
+                    <div class="content">
+                        <div></div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+        <div class="card-board">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="img/casino/solaire.png">
+                </div>
+                <span class="bet-limit">BET LIMIT:<span class="amount">10K - 10M</span></span>
+                <div class="timer">
+                    <svg height="45" width="45">
+                        <circle class="circle" cx="22" cy="22" r="19" stroke="#4AFFB7" stroke-width="5" fill-opacity="0" />
+                    </svg> 
+                    <span class="count">40</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="bead-road">
+                    <canvas width="600" height="360"></canvas>
+                </div>
+                <div class="right-road">
+                    <div class="big-road">
+                        <canvas width="3100" height="625"></canvas>
+                    </div>
+                    <div class="big-eye">
+                        <canvas width="1080" height="109"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="right-most">
+                    <span class="table-no">S01</span>
+                    <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                </div>
+                <div class="results">
+                    <div class="item">
+                        <img src="img/results/red-b.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/blue-p.png">
+                        <span>30</span>
+                    </div>
+                    <div class="item">
+                        <img src="img/results/green-t.png">
+                        <span>30</span>
+                    </div>
+                </div>
+                <button class="btn primary font-bold">JOIN GAME</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-wrapper" id="contactModal">
+        <div class="modal-container animate__animated animate__zoomIn">
+            <div class="modal-header">
+                <h2>Contact us</h2>
+                <button class="btn red closeModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="main-content">
+                    <h1 class="text-center font-medium">+63 2440 55678</h1>
+                    <div class="text-center max-w-sm text-blue-100">We take pride in providing round-the-clock service and if you have any queries, please feel free to get in touch with our customer support team.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-wrapper" id="historyModal">
+        <div class="modal-container lg animate__animated animate__zoomIn">
+            <div class="modal-header">
+                <h2>Game history</h2>
+                <button class="btn red closeModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4 flex ml-auto w-fit gap-10">
+                    <div class="flex items-center gap-2">
+                        <label>From</label>
+                        <input type="date" class="input">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label>To</label>
+                        <input type="date" class="input">
+                    </div>
+                    <button class="btn primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="main-content  mb-3">
+                    <table class="stripe w-full">
+                        <thead>
+                            <tr>
+                                <th>Date & time</th>
+                                <th>Round ID</th>
+                                <th>Type</th>
+                                <th>Result</th>
+                                <th>Award</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination m-auto w-fit">
+                    <a href="#" class="prev">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="active">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#" class="next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-wrapper" id="settingsModal">
+        <div class="modal-container animate__animated animate__zoomIn">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="btn red closeModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="main-content no-max">
+                    <h3 class="setting-title">Sound</h3>
+                    <div class="settings-modal">
+                        <div>
+                            <input type="checkbox" id="master" name="radio-group" checked>
+                            <label for="master">Master Sound</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="music" name="radio-group">
+                            <label for="music">Music</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sfx" name="radio-group" checked>
+                            <label for="sfx">Effects</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="voice" name="radio-group" checked>
+                            <label for="voice">Voice</label>
+                        </div>
+                    </div>
+                    <h3 class="setting-title my-5">Language</h3>
+                    <div class="settings-modal">
+                        <div class="lang-item">
+                            <input type="radio" id="kor" name="radio-group">
+                            <label for="kor"><img src="img/elements/kor.png">Korean</label>
+                        </div>
+                        <div class="lang-item">
+                            <input type="radio" id="chi" name="radio-group">
+                            <label for="chi"><img src="img/elements/chi.png">Chinese</label>
+                        </div>
+                        <div class="lang-item">
+                            <input type="radio" id="eng" name="radio-group" checked>
+                            <label for="eng"><img src="img/elements/us.png">English</label>
+                        </div>
+                        <div class="lang-item">
+                            <input type="radio" id="jap" name="radio-group">
+                            <label for="jap"><img src="img/elements/jap.png">Japanese</label>
+                        </div>
+                    </div>
+                    <h3 class="setting-title mt-5">Lobby</h3>
+                    <div class="settings-modal">
+                        <div>
+                            <input type="checkbox" id="close" name="radio-group" checked>
+                            <label for="close">Hide close table</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

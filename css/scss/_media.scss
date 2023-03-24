@@ -1,0 +1,717 @@
+@media(max-width:1602px){
+    .room{
+        .top{
+            >div{
+                &.right{
+                    .header{
+                        .room-info{
+                            .info{
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .body{
+                        .control-area{
+                            .top-control{
+                                .chips{
+                                    width: calc(100% - 100px);
+                                    .btn-chip{
+                                        width: 57px;
+                                        height: 57px;
+                                        &.active{
+                                            &::before{
+                                                width: 73px;
+                                                height: 66px;
+                                            }
+                                        }
+                                        &::after{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1590px){
+    .board-overlay{
+        .mid-result{
+            transform: translate(-50%,-50%) scale(.7);
+            .winner-text{
+                font-size: 35px;
+            }
+        }
+        .card-res{
+            &.player{
+                left: 5%;
+                .card{
+                    &:first-child{
+                        margin-right: 34px;
+                    }
+                }
+            }
+            &.banker{
+                right: 5%;
+                .card{
+                    &:last-child{
+                        margin-left: 34px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:1280px){
+    header{
+        .user-info{
+            font-size: 15px;
+        }
+    }
+    .room{
+        .top{
+            >div{
+                
+                &.right{
+                    .header{
+                        .room-info{
+                            .info{
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                    .body{
+                        width: calc(100% - 20px);
+                        .bet-area{
+                            height: 69%;
+                            .area{
+                                font-size: 12px;
+                                .area-info{
+                                    .info{
+                                        width: calc(100% - 10px);
+                                    }
+                                }
+                            }
+                        }
+                        .control-area{
+                            height: 31%;
+                            .top-control{
+                                .chips{
+                                    .btn-chip{
+                                        width: 39px;
+                                        height: 39px;
+                                        &::after{
+                                            font-size: 13px;
+                                        }
+                                        &.active{
+                                            &::before{
+                                                width: 52px;
+                                                height: 46px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .bottom-control{
+                                .btns{
+                                    transform: scale(0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-wrapper{
+        .modal-container{
+            width: 100%;
+            max-width: calc(100% - 36px);
+        }
+    }
+    #contactModal{
+        .text-center{
+            &.max-w-sm{
+                max-width: 100%;
+            }
+        }
+    }
+    #historyModal{
+        .modal-body{
+            >div{
+                &:first-child{
+                    gap: 7px;
+                    input{
+                        width: 122px;
+                        font-size: 13px;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+    }
+    .board-overlay{
+        .mid-result{
+            transform: translate(-50%,-50%) scale(.7);
+        }
+        .card-res{
+            &.player{
+                left: 5%;
+                .card{
+                    &:first-child{
+                        margin-right: 20px;
+                    }
+                }
+            }
+            &.banker{
+                right: 5%;
+                .card{
+                    &:last-child{
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .card{
+        width: 85px;
+        height: 130px;
+    }
+}
+@media(max-width:935px){
+    header{
+        .logo{
+            top: -16px;
+            transform: translateX(-50%) scale(0.6)
+        }
+        .top-menu{
+            display: none;
+        }
+        .user-info{
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+    .room{
+        height:calc(100% - 143px);
+        .top{
+            flex-direction: column;
+            >div{
+                width: 100%;
+                height: 100%;
+                &.left{
+                    .count-down{
+                        right: 28px;
+                        top: 12px;
+                    }
+                    .vid-controls{
+                        right: 28px;
+                        bottom: 12px;
+                        padding-right: 0;
+                    }
+                }
+                &.right{
+                    .header{
+                        .room-info{
+                            .info{
+                                flex-direction: row;
+                                gap: 4px;
+                            }
+                        }
+                    }
+                    .body{
+                        width: 100%;
+                        left: 0;
+                        .bet-area{
+                            width: calc(100% - 29px);
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            height: 84%;
+                            .area{
+                                .area-info{
+                                    .info{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        .control-area{
+                            .bottom-control{
+                                position: fixed;
+                                left: 50%;
+                                bottom: calc(68px + 5px);
+                                width: calc(100% - 4px);
+                                .btns{
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    transform: scale(1);
+                                    .cancel{
+                                        margin-right: 60px;
+                                    }
+                                    .bet{
+                                        margin-left: 60px;
+                                    }
+                                }
+                            }
+                            .top-control{
+                                top: 37px;
+                                left: 49%;
+                                .chips{
+                                    width: calc(100% - 144px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            height: 116px;
+            top: 51px;
+            background-color: #fff;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .results-wrapper{
+                width: 100%;
+                background-color: unset;
+                .bead-road{
+                    width: 98px;
+                    min-width: 98px;
+                }
+                .small-grid{
+                    width: 100%;
+                }
+            }
+            .legend{
+                display: none;
+                width: 100%;
+                ul,.indicators{
+                    flex-direction: row;
+                    .indi{
+                        display: flex;
+                    }
+                }
+            }
+            .bottom-menu{
+                display: none;
+            }
+        }
+    }
+    .mobile-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 70px;
+        width: 100%;
+        background: rgb(126 77 24 / 55%);
+        border: 1px solid #785732bf;
+        position: relative;
+        .btn-mid{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            top: -31px;
+            i{
+                font-size: 30px;
+            }
+        }
+        >div{
+            width: calc(100% / 2 - 100px);
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(#5C2E17, #1c0e06);
+            &:not(:nth-child(3)){
+                display: flex;
+                flex-direction: column;
+                font-size: 9px;
+                background: unset;
+                border: unset;
+                white-space: nowrap;
+                &:hover{
+                    box-shadow: unset;
+                }
+            }
+        }
+    }
+    .legend-mobile{
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        z-index: 99;
+        bottom: 2px;
+        width: calc(100% - 200px);
+        background: #5e3b28;
+        border-radius: 530px;
+        padding: 1px 0;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: inset 0 0 2px #000;
+        .right-indi{
+            display: flex;
+            width: calc(100% / 2);
+            >div{
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                div{
+                    width: 17px;
+                    position: relative;
+                    left: unset;
+                    top: unset;
+                    transform: unset;
+                    display: flex;
+                }
+            }
+        }
+        .indicators{
+            display: flex;
+            gap: 10px;
+            .indi{
+                display: flex;
+                gap: 3px;
+                .result{
+                    width: 17px;
+                    position: relative;
+                    left: unset;
+                    top: unset;
+                    transform: unset;
+                }
+            }
+        }
+    }
+    //modal contents
+    #chipModal{
+        .chip-settings{
+           >div{
+                width: calc(100% / 3 - 10px);
+           }
+        }
+    }
+    .modal-wrapper{
+        .modal-container{
+            .modal-body{
+                padding: 5px;
+            }
+        }
+        &#historyModal{
+            .modal-container{
+                height: fit-content;
+                .modal-body{
+                    >div{
+                        &:first-child{
+                            transform: unset;
+                            width: 100%;
+                            align-items: flex-end;
+                            justify-content: space-between;;
+                            gap: 0;
+                            margin: unset;
+                            margin-bottom: 10px;
+                            padding: 0 10px;
+                            div{
+                                flex-direction: column;
+                                align-items: flex-start;
+                                width: 100%;
+                                input{
+                                    width: 90%;
+                                }
+                            }
+                            button{
+                                height: 33px;
+                            }
+                        }
+                    }
+                    .main-content{
+                        max-height: 400px;
+                        font-size: 10px;
+                        table{
+                            thead{
+                                tr{
+                                    th{
+                                        font-size: 10px;
+                                    }
+                                }
+                            }
+                            tbody{
+                                tr{
+                                    td{
+                                        font-size: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .board-overlay{
+        .mid-result{
+            transform: translate(-50%,-50%) scale(.4);
+            width: calc(100% - 20px);
+        }
+        .card-res{
+            &.player{
+                .card{
+                    &:first-child{
+                        margin-right: 15px;
+                    }
+                }
+            }
+            &.banker{
+                .card{
+                    &:last-child{
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .card{
+        width: 60px;
+        height: 110px;
+    }
+}
+
+@media(max-width:697px){
+    .card{
+        width: 40px;
+        height: 85px;
+    }
+}
+@media(max-width:600px){
+    header{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 12px;
+        .user-info{
+            top: 31px;
+            position: relative;
+            background: #2e180ccf;
+            padding: 1px 17px;
+            border: 1px solid #b5ab8170;
+            gap: 5px;
+        }
+    }
+    .room{
+        .top{
+            >div{
+                &.left{
+                    .count-down{
+                        right: 20px;
+                        top: 12px;
+                    }
+                    .vid-controls{
+                        right: 20px;
+                        bottom: 12px;
+                        padding-right: 0;
+                    }
+                }
+                &.right{
+                    .header{
+                        .logo{
+                            width: 59px;
+                        }
+                        .room-info{
+                            gap: 1px;
+                            .info{
+                                flex-direction: column;
+                                font-size: 8px;
+                                gap: 0;
+                            }
+                        }
+                    }
+                    .body{
+                        .control-area{
+                            .top-control{
+                                top: 35px;
+                                .chips{
+                                    width: calc(100% - 42px);
+                                }
+                                a{
+                                    width: 15px;
+                                    height: 15px;
+                                    background: unset;
+                                    border: unset;
+                                }
+                            }
+                            .bottom-control{
+                                .btns{
+                                    .cancel{
+                                        margin-right: 0;
+                                    }
+                                    .bet{
+                                        margin-left: 0;
+                                    }
+                                    button{
+                                        &:not(.btn-circle){
+                                            min-width: 157px;
+                                            font-size: 10px;
+                                        }
+                                        &.btn-circle{
+                                            width: 40px;
+                                            height: 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .bet-area{
+                            height: 84%;
+                            width: calc(100% - 16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .legend-mobile {
+        width: calc(100% - 4px);
+        height: 28px;
+        border: 2px solid #9a5b2f;
+        padding: 2px 3px;
+        >*{
+            transform: scale(.9);
+        }
+        .right-indi{
+            gap: 2px;
+            >div{
+                gap: 2px;
+                font-weight: 500;
+            }
+        }
+    }
+    .mobile-menu{
+        >div{
+            width: 100%;
+        }
+        button{
+            width: 35px;
+            height: 35px;
+        }
+        .btn-mid{
+            max-width: 50px;
+            max-height: 50px;
+            position: relative;
+            left: unset;
+            bottom: unset;
+            top: unset;
+            transform: unset;
+            i{
+                font-size: 20px;
+            }
+        }
+    }
+    .board-overlay{
+        .mid-result{
+            transform: translate(-50%, -50%) scale(0.3);
+            .winner-number{
+                gap: 3px;
+            }
+            .winner-text{
+                font-size: 47px;
+            }
+        }
+        .card-res{
+            gap: 3px;
+            &.player{
+                left: 3%;
+                .card{
+                    &:first-child{
+                        margin-right: 11px;
+                    }
+                }
+            }
+            &.banker{
+                right: 3%;
+                .card{
+                    &:last-child{
+                        margin-left: 11px;
+                    }
+                }
+            }
+        }
+    }
+    .card{
+        width: 40px;
+        height: 85px;
+    }
+}
+@media(max-width:450px){
+    .room{
+        .top{
+            >div{
+                &.right{
+                    .body{
+                        .control-area{
+                            .bottom-control{
+                                .btns{
+                                    button{
+                                        &:not(.btn-circle){
+                                            min-width: 110px;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #tablesModal{
+        .modal-container{
+            width: 320px;
+        }
+    }
+}
+
+@media(max-width:405px){
+    .board-overlay{
+        .mid-result{
+            transform: translate(-50%, -50%) scale(0.3);
+            .winner-number{
+                gap: 3px;
+            }
+            .winner-text{
+                font-size: 47px;
+            }
+        }
+        .card-res{
+            gap: 3px;
+            &.player{
+                left: 3%;
+                .card{
+                    &:first-child{
+                        margin-right: 7px;
+                    }
+                }
+            }
+            &.banker{
+                right: 3%;
+                .card{
+                    &:last-child{
+                        margin-left: 7px;
+                    }
+                }
+            }
+        }
+    }
+    .card{
+        width: 25px;
+        height: 43px;
+    }
+}
