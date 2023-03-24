@@ -9,6 +9,7 @@ const layout = {
     chipValue:'',
     chipOffset:null,
     chipPos:null,
+    tableColNumber:0
 }
 
 const functions = {
@@ -224,9 +225,42 @@ const functions = {
                 $( ".results-wrapper ul.cock-roach").append(`<li></li>`)
             }
         }
-        
         let smallGrids = window.innerWidth > 1458? 14 : window.innerWidth > 700 ? 8 : window.innerWidth <= 400 ? 4 : 6 
         let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (smallGrids/2) /2)
+
+        for(i=0;i<30;i++){
+            $(".results-wrapper-card ul.bead-road").append(`<li><div class="result blue"></div></li>`)
+        }
+        for(i=0;i<functions.makeDivisibleBySix(mainRoadCol);i++){
+            $(".results-wrapper-card ul.main-road").append(`<li><div class="result outline-red"></div></li>`)
+        }
+        for(i=0;i<functions.makeDivisibleBySix(mainRoadCol)*2;i++){
+            $(".results-wrapper-card ul.bigeye-road").append(`<li></li>`)
+        }
+        for(i=0;i<functions.makeDivisibleBySix(mainRoadCol);i++){
+            $(".results-wrapper-card ul.small-road").append(`<li></li>`)
+        }
+        for(i=0;i<functions.makeDivisibleBySix(mainRoadCol);i++){
+            $(".results-wrapper-card ul.cock-roach").append(`<li></li>`)
+        }
+    },
+    createGrid2(){
+        $( "ul.bead-road").html('')
+        $( "ul.main-road").html('')
+        $( "ul.bigeye-road").html('')
+        $( "ul.small-road").html('')
+        $( "ul.cock-roach").html('')
+
+        let elWidth = $('ul.main-road').outerWidth()
+        console.log(elWidth)
+        if(elWidth < 400){
+            layout.tableColNumber = 3
+        }else{
+            layout.tableColNumber = 10
+            
+        }
+
+        let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (layout.tableColNumber/2) /2)
 
         for(i=0;i<30;i++){
             $(".results-wrapper-card ul.bead-road").append(`<li><div class="result blue"></div></li>`)
@@ -249,11 +283,13 @@ const functions = {
 $(document).ready(function(){
     functions.logoAnimation()
     functions.tableTimer()
-    functions.createGrid()
+    // functions.createGrid()
     functions.timer();
+    functions.createGrid2()
     // functions.timerRoom();
     $(window).on('resize',function(){
-        functions.createGrid()
+        // functions.createGrid()
+        functions.createGrid2()
     })
     
     $('.toggleFull').on('click',function(){
@@ -307,11 +343,11 @@ $(document).ready(function(){
             $('.bottom-menu').removeClass('animate__animated animate__fadeInRight')
         }
     })
-    console.log('test')
+
     //filter table
     $('.table-filter button').on('click',function(){
         let el = $(this).data('tval')
-        console.log('test')
+        functions.createGrid2()
         switch(el){
             case 'two':
                 $('.table-grid').removeClass('col-three')

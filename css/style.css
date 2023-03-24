@@ -689,7 +689,8 @@ header .top-menu {
   overflow: hidden;
   background-color: #fff;
   position: relative;
-  height: 150px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .card-board .card-body .table-status {
   width: 100%;
@@ -700,11 +701,13 @@ header .top-menu {
   justify-content: center;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
+  z-index: 100;
 }
 .card-board .card-body .table-status .content {
   display: flex;
   align-items: center;
   flex-direction: column;
+  scale: 0.7;
 }
 .card-board .card-body .table-status .content img {
   width: 150px;
@@ -811,7 +814,7 @@ header .top-menu {
 }
 .card-board:first-child .card-body {
   width: 100%;
-  height: 233px;
+  height: 183px;
   border-radius: 5px;
   background: #231309;
   box-shadow: inset 0 0 6px #000;
@@ -2415,6 +2418,12 @@ table.stripe tbody tr td:last-child {
     width: 85px;
     height: 130px;
   }
+  .sub-header .table-filters .table-filter button:last-child {
+    display: none;
+  }
+  .table-grid .card-board {
+    width: calc(33.3333333333% - 8px) !important;
+  }
 }
 @media (max-width: 935px) {
   header .logo {
@@ -2665,11 +2674,38 @@ table.stripe tbody tr td:last-child {
     width: 60px;
     height: 110px;
   }
+  .sub-header .table-filters {
+    gap: 0;
+  }
+  .sub-header .table-filters .table-filter {
+    margin: 0 !important;
+  }
+  .sub-header .table-filters .table-filter button {
+    display: none;
+  }
+  .table-grid {
+    max-height: calc(100% - 141.5px);
+  }
+  .table-grid .card-board {
+    width: calc(50% - 8px) !important;
+  }
 }
 @media (max-width: 697px) {
   .card {
     width: 40px;
     height: 85px;
+  }
+  .sub-header {
+    flex-direction: column;
+  }
+  .sub-header .subhead-inputs select {
+    width: calc(50% - 4px);
+  }
+  .sub-header.container {
+    max-width: calc(100% - 10px);
+  }
+  .table-grid.container {
+    max-width: calc(100% - 10px);
   }
 }
 @media (max-width: 600px) {
@@ -2681,9 +2717,7 @@ table.stripe tbody tr td:last-child {
   header .user-info {
     top: 31px;
     position: relative;
-    background: rgba(46, 24, 12, 0.8117647059);
     padding: 1px 17px;
-    border: 1px solid rgba(181, 171, 129, 0.4392156863);
     gap: 5px;
   }
   .room .top > div.left .count-down {
@@ -2798,6 +2832,15 @@ table.stripe tbody tr td:last-child {
   .card {
     width: 40px;
     height: 85px;
+  }
+  .sub-header {
+    margin-top: 20px;
+  }
+  .table-grid {
+    padding: 0;
+  }
+  .table-grid .card-board {
+    width: 100% !important;
   }
 }
 @media (max-width: 450px) {
