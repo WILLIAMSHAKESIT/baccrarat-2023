@@ -353,8 +353,8 @@ class Layout{
         $( "ul.small-road").html('')
         $( "ul.cock-roach").html('')
         if(window.innerWidth > 935){
-            let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 6.9) / 2)
-            let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (6.8/2) /2)
+            let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
+            let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
                 $( ".room .bottom .results-wrapper ul.bead-road").append(`<li><div class="result red"></div></li>`)
             }

@@ -107,7 +107,7 @@
     max-width: 100%;
     .top{
         display: flex;
-        height: calc(100% - 32%);
+        height: calc(100% - 256px);
         >div{
             width: calc(100% / 2);
             &.left{
@@ -138,6 +138,19 @@
                     background-image: linear-gradient(#376662, #223e37);
                     z-index: 0;
                     box-shadow: inset 3px 3px 66px #000;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url(../img/bg/bet-bg.png);
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: center;
+                    z-index: -10px;
                 }
                 .header{
                     position: absolute;
@@ -180,9 +193,12 @@
                         display: flex;
                         flex-wrap: wrap;
                         height: 60%;
+                        overflow: hidden;
+                        margin-top: 3px;
                         .area{
                             transition: .5s ease-in-out;
                             position: relative;
+                            overflow: hidden;
                             &:nth-child(1),&:nth-child(2),&:nth-child(3){
                                 width: calc(100% / 3);
                                 border-bottom: 1px solid rgb(0 0 0 / 17%);
@@ -321,7 +337,7 @@
         }
     }
     .bottom{
-        height: 32%;
+        height: 256px;
         background-color: #403f35a7;
         display: flex;
         position: relative;
