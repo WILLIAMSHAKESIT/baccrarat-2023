@@ -258,7 +258,7 @@ header{
 }
 .card-board{
     background: linear-gradient(178deg, #744c14c4, #291901d6);
-    border: 1px solid rgb(162 131 85 / 65%);
+    // border: 1px solid rgb(162 131 85 / 65%);
     height: -moz-fit-content;
     height: fit-content;
     border-radius: 4px;
@@ -460,7 +460,7 @@ header{
             }
         }
     }
-    &:first-child{
+    &.multi-bet{
         padding: 10px;
         .card-body{
             width: 100%;
@@ -1186,7 +1186,7 @@ table{
 }
 .timer{
     border-radius: 91px;
-    outline: 9px solid #221710;
+    // outline: 9px solid #221710;
     outline-offset: -8px;
 }
 
@@ -1195,7 +1195,7 @@ table{
     z-index: 1000;
     .timerValue{
         color: #fff;
-        font-size: 14px;
+        font-size: 20px;
         font-weight: 600;
         position: absolute;
         top: 50%;
@@ -1203,6 +1203,10 @@ table{
         transform: translate(-50%, -50%);
         z-index: 200;
     }
+    canvas {
+        border-radius: 50%;
+        background-color: #000000b0;
+    }    
 }
 
 .results-wrapper-card{
@@ -1283,21 +1287,24 @@ table{
 .board-overlay{
     position: absolute;
     bottom: -100%;
+    transform: translateY(-100%);
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #000000db;
     backdrop-filter: blur(2px);
-    z-index: 100;
+    z-index: 5;
     &.active{
         animation: show-result 2s forwards;
         @keyframes show-result {
             0%{
                 bottom: -100%;
+                transform: translateY(-100%);
                 opacity: 0;
             }
             100%{
                 bottom: 0;
+                transform: translateY(0);
                 opacity: 1;
             }
         }
@@ -1434,4 +1441,44 @@ table{
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+
+
+.fancy-border{
+    position: relative;
+    background: linear-gradient(182deg, #fabb64, #c5a172);
+    >*{
+        z-index: 100;
+        position: relative;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: linear-gradient(360deg, #453219, #9c6d2c);
+        width: calc(100% - 7px);
+        height: calc(100% - 7px);
+        box-shadow: 0 0 5px #000;
+    }
+}
+.fancy-border-2{
+    background: linear-gradient(182deg, #e0b883, #947040) !important;
+    >*{
+        z-index: 100;
+        position: relative;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: linear-gradient(188deg, #2f1f0b, #160f04);
+        border-radius: 5px;
+        width: calc(100% - 10px) !important;
+        height: calc(100% - 10px) !important;
+        box-shadow: 0 0 5px #000;
+    }
 }

@@ -49,7 +49,7 @@
             <div class="left">
                 <div class="count-down">
                     <span class="timerValue"></span>
-                    <canvas class="timer" id="timerRoom" width="50"height="50"></canvas>
+                    <canvas class="timer" width="50" height="50"></canvas>
                 </div>
                 <div class="vid-controls">
                     <button><i class="fa-solid fa-wifi"></i></button>
@@ -215,7 +215,7 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="board-overlay">
+            <!-- <div class="board-overlay">
                 <div class="card-res player face-down">
                     <div class="horizontal">
                         <div class="card f_2"></div>
@@ -240,7 +240,7 @@
                         <div class="card f_4"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="results-wrapper">
                 <ul class="bead-road">
                 </ul>
@@ -297,7 +297,7 @@
                 </div>
             </div>
             <div class="bottom-menu">
-                <button class="btn-circle" id="toggleBottomMenu">
+                <button class="btn-circle toggleBottomMenu">
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
                 <div class="menu-content">
@@ -332,6 +332,34 @@
                 </div>
             </div>
         </div>
+        <div class="mobile-controls">
+            <div class="control-area-mobile">
+                <div class="top-control mx-auto">
+                    <a href="#" class="prevChip">
+                        <i class="fa-solid fa-angle-left" class="prevChip"></i>
+                    </a>
+                    <div class="chips">
+                        <button class="btn-chip chip-1" value="1k" data-val="1k"></button>
+                        <button class="btn-chip chip-2" value="5k" data-val="5k"></button>
+                        <button class="btn-chip chip-3" value="10k" data-val="10k"></button>
+                        <button class="btn-chip chip-4" value="50k" data-val="50k"></button>
+                        <button class="btn-chip chip-5" value="100k" data-val="100k"></button>
+                        <button class="btn-chip chip-6" value="500k" data-val="500k"></button>
+                    </div>
+                    <a href="#" class="nextChip">
+                        <i class="fa-solid fa-angle-right" class="nextChip"></i>
+                    </a>
+                </div>
+                <div class="bottom-control">
+                    <div class="btns">
+                        <button class="btn-circle btn-gray"><i class="fa-solid fa-repeat"></i></button>
+                        <button class="btn cancel">Cancel Bets</button>
+                        <button class="btn bet">Place Bet</button>
+                        <button class="btn-circle btn-gray chip-settings"><i class="fa-solid fa-gear"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="mobile-menu">
         <button class="btn bnt-primary toggle-tables">
@@ -342,9 +370,9 @@
             <i class="fa-solid fa-expand"></i>
             Expand
         </button>
-        <button class="btn btn-primary btn-mid">
+        <a href="index.html" class="btn btn-primary btn-mid">
             <i class="fa-solid fa-house"></i>
-        </button>
+        </a>
         <button class="btn bnt-primary toggle-contact">
             <i class="fa-solid fa-phone"></i>
             Contact
@@ -355,7 +383,7 @@
         </button>
     </div>
     <div class="modal-wrapper" id="chipModal">
-        <div class="modal-container">
+        <div class="modal-container fancy-border-2">
             <div class="modal-header">
                 <h2>Chip Settings</h2>
                 <button class="btn red closeModal">
@@ -419,7 +447,7 @@
         </div>
     </div>
     <div class="modal-wrapper" id="contactModal">
-        <div class="modal-container">
+        <div class="modal-container fancy-border-2">
             <div class="modal-header">
                 <h2>Contact us</h2>
                 <button class="btn red closeModal">
@@ -435,7 +463,7 @@
         </div>
     </div>
     <div class="modal-wrapper" id="historyModal">
-        <div class="modal-container lg">
+        <div class="modal-container fancy-border-2 lg">
             <div class="modal-header">
                 <h2>Game history</h2>
                 <button class="btn red closeModal">
@@ -654,7 +682,7 @@
         </div>
     </div>
     <div class="modal-wrapper" id="settingsModal">
-        <div class="modal-container">
+        <div class="modal-container fancy-border-2">
             <div class="modal-header">
                 <h2>Settings</h2>
                 <button class="btn red closeModal">
@@ -722,7 +750,7 @@
             </div>
             <div class="modal-body">
                 <div class="main-content">
-                    <div class="card-board sm mb-2">
+                    <div class="card-board">
                         <div class="card-header">
                             <div class="logo">
                                 <img src="img/casino/solaire.png">
@@ -767,6 +795,7 @@
                                     <span>30</span>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

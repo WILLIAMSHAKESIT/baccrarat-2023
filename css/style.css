@@ -619,7 +619,6 @@ header .top-menu {
 
 .card-board {
   background: linear-gradient(178deg, rgba(116, 76, 20, 0.768627451), rgba(41, 25, 1, 0.8392156863));
-  border: 1px solid rgba(162, 131, 85, 0.65);
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 4px;
@@ -809,10 +808,10 @@ header .top-menu {
 .card-board.sm .card-header .bet-limit {
   font-size: 15px;
 }
-.card-board:first-child {
+.card-board.multi-bet {
   padding: 10px;
 }
-.card-board:first-child .card-body {
+.card-board.multi-bet .card-body {
   width: 100%;
   height: 183px;
   border-radius: 5px;
@@ -820,27 +819,27 @@ header .top-menu {
   box-shadow: inset 0 0 6px #000;
   position: relative;
 }
-.card-board:first-child .card-body .screw {
+.card-board.multi-bet .card-body .screw {
   width: 30px;
   position: absolute;
 }
-.card-board:first-child .card-body .screw.one {
+.card-board.multi-bet .card-body .screw.one {
   left: 0;
   top: 5px;
 }
-.card-board:first-child .card-body .screw.two {
+.card-board.multi-bet .card-body .screw.two {
   right: 0;
   top: 5px;
 }
-.card-board:first-child .card-body .screw.three {
+.card-board.multi-bet .card-body .screw.three {
   right: 0;
   bottom: 5px;
 }
-.card-board:first-child .card-body .screw.four {
+.card-board.multi-bet .card-body .screw.four {
   left: 0;
   bottom: 5px;
 }
-.card-board:first-child .card-body .content {
+.card-board.multi-bet .card-body .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -849,7 +848,7 @@ header .top-menu {
   flex-direction: column;
   align-items: center;
 }
-.card-board:first-child .card-body .content h1 {
+.card-board.multi-bet .card-body .content h1 {
   background: -webkit-linear-gradient(#FEA638, #ffcc86, #FEA231);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -858,7 +857,7 @@ header .top-menu {
   white-space: nowrap;
   text-transform: uppercase;
 }
-.card-board:first-child .card-body .content a {
+.card-board.multi-bet .card-body .content a {
   background: linear-gradient(338deg, #a07e37, #dfc073, #9e7b34);
   padding: 5px 10px;
   border-radius: 5px;
@@ -1509,7 +1508,6 @@ table.stripe tbody tr td:last-child {
 
 .timer {
   border-radius: 91px;
-  outline: 9px solid #221710;
   outline-offset: -8px;
 }
 
@@ -1519,13 +1517,17 @@ table.stripe tbody tr td:last-child {
 }
 .count-down .timerValue {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 200;
+}
+.count-down canvas {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6901960784);
 }
 
 .results-wrapper-card {
@@ -1606,13 +1608,14 @@ table.stripe tbody tr td:last-child {
 .board-overlay {
   position: absolute;
   bottom: -100%;
+  transform: translateY(-100%);
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8588235294);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  z-index: 100;
+  z-index: 5;
 }
 .board-overlay.active {
   animation: show-result 2s forwards;
@@ -1620,10 +1623,12 @@ table.stripe tbody tr td:last-child {
 @keyframes show-result {
   0% {
     bottom: -100%;
+    transform: translateY(-100%);
     opacity: 0;
   }
   100% {
     bottom: 0;
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -1752,12 +1757,53 @@ table.stripe tbody tr td:last-child {
   z-index: 0;
 }
 
+.fancy-border {
+  position: relative;
+  background: linear-gradient(182deg, #fabb64, #c5a172);
+}
+.fancy-border > * {
+  z-index: 100;
+  position: relative;
+}
+.fancy-border::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(360deg, #453219, #9c6d2c);
+  width: calc(100% - 7px);
+  height: calc(100% - 7px);
+  box-shadow: 0 0 5px #000;
+}
+
+.fancy-border-2 {
+  background: linear-gradient(182deg, #e0b883, #947040) !important;
+}
+.fancy-border-2 > * {
+  z-index: 100;
+  position: relative;
+}
+.fancy-border-2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(188deg, #2f1f0b, #160f04);
+  border-radius: 5px;
+  width: calc(100% - 10px) !important;
+  height: calc(100% - 10px) !important;
+  box-shadow: 0 0 5px #000;
+}
+
 .sub-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 .sub-header .table-filters {
   display: flex;
@@ -2278,6 +2324,9 @@ table.stripe tbody tr td:last-child {
 .room .bottom .legend .indicators .indi.indi-two {
   border: 1px solid #0079e2;
 }
+.room .mobile-controls {
+  display: none;
+}
 
 .legend-mobile {
   display: none;
@@ -2426,9 +2475,28 @@ table.stripe tbody tr td:last-child {
   }
 }
 @media (max-width: 935px) {
+  header {
+    margin-bottom: 0;
+    padding: 10px !important;
+  }
   header .logo {
-    top: -16px;
-    transform: translateX(-50%) scale(0.6);
+    -webkit-clip-path: unset;
+            clip-path: unset;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 0;
+    font-size: 23px;
+    padding: 0 11px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header .logo::before {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+    width: calc(100% - 5px);
+    height: calc(100% - 2px);
   }
   header .top-menu {
     display: none;
@@ -2438,7 +2506,8 @@ table.stripe tbody tr td:last-child {
     justify-content: space-between;
   }
   .room {
-    height: calc(100% - 143px);
+    height: calc(100% - 98px);
+    position: relative;
   }
   .room .top {
     flex-direction: column;
@@ -2448,13 +2517,17 @@ table.stripe tbody tr td:last-child {
     height: 100%;
   }
   .room .top > div.left .count-down {
-    right: 28px;
-    top: 12px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .room .top > div.left .vid-controls {
     right: 28px;
     bottom: 12px;
     padding-right: 0;
+  }
+  .room .top > div.left .vid-controls button {
+    width: 35px;
+    height: 35px;
   }
   .room .top > div.right .header .room-info .info {
     flex-direction: row;
@@ -2463,6 +2536,7 @@ table.stripe tbody tr td:last-child {
   .room .top > div.right .body {
     width: 100%;
     left: 0;
+    bottom: 6px;
   }
   .room .top > div.right .body .bet-area {
     width: calc(100% - 29px);
@@ -2474,10 +2548,13 @@ table.stripe tbody tr td:last-child {
   .room .top > div.right .body .bet-area .area .area-info .info {
     display: none;
   }
+  .room .top > div.right .body .control-area {
+    display: none;
+  }
   .room .top > div.right .body .control-area .bottom-control {
     position: fixed;
     left: 50%;
-    bottom: 73px;
+    bottom: 62px;
     width: calc(100% - 4px);
   }
   .room .top > div.right .body .control-area .bottom-control .btns {
@@ -2502,7 +2579,7 @@ table.stripe tbody tr td:last-child {
   }
   .room .bottom {
     height: 116px;
-    top: 51px;
+    top: 0;
     background-color: #fff;
   }
   .room .bottom::-webkit-scrollbar {
@@ -2532,37 +2609,130 @@ table.stripe tbody tr td:last-child {
   .room .bottom .bottom-menu {
     display: none;
   }
+  .room .mobile-controls {
+    display: block;
+    height: 17%;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .room .mobile-controls .control-area-mobile {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 4px);
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    transform: scale(1);
+    margin-bottom: 12px;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button {
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5490196078));
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-circle {
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) {
+    font-size: 14px;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-weight: 500;
+    position: relative;
+    width: calc(100% - 10px);
+  }
+  .room .mobile-controls .control-area-mobile .top-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: calc(100% - 10px);
+    width: 100%;
+    top: 35px;
+  }
+  .room .mobile-controls .control-area-mobile .top-control a {
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    background: unset;
+    border: unset;
+  }
+  .room .mobile-controls .control-area-mobile .top-control a i {
+    font-size: 30px;
+    cursor: pointer;
+    background: -webkit-linear-gradient(#fff9f1, hsl(37, 100%, 90%), #fffcf5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips {
+    width: calc(100% - 14px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip {
+    width: 39px;
+    height: 39px;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip.active::before {
+    width: 42px;
+    height: 37px;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip::after {
+    font-size: 11px;
+    top: 46%;
+  }
   .mobile-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 70px;
+    height: 57px;
     width: 100%;
-    background: rgba(126, 77, 24, 0.55);
-    border: 1px solid rgba(120, 87, 50, 0.7490196078);
-    position: relative;
+    background: linear-gradient(178deg, #432614, #231309);
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
   }
   .mobile-menu .btn-mid {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     border-radius: 50%;
     width: 70px;
     height: 70px;
-    top: -31px;
+    max-width: 50px;
+    max-height: 50px;
+    position: relative;
+    left: unset;
+    bottom: unset;
+    top: unset;
+    transform: unset;
   }
   .mobile-menu .btn-mid i {
-    font-size: 30px;
+    font-size: 20px;
   }
   .mobile-menu > div {
     width: calc(50% - 100px);
   }
-  .mobile-menu button {
+  .mobile-menu .btn {
     width: 50px;
     height: 50px;
     background: linear-gradient(#5C2E17, #1c0e06);
   }
-  .mobile-menu button:not(:nth-child(3)) {
+  .mobile-menu .btn:not(.btn-mid) {
     display: flex;
     flex-direction: column;
     font-size: 9px;
@@ -2570,7 +2740,7 @@ table.stripe tbody tr td:last-child {
     border: unset;
     white-space: nowrap;
   }
-  .mobile-menu button:not(:nth-child(3)):hover {
+  .mobile-menu .btn:not(.btn-mid):hover {
     box-shadow: unset;
   }
   .legend-mobile {
@@ -2684,7 +2854,7 @@ table.stripe tbody tr td:last-child {
     display: none;
   }
   .table-grid {
-    max-height: calc(100% - 141.5px);
+    max-height: calc(100% - 210.5px);
   }
   .table-grid .card-board {
     width: calc(50% - 8px) !important;
@@ -2698,6 +2868,11 @@ table.stripe tbody tr td:last-child {
   .sub-header {
     flex-direction: column;
   }
+  .sub-header .subhead-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
   .sub-header .subhead-inputs select {
     width: calc(50% - 4px);
   }
@@ -2707,17 +2882,30 @@ table.stripe tbody tr td:last-child {
   .table-grid.container {
     max-width: calc(100% - 10px);
   }
+  .mobile-controls .control-area-mobile .bottom-control .btns button {
+    height: 30px;
+  }
+  .mobile-controls .control-area-mobile .bottom-control .btns button.btn-circle {
+    min-width: 30px !important;
+    min-height: 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .card-board.multi-bet .card-body .content h1 {
+    font-size: 34px;
+  }
 }
 @media (max-width: 600px) {
   header {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-bottom: 12px;
+    padding: 8px 0 !important;
+  }
+  header .logo {
+    font-size: 15px;
+    display: none;
   }
   header .user-info {
-    top: 31px;
     position: relative;
-    padding: 1px 17px;
+    padding: 1px 10px;
     gap: 5px;
   }
   .room .top > div.left .count-down {
