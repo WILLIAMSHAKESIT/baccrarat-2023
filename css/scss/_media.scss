@@ -220,6 +220,10 @@
                 &::after{
                     font-size: 13px;
                 }
+                &::before{
+                    width: 67px;
+                    height: 59px;
+                }
             }
         }
         .control-menu{

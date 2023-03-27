@@ -115,35 +115,33 @@ $(document).ready(function(){
 
     $('.bet-area .area').on('click',function(){
         let _this = this
+        let chip = JSON.parse(localStorage.getItem("selectedChip"))
         layout.selectedBet = $(this).attr('class')
         layout.chipPos = $(this).offset()
         $('.bet-area .area').removeClass('active')
         $(this).toggleClass('active')
         top = top+.4
-        if(layout.selectedChip){
+        if(chip.chipNo){
             if(window.innerWidth > 935){
                 if(bool){
                     bool = false
-                    $(_this).append(`<div class="btn-chip chip-${layout.selectedChip}" value="${layout.chipValue}"></div>`)
-                    $(this).find(`div.chip-${layout.selectedChip}`).css({left:layout.chipOffset.left,top:layout.chipOffset.top,position:'fixed'}).animate({
+                    $(_this).append(`<div class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></div>`)
+                    $(this).find(`div.chip-${chip.chipNo}`).css({left:layout.chipOffset.left,top:layout.chipOffset.top,position:'fixed'}).animate({
                         "left": `${layout.chipPos.left + $(this).outerWidth()/2}px`,
                         "top": `${layout.chipPos.top + $(this).outerHeight()/2 + 20}px`,
                     },"slow", function() {
                         bool = true
                         $(this).css({position:'absolute',left:`50%`,top:`${80 - top}%`})
-                        $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${layout.selectedChip}" value="${layout.chipValue}"></a>`)
+                        $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
                     });
                 }
             }else{
-                $(_this).append(`<div class="btn-chip chip-${layout.selectedChip}" style="position:absolute;left:50%;top:${80 - top}%" value="${layout.chipValue}"></div>`)
-                $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${layout.selectedChip}" value="${layout.chipValue}"></a>`)
+                $(_this).append(`<div class="btn-chip chip-${chip}" style="position:absolute;left:50%;top:${80 - top}%" value="${chip.chipValue}"></div>`)
+                $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
             }
         }
     })
 
-    $(document).on('click',`#${layout.roomId}`,function(event){
-        alert('eherfsdbfjh')
-    })
     //room chips replace
     $('.prevChip').on('click',function(){
         $('.chips').html('')
@@ -167,7 +165,9 @@ $(document).ready(function(){
         layout.chipOffset = $(this).offset()
         $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInLeft')
         $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInRight')
-        $(this).addClass('active animate__animated animate__pulse')  
+        $(this).addClass('active animate__animated animate__pulse') 
+        localStorage.setItem("selectedChip",JSON.stringify({chipNo:layout.selectedChip,chipValue:layout.chipValue}));
+        console.log(layout.chipValue)
     })
 })
 

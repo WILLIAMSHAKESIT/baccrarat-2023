@@ -1608,7 +1608,7 @@ table.stripe tbody tr td:last-child {
 .board-overlay {
   position: absolute;
   bottom: -100%;
-  transform: translateY(-100%);
+  transform: translateY(100%);
   left: 0;
   width: 100%;
   height: 100%;
@@ -1623,7 +1623,7 @@ table.stripe tbody tr td:last-child {
 @keyframes show-result {
   0% {
     bottom: -100%;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0;
   }
   100% {
@@ -1638,10 +1638,12 @@ table.stripe tbody tr td:last-child {
 @keyframes hide-result {
   0% {
     bottom: 0;
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
     bottom: -100%;
+    transform: translateY(100%);
     opacity: 0;
   }
 }
@@ -2604,6 +2606,10 @@ table.stripe tbody tr td:last-child {
   }
   .multi-rooms .buttons-chips .btn-chip::after {
     font-size: 13px;
+  }
+  .multi-rooms .buttons-chips .btn-chip::before {
+    width: 67px;
+    height: 59px;
   }
   .multi-rooms .control-menu {
     padding: 0;
