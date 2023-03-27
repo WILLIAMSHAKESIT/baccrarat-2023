@@ -444,25 +444,25 @@ header .top-menu {
 .btn {
   padding: 10px;
   transition: 0.5s ease-in-out;
-  border: 1px solid rgba(162, 131, 85, 0.44);
+  border: 2px solid rgb(255, 199, 116);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
 }
 .btn.primary {
-  background: rgba(87, 44, 22, 0.768627451);
+  background: linear-gradient(359deg, #26140b, #552b17);
 }
-.btn.red {
-  background: rgba(122, 24, 24, 0.77);
+.btn.btn-red {
+  background: linear-gradient(359deg, #2d0a0a, #811d1d);
 }
-.btn.blue {
-  background: rgba(29, 64, 116, 0.752);
+.btn.btn-blue {
+  background: linear-gradient(359deg, #0a0a29, #1a3667);
 }
-.btn.green {
+.btn.btn-green {
   background: rgba(29, 116, 49, 0.752);
 }
-.btn.normal {
+.btn.btn-normal {
   background: none;
 }
 .btn i {
@@ -580,8 +580,8 @@ header .top-menu {
 }
 
 .input {
-  background: rgba(87, 44, 22, 0.768627451);
-  border: 1px solid rgb(162, 131, 85);
+  background: linear-gradient(359deg, #26140b, #552b17);
+  border: 2px solid rgb(255, 199, 116);
   border-radius: 4px;
   padding: 5px 10px;
 }
@@ -1828,6 +1828,11 @@ table.stripe tbody tr td:last-child {
   height: 44px;
   margin-left: 5px;
 }
+.sub-header .subhead-inputs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .sub-header .subhead-inputs select {
   width: 170px;
 }
@@ -1862,29 +1867,51 @@ table.stripe tbody tr td:last-child {
 .multi-rooms {
   height: calc(100% - 220px);
 }
-.multi-rooms .room {
+.multi-rooms > div {
+  gap: 10px;
+}
+.multi-rooms > div .room {
   width: 25%;
   height: 100%;
   background: linear-gradient(178deg, rgba(43, 27, 19, 0.72), rgba(8, 5, 2, 0.92));
   border-radius: 5px;
   border: 1px solid rgba(64, 63, 53, 0.1882352941);
   position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
-.multi-rooms .room button {
+.multi-rooms > div .room button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 150px;
 }
-.multi-rooms .room button i {
+.multi-rooms > div .room button i {
   margin-right: 10px;
+}
+.multi-rooms > div .room iframe {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+  z-index: 3000;
 }
 .multi-rooms .buttons-chips {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-around;
+  width: 100%;
+}
+.multi-rooms .buttons-chips .chips {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.multi-rooms .buttons-chips a {
+  display: none;
 }
 .multi-rooms .control-menu {
   display: flex;
@@ -1892,6 +1919,9 @@ table.stripe tbody tr td:last-child {
   justify-content: space-around;
   width: 100%;
   padding: 30px 0;
+}
+.multi-rooms .control-menu .btn {
+  white-space: nowrap;
 }
 
 .room {
@@ -2343,6 +2373,69 @@ table.stripe tbody tr td:last-child {
 .room .mobile-controls {
   display: none;
 }
+.room .mobile-controls .control-area-mobile .bottom-control .btns:not(.btn-circle) {
+  white-space: nowrap;
+}
+.room.multi .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  background: linear-gradient(181deg, #402010, #26140a);
+}
+.room.multi .header .room-info .info {
+  margin-right: unset;
+  font-size: 10px;
+}
+.room.multi .header .logo {
+  width: 71px;
+}
+.room.multi .header .room-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.room.multi .header .room-info .info {
+  margin-right: 15px;
+}
+.room.multi .header .room-info .info .value {
+  font-weight: 800;
+  color: #fdf1cf;
+}
+.room.multi .top {
+  flex-direction: column;
+  height: calc(100% - 184px);
+}
+.room.multi .top > div.right .body {
+  top: 3px;
+  width: 100%;
+  height: calc(100% - 36px);
+}
+.room.multi .top > div.right .body .bet-area {
+  height: 100%;
+}
+.room.multi .top > div.left .count-down {
+  left: 10px;
+  top: 0;
+  transform: scale(0.7);
+}
+.room.multi .top > div.left .vid-controls {
+  right: 13px;
+}
+.room.multi .top > div.left .vid-controls button {
+  width: 27px;
+  height: 27px;
+  font-size: 13px;
+}
+.room.multi .mobile-controls .control-area-mobile .bottom-control .btns {
+  gap: 4px;
+  margin-bottom: 3px;
+  padding: 0 2px;
+}
+.room.multi > .legend-mobile {
+  display: none;
+}
 
 .legend-mobile {
   display: none;
@@ -2412,6 +2505,52 @@ table.stripe tbody tr td:last-child {
     margin-left: 34px;
   }
 }
+@media only screen and (max-device-width: 1342px) {
+  .room.multi .top {
+    height: calc(100% - 210px);
+  }
+}
+@media only screen and (max-device-width: 1280px) {
+  .room.multi .top {
+    flex-direction: row;
+  }
+  .room.multi .top > div.left .count-down {
+    left: 0;
+  }
+  .room.multi .top > div.right .header {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .room.multi .top > div.right .header .logo {
+    width: 48px;
+  }
+  .room.multi .top > div.right .body {
+    height: calc(100% - 21px);
+  }
+  .room.multi .top > div.right .body .bet-area {
+    width: calc(100% - 7px);
+  }
+  .room.multi .top > div.left .vid-controls {
+    right: 10px;
+  }
+  .room.multi > .legend-mobile {
+    position: relative;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    bottom: 0;
+  }
+  .legend-mobile.multi {
+    width: 100%;
+    display: none;
+  }
+  .legend-mobile.multi .right-indi > div div {
+    width: 12px;
+  }
+  .legend-mobile.multi .indicators .indi .result {
+    width: 12px;
+  }
+}
 @media (max-width: 1280px) {
   header .user-info {
     font-size: 15px;
@@ -2447,6 +2586,28 @@ table.stripe tbody tr td:last-child {
   }
   .room .top > div.right .body .control-area .bottom-control .btns {
     transform: scale(0.8);
+  }
+  .multi-rooms {
+    height: calc(100% - 169px);
+  }
+  .multi-rooms > div:first-child {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .multi-rooms > div:first-child .room {
+    width: calc(50% - 5px);
+    height: 50%;
+  }
+  .multi-rooms .buttons-chips .btn-chip {
+    width: 50px;
+    height: 50px;
+  }
+  .multi-rooms .buttons-chips .btn-chip::after {
+    font-size: 13px;
+  }
+  .multi-rooms .control-menu {
+    padding: 0;
+    margin-top: 20px;
   }
   .modal-wrapper .modal-container {
     width: 100%;
@@ -2524,6 +2685,9 @@ table.stripe tbody tr td:last-child {
   .room {
     height: calc(100% - 98px);
     position: relative;
+  }
+  .room.h-full {
+    height: 100%;
   }
   .room .top {
     flex-direction: column;
@@ -2716,6 +2880,31 @@ table.stripe tbody tr td:last-child {
     font-size: 11px;
     top: 46%;
   }
+  .multi-rooms {
+    height: calc(100% - 168px);
+  }
+  .multi-rooms .control-menu {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .multi-rooms .control-menu .toggle-chips, .multi-rooms .control-menu a.btn {
+    display: none;
+  }
+  .multi-rooms .buttons-chips {
+    width: calc(100% - 20px);
+  }
+  .multi-rooms .buttons-chips button.active::before {
+    width: 59px;
+    height: 54px;
+  }
+  .multi-rooms .buttons-chips button:nth-child(7), .multi-rooms .buttons-chips button:nth-child(8), .multi-rooms .buttons-chips button:nth-child(9), .multi-rooms .buttons-chips button:nth-child(10) {
+    display: none;
+  }
+  .multi-rooms .buttons-chips a {
+    display: block;
+  }
   .mobile-menu {
     display: flex;
     align-items: center;
@@ -2878,6 +3067,11 @@ table.stripe tbody tr td:last-child {
     width: calc(50% - 8px) !important;
   }
 }
+@media only screen and (max-device-width: 697px) {
+  .room.multi .top > div.right .body {
+    height: calc(100% - 24px);
+  }
+}
 @media (max-width: 697px) {
   .card {
     width: 40px;
@@ -2911,6 +3105,17 @@ table.stripe tbody tr td:last-child {
   }
   .card-board.multi-bet .card-body .content h1 {
     font-size: 34px;
+  }
+  .multi-rooms {
+    max-width: calc(100% - 13px);
+    overflow-y: auto;
+  }
+  .multi-rooms > div:first-child {
+    gap: 5px;
+  }
+  .multi-rooms > div:first-child .room {
+    width: 100%;
+    height: 356px;
   }
 }
 @media (max-width: 600px) {

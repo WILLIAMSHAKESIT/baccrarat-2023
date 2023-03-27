@@ -74,24 +74,24 @@ header{
 .btn{
     padding: 10px;
     transition: .5s ease-in-out;
-    border: 1px solid rgba(162, 131, 85, 0.44);
+    border: 2px solid rgb(255 199 116);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
     &.primary{
-        background: #572c16c4;
+        background: linear-gradient(359deg, #26140b, #552b17);
     }
-    &.red{
-        background: rgba(122, 24, 24, 0.77);
+    &.btn-red{
+        background: linear-gradient(359deg, #2d0a0a, #811d1d);
     }
-    &.blue{
-        background: rgba(29, 64, 116, 0.752);
+    &.btn-blue{
+        background:  linear-gradient(359deg, #0a0a29, #1a3667);
     }
-    &.green{
+    &.btn-green{
         background: rgba(29, 116, 49, 0.752);
     }
-    &.normal{
+    &.btn-normal{
         background: none;
     }
     i{
@@ -210,8 +210,8 @@ header{
     }
 } 
 .input{
-    background: #572c16c4;
-    border: 1px solid rgb(162 131 85);
+    background: linear-gradient(359deg, #26140b, #552b17);
+    border: 2px solid rgb(255, 199, 116);
     border-radius: 4px;
     padding: 5px 10px;
     &:focus-visible{

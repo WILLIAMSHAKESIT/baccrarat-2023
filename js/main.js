@@ -8,11 +8,9 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-    // layout.createGrid2()
 
     $(window).on('resize',function(){
         layout.createGrid()
-        // layout.createGrid2()
     })
 
     //filter table
@@ -60,7 +58,6 @@ $(document).ready(function(){
     $('.closeModal').on('click',function(){
         $('.modal-wrapper').removeClass('show')
     })
-
     //modal open
     $('.toggle-history').on('click',function(){
         $('#historyModal').addClass('show')  
@@ -75,11 +72,24 @@ $(document).ready(function(){
     })
     $('.toggle-tables').on('click',function(){
         $('#tablesModal').addClass('show')
+        layout.createGrid()
+    })
+    // event for multi betting room select
+    $('.multi-rooms .room').on('click',function(event){
+        $('#tablesModal').addClass('show')
+        layout.multiBetRoom = this
+        layout.roomId = $(layout.multiBetRoom).data('room')
+    })
+    //selected table for multi-betting
+    $('#tablesModal .main-content .card-board').on('click',function(){
+        layout.createGrid()
+        $('.modal-wrapper').removeClass('show')
+        $(layout.multiBetRoom).html(`<iframe src="multi-room.html" id="${layout.roomId}" height="700" width="300" title="Multi-Betting Room 1"></iframe>`)
     })
     $('.toggle-menu').on('click',function(){
         $('#menuModal').addClass('show')
     })
-    $('.chip-settings').on('click',function(){
+    $('.toggle-chips').on('click',function(){
         $('#chipModal').addClass('show')
     })
 
@@ -95,12 +105,14 @@ $(document).ready(function(){
             $('.bottom-menu').removeClass('animate__animated animate__fadeInRight')
         }
     })
+
     let top = 1
     //betting area highlight
     let bool = false
     $('.bet-area .area').one('click',function(){
         bool = true
     })
+
     $('.bet-area .area').on('click',function(){
         let _this = this
         layout.selectedBet = $(this).attr('class')
@@ -129,6 +141,9 @@ $(document).ready(function(){
         }
     })
 
+    $(document).on('click',`#${layout.roomId}`,function(event){
+        alert('eherfsdbfjh')
+    })
     //room chips replace
     $('.prevChip').on('click',function(){
         $('.chips').html('')
@@ -156,7 +171,6 @@ $(document).ready(function(){
     })
 })
 
-  
 
 class CountdownTimer {
     constructor(canvasId, timerDivId, totalTime) {
@@ -259,8 +273,9 @@ class Layout{
         this.chipValue = '',
         this.chipOffset = null,
         this.chipPos= null,
-        this.tableColNumber = 0
-    
+        this.tableColNumber = 0,
+        this.multiBetRoom = null,
+        this.roomId = null
     }
     closeFullscreen() {
         if (document.exitFullscreen) {
@@ -389,10 +404,10 @@ class Layout{
                 $( ".room .bottom .results-wrapper ul.cock-roach").append(`<li></li>`)
             }
         }
-        
+
         this.tableColNumber = 3
 
-        let mainRoadColSmall = 2 * Math.round( $('ul.main-road').outerWidth() / (this.tableColNumber/2) /2)
+        let mainRoadColSmall = 2 * Math.round( $('.card-board .card-body .results-wrapper-card ul.main-road').outerWidth() / (this.tableColNumber/2) /2)
 
         for(let i=0;i<30;i++){
             $(".card-board .card-body .results-wrapper-card ul.bead-road").append(`<li><div class="result blue"></div></li>`)

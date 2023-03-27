@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilton | Table</title>
+    <link href="css/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container room multi h-full">
+        <div class="header">
+            <img class="logo" src="img/casino/solaire.png">
+            <div class="room-info">
+                <span class="info">TABLE: <span class="value">S03</span></span>
+                <span class="info">TYPE: <span class="value">SPEED</span></span>
+                <span class="info">GAME: <span class="value">S0334564564</span></span>
+                <span class="info">LIMIT: <span class="value">10K ~ 5M</span></span>
+            </div>
+        </div>
+        <div class="top">
+            <div class="left">
+                <div class="count-down">
+                    <span class="timerValue"></span>
+                    <canvas class="timer" width="50" height="50"></canvas>
+                </div>
+                <div class="vid-controls">
+                    <button><i class="fa-solid fa-wifi"></i></button>
+                    <button><i class="fa-solid fa-video"></i></button>
+                    <button><i class="fa-solid fa-expand"></i></button>
+                </div>
+                <img class="bg-border" src="img/bg/video_bg.png" alt="Hilton Casino Betting Background">
+            </div>
+            <div class="right">
+                <div class="body">
+                    <div class="bet-area">
+                        <div class="area p-pair">
+                            <div class="area-info">
+                                <div class="info">
+                                    <div>
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>0</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                                <span class="text light-blue">P.PAIR</span>
+                            </div>
+                        </div>
+                        <div class="area tie">
+                            <div class="area-info">
+                                <div class="info">
+                                    <div>
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>0</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                                <span class="text green">TIE</span>
+                            </div>
+                        </div>
+                        <div class="area b-pair">
+                            <div class="area-info">
+                                <div class="info">
+                                    <div>
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>0</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                                <span class="text red">B.PAIR</span>
+                            </div>
+                        </div>
+                        <div class="area player">
+                            <div class="area-info">
+                                <div class="info">
+                                    <div>
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>0</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                                <span class="text light-blue">PLAYER</span>
+                            </div>
+                        </div>
+                        <div class="area banker">
+                            <div class="area-info">
+                                <div class="info">
+                                    <div>
+                                        <i class="fa-solid fa-user"></i>
+                                        <span>0</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span>0</span>
+                                    </div>
+                                </div>
+                                <span class="text red">BANKER</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-area">
+                        <div class="top-control mx-auto">
+                            <a href="#" id="prevChip">
+                                <i class="fa-solid fa-angle-left" id="prevChip"></i>
+                            </a>
+                            <div class="chips">
+                                <button class="btn-chip chip-1" value="1k" data-val="1k"></button>
+                                <button class="btn-chip chip-2" value="5k" data-val="5k"></button>
+                                <button class="btn-chip chip-3" value="10k" data-val="10k"></button>
+                                <button class="btn-chip chip-4" value="50k" data-val="50k"></button>
+                                <button class="btn-chip chip-5" value="100k" data-val="100k"></button>
+                                <button class="btn-chip chip-6" value="500k" data-val="500k"></button>
+                            </div>
+                            <a href="#" id="nextChip">
+                                <i class="fa-solid fa-angle-right" id="nextChip"></i>
+                            </a>
+                        </div>
+                        <div class="bottom-control">
+                            <div class="btns">
+                                <button class="btn-circle btn-gray"><i class="fa-solid fa-repeat"></i></button>
+                                <button class="btn cancel">Cancel Bets</button>
+                                <button class="btn bet">Place Bet</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend-mobile multi">
+                    <div class="right-indi">
+                        <div>
+                            <div class="result red"></div>
+                            <span class="red">0</span>
+                        </div>
+                        <div>
+                            <div class="result blue"></div>
+                            <span class="blue">0</span>
+                        </div>
+                        <div>
+                            <div class="result green"></div>
+                            <span class="green">0</span>
+                        </div>
+                        <div>
+                            <div class="result red"><div class="pair-banker"></div></div>
+                            <span class="red">0</span>
+                        </div>
+                        <div>
+                            <div class="result blue"><div class="pair-player"></div></div>
+                            <span class="blue">0</span>
+                        </div>
+                    </div>
+                    <div class="indicators">
+                        <div class="indi indi-one">
+                            <div class="result red"></div>
+                            <div class="result outline-red"></div>
+                            <div class="result fill-red"></div>
+                            <div class="result line-blue"></div>
+                        </div>
+                        <div class="indi indi-two">
+                            <div class="result blue"></div>
+                            <div class="result outline-blue"></div>
+                            <div class="result fill-blue"></div>
+                            <div class="result line-red"></div>
+                        </div>
+                    </div>
+                </div>
+                <img class="bg-border" src="img/bg/betting_bg.png" alt="Hilton Casino Betting Background">
+            </div>
+        </div>
+        <div class="legend-mobile">
+            <div class="right-indi">
+                <div>
+                    <div class="result red"></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"></div>
+                    <span class="blue">0</span>
+                </div>
+                <div>
+                    <div class="result green"></div>
+                    <span class="green">0</span>
+                </div>
+                <div>
+                    <div class="result red"><div class="pair-banker"></div></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"><div class="pair-player"></div></div>
+                    <span class="blue">0</span>
+                </div>
+            </div>
+            <div class="indicators">
+                <div class="indi indi-one">
+                    <div class="result red"></div>
+                    <div class="result outline-red"></div>
+                    <div class="result fill-red"></div>
+                    <div class="result line-blue"></div>
+                </div>
+                <div class="indi indi-two">
+                    <div class="result blue"></div>
+                    <div class="result outline-blue"></div>
+                    <div class="result fill-blue"></div>
+                    <div class="result line-red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <!-- <div class="board-overlay">
+                <div class="card-res player face-down">
+                    <div class="horizontal">
+                        <div class="card f_2"></div>
+                    </div>
+                    <div class="card f_3"></div>
+                    <div class="card f_4"></div>
+                </div>
+                <div class="mid-result">
+                    <div class="winner-text tie">
+                        Tie!
+                    </div>
+                    <div class="winner-number">
+                        <span class="player">8</span>
+                        <img src="img/results/vs.png">
+                        <span class="banker">8</span>
+                    </div>
+                </div>
+                <div class="card-res banker face-down">
+                    <div class="card f_2"></div>
+                    <div class="card f_3"></div>
+                    <div class="horizontal">
+                        <div class="card f_4"></div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="results-wrapper">
+                <ul class="bead-road">
+                </ul>
+                <div class="small-grid">
+                    <ul class="main-road">
+                    </ul>
+                    <ul class="bigeye-road"></ul>
+                    <div class="bottom-small">
+                        <ul class="small-road">
+                            
+                        </ul>
+                        <ul class="cock-roach">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="legend">
+                <ul>
+                    <li>
+                        <div class="result red"></div>
+                        <span class="red">0</span>
+                    </li>
+                    <li>
+                        <div class="result blue"></div>
+                        <span class="blue">0</span>
+                    </li>
+                    <li>
+                        <div class="result green"></div>
+                        <span class="green">0</span>
+                    </li>
+                    <li>
+                        <div class="result red"><div class="pair-banker"></div></div>
+                        <span class="red">0</span>
+                    </li>
+                    <li>
+                        <div class="result blue"><div class="pair-player"></div></div>
+                        <span class="blue">0</span>
+                    </li>
+                </ul>
+                <div class="indicators">
+                    <div class="indi indi-one">
+                        <div class="result red"></div>
+                        <div class="result outline-red"></div>
+                        <div class="result fill-red"></div>
+                        <div class="result line-blue"></div>
+                    </div>
+                    <div class="indi indi-two">
+                        <div class="result blue"></div>
+                        <div class="result outline-blue"></div>
+                        <div class="result fill-blue"></div>
+                        <div class="result line-red"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-menu">
+                <button class="btn-circle toggleBottomMenu">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <div class="menu-content">
+                    <div class="total red">
+                        <span>Bet Amount</span>
+                        <span>999,999,999</span>
+                    </div>
+                    <div class="total green">
+                        <span>Bet Amount</span>
+                        <span>999,999,999</span>
+                    </div>
+                    <div class="btns-bottom">
+                        <button class="toggle-tables">
+                            <div>
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                <span>Change Table</span>
+                            </div>
+                        </button>
+                        <button>
+                            <div>
+                                <i class="fa-solid fa-table-cells-large"></i>
+                                <span>Return to lobby</span>
+                            </div>
+                        </button>
+                        <button>
+                            <div>
+                                <i class="fa-solid fa-rotate-right"></i>
+                                <span>Refresh</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="control-area-mobile">
+                <div class="bottom-control">
+                    <div class="btns">
+                        <button class="btn-circle btn-gray"><i class="fa-solid fa-repeat"></i></button>
+                        <button class="btn-circle btn-gray"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                        <button class="btn cancel">Cancel Bets</button>
+                        <button class="btn bet">Place Bet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

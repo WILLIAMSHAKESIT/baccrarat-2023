@@ -33,6 +33,9 @@
         }
     }
     .subhead-inputs{
+        display: flex;
+        align-items: center;
+        gap: 5px;
         select{
             width: 170px;
         }
@@ -69,29 +72,52 @@
 }
 .multi-rooms{
     height: calc(100% - 220px);
-    .room{
-        width: 25%;
-        height: 100%;
-        background: linear-gradient(178deg, rgb(43 27 19 / 72%), rgb(8 5 2 / 92%));
-        border-radius: 5px;
-        border: 1px solid #403f3530;
-        position: relative;
-        button{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            min-width: 150px;
-            i{
-                margin-right: 10px;
+    // gap: 20px;
+    >div{
+        gap: 10px;
+        .room{
+            width: calc(100% / 4);
+            height: 100%;
+            background: linear-gradient(178deg, rgb(43 27 19 / 72%), rgb(8 5 2 / 92%));
+            border-radius: 5px;
+            border: 1px solid #403f3530;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+            button{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                min-width: 150px;
+                i{
+                    margin-right: 10px;
+                }
+            }
+            iframe{
+                width: 100%;
+                min-width: 100%;
+                height: 100%;
+                max-height: 100%;
+                position: relative;
+                z-index: 3000;
             }
         }
     }
     .buttons-chips{
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 30px;
+        justify-content: space-around;
+        width: 100%;
+        .chips{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+        }
+        a{
+            display: none;
+        }
     }   
     .control-menu{
         display: flex;
@@ -99,6 +125,9 @@
         justify-content: space-around;
         width: 100%;
         padding: 30px 0;
+        .btn{
+            white-space: nowrap;
+        }
     }
 }
 //room page
@@ -552,6 +581,91 @@
     }
     .mobile-controls{
         display: none;
+        .control-area-mobile{
+            .bottom-control{
+                .btns{
+                    &:not(.btn-circle){
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+    &.multi{
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px;
+            background: linear-gradient(181deg, #402010, #26140a);
+            .room-info{
+                .info{
+                    margin-right: unset;
+                    font-size: 10px;
+                }
+            }
+            .logo{
+                width: 71px;
+            }
+            .room-info{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                .info{
+                    margin-right: 15px;
+                    .value{
+                        font-weight: 800;
+                        color:#fdf1cf;
+                    }
+                }
+            }
+        }
+        .top{
+            flex-direction: column;
+            height: calc(100% - 184px);
+            >div{
+                &.right{
+                    .body{
+                        top: 3px;
+                        width: 100%;
+                        height: calc(100% - 36px);
+                        .bet-area{
+                            height: 100%;
+                        }
+                    }
+                }
+                &.left{
+                    .count-down{
+                        left: 10px;
+                        top: 0;
+                        transform: scale(0.7);
+                    }
+                    .vid-controls{
+                        right: 13px;
+                        button{
+                            width: 27px;
+                            height: 27px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+        .mobile-controls{
+            .control-area-mobile{
+                .bottom-control{
+                    .btns{
+                        gap: 4px;
+                        margin-bottom: 3px;
+                        padding: 0 2px;
+                    }
+                }
+            }
+        }
+        >.legend-mobile{
+            display: none;
+        }
     }
 }
 
