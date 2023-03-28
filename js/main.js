@@ -9,66 +9,35 @@ $(document).ready(function(){
     layout.logoAnimation()
     layout.createGrid()
 
+    $('#soundSettings :checkbox').each(function(){
+        layout.setupSound(this)
+    })
+
     $(window).on('resize',function(){
         layout.createGrid()
     })
-
     //filter table
     $('.table-filter button').on('click',function(){
-        let el = $(this).data('tval')
-        switch(el){
-            case 'two':
-                $('.table-grid').removeClass('col-three')
-                $('.table-grid').removeClass('col-four')
-                $('.table-grid').addClass('col-two')
-                $('.table-grid button img').addClass('inactive')
-                $(this).find('img').removeClass('inactive')
-            break;
-            case 'three':
-                $('.table-grid').removeClass('col-two')
-                $('.table-grid').removeClass('col-four')
-                $('.table-grid').addClass('col-three')
-                $('.table-grid button img').addClass('inactive')
-                $(this).find('img').removeClass('inactive')
-            break;
-            case 'four':
-                $('.table-grid').removeClass('col-two')
-                $('.table-grid').removeClass('col-three')
-                $('.table-grid').addClass('col-four')
-                $('.table-grid button img').addClass('inactive')
-                $(this).find('img').removeClass('inactive')
-            break;
-        }
-        layout.createGrid2()
+        layout.filterTable(this)
     })
 
     $('.toggleFull').on('click',function(){
-        if(!layout.fsBool){
-            layout.fsBool = true
-            layout.openFullscreen()
-            $(this).html('<i class="fa-solid fa-compress"></i>')
-        }else{
-            layout.fsBool = false
-            layout.closeFullscreen()
-            $(this).html('<i class="fa-solid fa-expand"></i>')
-        }
+        layout.toggleFullScreen(this)
     })
 
     //modal events
     $('.closeModal').on('click',function(){
-        $('.modal-wrapper').removeClass('show')
+        layout.modalClose()
     })
     //modal open
     $('.toggle-history').on('click',function(){
-        $('#historyModal').addClass('show')  
-        $('.modal-wrapper.side').removeClass('show')
+        layout.historyModal()
     })
     $('.toggle-contact').on('click',function(){
-        $('#contactModal').addClass('show')
+        layout.toggleContact()
     })
     $('.toggle-settings').on('click',function(){
-        $('#settingsModal').addClass('show')
-        $('.modal-wrapper.side').removeClass('show')
+        layout.toggleSettings()
     })
     $('.toggle-tables').on('click',function(){
         $('#tablesModal').addClass('show')
@@ -76,98 +45,76 @@ $(document).ready(function(){
     })
     // event for multi betting room select
     $('.multi-rooms .room').on('click',function(event){
-        $('#tablesModal').addClass('show')
-        layout.multiBetRoom = this
-        layout.roomId = $(layout.multiBetRoom).data('room')
+        layout.roomSelect(this)
     })
     //selected table for multi-betting
     $('#tablesModal .main-content .card-board').on('click',function(){
-        layout.createGrid()
-        $('.modal-wrapper').removeClass('show')
-        $(layout.multiBetRoom).html(`<iframe src="multi-room.html" id="${layout.roomId}" height="700" width="300" title="Multi-Betting Room 1"></iframe>`)
+       layout.selectTable()
     })
     $('.toggle-menu').on('click',function(){
-        $('#menuModal').addClass('show')
+        layout.toggleMenu()
     })
     $('.toggle-chips').on('click',function(){
-        $('#chipModal').addClass('show')
+       layout.toggleChipSettings()
     })
 
     //toggle bottom menu
     $('.toggleBottomMenu').on('click',function(){
-        $('.bottom-menu').toggleClass('show')
-        layout.bottomBool = !layout.bottomBool
-        if(layout.bottomBool){
-            $(this).html('<i class="fa-solid fa-angle-right"></i>')
-            $('.bottom-menu').addClass('animate__animated animate__fadeInRight')
-        }else{
-            $(this).html('<i class="fa-solid fa-angle-left"></i>')
-            $('.bottom-menu').removeClass('animate__animated animate__fadeInRight')
-        }
+        layout.toggleBottomMenu(this)
     })
 
-    let top = 1
     //betting area highlight
-    let bool = false
     $('.bet-area .area').one('click',function(){
-        bool = true
+        layout.appendChipAreaBool = true
     })
 
     $('.bet-area .area').on('click',function(){
         let _this = this
         let chip = JSON.parse(localStorage.getItem("selectedChip"))
-        layout.selectedBet = $(this).attr('class')
-        layout.chipPos = $(this).offset()
+        layout.selectedBet = $(_this).attr('class')
+        layout.chipPos = $(_this).offset()
         $('.bet-area .area').removeClass('active')
-        $(this).toggleClass('active')
-        top = top+.4
+        $(_this).toggleClass('active')
+        layout.chipStack = layout.chipStack+.4
         if(chip.chipNo){
             if(window.innerWidth > 935){
-                if(bool){
-                    bool = false
+                if(layout.appendChipAreaBool){
+                    layout.appendChipAreaBool = false
                     $(_this).append(`<div class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></div>`)
-                    $(this).find(`div.chip-${chip.chipNo}`).css({left:layout.chipOffset.left,top:layout.chipOffset.top,position:'fixed'}).animate({
-                        "left": `${layout.chipPos.left + $(this).outerWidth()/2}px`,
-                        "top": `${layout.chipPos.top + $(this).outerHeight()/2 + 20}px`,
+                    $(_this).find(`div.chip-${chip.chipNo}`).css({left:layout.chipOffset.left,top:layout.chipOffset.top,position:'fixed'}).animate({
+                        "left": `${layout.chipPos.left + $(_this).outerWidth()/2}px`,
+                        "top": `${layout.chipPos.top + $(_this).outerHeight()/2 + 20}px`,
                     },"slow", function() {
-                        bool = true
-                        $(this).css({position:'absolute',left:`50%`,top:`${80 - top}%`})
-                        $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
+                        layout.appendChipAreaBool = true
+                        $(this).css({position:'absolute',left:`50%`,top:`${75 - layout.chipStack}%`})
+                        $(_this).append(`<a style="position:absolute;left:50%;top:${75 - layout.chipStack}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
                     });
                 }
             }else{
-                $(_this).append(`<div class="btn-chip chip-${chip}" style="position:absolute;left:50%;top:${80 - top}%" value="${chip.chipValue}"></div>`)
-                $(_this).append(`<a style="position:absolute;left:50%;top:${80 - top}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
+                $(_this).append(`<div class="btn-chip chip-${chip}" style="position:absolute;left:50%;top:${75 - layout.chipStack}%" value="${chip.chipValue}"></div>`)
+                $(_this).append(`<a style="position:absolute;left:50%;top:${75 - layout.chipStack}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
             }
         }
     })
 
+    $('#soundSettings :checkbox').on('click',function(){
+        layout.setupSound(this)
+    })
     //room chips replace
     $('.prevChip').on('click',function(){
-        $('.chips').html('')
-        layout.chips.forEach((el,index)=>{
-            if(index<6)
-                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInRight" value="${el}" data-val="${el}"></button>`)
-        })
+        layout.prevChip()
     })
 
     $('.nextChip').on('click',function(){
-        $('.chips').html('')
-        layout.chips.forEach((el,index)=>{
-            if(index>3)
-                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInLeft" value="${el}" data-val="${el}"></button>`)
-        })
+        layout.nextChip()
+    })
+
+    $('.btn, input, select, .card-board').on('click',function(){
+        layout.toggleClickSound()
     })
 
     $(document).on('click','button.btn-chip',function(){
-        layout.chipValue = $(this).data("val")
-        layout.selectedChip = layout.chips.indexOf(layout.chipValue)+1
-        layout.chipOffset = $(this).offset()
-        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInLeft')
-        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInRight')
-        $(this).addClass('active animate__animated animate__pulse') 
-        localStorage.setItem("selectedChip",JSON.stringify({chipNo:layout.selectedChip,chipValue:layout.chipValue}));
-        console.log(layout.chipValue)
+       layout.chipSelect(this)
     })
 })
 
@@ -275,7 +222,14 @@ class Layout{
         this.chipPos= null,
         this.tableColNumber = 0,
         this.multiBetRoom = null,
-        this.roomId = null
+        this.roomId = null,
+        this.appendChipAreaBool = false,
+        this.chipStack = 1,
+        this.clickSound = new Audio("/sound/click.mp3");
+        this.bgm = new Audio("/sound/bgm.mp3");
+        this.masterSound = true,
+        this.sfx = true,
+        this.music = true
     }
     closeFullscreen() {
         if (document.exitFullscreen) {
@@ -367,20 +321,31 @@ class Layout{
         $( "ul.bigeye-road").html('')
         $( "ul.small-road").html('')
         $( "ul.cock-roach").html('')
+
+        let smallBoxEl = '.card-board .card-body .results-wrapper-card ul.bead-road'
+        let smallBoxElOne = '.card-board .card-body .results-wrapper-card ul.main-road'
+        let smallBoxElTwo = '.card-board .card-body .results-wrapper-card ul.bigeye-road'
+        let smallBoxElThree = '.card-board .card-body .results-wrapper-card ul.small-road'
+        
+        let bigBoxEl = '.room .bottom .results-wrapper ul.bead-road'
+        let bigBoxElOne = '.room .bottom .results-wrapper ul.main-road'
+        let bigBoxElTwo = '.room .bottom .results-wrapper ul.bigeye-road'
+        let bigBoxElThree = '.room .bottom .results-wrapper ul.small-road'
+
         if(window.innerWidth > 935){
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.bead-road").append(`<li><div class="result red"></div></li>`)
+                $(`${bigBoxEl}`).append(`<li><div class="result red"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.main-road").append(`<li><div class="result outline-blue"></div></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"></div><div class="tie-result"></div><div class="pair-banker"></div><div class="pair-player"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $( ".room .bottom .results-wrapper ul.bigeye-road").append(`<li><div class="result outline-blue"></div></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-blue"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.small-road").append(`<li><div class="result fill-blue"></div></li>`)
+                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
                 $( ".room .bottom .results-wrapper ul.cock-roach").append(`<li><div class="result line-red"></div></li>`)
@@ -389,7 +354,7 @@ class Layout{
         else{
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                $( ".room .bottom .results-wrapper ul.bead-road").append(`<li><div class="result red"></div><div class="pair-banker"></div><div class="pair-player"></div></li>`)
+                $(`${bigBoxEl}`).append(`<li><div class="result red"></div><div class="pair-banker"></div><div class="pair-player"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
                 $( ".room .bottom .results-wrapper ul.main-road").append(`<li><div class="result outline-red"></div></li>`)
@@ -405,51 +370,191 @@ class Layout{
             }
         }
 
+        let bigBeadRoadItemSize = Math.round($(`${bigBoxEl} li`).outerHeight() - 2)
+        let bigMainRoadItemSize = Math.round($(`${bigBoxElOne} li`).outerHeight() - 1)
+        let bigBigeyeRoadItemSize = Math.round($(`${bigBoxElTwo} li`).outerHeight())
+        let bigSmallRoadItemSize = Math.round($(`${bigBoxElThree} li`).outerHeight() - 1)
+        
+        $(`${bigBoxEl} li`).find('.result').css({width:`${bigBeadRoadItemSize}px`,height:`${bigBeadRoadItemSize}px`})
+        $(`${bigBoxElOne} li`).find('.result').css({width:`${bigMainRoadItemSize}px`,height:`${bigMainRoadItemSize}px`})
+        $(`${bigBoxElTwo} li`).find('.result').css({width:`${bigBigeyeRoadItemSize}px`,height:`${bigBigeyeRoadItemSize}px`})
+        $(`${bigBoxElThree} li`).find('.result').css({width:`${bigSmallRoadItemSize}px`,height:`${bigSmallRoadItemSize}px`})
+
         this.tableColNumber = 3
 
-        let mainRoadColSmall = 2 * Math.round( $('.card-board .card-body .results-wrapper-card ul.main-road').outerWidth() / (this.tableColNumber/2) /2)
+        let mainRoadColSmall = 2 * Math.round( $(`${smallBoxElOne}`).outerWidth() / (this.tableColNumber/2) /2)
 
         for(let i=0;i<30;i++){
-            $(".card-board .card-body .results-wrapper-card ul.bead-road").append(`<li><div class="result blue"></div></li>`)
+            $(`${smallBoxEl}`).append(`<li><div class="result blue"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
-            $(".card-board .card-body .results-wrapper-card ul.main-road").append(`<li><div class="result outline-red"></div></li>`)
+            $(`${smallBoxElOne}`).append(`<li><div class="result outline-red"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall)*2;i++){
-            $(".card-board .card-body .results-wrapper-card ul.bigeye-road").append(`<li></li>`)
+            $(`${smallBoxElTwo}`).append(`<li><div class="result outline-blue"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
-            $(".card-board .card-body .results-wrapper-card ul.small-road").append(`<li></li>`)
+            $(`${smallBoxElThree}`).append(`<li><div class="result fill-red"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
-            $(".card-board .card-body .results-wrapper-card ul.cock-roach").append(`<li></li>`)
+            $(".card-board .card-body .results-wrapper-card ul.cock-roach").append(`<li><div class="result line-red"></div></li>`)
+        }
+
+        let beadRoadItemSize = Math.round($(`${smallBoxEl} li`).outerHeight() - 2)
+        let mainRoadItemSize = Math.round($(`${smallBoxElOne} li`).outerHeight() - 1)
+        let bigeyeRoadItemSize = Math.round($(`${smallBoxElTwo} li`).outerHeight())
+        let smallRoadItemSize = Math.round($(`${smallBoxElThree} li`).outerHeight() - 1)
+
+        $(`${smallBoxEl} li`).find('.result').css({width:`${beadRoadItemSize}px`,height:`${beadRoadItemSize}px`})
+        $(`${smallBoxElOne} li`).find('.result').css({width:`${mainRoadItemSize}px`,height:`${mainRoadItemSize}px`})
+        $(`${smallBoxElTwo} li`).find('.result').css({width:`${bigeyeRoadItemSize}px`,height:`${bigeyeRoadItemSize}px`})
+        $(`${smallBoxElThree} li`).find('.result').css({width:`${bigeyeRoadItemSize}px`,height:`${smallRoadItemSize}px`})
+    }
+    chipSelect(_this){
+        this.chipValue = $(_this).data("val")
+        this.selectedChip = this.chips.indexOf(this.chipValue)+1
+        this.chipOffset = $(_this).offset()
+        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInLeft')
+        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInRight')
+        $(_this).addClass('active animate__animated animate__pulse') 
+        localStorage.setItem("selectedChip",JSON.stringify({chipNo:this.selectedChip,chipValue:this.chipValue}));
+    }
+    prevChip(){
+        $('.chips').html('')
+        this.chips.forEach((el,index)=>{
+            if(index<6)
+                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInRight" value="${el}" data-val="${el}"></button>`)
+        })
+    }
+    nextChip(){
+        $('.chips').html('')
+        this.chips.forEach((el,index)=>{
+            if(index>3)
+                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInLeft" value="${el}" data-val="${el}"></button>`)
+        })
+    }
+    toggleBottomMenu(_this){
+        $('.bottom-menu').toggleClass('show')
+        this.bottomBool = !this.bottomBool
+        if(this.bottomBool){
+            $(_this).html('<i class="fa-solid fa-angle-right"></i>')
+            $('.bottom-menu').addClass('animate__animated animate__fadeInRight')
+        }else{
+            $(_this).html('<i class="fa-solid fa-angle-left"></i>')
+            $('.bottom-menu').removeClass('animate__animated animate__fadeInRight')
         }
     }
-    createGrid2(){
-        $( "ul.bead-road").html('')
-        $( "ul.main-road").html('')
-        $( "ul.bigeye-road").html('')
-        $( "ul.small-road").html('')
-        $( "ul.cock-roach").html('')
-
-        this.tableColNumber = 3
-
-        let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (this.tableColNumber/2) /2)
-
-        for(let i=0;i<30;i++){
-            $(".results-wrapper-card ul.bead-road").append(`<li><div class="result blue"></div></li>`)
+    filterTable(_this){
+        let el = $(_this).data('tval')
+        switch(el){
+            case 'two':
+                $('.table-grid').removeClass('col-three')
+                $('.table-grid').removeClass('col-four')
+                $('.table-grid').addClass('col-two')
+                $('.table-grid button img').addClass('inactive')
+                $(_this).find('img').removeClass('inactive')
+            break;
+            case 'three':
+                $('.table-grid').removeClass('col-two')
+                $('.table-grid').removeClass('col-four')
+                $('.table-grid').addClass('col-three')
+                $('.table-grid button img').addClass('inactive')
+                $(-this).find('img').removeClass('inactive')
+            break;
+            case 'four':
+                $('.table-grid').removeClass('col-two')
+                $('.table-grid').removeClass('col-three')
+                $('.table-grid').addClass('col-four')
+                $('.table-grid button img').addClass('inactive')
+                $(_this).find('img').removeClass('inactive')
+            break;
         }
-        for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-            $(".results-wrapper-card ul.main-road").append(`<li><div class="result outline-red"></div></li>`)
+        this.createGrid2()
+    }
+    toggleFullScreen(_this){
+        if(!this.fsBool){
+            this.fsBool = true
+            this.openFullscreen()
+            $(_this).html('<i class="fa-solid fa-compress"></i>')
+        }else{
+            this.fsBool = false
+            this.closeFullscreen()
+            $(_this).html('<i class="fa-solid fa-expand"></i>')
         }
-        for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-            $(".results-wrapper-card ul.bigeye-road").append(`<li></li>`)
+    }
+    modalClose(){
+        $('.modal-wrapper').removeClass('show')
+    }
+    historyModal(){
+        $('#historyModal').addClass('show')  
+        $('.modal-wrapper.side').removeClass('show')
+    }
+    toggleSettings(){
+        $('#settingsModal').addClass('show')
+        $('.modal-wrapper.side').removeClass('show')
+    }
+    toggleContact(){
+        $('#contactModal').addClass('show')
+    }
+    selectTable(){
+        this.createGrid()
+        $('.modal-wrapper').removeClass('show')
+        $(this.multiBetRoom).html(`<iframe src="multi-room.html" id="${this.roomId}" height="700" width="300" title="Multi-Betting Room 1"></iframe>`)
+    }
+    toggleMenu(){
+        $('#menuModal').addClass('show')
+    }
+    toggleChipSettings(){
+        $('#chipModal').addClass('show')
+    }
+    roomSelect(_this){
+        $('#tablesModal').addClass('show')
+        this.multiBetRoom = _this
+        this.roomId = $(this.multiBetRoom).data('room')
+    }
+    toggleClickSound(){
+        if(this.masterSound && this.sfx)
+            this.clickSound.play()
+    }
+    setupSound(_this){
+        let val = $(_this).val()
+        let checkStat = _this.checked
+        if(val == 'master'){
+            if(checkStat){
+                this.masterSound = true
+                this.bgm.play()
+                $('#soundSettings :checkbox')[1].disabled = false
+                $('#soundSettings :checkbox')[2].disabled = false
+                $('#soundSettings :checkbox')[3].disabled = false
+                $('#soundSettings :checkbox')[1].checked = true
+                $('#soundSettings :checkbox')[2].checked = true
+                $('#soundSettings :checkbox')[3].checked = true
+            }else{
+                this.masterSound = false
+                this.bgm.pause()
+                $('#soundSettings :checkbox')[1].disabled = true
+                $('#soundSettings :checkbox')[2].disabled = true
+                $('#soundSettings :checkbox')[3].disabled = true
+                $('#soundSettings :checkbox')[1].checked = false
+                $('#soundSettings :checkbox')[2].checked = false
+                $('#soundSettings :checkbox')[3].checked = false
+            }
         }
-        for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-            $(".results-wrapper-card ul.small-road").append(`<li></li>`)
+        if(val == 'sfx'){
+            if(checkStat){
+                this.sfx = true
+            }else{
+                this.sfx = false
+            }
         }
-        for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-            $(".results-wrapper-card ul.cock-roach").append(`<li></li>`)
+        if(val == 'music'){
+            if(checkStat){
+                this.music = true
+                this.bgm.play()
+            }else{
+                this.music = false
+                this.bgm.pause()
+            }
         }
     }
 }

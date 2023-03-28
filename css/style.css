@@ -364,6 +364,14 @@ Explorer 10-11 */
   font-weight: 900;
 }
 
+input[type=checkbox]:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+}
+input[type=checkbox]:disabled + label {
+  color: #3d3d3d !important;
+}
+
 header {
   position: relative;
   display: flex;
@@ -588,6 +596,11 @@ header .top-menu {
 .input:focus-visible {
   outline: 1px solid rgba(196, 158, 101, 0.2);
   box-shadow: 0 0 5px 1px rgba(245, 207, 148, 0.28);
+}
+
+select option {
+  background-color: #5a2d18;
+  border: unset;
 }
 
 .container {
@@ -905,7 +918,7 @@ header .top-menu {
 }
 .modal-wrapper .modal-container.lg {
   min-width: calc(100% - 520px);
-  height: calc(100% - 10px);
+  height: calc(100% - 135px);
 }
 .modal-wrapper .modal-container .modal-header {
   padding: 10px 15px;
@@ -920,7 +933,7 @@ header .top-menu {
 .modal-wrapper .modal-container .modal-body {
   padding: 20px;
   padding-top: 0;
-  height: 100%;
+  height: calc(100% - 60px);
 }
 .modal-wrapper .modal-container .modal-body .main-content {
   overflow: auto;
@@ -1008,6 +1021,10 @@ table.stripe tbody tr td:last-child {
   display: flex;
   align-items: center;
   gap: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .pagination a {
   height: 30px;
@@ -1608,7 +1625,7 @@ table.stripe tbody tr td:last-child {
 .board-overlay {
   position: absolute;
   bottom: -100%;
-  transform: translateY(-100%);
+  transform: translateY(100%);
   left: 0;
   width: 100%;
   height: 100%;
@@ -1623,7 +1640,7 @@ table.stripe tbody tr td:last-child {
 @keyframes show-result {
   0% {
     bottom: -100%;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0;
   }
   100% {
@@ -1638,10 +1655,12 @@ table.stripe tbody tr td:last-child {
 @keyframes hide-result {
   0% {
     bottom: 0;
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
     bottom: -100%;
+    transform: translateY(100%);
     opacity: 0;
   }
 }
@@ -1965,6 +1984,10 @@ table.stripe tbody tr td:last-child {
   position: absolute;
   display: flex;
 }
+.room .top > div.left iframe {
+  max-width: 100%;
+  height: 100%;
+}
 .room .top > div.right {
   height: 100%;
   position: relative;
@@ -2068,7 +2091,7 @@ table.stripe tbody tr td:last-child {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 5px 0;
+  padding: 0;
   margin-top: 3px;
 }
 .room .top > div.right .body .bet-area .area .area-info .info {

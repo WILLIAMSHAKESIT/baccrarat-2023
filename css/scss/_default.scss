@@ -446,3 +446,14 @@ font-weight: 900;
   opacity:1;/* Firefox */
   font-weight: 900;
 }
+
+
+input[type="checkbox"]:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  +{
+    label{
+      color: #3d3d3d !important;
+    }
+  }
+}

@@ -219,6 +219,12 @@ header{
         box-shadow: 0 0 5px 1px rgb(245 207 148 / 28%);
     }
 }
+select{
+    option{
+        background-color: #5a2d18;
+        border: unset;
+    }
+}
 .container{
     max-width: calc(100% - 35px);
     margin:0 auto;
@@ -551,7 +557,7 @@ header{
         height: fit-content;
         &.lg{
             min-width: calc(100% - 520px);
-            height: calc(100% - 10px);
+            height: calc(100% - 135px);
         }
         .modal-header{
             padding: 10px 15px;
@@ -566,7 +572,7 @@ header{
         .modal-body{
             padding: 20px;
             padding-top: 0;
-            height: 100%;
+            height: calc(100% - 60px);
             .main-content{  
                 overflow: auto;
                 max-height: calc(100% - 150px);
@@ -668,6 +674,10 @@ table{
     display: flex;
     align-items: center;
     gap:5px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     a{
         height: 30px;
         width: 30px;
@@ -1287,7 +1297,7 @@ table{
 .board-overlay{
     position: absolute;
     bottom: -100%;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     left: 0;
     width: 100%;
     height: 100%;
@@ -1299,7 +1309,7 @@ table{
         @keyframes show-result {
             0%{
                 bottom: -100%;
-                transform: translateY(-100%);
+                transform: translateY(100%);
                 opacity: 0;
             }
             100%{
@@ -1314,10 +1324,12 @@ table{
         @keyframes hide-result {
             0%{
                 bottom: 0;
+                transform: translateY(0);
                 opacity: 1;
             }
             100%{
                 bottom: -100%;
+                transform: translateY(100%);
                 opacity: 0;
             }
         }
