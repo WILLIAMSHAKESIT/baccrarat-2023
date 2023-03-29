@@ -2543,7 +2543,7 @@ table.stripe tbody tr td:last-child {
 }
 .room.multi .mobile-controls .control-area-mobile .bottom-control .btns {
   gap: 4px;
-  margin-bottom: 0;
+  margin-bottom: 3px;
   padding: 0 2px;
 }
 .room.multi > .legend-mobile {
@@ -3383,6 +3383,11 @@ table.stripe tbody tr td:last-child {
   }
   #tablesModal .modal-container {
     width: 320px;
+  }
+}
+@media only screen and (max-device-width: 442px) {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 405px) {

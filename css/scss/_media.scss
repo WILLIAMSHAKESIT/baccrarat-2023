@@ -1055,6 +1055,21 @@
         }
     }
 }
+@media only screen and (max-device-width : 442px) {
+    .room{
+        &.multi{
+            .mobile-controls{
+                .control-area-mobile{
+                    .bottom-control{
+                        .btns{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media(max-width:405px){
     .board-overlay{
         .mid-result{
