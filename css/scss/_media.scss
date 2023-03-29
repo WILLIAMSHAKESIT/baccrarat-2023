@@ -101,6 +101,12 @@
                                 width: calc(100% - 7px);
                             }
                         }
+                        .waiting-prompt{
+                            .video-prompt{
+                                font-size: 15px;
+                                text-align: center;
+                            }
+                        }
                     }
                     &.left{
                         .vid-controls{

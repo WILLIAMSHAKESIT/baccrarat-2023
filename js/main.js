@@ -343,7 +343,7 @@ class Layout{
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                $(`${bigBoxEl}`).append(`<li><div class="result red"></div></li>`)
+                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
                 $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"></div><div class="tie-result"></div><div class="pair-banker"></div><div class="pair-player"></div></li>`)

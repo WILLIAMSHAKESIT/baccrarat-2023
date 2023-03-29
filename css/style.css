@@ -1886,6 +1886,25 @@ table.stripe tbody tr td:last-child {
   backdrop-filter: blur(3px);
 }
 
+.blink-2 {
+  animation: blink 1s ease-in-out 3;
+}
+
+.blink > * {
+  animation: blink 1s ease-in-out 3;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .sub-header {
   display: flex;
   align-items: center;
@@ -2622,6 +2641,10 @@ table.stripe tbody tr td:last-child {
   }
   .room.multi .top > div.right .body .bet-area {
     width: calc(100% - 7px);
+  }
+  .room.multi .top > div.right .waiting-prompt .video-prompt {
+    font-size: 15px;
+    text-align: center;
   }
   .room.multi .top > div.left .vid-controls {
     right: 10px;
