@@ -113,6 +113,11 @@ $(document).ready(function(){
         layout.toggleClickSound()
     })
 
+    $('#toggleVideo').on('click',function(){
+        $('#roomVideo').toggleClass('hidden')
+        $(this).html($('#roomVideo').is(":hidden")?'<i class="fa-solid fa-video"></i>':'<i class="fa-solid fa-video-slash"></i>')
+    })
+
     $(document).on('click','button.btn-chip',function(){
        layout.chipSelect(this)
     })
@@ -326,11 +331,13 @@ class Layout{
         let smallBoxElOne = '.card-board .card-body .results-wrapper-card ul.main-road'
         let smallBoxElTwo = '.card-board .card-body .results-wrapper-card ul.bigeye-road'
         let smallBoxElThree = '.card-board .card-body .results-wrapper-card ul.small-road'
+        let smallBoxElFour = '.card-board .card-body .results-wrapper-card ul.cock-roach'
         
         let bigBoxEl = '.room .bottom .results-wrapper ul.bead-road'
         let bigBoxElOne = '.room .bottom .results-wrapper ul.main-road'
         let bigBoxElTwo = '.room .bottom .results-wrapper ul.bigeye-road'
         let bigBoxElThree = '.room .bottom .results-wrapper ul.small-road'
+        let bigBoxElFour = '.room .bottom .results-wrapper ul.cock-roach'
 
         if(window.innerWidth > 935){
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
@@ -348,7 +355,7 @@ class Layout{
                 $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.cock-roach").append(`<li><div class="result line-red"></div></li>`)
+                $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
             }
         }
         else{
@@ -357,16 +364,16 @@ class Layout{
                 $(`${bigBoxEl}`).append(`<li><div class="result red"></div><div class="pair-banker"></div><div class="pair-player"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.main-road").append(`<li><div class="result outline-red"></div></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-red"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $( ".room .bottom .results-wrapper ul.bigeye-road").append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.small-road").append(`<li></li>`)
+                $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( ".room .bottom .results-wrapper ul.cock-roach").append(`<li></li>`)
+                $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
             }
         }
 
@@ -374,11 +381,13 @@ class Layout{
         let bigMainRoadItemSize = Math.round($(`${bigBoxElOne} li`).outerHeight() - 1)
         let bigBigeyeRoadItemSize = Math.round($(`${bigBoxElTwo} li`).outerHeight())
         let bigSmallRoadItemSize = Math.round($(`${bigBoxElThree} li`).outerHeight() - 1)
+        let bigCockRoadItemSize = Math.round($(`${bigBoxElFour} li`).outerHeight() - 1)
         
         $(`${bigBoxEl} li`).find('.result').css({width:`${bigBeadRoadItemSize}px`,height:`${bigBeadRoadItemSize}px`})
         $(`${bigBoxElOne} li`).find('.result').css({width:`${bigMainRoadItemSize}px`,height:`${bigMainRoadItemSize}px`})
         $(`${bigBoxElTwo} li`).find('.result').css({width:`${bigBigeyeRoadItemSize}px`,height:`${bigBigeyeRoadItemSize}px`})
         $(`${bigBoxElThree} li`).find('.result').css({width:`${bigSmallRoadItemSize}px`,height:`${bigSmallRoadItemSize}px`})
+        $(`${bigBoxElFour} li`).find('.result').css({width:`${bigCockRoadItemSize}px`,height:`${bigCockRoadItemSize}px`})
 
         this.tableColNumber = 3
 
@@ -388,7 +397,7 @@ class Layout{
             $(`${smallBoxEl}`).append(`<li><div class="result blue"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
-            $(`${smallBoxElOne}`).append(`<li><div class="result outline-red"></div></li>`)
+            $(`${smallBoxElOne}`).append(`<li><div class="result outline-red"></div><div class="tie-result" total="1"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall)*2;i++){
             $(`${smallBoxElTwo}`).append(`<li><div class="result outline-blue"></div></li>`)
@@ -397,18 +406,20 @@ class Layout{
             $(`${smallBoxElThree}`).append(`<li><div class="result fill-red"></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
-            $(".card-board .card-body .results-wrapper-card ul.cock-roach").append(`<li><div class="result line-red"></div></li>`)
+            $(`${smallBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
         }
 
         let beadRoadItemSize = Math.round($(`${smallBoxEl} li`).outerHeight() - 2)
         let mainRoadItemSize = Math.round($(`${smallBoxElOne} li`).outerHeight() - 1)
         let bigeyeRoadItemSize = Math.round($(`${smallBoxElTwo} li`).outerHeight())
         let smallRoadItemSize = Math.round($(`${smallBoxElThree} li`).outerHeight() - 1)
+        let cockRoadItemSize = Math.round($(`${smallBoxElFour} li`).outerHeight() - 1)
 
         $(`${smallBoxEl} li`).find('.result').css({width:`${beadRoadItemSize}px`,height:`${beadRoadItemSize}px`})
         $(`${smallBoxElOne} li`).find('.result').css({width:`${mainRoadItemSize}px`,height:`${mainRoadItemSize}px`})
         $(`${smallBoxElTwo} li`).find('.result').css({width:`${bigeyeRoadItemSize}px`,height:`${bigeyeRoadItemSize}px`})
         $(`${smallBoxElThree} li`).find('.result').css({width:`${bigeyeRoadItemSize}px`,height:`${smallRoadItemSize}px`})
+        $(`${smallBoxElFour} li`).find('.result').css({width:`${cockRoadItemSize}px`,height:`${cockRoadItemSize}px`})
     }
     chipSelect(_this){
         this.chipValue = $(_this).data("val")
@@ -469,7 +480,7 @@ class Layout{
                 $(_this).find('img').removeClass('inactive')
             break;
         }
-        this.createGrid2()
+        this.createGrid()
     }
     toggleFullScreen(_this){
         if(!this.fsBool){

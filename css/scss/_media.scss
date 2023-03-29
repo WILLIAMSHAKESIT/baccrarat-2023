@@ -417,7 +417,7 @@
             }
         }
         .bottom{
-            height: 116px;
+            height: 117px;
             top: 0;
             background-color: #fff;
             &::-webkit-scrollbar{
@@ -706,6 +706,7 @@
                     .main-content{
                         max-height: 400px;
                         font-size: 10px;
+                        margin-bottom: 51px;
                         table{
                             thead{
                                 tr{

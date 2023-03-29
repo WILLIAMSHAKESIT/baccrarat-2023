@@ -61,19 +61,23 @@
     <div class="container room">
         <div class="top">
             <div class="left">
+                <div class="video-prompt red-color">Stop Betting</div>
                 <div class="count-down">
                     <span class="timerValue"></span>
                     <canvas class="timer" width="50" height="50"></canvas>
                 </div>
                 <div class="vid-controls">
                     <button><i class="fa-solid fa-wifi"></i></button>
-                    <button><i class="fa-solid fa-video"></i></button>
+                    <button id="toggleVideo"><i class="fa-solid fa-video-slash"></i></button>
                     <button><i class="fa-solid fa-expand"></i></button>
                 </div>
                 <!-- <img class="bg-border" src="img/bg/video_bg.png" alt="Hilton Casino Betting Background"> -->
-                <iframe width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="right">
+                <div class="waiting-prompt">
+                    <div class="video-prompt yellow-color">Waiting for next round</div>
+                </div>
                 <div class="header">
                     <img class="logo" src="img/casino/solaire.png">
                     <div class="room-info">
@@ -230,7 +234,7 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="board-overlay">
+            <!-- <div class="board-overlay">
                 <div class="card-res player face-down">
                     <div class="horizontal">
                         <div class="card f_2"></div>
@@ -255,7 +259,7 @@
                         <div class="card f_4"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="results-wrapper">
                 <ul class="bead-road">
                 </ul>
