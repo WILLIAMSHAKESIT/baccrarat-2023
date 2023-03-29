@@ -2543,6 +2543,7 @@ table.stripe tbody tr td:last-child {
 }
 .room.multi .mobile-controls .control-area-mobile .bottom-control .btns {
   gap: 4px;
+  margin-bottom: 0px;
   padding: 0 2px;
 }
 .room.multi > .legend-mobile {
