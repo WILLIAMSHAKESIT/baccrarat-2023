@@ -136,7 +136,7 @@
     max-width: 100%;
     .top{
         display: flex;
-        height: calc(100% - 256px);
+        height: calc(100% - 255px);
         >div{
             width: calc(100% / 2);
             &.left{
@@ -371,7 +371,7 @@
         }
     }
     .bottom{
-        height: 256px;
+        height: 255px;
         background-color: #403f35a7;
         display: flex;
         position: relative;
