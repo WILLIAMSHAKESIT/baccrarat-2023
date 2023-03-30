@@ -178,34 +178,34 @@ header{
     span{
         margin-bottom: 6px;
     }
-    &.chip-1{
+    &.chip-1k{
         background-image: url(../img/chips/chip1.png);
     }
-    &.chip-2{
+    &.chip-5k{
         background-image: url(../img/chips/chip2.png);
     }
-    &.chip-3{
+    &.chip-10k{
         background-image: url(../img/chips/chip3.png);
     }
-    &.chip-4{
+    &.chip-50k{
         background-image: url(../img/chips/chip4.png);
     }
-    &.chip-5{
+    &.chip-100k{
         background-image: url(../img/chips/chip5-1.png);
     }
-    &.chip-6{
+    &.chip-500k{
         background-image: url(../img/chips/chip6-1.png);
     }
-    &.chip-7{
+    &.chip-1m{
         background-image: url(../img/chips/chip7-1.png);
     }
-    &.chip-8{
+    &.chip-5m{
         background-image: url(../img/chips/chip8-1.png);
     }
-    &.chip-9{
+    &.chip-10m{
         background-image: url(../img/chips/chip9-1.png);
     }
-    &.chip-10{
+    &.chip-50m{
         background-image: url(../img/chips/chip10-1.png);
     }
 } 
@@ -585,17 +585,21 @@ select{
                     flex-wrap: wrap;
                     justify-content: center;
                     gap: 10px;
+                    min-width: 500px;
                     div{
                         width: calc(100% / 6);
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        margin-bottom: 23px;
+                        margin-bottom: 110px;
                         button{
                             margin-bottom: 5px;
                         }
                         label{
                             padding-left: 20px;
+                            &.btn-chip{
+                                padding: 0;
+                            }
                         }
                     }
                 }
@@ -734,6 +738,52 @@ table{
                     justify-content: center;
                     font-size: 12px;
 				}
+                &.btn-chip{
+                    position: absolute;
+                    padding: unset;
+                    color: #000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-left: 0;
+                    span{
+                        background: -webkit-linear-gradient(#C2720C, #FFCE8A, #C2720C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: 900;
+                        font-size: 21px;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 29px;
+                        top: 81px;
+                        width: 18px;
+                        height: 18px;
+                        border: 1px solid #26211b;
+                        border-radius: 100%;
+                        background: #f7b34b;
+                    }
+                    &:after {
+                        content: "✓";
+                        width: 15px;
+                        height: 15px;
+                        background: radial-gradient(#24BB3D, #007A0C);
+                        position: absolute;
+                        top: 90px;
+                        left: 38px;
+                        border-radius: 100%;
+                        transition: all 0.2s ease;
+                        opacity: 1;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 12px;
+                        -webkit-text-stroke-width: 0.1px;
+                        -webkit-text-stroke-color:#fff
+                    }
+                }
 			}
 		}
 	}
@@ -743,7 +793,7 @@ table{
         display: none;
 		+ {
 			label {
-				position: relative;
+                position: relative;
 				padding-left: 28px;
 				cursor: pointer;
 				line-height: 20px;
@@ -775,6 +825,38 @@ table{
 					-webkit-transform: scale(0);
 					transform: scale(0);
 				}
+                &.btn-chip{
+                    position: absolute;
+                    padding: unset;
+                    color: #000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-left: 0;
+                    span{
+                        background: -webkit-linear-gradient(#C2720C, #FFCE8A, #C2720C);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: 900;
+                        font-size: 21px;
+                    }
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        left: 29px;
+                        top: 83px;
+                        width: 18px;
+                        height: 18px;
+                        border: 1px solid #af8e5c;
+                        border-radius: 100%;
+                        background: #4c3019;
+                    }
+                    &::after{
+                        top: 90px;
+                        left: 38px;
+                        display: none;
+                    }
+                }
 			}
 		}
 	}
@@ -1584,4 +1666,10 @@ table{
     100%{
         opacity: 1;
     } 
+ }
+
+ #chipsForm{
+    button{
+        pointer-events: none;
+    }
  }

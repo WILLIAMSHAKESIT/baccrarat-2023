@@ -155,7 +155,6 @@
     .room{
         .top{
             >div{
-                
                 &.right{
                     .header{
                         .room-info{
@@ -241,6 +240,13 @@
         .modal-container{
             width: 100%;
             max-width: calc(100% - 36px);
+            .modal-body{
+                .main-content{
+                    &.chip-settings{
+                        min-width: unset;
+                    }
+                }
+            }
         }
     }
     #contactModal{
@@ -305,6 +311,11 @@
     .table-grid{
         .card-board{
             width: calc(100% / 3 - 8px) !important;
+        }
+        &.col-two{
+            .card-board{
+                width: calc(100% / 2 - 5px) !important;
+            }
         }
     }
 }
@@ -384,7 +395,13 @@
                             .area{
                                 .area-info{
                                     .info{
-                                        display: none;
+                                        // display: none;
+                                        font-size: 8px;
+                                        div{
+                                            i{
+                                                margin-right: 2px;
+                                            }
+                                        }
                                     }
                                 }
                             }

@@ -12,7 +12,21 @@ $(document).ready(function(){
     $('#soundSettings :checkbox').each(function(){
         layout.setupSound(this)
     })
-
+    $('.chips .btn-chip').each(function(){
+        if(!$(this).hasClass('active')){
+            localStorage.setItem("selectedChip",null);
+        }
+    })
+    $('#chipsForm input').click(function(){
+        layout.chips = []
+        $('#chipsForm :checkbox').each(function () {
+            if(this.checked){
+                let item = $(this).attr('id')
+                layout.chips.push(item)
+            }
+        });
+        layout.setUpChips()
+    })
     $(window).on('resize',function(){
         layout.createGrid()
     })
@@ -116,6 +130,14 @@ $(document).ready(function(){
     $('#toggleVideo').on('click',function(){
         $('#roomVideo').toggleClass('hidden')
         $(this).html($('#roomVideo').is(":hidden")?'<i class="fa-solid fa-video"></i>':'<i class="fa-solid fa-video-slash"></i>')
+    })
+    $('#videoExpand').on('click',function(){
+        $('.room .top .left').toggleClass('full-screen')
+        if($('.room .top .left').css('position') == 'fixed'){
+            $(this).html('<i class="fa-solid fa-compress"></i>')
+        }else{
+            $(this).html('<i class="fa-solid fa-expand"></i>')
+        }
     })
 
     $(document).on('click','button.btn-chip',function(){
@@ -423,26 +445,13 @@ class Layout{
     }
     chipSelect(_this){
         this.chipValue = $(_this).data("val")
-        this.selectedChip = this.chips.indexOf(this.chipValue)+1
+        this.selectedChip = $(_this).data("val")
         this.chipOffset = $(_this).offset()
-        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInLeft')
-        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__bounceInRight')
+        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__fadeInLeft')
+        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__fadeInRight')
+        $('.btn-chip').removeClass('active animate__animated animate__pulse animate__fadeInDown')
         $(_this).addClass('active animate__animated animate__pulse') 
         localStorage.setItem("selectedChip",JSON.stringify({chipNo:this.selectedChip,chipValue:this.chipValue}));
-    }
-    prevChip(){
-        $('.chips').html('')
-        this.chips.forEach((el,index)=>{
-            if(index<6)
-                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInRight" value="${el}" data-val="${el}"></button>`)
-        })
-    }
-    nextChip(){
-        $('.chips').html('')
-        this.chips.forEach((el,index)=>{
-            if(index>3)
-                $('.chips').append(`<button class="btn-chip chip-${index+1} animate__animated animate__bounceInLeft" value="${el}" data-val="${el}"></button>`)
-        })
     }
     toggleBottomMenu(_this){
         $('.bottom-menu').toggleClass('show')
@@ -457,27 +466,25 @@ class Layout{
     }
     filterTable(_this){
         let el = $(_this).data('tval')
+        $('.table-filter button img').addClass('inactive')
         switch(el){
             case 'two':
                 $('.table-grid').removeClass('col-three')
                 $('.table-grid').removeClass('col-four')
                 $('.table-grid').addClass('col-two')
-                $('.table-grid button img').addClass('inactive')
-                $(_this).find('img').removeClass('inactive')
+                $('.table-filter button[data-tval = '+'two'+'] img').removeClass('inactive')
             break;
             case 'three':
                 $('.table-grid').removeClass('col-two')
                 $('.table-grid').removeClass('col-four')
                 $('.table-grid').addClass('col-three')
-                $('.table-grid button img').addClass('inactive')
-                $(-this).find('img').removeClass('inactive')
+                $('.table-filter button[data-tval = '+'three'+'] img').removeClass('inactive')
             break;
             case 'four':
                 $('.table-grid').removeClass('col-two')
                 $('.table-grid').removeClass('col-three')
                 $('.table-grid').addClass('col-four')
-                $('.table-grid button img').addClass('inactive')
-                $(_this).find('img').removeClass('inactive')
+                $('.table-filter button[data-tval = '+'four'+'] img').removeClass('inactive')
             break;
         }
         this.createGrid()
@@ -567,5 +574,34 @@ class Layout{
                 this.bgm.pause()
             }
         }
+    }
+    setUpChips(){
+        $('.chips').html('')
+        if(this.chips.length < 6){
+            $('.prevChip').css({visibility:'hidden'})
+            $('.nextChip').css({visibility:'hidden'})
+        }else{
+            $('.prevChip').css({visibility:'visible'})
+            $('.nextChip').css({visibility:'visible'})
+        }
+
+        this.chips.forEach((el,index)=>{
+            if(index<6)
+            $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInDown" value="${el}" data-val="${el}"></button>`)
+        })
+    }
+    prevChip(){
+        $('.chips').html('')
+        this.chips.forEach((el,index)=>{
+            if(index<6)
+                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInRight" value="${el}" data-val="${el}"></button>`)
+        })
+    }
+    nextChip(){
+        $('.chips').html('')
+        this.chips.forEach((el,index)=>{
+            if(index>3)
+                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInLeft" value="${el}" data-val="${el}"></button>`)
+        })
     }
 }
