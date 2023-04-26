@@ -6,7 +6,9 @@
                     .header{
                         .room-info{
                             .info{
-                                font-size: 15px;
+                                font-size: 12px;
+                                display: flex;
+                                flex-direction: column;
                             }
                         }
                     }
@@ -212,9 +214,11 @@
             &:first-child{
                 gap: 10px;
                 flex-wrap: wrap;
+                max-height: calc(100% - -32px);
+                overflow: auto;
                 .room{
                     width: calc(100% / 2  - 5px);
-                    height: calc(100% / 2);
+                    height: calc(100% / 1.6);
                 }
             }
         }
@@ -871,7 +875,7 @@
                 gap: 5px;
                 .room{
                     width: 100%;
-                    height: 356px;
+                    height: 397px;
                 }
             }
         }
@@ -1042,6 +1046,39 @@
             width: calc(100% / 1) !important;
         }
     }
+    .errorpage{
+        &::before{
+            width: 273px;
+            height: 183px;
+        }
+        &::after{
+            width: 273px;
+            height: 183px;
+        }
+        .error-content{
+            h1{
+                font-size: 8rem;
+                &.small{
+                    font-size: 2.5rem;
+                }
+            }
+            h5{
+                font-size: 1.5rem;
+                line-height: 1;
+                color: #FDF1CF;
+                margin-bottom: 10px;
+            }
+            span{
+                color: #bcbcbc;
+                line-height: 1.1;
+            }
+            .btn{
+                margin: 0 auto;
+                margin-top: 20px;
+                color: #FDF1CF;
+            }
+         }
+    }
 }
 @media(max-width:450px){
     .room{
@@ -1121,5 +1158,39 @@
     .card{
         width: 25px;
         height: 43px;
+    }
+    .room {
+        .top{
+            >{
+                div{
+                    &.right{
+                        .header{
+                            height: 32px;
+                            .room-info{
+                                .info{
+                                    font-size: 5px;
+                                }
+                            }
+                        }
+                        .body{
+                            top: 34px;
+                            bottom: unset;
+                            height: calc(100% - 65px);
+                            .bet-area{
+                                height: 100%;
+                                .area{
+                                    .area-info{
+                                        margin-top: 0;
+                                        .text{
+                                            font-size: 9px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

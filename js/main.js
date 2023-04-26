@@ -65,13 +65,21 @@ $(document).ready(function(){
     $('#tablesModal .main-content .card-board').on('click',function(){
        layout.selectTable()
     })
+    //close multi betting room
+    $('.close-room').on('click',function(e){
+        e.stopPropagation()
+        layout.closeMultiRoom(this)
+    })
     $('.toggle-menu').on('click',function(){
         layout.toggleMenu()
     })
     $('.toggle-chips').on('click',function(){
        layout.toggleChipSettings()
     })
-
+    //custom alert
+    $("#btnAlert").click(function() {
+        layout.customAlert() 
+    });
     //toggle bottom menu
     $('.toggleBottomMenu').on('click',function(){
         layout.toggleBottomMenu(this)
@@ -201,6 +209,7 @@ class CountdownTimer {
             $('.card-res').removeClass('face-down')
             $('.card-res.player .card').not(':first').addClass('animate__animated animate__flip')
             $('.card-res.player .horizontal, .card-res.banker .horizontal').addClass('animate__animated animate__flip')
+            $('.card-res.player .card').not(':first').addClass('animate__animated animate__flip')
             $('.card-res.banker .card').not(':last').addClass('animate__animated animate__flip')
             //remove classes
             $('.board-overlay').removeClass('animate__animated animate__fadeOutDownBig')
@@ -223,7 +232,10 @@ class CountdownTimer {
             $('.mid-result span.banker').addClass('animate__animated animate__fadeOutRight')
         }
         if(this.remainingTime == 1){
-            $('.card-res.player .card').removeClass('animate__animated animate__flip')
+            $('.card-res.player .card').not(':first').removeClass('animate__animated animate__flip')
+            $('.card-res.player .horizontal, .card-res.banker .horizontal').removeClass('animate__animated animate__flip')
+            $('.card-res.player .card').not(':first').removeClass('animate__animated animate__flip')
+            $('.card-res.banker .card').not(':last').removeClass('animate__animated animate__flip')
             $('.card-res').addClass('face-down')
             $('.board-overlay').removeClass('active')
             $('.board-overlay').addClass('inactive')
@@ -517,7 +529,12 @@ class Layout{
     selectTable(){
         this.createGrid()
         $('.modal-wrapper').removeClass('show')
-        $(this.multiBetRoom).html(`<iframe src="multi-room.html" id="${this.roomId}" height="700" width="300" title="Multi-Betting Room 1"></iframe>`)
+        $(this.multiBetRoom).find('.room-content').html(`<iframe src="multi-room.html" id="${this.roomId}" height="700" width="300" title="Multi-Betting Room 1"></iframe>`)
+        $(this.multiBetRoom).find('.close-room').removeClass('hide')
+    }
+    closeMultiRoom(_this){
+        $(_this).siblings('.room-content').html('<button class="btn btn-blue toggle-tables"><i class="fa-solid fa-plus"></i>Add Table</button>')
+        $(_this).addClass('hide')
     }
     toggleMenu(){
         $('#menuModal').addClass('show')
@@ -603,5 +620,35 @@ class Layout{
             if(index>3)
                 $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInLeft" value="${el}" data-val="${el}"></button>`)
         })
+    }
+    customAlert(){
+        // $.alert({
+        //   title: '',
+        //   content: 'Start Betting!',
+        //   buttons: { 
+        //     ok: {
+        //         btnClass: 'btn-blue',
+        //     }
+        //   }
+        // });
+        $.confirm({
+            text: "sds",
+            title: '',
+            content: 'In publishing and graphic design!',
+            confirm: function(button) {
+                alert("You just confirmed.");
+            },
+            cancel: function(button) {
+                alert("You cancelled.");
+            },
+            buttons: { 
+                confirm: {
+                    btnClass: 'btn-blue',
+                },
+                cancel: {
+                    btnClass: 'btn-red',
+                }
+            }
+        });
     }
 }
