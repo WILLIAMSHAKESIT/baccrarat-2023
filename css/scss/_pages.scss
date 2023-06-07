@@ -128,6 +128,8 @@
             align-items: center;
             justify-content: space-around;
             width: 100%;
+            position: relative;
+            left: 0px;
         }
         a{
             display: none;
@@ -158,7 +160,7 @@
                 background-position: center;
                 background-size: cover;
                 position: relative;
-                .count-down{
+                .timerParent{
                     position: absolute;
                     right: 27px;
                     top: 21px;
@@ -228,6 +230,7 @@
                     align-items: center;
                     justify-content: space-between;
                     padding: 0 10px;
+                    z-index: 300;
                     .logo{
                         width: 100px;
                     }
@@ -242,6 +245,37 @@
                             .value{
                                 font-weight: 800;
                                 color:#fdf1cf;
+                            }
+                            &:last-child{ 
+                                position: relative;
+                                cursor: pointer;
+                                i{
+                                    margin-left: 5px;
+                                    font-size: 20px;
+                                }
+                                .limit-details-room{
+                                    position: absolute;
+                                    width: 500px;
+                                    height: fit-content;
+                                    background-color: #000000bf;
+                                    backdrop-filter: blur(5px);
+                                    top: 29px;
+                                    right: 0;
+                                    border-radius: 5px;
+                                    overflow: hidden;
+                                    display: none;
+                                    table{
+                                        width: 100%;
+                                        thead{
+                                            background: #704a35;
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .limit-details-room{
+                                        display: block;
+                                    }
+                                }
                             }
                         }
                     }
@@ -668,6 +702,38 @@
                         font-weight: 800;
                         color:#fdf1cf;
                     }
+                    &:last-child{ 
+                        cursor: pointer;
+                        i{
+                            margin-left: 5px;
+                            font-size: 20px;
+                            line-height: 0.5;
+                        }
+                        .limit-details-room{
+                            position: absolute;
+                            width: 100%;
+                            height: fit-content;
+                            background-color: #000000bf;
+                            backdrop-filter: blur(5px);
+                            top: 29px;
+                            right: 0;
+                            border-radius: 5px;
+                            overflow: hidden;
+                            display: none;
+                            z-index: 1100;
+                            table{
+                                width: 100%;
+                                thead{
+                                    background: #704a35;
+                                }
+                            }
+                        }
+                        &:hover{
+                            .limit-details-room{
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -686,8 +752,8 @@
                     }
                 }
                 &.left{
-                    .count-down{
-                        left: 10px;
+                    .timerParent{
+                        right: 0;
                         top: 0;
                         transform: scale(0.7);
                     }

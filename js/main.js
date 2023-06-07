@@ -1,4 +1,44 @@
 
+var progress = 20;
+
+      // document
+      //   .getElementById("incbtn")
+      //   .addEventListener("click", incrementProgress);
+      // document
+      //   .getElementById("decbtn")
+      //   .addEventListener("click", decrementProgress);
+
+      function incrementProgress() {
+        if (progress != 100) {
+          progress = progress + 10;
+          console.log(progress);
+          setProgress();
+        }
+      }
+
+      function decrementProgress() {
+        if (progress != 0) {
+          progress = progress - 10;
+          console.log(progress);
+          setProgress();
+        }
+      }
+
+      function setProgress() {
+        document.getElementsByClassName("progress-spinner")[0].style.background =
+          "conic-gradient(rgb(0, 219, 57) " +
+          progress +
+          "%,rgb(242, 242, 242) " +
+          progress +
+          "%)";
+          
+        document.getElementsByClassName("middle-circle")[0].innerHTML =
+          progress.toString();
+      }
+
+      window.onload = function () {
+        setProgress();
+      };
 $(document).ready(function(){
     const layout = new Layout()
     const timers = document.querySelectorAll('.count-down .timer')
@@ -8,7 +48,26 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-
+    $('.buttons-chips .chips').on('touchmove',function(e){
+        layout.handleTouchMove(this,e)
+    })
+    $('.buttons-chips .chips').on('touchstart',function(e){
+        layout.handleTouchStart(this,e)
+    })
+    $('.buttons-chips .chips').on('touchend',function(){
+        layout.handleTouchEnd()
+    })
+    $('.limit-toggle').mouseenter(function(e){
+        e.stopPropagation()
+        layout.showLimitDetails(this)
+    })
+    $('.limit-toggle').mouseleave(function(e){
+        e.stopPropagation()
+        layout.hideLimitDetails(this)
+    })
+    $('.card-board').click(function(e){
+        e.stopPropagation()
+    })
     $('#soundSettings :checkbox').each(function(){
         layout.setupSound(this)
     })
@@ -62,7 +121,7 @@ $(document).ready(function(){
         layout.roomSelect(this)
     })
     //selected table for multi-betting
-    $('#tablesModal .main-content .card-board').on('click',function(){
+    $('#tablesModal .main-content .card-board').on('click',function(e){
        layout.selectTable()
     })
     //close multi betting room
@@ -84,12 +143,10 @@ $(document).ready(function(){
     $('.toggleBottomMenu').on('click',function(){
         layout.toggleBottomMenu(this)
     })
-
     //betting area highlight
     $('.bet-area .area').one('click',function(){
         layout.appendChipAreaBool = true
     })
-
     $('.bet-area .area').on('click',function(){
         let _this = this
         let chip = JSON.parse(localStorage.getItem("selectedChip"))
@@ -268,7 +325,11 @@ class Layout{
         this.bgm = new Audio("/sound/bgm.mp3");
         this.masterSound = true,
         this.sfx = true,
-        this.music = true
+        this.music = true,
+        this.chipsOffset = 0,
+        this.startX = 0,
+        this.endX = 0,
+        this.touchMoveThis =  null
     }
     closeFullscreen() {
         if (document.exitFullscreen) {
@@ -650,5 +711,44 @@ class Layout{
                 }
             }
         });
+    }
+    showLimitDetails(_this){
+        $(_this).parent().parent().siblings('.card-body').find('.limit-details').show()
+    }
+    hideLimitDetails(_this){
+        $(_this).parent().parent().siblings('.card-body').find('.limit-details').hide()
+    }
+    handleTouchStart(_this,event){
+        this.startX = event.touches[0].clientX;
+        console.log(this.startX,'test')
+    }
+    handleTouchMove(_this,event){
+        this.touchMoveThis = _this
+        if(this.startX < this.endX){
+            $(_this).css('left',`${this.chipOffset++}px`)
+        }else{
+            $(_this).css('left',`${this.chipOffset--}px`)
+        }
+        this.endX = event.touches[0].clientX;
+    }
+    handleTouchEnd() {
+        $(this.touchMoveThis).css('left',`${0}px`)
+        this.chipOffset = 0
+        const threshold = 50; // Minimum swipe distance threshold
+
+        // Calculate the distance swiped
+        const distance = this.endX - this.startX;
+
+        if (Math.abs(distance) >= threshold) {
+            if (distance > 0) {
+            // Swipe righthandleTouchMove
+            console.log('Swipe right');
+            this.nextChip()
+            } else {
+            // Swipe left
+            console.log('Swipe left');
+            this.prevChip()
+            }
+        }
     }
 }

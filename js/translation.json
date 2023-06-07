@@ -1,0 +1,342 @@
+{
+    "KO":{
+        "lobby":{
+            "table_filter":"총 테이블 수",
+            "casino_select_default":"모든 카지노",
+            "multibet_title":"멀티 베팅",
+            "multibet_start":"시작하려면 클릭"
+        },
+        "room":{
+            "header_title1":"테이블",
+            "header_title2":"유형",
+            "header_title3":"게임",
+            "header_title4":"리믹",
+            "bet_area1":"P.PAIR",
+            "bet_area2":"타이",
+            "bet_area3":"B.PAIR",
+            "bet_area4":"플레이어",
+            "bet_area5":"뱅커",
+            "bet_amount":"베팅 금액",
+            "stop_betting_promt":"베팅 중지",
+            "start_betting_promt":"베팅 시작",
+            "winnertie_title":"타이!",
+            "winnerbanker_title":"뱅커 승리!",
+            "winnerplayer_title":"플레이어 승리!",
+            "waiting_promt":"다음 라운드를 기다리는 중"
+        },
+        "modal":{
+            "history":{
+                "title":"게임 히스토리",
+                "date_from":"시작",
+                "date_to":"끝",
+                "history_th1":"날짜 및 시간",
+                "history_th2":"라운드 코드",
+                "history_th3":"베팅 옵션",
+                "history_th4":"베팅 금액",
+                "history_th5":"베팅 결과",
+                "history_th6":"베팅 혜택"
+            },
+            "contact":{
+                "title":"문의하기",
+                "content":"저희는 24시간 서비스를 제공하는 것을 자랑스럽게 생각합니다. 질문이 있으시면 언제든지 저희 고객 지원팀에 연락해 주십시오."
+            },
+            "settings":{
+                "title":"설정",
+                "sound":{
+                    "title":"사운드",
+                    "content1":"마스터 사운드",
+                    "content2":"효과",
+                    "content3":"음악",
+                    "content4":"음성"
+                },
+                "language":{
+                    "title":"언어",
+                    "content1":"한국어",
+                    "content2":"영어",
+                    "content3":"중국어",
+                    "content4":"일본어"
+                },
+                "lobby":{
+                    "title":"로비",
+                    "content1":"테이블 닫기 숨기기"
+                }
+            },
+            "side_bar":{
+                "settings":"설정",
+                "game_history":"게임 히스토리",
+                "logout":"로그아웃"
+            },
+            "pick_table_title":"테이블 선택",
+            "chip_settings_title":"테이블 선택"
+        },
+        "cards":{
+            "card_header":"베팅 한도",
+            "card_close":"닫기",
+            "card_shuffle": "셔플",
+            "card_footer":"속도"
+        },
+        "buttons":{
+            "cancel_bet":"베팅 취소",
+            "place_bet":"베팅하기",
+            "close_room":"방 닫기",
+            "add_table":"테이블 추가",
+            "return_to_lobby":"로비로 돌아가기",
+            "change_table":"테이블 변경"
+        }
+    },
+    "JP":{
+        "lobby":{
+            "table_filter":"テーブルの総数",
+            "casino_select_default":"すべてのカジノ",
+            "multibet_title":"マルチベット",
+            "multibet_start":"クリックして開始"
+        },
+        "room":{
+            "header_title1":"テーブル",
+            "header_title2":"TYPE",
+            "header_title3":"ゲーム",
+            "header_title4":"LIMIK",
+            "bet_area1":"P.PAIR",
+            "bet_area2":"TIE",
+            "bet_area3":"B.PAIR",
+            "bet_area4":"プレイヤー",
+            "bet_area5":"BANKER",
+            "bet_amount":"賭け金",
+            "stop_betting_promt":"賭けをやめる",
+            "start_betting_promt":"賭けを開始",
+            "winnertie_title":"引き分け!",
+            "winnerbanker_title":"バンカーが勝つ!",
+            "winnerplayer_title":"プレイヤーが勝ちます!",
+            "waiting_promt":"次のラウンドを待っています"
+        },
+        "modal":{
+            "history":{
+                "title":"ゲーム履歴",
+                "date_from":"From",
+                "date_to":"To",
+                "history_th1":"日時",
+                "history_th2":"ラウンドコード",
+                "history_th3":"ベットオプション",
+                "history_th4":"お金を賭ける",
+                "history_th5":"ベット結果",
+                "history_th6":"ベット特典"
+            },
+            "contact":{
+                "title":"お問い合わせ",
+                "content":"時間体制のサービスを提供することに誇りを持っています。ご不明な点がございましたら、お気軽にカスタマー サポート チームまでお問い合わせください."
+            },
+            "settings":{
+                "title":"設定",
+                "sound":{
+                    "title":"音",
+                    "content1":"マスターサウンド",
+                    "content2":"エフェクト",
+                    "content3":"音楽",
+                    "content4":"声"
+                },
+                "language":{
+                    "title":"言語",
+                    "content1":"韓国語",
+                    "content2":"英語",
+                    "content3":"中国語",
+                    "content4":"日本語"
+                },
+                "lobby":{
+                    "title":"ロビー",
+                    "content1":"テーブルを閉じる"
+                }
+            },
+            "side_bar":{
+                "settings":"設定",
+                "game_history":"ゲーム履歴",
+                "logout":"ログアウト"
+            },
+            "pick_table_title":"テーブルを選択",
+            "chip_settings_title":"テーブルを選択してください"
+        },
+        "cards":{
+            "card_header":"ベットリミット",
+            "card_close":"閉じる",
+            "card_shuffle":"シャッフル",
+            "card_footer":"スピード"
+        },
+        "buttons":{
+            "cancel_bet":"賭けをキャンセルする",
+            "place_bet":"賭ける",
+            "close_room":"部屋を閉じる",
+            "add_table":"テーブルを追加",
+            "return_to_lobby":"ロビーに戻る",
+            "change_table":"テーブルを変更"
+        }
+    },
+    "CN":{
+        "lobby":{
+            "table_filter":"总桌数",
+            "casino_select_default":"所有赌场",
+            "multibet_title":"多重投注",
+            "multibet_start":"点击开始"
+        },
+        "room":{
+            "header_title1":"表格",
+             "header_title2":"类型",
+             "header_title3":"游戏",
+             "header_title4":"LIMIK",
+             "bet_area1":"P.PAIR",
+             "bet_area2":"TIE",
+             "bet_area3":"B.PAIR",
+             "bet_area4":"玩家",
+             "bet_area5":"庄家",
+             "bet_amount":"投注金额",
+             "stop_betting_promt":"停止投注",
+             "start_betting_promt":"开始投注",
+             "winnertie_title":"领带！",
+             "winnerbanker_title":"庄家赢了！",
+             "winnerplayer_title":"玩家获胜！",
+             "waiting_promt":"等待下一轮"
+        },
+        "modal":{
+            "history":{
+                "title":"游戏历史",
+                "date_from":"从",
+                "date_to":"至",
+                "history_th1":"日期和时间",
+                "history_th2":"回合代码",
+                "history_th3":"投注选项",
+                "history_th4":"赌钱",
+                "history_th5":"投注结果",
+                "history_th6":"投注收益"
+            },
+            "contact":{
+                "title":"联系我们",
+                "content":"我们以提供全天候服务为荣，如果您有任何疑问，请随时与我们的客户支持团队联系。"
+            },
+            "settings":{
+                "title":"设置",
+                "sound":{
+                    "title":"声音",
+                     "content1":"主音效",
+                     "content2":"效果",
+                     "content3":"音乐",
+                     "content4":"语音"
+                },
+                "language":{
+                    "title":"语言",
+                    "content1":"韩文",
+                    "content2":"英语",
+                    "content3":"中文",
+                    "content4":"日语"
+                },
+                "lobby":{
+                    "title":"大堂",
+                    "content1":"隐藏关闭表"
+                }
+            },
+            "side_bar":{
+                "settings":"设置",
+                "game_history":"游戏历史",
+                "logout":"注销"
+            },
+            "pick_table_title":"选择一个表",
+            "chip_settings_title":"选择表"
+        },
+        "cards":{
+            "card_header":"下注限额",
+            "card_close":"关闭",
+            "card_shuffle":"洗牌",
+            "card_footer":"速度"
+        },
+        "buttons":{
+            "cancel_bet":"取消投注",
+            "place_bet":"下注",
+            "close_room":"关闭房间",
+            "add_table":"添加表格",
+            "return_to_lobby":"返回大厅",
+            "change_table":"更改表"
+        }
+    },
+    "EN" : {
+        "lobby":{
+            "table_filter":"Total Tables",
+            "casino_select_default":"All Casino",
+            "multibet_title":"multi betting",
+            "multibet_start":"click to start"
+        },
+        "room":{
+            "header_title1":"TABLE",
+            "header_title2":"TYPE",
+            "header_title3":"GAME",
+            "header_title4":"LIMIK",
+            "bet_area1":"P.PAIR",
+            "bet_area2":"TIE",
+            "bet_area3":"B.PAIR",
+            "bet_area4":"PLAYER",
+            "bet_area5":"BANKER",
+            "bet_amount":"Bet Amount",
+            "stop_betting_promt":"Stop Betting",
+            "start_betting_promt":"Start Betting",
+            "winnertie_title":"Tie!",
+            "winnerbanker_title":"Banker Wins!",
+            "winnerplayer_title":"Player Wins!",
+            "waiting_promt":"Waiting for next round"
+        },
+        "modal":{
+            "history":{
+                "title":"Game history",
+                "date_from":"From",
+                "date_to":"To",
+                "history_th1":"Date & time",
+                "history_th2":"Round Code",
+                "history_th3":"Bet Option",
+                "history_th4":"Bet Money",
+                "history_th5":"Bet Result",
+                "history_th6":"Bet Benefit"
+            },
+            "contact":{
+                "title":"Contact us",
+                "content":"We take pride in providing round-the-clock service and if you have any queries, please feel free to get in touch with our customer support team."
+            },
+            "settings":{
+                "title":"Settings",
+                "sound":{
+                    "title":"Sound",
+                    "content1":"Master Sound",
+                    "content2":"Effects",
+                    "content3":"Music",
+                    "content4":"Voice"
+                },
+                "language":{
+                    "title":"Language",
+                    "content1":"Korean",
+                    "content2":"English",
+                    "content3":"Chinese",
+                    "content4":"Japanese"
+                },
+                "lobby":{
+                    "title":"Lobby",
+                    "content1":"Hide close table"
+                }
+            },
+            "side_bar":{
+                "settings":"Settings",
+                "game_history":"Game History",
+                "logout":"Logout"
+            },
+            "pick_table_title":"Choose a table",
+            "chip_settings_title":"Choose a table"
+        },
+        "cards":{
+            "card_header":"bet limit",
+            "card_close":"close",
+            "card_shuffle":"shuffle",
+            "card_footer":"speed"
+        },
+        "buttons":{
+            "cancel_bet":"Cancel Bets",
+            "place_bet":"Place Bets",
+            "close_room":"Close Room",
+            "add_table":"Add Table",
+            "return_to_lobby":"Return to lobby",
+            "change_table":"Change Table"
+        }
+    }
+}

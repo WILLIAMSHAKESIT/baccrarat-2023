@@ -9,6 +9,11 @@
                                 font-size: 12px;
                                 display: flex;
                                 flex-direction: column;
+                                &:last-child{ 
+                                    .limit-details-room{
+                                        top: 41px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -162,6 +167,11 @@
                         .room-info{
                             .info{
                                 font-size: 10px;
+                                &:last-child{ 
+                                    .limit-details-room{
+                                        width: 388px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -324,6 +334,16 @@
     }
 }
 @media(max-width:935px){
+    .shuffle-board{
+        img{
+            width: 68px;
+        }
+        div{
+            span{
+                font-size: 24px;
+            }
+        }
+    }
     header{
         margin-bottom: 0;
         padding: 10px !important;
@@ -383,6 +403,24 @@
                             .info{
                                 flex-direction: row;
                                 gap: 4px;
+                                &:last-child{ 
+                                    position: static;
+                                    i{
+                                        display: none;
+                                    }
+                                    .limit-details-room{
+                                        width: calc(100vw - 19px);
+                                        top: 41px;
+                                        right: -7px;
+                                        table{
+                                            thead{
+                                                th{
+                                                    font-size: 12px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -500,7 +538,7 @@
                         justify-content: space-between;
                         gap: 10px;
                         transform: scale(1);
-                        margin-bottom: 12px;
+                        margin-bottom: 0px !important;
                         button{
                             filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5490196078));
                             &.btn-circle{
@@ -1078,6 +1116,23 @@
                 color: #FDF1CF;
             }
          }
+    }
+}
+@media only screen and (max-device-width:450px){
+    .room{
+        &.multi{
+            .header{
+                .room-info{
+                    .info{
+                        &:last-child{
+                            i{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 @media(max-width:450px){

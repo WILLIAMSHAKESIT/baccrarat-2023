@@ -667,6 +667,10 @@ select option {
   color: yellow;
   margin-left: 4px;
 }
+.card-board .card-header .bet-limit .limit-toggle {
+  margin-left: 10px;
+  font-size: 24px;
+}
 .card-board .card-header .timer {
   display: flex;
   align-items: center;
@@ -777,6 +781,24 @@ select option {
 }
 .card-board .card-body .right-road canvas {
   max-width: 100%;
+}
+.card-board .card-body .limit-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 19, 9, 0.7215686275);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  z-index: 200;
+  display: none;
+}
+.card-board .card-body .limit-details table {
+  width: 100%;
+}
+.card-board .card-body .limit-details table thead th {
+  color: #c7c793;
 }
 .card-board .card-footer {
   display: flex;
@@ -1614,23 +1636,9 @@ table.stripe tbody tr td:last-child {
   outline-offset: -8px;
 }
 
-.count-down {
+.room-timer {
   position: relative;
   z-index: 1000;
-}
-.count-down .timerValue {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 200;
-}
-.count-down canvas {
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.6901960784);
 }
 
 .results-wrapper-card {
@@ -2103,6 +2111,84 @@ table.stripe tbody tr td:last-child {
   cursor: pointer;
 }
 
+.timerParent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-spinner {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.middle-circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 37px;
+  width: 37px;
+  background-color: rgb(44, 31, 13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.shuffle-board {
+  background-color: rgba(12, 12, 12, 0.88);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.shuffle-board img {
+  width: 200px;
+  animation-iteration-count: infinite;
+}
+.shuffle-board div {
+  background: linear-gradient(288deg, rgba(0, 8, 51, 0) 0%, rgb(20, 110, 69) 37%, rgba(29, 129, 77, 0.89) 65%, rgba(24, 90, 47, 0.82) 71%, rgba(12, 27, 68, 0) 100%);
+  width: calc(100% - 50px);
+  text-align: center;
+  position: relative;
+}
+.shuffle-board div::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(276deg, rgba(0, 8, 51, 0) 0%, rgb(246, 255, 189) 49%, rgba(12, 27, 68, 0) 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.shuffle-board div::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(276deg, rgba(0, 8, 51, 0) 0%, rgb(246, 255, 189) 49%, rgba(12, 27, 68, 0) 100%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.shuffle-board div span {
+  background: -webkit-linear-gradient(#FDBEFF, #F838FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  font-style: italic;
+}
+
 .sub-header {
   display: flex;
   align-items: center;
@@ -2229,6 +2315,8 @@ table.stripe tbody tr td:last-child {
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  position: relative;
+  left: 0px;
 }
 .multi-rooms .buttons-chips a {
   display: none;
@@ -2261,7 +2349,7 @@ table.stripe tbody tr td:last-child {
   background-size: cover;
   position: relative;
 }
-.room .top > div.left .count-down {
+.room .top > div.left .timerParent {
   position: absolute;
   right: 27px;
   top: 21px;
@@ -2331,6 +2419,7 @@ table.stripe tbody tr td:last-child {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  z-index: 300;
 }
 .room .top > div.right .header .logo {
   width: 100px;
@@ -2348,6 +2437,37 @@ table.stripe tbody tr td:last-child {
 .room .top > div.right .header .room-info .info .value {
   font-weight: 800;
   color: #fdf1cf;
+}
+.room .top > div.right .header .room-info .info:last-child {
+  position: relative;
+  cursor: pointer;
+}
+.room .top > div.right .header .room-info .info:last-child i {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.room .top > div.right .header .room-info .info:last-child .limit-details-room {
+  position: absolute;
+  width: 500px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.7490196078);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 29px;
+  right: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+}
+.room .top > div.right .header .room-info .info:last-child .limit-details-room table {
+  width: 100%;
+}
+.room .top > div.right .header .room-info .info:last-child .limit-details-room table thead {
+  background: #704a35;
+}
+.room .top > div.right .header .room-info .info:last-child:hover .limit-details-room {
+  display: block;
 }
 .room .top > div.right .body {
   height: calc(100% - 54px);
@@ -2758,6 +2878,38 @@ table.stripe tbody tr td:last-child {
   font-weight: 800;
   color: #fdf1cf;
 }
+.room.multi .header .room-info .info:last-child {
+  cursor: pointer;
+}
+.room.multi .header .room-info .info:last-child i {
+  margin-left: 5px;
+  font-size: 20px;
+  line-height: 0.5;
+}
+.room.multi .header .room-info .info:last-child .limit-details-room {
+  position: absolute;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.7490196078);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 29px;
+  right: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+  z-index: 1100;
+}
+.room.multi .header .room-info .info:last-child .limit-details-room table {
+  width: 100%;
+}
+.room.multi .header .room-info .info:last-child .limit-details-room table thead {
+  background: #704a35;
+}
+.room.multi .header .room-info .info:last-child:hover .limit-details-room {
+  display: block;
+}
 .room.multi .top {
   flex-direction: column;
   height: calc(100% - 184px);
@@ -2770,8 +2922,8 @@ table.stripe tbody tr td:last-child {
 .room.multi .top > div.right .body .bet-area {
   height: 100%;
 }
-.room.multi .top > div.left .count-down {
-  left: 10px;
+.room.multi .top > div.left .timerParent {
+  right: 0;
   top: 0;
   transform: scale(0.7);
 }
@@ -2826,6 +2978,9 @@ table.stripe tbody tr td:last-child {
     font-size: 12px;
     display: flex;
     flex-direction: column;
+  }
+  .room .top > div.right .header .room-info .info:last-child .limit-details-room {
+    top: 41px;
   }
   .room .top > div.right .body .control-area .top-control .chips {
     width: calc(100% - 100px);
@@ -2918,6 +3073,9 @@ table.stripe tbody tr td:last-child {
   }
   .room .top > div.right .header .room-info .info {
     font-size: 10px;
+  }
+  .room .top > div.right .header .room-info .info:last-child .limit-details-room {
+    width: 388px;
   }
   .room .top > div.right .body {
     width: calc(100% - 20px);
@@ -3025,6 +3183,12 @@ table.stripe tbody tr td:last-child {
   }
 }
 @media (max-width: 935px) {
+  .shuffle-board img {
+    width: 68px;
+  }
+  .shuffle-board div span {
+    font-size: 24px;
+  }
   header {
     margin-bottom: 0;
     padding: 10px !important;
@@ -3086,6 +3250,20 @@ table.stripe tbody tr td:last-child {
   .room .top > div.right .header .room-info .info {
     flex-direction: row;
     gap: 4px;
+  }
+  .room .top > div.right .header .room-info .info:last-child {
+    position: static;
+  }
+  .room .top > div.right .header .room-info .info:last-child i {
+    display: none;
+  }
+  .room .top > div.right .header .room-info .info:last-child .limit-details-room {
+    width: calc(100vw - 19px);
+    top: 41px;
+    right: -7px;
+  }
+  .room .top > div.right .header .room-info .info:last-child .limit-details-room table thead th {
+    font-size: 12px;
   }
   .room .top > div.right .body {
     width: 100%;
@@ -3194,7 +3372,7 @@ table.stripe tbody tr td:last-child {
     justify-content: space-between;
     gap: 10px;
     transform: scale(1);
-    margin-bottom: 12px;
+    margin-bottom: 0px !important;
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button {
     filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5490196078));
@@ -3658,6 +3836,11 @@ table.stripe tbody tr td:last-child {
     margin: 0 auto;
     margin-top: 20px;
     color: #FDF1CF;
+  }
+}
+@media only screen and (max-device-width: 450px) {
+  .room.multi .header .room-info .info:last-child i {
+    display: none;
   }
 }
 @media (max-width: 450px) {

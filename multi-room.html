@@ -33,15 +33,52 @@
                 <span class="info">TABLE: <span class="value">S03</span></span>
                 <span class="info">TYPE: <span class="value">SPEED</span></span>
                 <span class="info">GAME: <span class="value">S0334564564</span></span>
-                <span class="info">LIMIT: <span class="value">10K ~ 5M</span></span>
+                <span class="info">LIMIT: 
+                    <span class="value">10K ~ 5M</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <div class="limit-details-room">
+                        <table class="stripe">
+                            <thead>
+                                <th>Area</th>
+                                <th>User limit</th>
+                                <th>Table limit</th>
+                                <th>Limit range</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>B/P</td>
+                                    <td>10K-10M</td>
+                                    <td>5K-600M</td>
+                                    <td>10K-10M</td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td>10K-10M</td>
+                                    <td>5K-600M</td>
+                                    <td>10K-10M</td>
+                                </tr>
+                                <tr>
+                                    <td>Pair</td>
+                                    <td>10K-10M</td>
+                                    <td>5K-600M</td>
+                                    <td>10K-10M</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </span>
             </div>
         </div>
         <div class="top">
             <div class="left">
                 <div class="video-prompt red-color">Stop Betting</div>
-                <div class="count-down">
+                <!-- <div class="count-down">
                     <span class="timerValue"></span>
                     <canvas class="timer" width="50" height="50"></canvas>
+                </div> -->
+                <div class="timerParent room-timer">
+                    <div class="middle-circle"></div>
+                    <div class="progress-spinner"></div>
                 </div>
                 <div class="vid-controls">
                     <button><i class="fa-solid fa-wifi"></i></button>
@@ -239,7 +276,13 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="board-overlay">
+            <div class="shuffle-board animate__animated animate__fadeInUp">
+                <img class="animate__animated animate__flipInY" src="../img/elements/card_shuffle.png" alt="Deck cards image">
+                <div>
+                    <span>SHUFFLING</span>
+                </div>
+            </div>
+            <!-- <div class="board-overlay">
                 <div class="card-res player face-down">
                     <div class="horizontal">
                         <div class="card f_2"></div>
@@ -264,7 +307,7 @@
                         <div class="card f_4"></div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="results-wrapper">
                 <ul class="bead-road">
                 </ul>
