@@ -57,11 +57,12 @@ $(document).ready(function(){
     $('.buttons-chips .chips').on('touchend',function(){
         layout.handleTouchEnd()
     })
-    $('.limit-toggle').on('touchstart',function(){
+    $('.limit-toggle').on('touchstart',function(e){
+        e.preventDefault()
         layout.showLimitDetails(this)
     })
-    $('.limit-toggle').on('touchend',function(){
-        layout.handleTouchEnd()
+    $('.limit-toggle').on('touchend',function(e){
+        e.preventDefault()
         layout.hideLimitDetails(this)
     })
     $('.limit-toggle').mouseenter(function(event){
