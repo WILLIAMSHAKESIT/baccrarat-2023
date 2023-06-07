@@ -57,15 +57,25 @@ $(document).ready(function(){
     $('.buttons-chips .chips').on('touchend',function(){
         layout.handleTouchEnd()
     })
-    $('.limit-toggle').mouseenter(function(e){
-        e.stopPropagation()
+    $('.limit-toggle').on('touchstart',function(){
         layout.showLimitDetails(this)
     })
-    $('.limit-toggle').mouseleave(function(e){
-        e.stopPropagation()
+    $('.limit-toggle').on('touchend',function(){
+        layout.handleTouchEnd()
         layout.hideLimitDetails(this)
     })
-    $('.card-board').click(function(e){
+    $('.limit-toggle').mouseenter(function(event){
+        event.preventDefault()
+        event.stopPropagation()
+        layout.showLimitDetails(this)
+    })
+    $('.limit-toggle').mouseleave(function(event){
+        event.preventDefault()
+        event.stopPropagation()
+        layout.hideLimitDetails(this)
+    })
+    $('a.card-board').click(function(e){
+        // e.preventDefault()
         e.stopPropagation()
     })
     $('#soundSettings :checkbox').each(function(){
