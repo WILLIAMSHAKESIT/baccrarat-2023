@@ -57,13 +57,18 @@ $(document).ready(function(){
     $('.buttons-chips .chips').on('touchend',function(){
         layout.handleTouchEnd()
     })
-    $('.limit-toggle').on('touchstart',function(e){
+    // $('.limit-toggle').on('touchstart',function(e){
+    //     e.preventDefault()
+    //     layout.showLimitDetails(this)
+    // })
+    // $('.limit-toggle').on('touchend',function(e){
+    //     e.preventDefault()
+    //     layout.hideLimitDetails(this)
+    // })
+    $('.limit-toggle').on('click',function(e){
         e.preventDefault()
-        layout.showLimitDetails(this)
-    })
-    $('.limit-toggle').on('touchend',function(e){
-        e.preventDefault()
-        layout.hideLimitDetails(this)
+        e.stopPropagation()
+        layout.toggleLimitDetails(this)
     })
     $('.limit-toggle').mouseenter(function(event){
         event.preventDefault()
@@ -728,6 +733,9 @@ class Layout{
     }
     hideLimitDetails(_this){
         $(_this).parent().parent().siblings('.card-body').find('.limit-details').hide()
+    }
+    toggleLimitDetails(_this){  
+        $(_this).parent().parent().siblings('.card-body').find('.limit-details').toggle()
     }
     handleTouchStart(_this,event){
         this.startX = event.touches[0].clientX;
