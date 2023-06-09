@@ -150,9 +150,89 @@
 .room{
     height: calc(100% - 91px);
     max-width: 100%;
+    .upper-most{
+        height: 78px;
+        width: 100%;
+        // background: linear-gradient(359deg, #CCBF8B, #8B7350);
+        // background: linear-gradient(359deg, #CCBF8B, #8B7350);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .upper-content-wrapper{
+            // background: linear-gradient(359deg, #211209, #5a2d18);
+            background: rgba(61, 31, 17, 0.8117647059);
+            width: calc(100% - 10px);
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(255, 201, 128, 0.1882352941);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            padding: 0 12px;
+            margin-bottom: 10px;        
+            .left-most{
+                display: flex;
+                align-items: center;
+                width: 60%;
+                gap: 20px;
+                .logo{
+                    width: 150px;
+                }
+                .stat-items{
+                    display: flex;
+                    gap: 20px;
+                    font-size: 14px;
+                    .item{
+                        border-left: 1px solid #ffc77c1c;
+                        padding-left: 17px;
+                        span{
+                            font-weight: 500;
+                            i{
+                                margin-right: 3px;
+                            }
+                            &:first-child{
+                                color: #bd9b5e;
+                                margin-right: 7px;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-most{
+                width: calc(100% - 60%);
+                table{
+                    width: 100%;
+                    thead{
+                        border-bottom: 1px solid #ffbf6b26;
+                        th{
+                            padding: 0 5px;
+                            font-size: 10px;
+                        }
+                    }
+                    tbody{
+                        tr{
+                            &:not(:last-child){
+                                border-bottom: 1px solid #ffbf6b26;
+                            }
+                            &:nth-child(even){
+                                background: unset;
+                            }
+                            td{
+                                font-size: 10px;
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .top{
         display: flex;
-        height: calc(100% - 255px);
+        height: calc(100% - 255px - 78px);
         >div{
             width: calc(100% / 2);
             &.left{
@@ -282,7 +362,8 @@
                     }
                 }
                 .body{
-                    height: calc(100% - 54px);
+                    // height: calc(100% - 54px);
+                    height: calc(100% - 24px);
                     width: calc(100% - 35px);
                     z-index: 100;
                     position: absolute;
@@ -291,7 +372,7 @@
                     .bet-area{
                         display: flex;
                         flex-wrap: wrap;
-                        height: 60%;
+                        height: 58%;
                         overflow: hidden;
                         margin-top: 3px;
                         .area{
@@ -385,7 +466,7 @@
                         }
                     }
                     .control-area{
-                        height: 40%;
+                        height: calc(100% - 57%);
                         position: relative;
                         .top-control{
                             display: flex;
@@ -548,12 +629,16 @@
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
+                border-right: 1px solid #000000;
                 li{
                     border-left: 1px solid rgba(0, 0, 0, 0.278);
                     border-bottom: 1px solid rgba(0, 0, 0, 0.278);
                     height: calc(100% / 6);
                     aspect-ratio: 1/1;
                     position: relative;
+                    &:nth-last-child(6),&:nth-last-child(5),&:nth-last-child(4),&:nth-last-child(3),&:nth-last-child(2),&:nth-last-child(1){
+                        border-right: 0;
+                    }
                 }
             }
             .small-grid{
@@ -565,12 +650,16 @@
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
+                    border-bottom: 1px solid #000000;
                     li{
                         border-left: 1px solid rgba(0, 0, 0, 0.278);
                         border-bottom: 1px solid rgba(0, 0, 0, 0.278);
                         height: calc(100% / 6);
                         aspect-ratio: 1/1;
                         position: relative;
+                        &:nth-child(6n+6){
+                            border-bottom: 0;
+                        }
                     }
                 }
                 .bigeye-road{
@@ -579,12 +668,16 @@
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
+                    border-bottom: 1px solid #000000;
                     li{
                         border-left: 1px solid rgba(0, 0, 0, 0.278);
                         border-bottom: 1px solid rgba(0, 0, 0, 0.278);
                         height: calc(100% / 6);
                         aspect-ratio: 1/1;
                         position: relative;
+                        &:nth-child(6n+6){
+                            border-bottom: 0;
+                        }
                     }
                 }
                 .bottom-small{

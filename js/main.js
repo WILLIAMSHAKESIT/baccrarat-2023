@@ -460,37 +460,47 @@ class Layout{
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
+                $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
+                // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
+                $( `${bigBoxElFour}`).append(`<li></li>`)
             }
         }
         else{
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+                $(`${bigBoxEl}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
+                // $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
+                $(`${bigBoxElFour}`).append(`<li></li>`)
             }
         }
 

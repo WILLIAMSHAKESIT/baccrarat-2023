@@ -124,6 +124,29 @@
             }
         }
     }
+    .room{
+        .upper-most{
+            .upper-content-wrapper{
+                .left-most{
+                    .stat-items{
+                        gap: 6px;
+                        .item{
+                            padding-left: 6px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            &:first-child{
+                                margin-right: 0;
+                                i{
+                                    margin-right: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media only screen and (max-device-width : 1342px) {
     .room{
@@ -242,6 +265,27 @@
         }
     }
     .room{
+        .upper-most{
+            .upper-content-wrapper{
+                margin-bottom: 3px;
+                .left-most{
+                    .logo{
+                     width: 85px;
+                    }
+                    .stat-items{
+                        .item{
+                            font-size: 11px;
+                            &:first-child{
+                                margin-right: 0;
+                                i{
+                                    margin-right: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .top{
             >div{
                 &.right{
@@ -460,7 +504,8 @@
         }
         .top{
             flex-direction: column;
-            height: calc(100% - 212px);
+            // height: calc(100% - 212px);
+            height: calc(100% - 289px);
             >div{
                 width: 100%;
                 height: 100%;
@@ -963,6 +1008,42 @@
     
 }
 @media(max-width:697px){
+    .upper-most{
+        .upper-content-wrapper{
+            flex-direction: column;
+            justify-content: space-between;
+            .left-most{
+                width: 100% !important;
+                justify-content: space-between;
+                img{
+                    width: 65px !important;
+                }
+                .stat-items{
+                    .item{
+                        font-size: 8px !important;
+                        flex-direction: row !important;
+                    }
+                }
+            }
+            .right-most{
+                width: 100% !important;
+                table{
+                    thead{
+                        th{
+                            font-size: 8px !important;
+                        }
+                    }
+                    tbody{
+                        tr{
+                            td{
+                                font-size: 8px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .room{
         .waiting-prompt{
             .video-prompt{
@@ -1347,9 +1428,9 @@
                             }
                         }
                         .body{
-                            top: 34px;
+                            top: 4px;
                             bottom: unset;
-                            height: calc(100% - 65px);
+                            height: calc(100% - 37px);                        
                             .bet-area{
                                 height: 100%;
                                 .area{
