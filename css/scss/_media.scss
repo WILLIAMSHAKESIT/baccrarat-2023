@@ -1,3 +1,56 @@
+@media all and (orientation:landscape) {
+    body{
+        &.mobile{
+            >{
+                div{
+                    &:not(.device-prompt){
+                        display: none;
+                    }
+                }
+            }
+            .device-prompt{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-color: #00000073;
+                backdrop-filter: blur(5px);
+                display: block;
+                .prompt-content{
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        width: 170px;
+                        animation-iteration-count: infinite;
+                        margin-bottom: 15px;
+                    }
+                    span{
+                        color: #bcbcbc;
+                        line-height: 1.1;
+                        font-size: 21px;
+                    }
+                 }
+            }
+        }
+    }
+}
+@media all and (orientation:portrait) {
+    html,body{
+        &.mobile{
+            *>{
+                display: block;
+            }
+            .device-prompt{
+                display: none;
+            }
+        }
+    }
+}
 @media(max-width:1602px){
     .room{
         .top{
@@ -44,7 +97,6 @@
         }
     }
 }
-
 @media(max-width:1590px){
     .board-overlay{
         .mid-result{
@@ -78,6 +130,25 @@
         &.multi{
             .top{
                 height: calc(100% - 210px);
+                >div{
+                    &.right{
+                        .waiting-prompt{
+                            .prompt-with-img{
+                                img{
+                                    width: 30%;
+                                }
+                                .video-prompt{
+                                    font-size: 15px;
+                                    text-align: center;
+                                    height: 30px;
+                                    span{
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -109,9 +180,17 @@
                             }
                         }
                         .waiting-prompt{
-                            .video-prompt{
-                                font-size: 15px;
-                                text-align: center;
+                            .prompt-with-img{
+                                img{
+                                    width: 30%;
+                                }
+                                .video-prompt{
+                                    font-size: 15px;
+                                    text-align: center;
+                                    span{
+                                        font-size: 15px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -128,6 +207,9 @@
                 width: 100%;
                 display: flex;
                 bottom: 0;
+                .indicators{
+                    gap: 5px;
+                }
             }
         }
     }
@@ -371,7 +453,7 @@
         }
     }
     .room{
-        height:calc(100% - 98px);
+        height:calc(100% - 77px);
         position: relative;
         &.h-full{
             height: 100%;
@@ -515,12 +597,12 @@
         }
         .mobile-controls{
             display: block;
-            /* height: 14%; */
+            height: fit-content;
             position: absolute;
             width: 100%;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 0;
+            bottom: 8px;
             .control-area-mobile{
                 height: 100%;
                 display: flex;
@@ -587,6 +669,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-around;
+                        position: relative;
                         .btn-chip{
                             width: 39px;
                             height: 39px;
@@ -603,6 +686,11 @@
                         }
                     }
                 }
+            }
+        }
+        &.multi{
+            .mobile-controls{
+                bottom: 0px;
             }
         }
     }
@@ -639,7 +727,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        height: 57px;
+        height: 35px;
         width: 100%;
         background: linear-gradient(178deg, #432614, #231309);
         // border: 1px solid #785732bf;
@@ -665,9 +753,13 @@
             width: calc(100% / 2 - 100px);
         }
         .btn{
-            width: 50px;
-            height: 50px;
+            width: 42px;
+            height: 42px;
             background: linear-gradient(#5C2E17, #1c0e06);
+            padding: 0;
+            i{
+                font-size: 10px;
+            }
             &:not(.btn-mid){
                 display: flex;
                 flex-direction: column;
@@ -680,20 +772,28 @@
                 }
             }
         }
+        a{
+            height: 32px !important;
+            width: 32px !important;
+            i{
+                font-size: 14px !important;
+            }
+        }
     }
     .legend-mobile{
         display: flex;
         justify-content: space-around;
         position: absolute;
-        z-index: 99;
+        z-index: 500;
         bottom: 2px;
         width: calc(100% - 200px);
-        background: #5e3b28;
+        background: #734d38;
         border-radius: 530px;
         padding: 1px 0;
         left: 50%;
         transform: translateX(-50%);
         box-shadow: inset 0 0 2px #000;
+        cursor: pointer;
         .right-indi{
             display: flex;
             width: calc(100% / 2);
@@ -714,9 +814,18 @@
         .indicators{
             display: flex;
             gap: 10px;
+            >{
+                div{
+                    filter: drop-shadow(1px 1px 1px #161616);
+                }
+            }
             .indi{
                 display: flex;
                 gap: 3px;
+                &:last-child{
+                    border-left: 1px solid #ffc980;
+                    padding-left: 12px;
+                }
                 .result{
                     width: 17px;
                     position: relative;
@@ -854,6 +963,16 @@
     
 }
 @media(max-width:697px){
+    .room{
+        .waiting-prompt{
+            .video-prompt{
+                height: 34px;
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
     .card{
         width: 40px;
         height: 85px;

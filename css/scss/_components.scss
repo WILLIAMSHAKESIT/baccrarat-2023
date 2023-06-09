@@ -437,6 +437,12 @@ select{
                 thead{
                     th{
                         color: #c7c793;
+                        padding: 2px 10px;
+                    }
+                }
+                tbody{
+                    td{
+                        padding: 2px 10px;
                     }
                 }
             }
@@ -595,7 +601,8 @@ select{
         .modal-body{
             padding: 20px;
             padding-top: 0;
-            height: calc(100% - 60px);
+            // height: calc(100% - 60px);
+            height: 50%;
             .main-content{  
                 overflow: auto;
                 max-height: calc(100% - 150px);
@@ -1002,20 +1009,35 @@ table{
     &.outline-blue{
         background-image: url('../img/results/blue-circle-outline.png');
     }
+    &.outline-blue-small{
+        background-image: url('../img/results/blue-circle-outline-small.png');
+    }
     &.outline-red{
         background-image: url('../img/results/red-circle-outline.png');
+    }
+    &.outline-dark{
+        background-image: url('../img/results/black-circle-outline.png');
+    }
+    &.outline-red-small{
+        background-image: url('../img/results/red-circle-outline-small.png');
     }
     &.fill-red{
         background-image: url('../img/results/red-circle2.png');
     }
     &.fill-blue{
         background-image: url('../img/results/blue-circle2.png');
-    }
-    &.line-blue{
+    } 
+    &.fill-black{
+        background-image: url('../img/results/black-circle2.png');
+    } 
+    &.line-blue{ 
         background-image: url('../img/results/line-blue.png');
     }
     &.line-red{
         background-image: url('../img/results/line-red.png');
+    }
+    &.line-black{
+        background-image: url('../img/results/line-black.png');
     }
 }
 .pair-banker{
@@ -1044,7 +1066,8 @@ table{
   background-size: 100%;
   background-position: center;
   position: absolute;
-  width: 76%;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1/1;
   left: 50%;
   top: 50%;
@@ -1071,43 +1094,43 @@ table{
     width: 130px;
     height: 200px;
     position: relative;
-    &.f_1{
+    &.c_1{
         background-image: url('../img/cards/ace_of_clubs.png');
     }
-    &.f_2{
+    &.c_2{
         background-image: url('../img/cards/2_of_clubs.png');
     }
-    &.f_3{
+    &.c_3{
         background-image: url('../img/cards/3_of_clubs.png');
     }
-    &.f_4{
+    &.c_4{
         background-image: url('../img/cards/4_of_clubs.png');
     }
-    &.f_5{
+    &.c_5{
         background-image: url('../img/cards/5_of_clubs.png');
     }
-    &.f_6{
+    &.c_6{
         background-image: url('../img/cards/6_of_clubs.png');
     }
-    &.f_7{
+    &.c_7{
         background-image: url('../img/cards/7_of_clubs.png');
     }
-    &.f_8{
+    &.c_8{
         background-image: url('../img/cards/8_of_clubs.png');
     }
-    &.f_9{
+    &.c_9{
         background-image: url('../img/cards/9_of_clubs.png');
     }
-    &.f_10{
+    &.c_10{
         background-image: url('../img/cards/10_of_clubs.png');
     }
-    &.f_11{
+    &.c_11{
         background-image: url('../img/cards/jack_of_clubs.png');
     }
-    &.f_12{
+    &.c_12{
         background-image: url('../img/cards/queen_of_clubs.png');
     }
-    &.f_13{
+    &.c_13{
         background-image: url('../img/cards/king_of_clubs.png');
     }
     &.h_1{
@@ -1642,6 +1665,18 @@ table{
     &.blue-color{
         background: linear-gradient(288deg, rgba(0, 8, 51, 0) 0%, rgb(35, 90, 168) 37%, rgba(24, 36, 90, 0.891) 65%, rgba(25, 24, 90, 0.821) 71%, rgba(12, 27, 68, 0) 100%);
     }
+    &.green-color{
+        background: linear-gradient(288deg, rgba(0, 8, 51, 0) 0%, rgb(20 110 69) 37%, rgb(29 129 77 / 89%) 65%, rgb(24 90 47 / 82%) 71%, rgba(12, 27, 68, 0) 100%);
+        span{
+            background: -webkit-linear-gradient(#FDBEFF, #F838FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 35px;
+            font-weight: 700;
+            text-align: center;
+            font-style: italic;
+        }
+    }
     &::before{
         content: "";
         height: 2px;
@@ -1669,9 +1704,29 @@ table{
     width: 100%;
     height: 100%;
     background-color: rgb(44 15 0 / 81%);
-    z-index: 200;
+    z-index: 600;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(3px);
+    .prompt-with-img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        img{
+            width: 20%;
+        }
+        .video-prompt{
+            position: relative;
+            top: unset;
+            left: unset;
+            transform: unset;
+        }
+    }
 }
 
 .blink-2{

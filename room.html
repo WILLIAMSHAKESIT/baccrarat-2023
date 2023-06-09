@@ -26,6 +26,13 @@
     <script src="js/jquery.min.js"></script>
 </head>
 <body>
+    <div class="device-prompt">
+        <div class="prompt-content">
+            <h1 class="small"></h1>
+            <img src="img/elements/rotate-device.png" class="animate__animated animate__rotateInDownLeft">
+            <span>Please rotate your device</span>
+        </div>
+    </div>
     <header class="p-5">
         <div class="user-info flex  gap-5">
             <div class="user-name font-bold">
@@ -80,7 +87,12 @@
             </div>
             <div class="right">
                 <!-- <div class="waiting-prompt">
-                    <div class="video-prompt yellow-color">Waiting for next round</div>
+                    <div class="prompt-with-img">
+                        <img class="animate__animated animate__flipInY" src="../img/elements/card_shuffle.png" alt="Deck cards image">
+                        <div class="video-prompt green-color">
+                            <span>SHUFFLING</span>
+                        </div>
+                    </div>
                 </div> -->
                 <div class="header">
                     <img class="logo" src="img/casino/solaire.png">
@@ -129,16 +141,16 @@
                                 <div class="info">
                                     <div>
                                         <i class="fa-solid fa-users"></i>
-                                        <span>700.9M</span>
+                                        <span>0</span>
                                     </div>
                                     <div>
                                         <i class="fa-solid fa-coins"></i>
-                                        <span>700.9M</span>
+                                        <span>0</span>
                                     </div>
-                                    <!-- <div>
+                                    <div>
                                         <i class="fa-solid fa-dollar-sign"></i>
-                                        <span>700.9M</span>
-                                    </div> -->
+                                        <span>0</span>
+                                    </div>
                                 </div>
                                 <span class="text light-blue">P.PAIR</span>
                             </div>
@@ -273,9 +285,9 @@
                     <div class="indicators">
                         <div class="indi indi-one">
                             <div class="result red"></div>
-                            <div class="result outline-red"></div>
-                            <div class="result fill-red"></div>
-                            <div class="result line-blue"></div>
+                            <div class="result outline-dark"></div>
+                            <div class="result fill-black"></div>
+                            <div class="result line-black"></div>
                         </div>
                         <div class="indi indi-two">
                             <div class="result blue"></div>
@@ -289,12 +301,12 @@
             </div>
         </div>
         <div class="bottom">
-            <div class="shuffle-board animate__animated animate__fadeInUp">
+            <!-- <div class="shuffle-board animate__animated animate__fadeInUp">
                 <img class="animate__animated animate__flipInY" src="../img/elements/card_shuffle.png" alt="Deck cards image">
                 <div>
                     <span>SHUFFLING</span>
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="board-overlay">
                 <div class="card-res player face-down">
                     <div class="horizontal">
@@ -341,6 +353,10 @@
             <div class="legend">
                 <ul>
                     <li>
+                        <span>GAME</span>
+                        <span>50</span>
+                    </li>
+                    <li>
                         <div class="result red"></div>
                         <span class="red">0</span>
                     </li>
@@ -363,20 +379,47 @@
                 </ul>
                 <div class="indicators">
                     <div class="indi indi-one">
-                        <div class="result red"></div>
-                        <div class="result outline-red"></div>
-                        <div class="result fill-red"></div>
-                        <div class="result line-blue"></div>
+                        <div class="header-red">
+                            <!-- <div class="result red"></div> -->
+                            <span>B</span>
+                        </div>
+                        <div>
+                            <div class="result outline-dark"></div>
+                        </div>
+                        <div>
+                            <div class="result fill-red"></div>
+                        </div>
+                        <div>
+                            <div class="result line-black"></div>
+                        </div>
                     </div>
                     <div class="indi indi-two">
-                        <div class="result blue"></div>
-                        <div class="result outline-blue"></div>
-                        <div class="result fill-blue"></div>
-                        <div class="result line-red"></div>
+                        <div class="header-blue">
+                            <span>P</span>
+                        </div>
+                        <div>
+                            <div class="result outline-blue"></div>
+                        </div>
+                        <div>
+                            <div class="result fill-black"></div>
+                        </div>
+                        <div>
+                            <div class="result line-black"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="legend-controls">
+                    <button class="toggle-tables">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        <span>Change Table</span>
+                    </button>
+                    <button class="">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        <span>Return to lobby</span>
+                    </button>
+                </div>
             </div>
-            <div class="bottom-menu">
+            <!-- <div class="bottom-menu">
                 <button class="btn-circle toggleBottomMenu">
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
@@ -404,7 +447,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="mobile-controls">
             <div class="control-area-mobile">

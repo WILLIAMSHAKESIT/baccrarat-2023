@@ -328,6 +328,9 @@ html,body {
   background-image: url(../img/bg/main_bg.png);
   background-size:cover;
   background-position: center;
+  .device-prompt{
+    display: none;
+  }
 }
 i{
   background: -webkit-linear-gradient(#C39D64, #DBB984,#9C6800);

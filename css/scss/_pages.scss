@@ -245,6 +245,7 @@
                             .value{
                                 font-weight: 800;
                                 color:#fdf1cf;
+                                white-space: nowrap;
                             }
                             &:last-child{ 
                                 position: relative;
@@ -351,12 +352,15 @@
                                     border: 1px solid rgb(50 94 90);
                                     box-shadow: inset 0 0 2px #000;
                                     div{
-                                        width: calc(100% / 2);
+                                        width: 100%;
                                         display: flex;
                                         align-items: center;
                                         justify-content: center;
                                         i{
                                             margin-right: 7px;
+                                        }
+                                        &:first-child{
+                                            border-right: 1px solid #ffffff14;
                                         }
                                         &:last-child{
                                             border-left: 1px solid #ffffff14;
@@ -608,19 +612,27 @@
         }
         .legend{
             width: 200px;
-            background-color: #e3e3e3;
+            background-color: #fff;
             display: flex;
+            >{
+                width: calc(100% / 3);
+            }
             ul{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                width: calc(100% / 2);
-                padding: 0 5px;
+                width: 40%;
+                border-left: 1px solid #00000034;
                 li{
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    gap: 5px;
                     padding: 5px;
+                    &:first-child{
+                        height: 31px;
+                        background: #2b4f4a;
+                    }
                     .result{
                         position: relative;
                         width: 30px;
@@ -629,22 +641,27 @@
                         transform: unset;
                     }
                     span{
-                        font-size: 20px;
-                        font-weight: 900;
+                        // font-size: 20px;
+                        // font-weight: 900;
                     }
                 }
             }
             .indicators{
                 background: #fff;
-                width: calc(100% / 2);
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
-                align-items: flex-start;
-                padding-left: 15px;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                border-left: 1px solid #00000034;
+                cursor: pointer;
                 .indi{
-                    padding: 10px;
                     border-radius: 5px;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
                     .result{
                         position: relative;
                         width: 19px;
@@ -653,11 +670,49 @@
                         transform: unset;
                         margin-bottom: 3px;
                     }
-                    &.indi-one{
-                        border: 1px solid #f70849;
+                    >div{
+                        height: calc(100% / 4);
+                        width: 100%;
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &.header-red{
+                            background-color: #f70849;
+                        }
+                        &.header-blue{
+                            background-color: #0477e0;
+                        }
+                        span{
+                            font-weight: 700;
+                            color: #fff;
+                        }
                     }
-                    &.indi-two{
-                        border: 1px solid #0079e2;
+                }
+            }
+            .legend-controls{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                button{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    height: calc(100% / 2);
+                    background: #fff;
+                    font-size: 10px;
+                    filter: brightness(1);
+                    transition: .5s ease-in-out;
+                    color: #6d5223;
+                    border-bottom: 1px solid #00000034;
+                    border-left: 1px solid #00000034;
+                    i{
+                        font-size: 20px;
+                        background: unset;
+                        color: #ac7d21 !important;
+                        -webkit-text-fill-color: unset;
                     }
                 }
             }

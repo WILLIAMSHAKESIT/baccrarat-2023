@@ -1,44 +1,43 @@
-
 var progress = 20;
 
-      // document
-      //   .getElementById("incbtn")
-      //   .addEventListener("click", incrementProgress);
-      // document
-      //   .getElementById("decbtn")
-      //   .addEventListener("click", decrementProgress);
+// document
+//   .getElementById("incbtn")
+//   .addEventListener("click", incrementProgress);
+// document
+//   .getElementById("decbtn")
+//   .addEventListener("click", decrementProgress);
 
-      function incrementProgress() {
-        if (progress != 100) {
-          progress = progress + 10;
-          console.log(progress);
-          setProgress();
-        }
-      }
+function incrementProgress() {
+if (progress != 100) {
+    progress = progress + 10;
+    console.log(progress);
+    setProgress();
+}
+}
 
-      function decrementProgress() {
-        if (progress != 0) {
-          progress = progress - 10;
-          console.log(progress);
-          setProgress();
-        }
-      }
+function decrementProgress() {
+if (progress != 0) {
+    progress = progress - 10;
+    console.log(progress);
+    setProgress();
+}
+}
 
-      function setProgress() {
-        document.getElementsByClassName("progress-spinner")[0].style.background =
-          "conic-gradient(rgb(0, 219, 57) " +
-          progress +
-          "%,rgb(242, 242, 242) " +
-          progress +
-          "%)";
-          
-        document.getElementsByClassName("middle-circle")[0].innerHTML =
-          progress.toString();
-      }
+function setProgress() {
+document.getElementsByClassName("progress-spinner")[0].style.background =
+    "conic-gradient(rgb(0, 219, 57) " +
+    progress +
+    "%,rgb(242, 242, 242) " +
+    progress +
+    "%)";
+    
+document.getElementsByClassName("middle-circle")[0].innerHTML =
+    progress.toString();
+}
 
-      window.onload = function () {
-        setProgress();
-      };
+window.onload = function () {
+    setProgress();
+};
 $(document).ready(function(){
     const layout = new Layout()
     const timers = document.querySelectorAll('.count-down .timer')
@@ -48,13 +47,24 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-    $('.buttons-chips .chips').on('touchmove',function(e){
+    layout.handleDevicePrompt()
+    //modal events
+    // console.log($('.area-info .info').siblings())
+    $('.closeModal, .modal-wrapper').on('click',function(e){
+        e.stopPropagation()
+        layout.modalClose()
+    })
+    $('.modal-container').on('click',function(e){
+        e.stopPropagation()
+        return false
+    })
+    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchmove',function(e){
         layout.handleTouchMove(this,e)
     })
-    $('.buttons-chips .chips').on('touchstart',function(e){
+    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchstart',function(e){
         layout.handleTouchStart(this,e)
     })
-    $('.buttons-chips .chips').on('touchend',function(){
+    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
         layout.handleTouchEnd()
     })
     // $('.limit-toggle').on('touchstart',function(e){
@@ -114,10 +124,6 @@ $(document).ready(function(){
         layout.toggleFullScreen(this)
     })
 
-    //modal events
-    $('.closeModal').on('click',function(){
-        layout.modalClose()
-    })
     //modal open
     $('.toggle-history').on('click',function(){
         layout.historyModal()
@@ -454,37 +460,37 @@ class Layout{
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
+                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElThree}`).append(`<li></li>`)
+                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $( `${bigBoxElFour}`).append(`<li></li>`)
+                $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
             }
         }
         else{
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                $(`${bigBoxEl}`).append(`<li></li>`)
+                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElThree}`).append(`<li></li>`)
+                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElFour}`).append(`<li></li>`)
+                $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
             }
         }
 
@@ -505,7 +511,7 @@ class Layout{
         let mainRoadColSmall = 2 * Math.round( $(`${smallBoxElOne}`).outerWidth() / (this.tableColNumber/2) /2)
 
         for(let i=0;i<30;i++){
-            $(`${smallBoxEl}`).append(`<li></li>`)
+            $(`${smallBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
         }
         for(let i=0;i<this.makeDivisibleBySix(mainRoadColSmall);i++){
             $(`${smallBoxElOne}`).append(`<li></li>`)
@@ -768,6 +774,13 @@ class Layout{
             console.log('Swipe left');
             this.prevChip()
             }
+        }
+    }
+    handleDevicePrompt(){
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            $('html,body').addClass('mobile')
+        }else{
+            $('html,body').removeClass('mobile')
         }
     }
 }
