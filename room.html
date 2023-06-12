@@ -35,18 +35,23 @@
     </div>
     <header class="p-5">
         <div class="user-info flex  gap-5">
-            <div class="user-name font-bold">
-                <i class="fa-solid fa-user  mr-1"></i>
-                John Doe
-            </div>
-            <div class="flex gap-3 items-center">
+            <div class="flex gap-2 items-center">
+                <div class="user-name font-bold">
+                    <i class="fa-solid fa-user  mr-1"></i>
+                    John Doe
+                </div>
                 <div class="user-name font-bold">
                     <i class="fa-solid fa-won-sign mr-1"></i>
                     100,000,000
                 </div>
-                <div class="toggle-menu mobile">
+            </div>
+            <div class="flex gap-2 items-center mobile-flex">
+                <a href="index.html" class="goto-home mobile">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <a href="#" class="toggle-menu mobile">
                     <i class="fa-solid fa-bars"></i>
-                </div>
+                </a>
             </div>
         </div>
         <div class="logo">
@@ -76,6 +81,10 @@
                 <div class="left-most">
                     <img class="logo" src="img/casino/solaire.png">
                     <div class="stat-items">
+                        <div class="item mobile">
+                            <span><i class="fa-solid fa-heart"></i>GAME No:</span>
+                            <span>10</span>
+                        </div>
                         <div class="item">
                             <span><i class="fa-solid fa-table"></i>TABLE:</span>
                             <span>10</span>
@@ -293,7 +302,7 @@
                             <a href="#" class="prevChip">
                                 <i class="fa-solid fa-angle-left" id="prevChip"></i>
                             </a>
-                            <div class="chips">
+                            <div class="chips" draggable="true">
                                 <button class="btn-chip chip-1k" value="1k" data-val="1k"></button>
                                 <button class="btn-chip chip-5k" value="5k" data-val="5k"></button>
                                 <button class="btn-chip chip-10k" value="10k" data-val="10k"></button>
@@ -525,7 +534,7 @@
                 </div>
                 <div class="bottom-control">
                     <div class="btns">
-                        <button class="btn-circle btn-gray toggle-tables"><i class="fa-solid fa-repeat"></i></button>
+                        <button class="btn-circle btn-gray toggle-tables"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
                         <button class="btn cancel">Cancel Bets</button>
                         <button class="btn bet">Place Bet</button>
                         <button class="btn-circle btn-gray chip-settings"><i class="fa-solid fa-gear"></i></button>
@@ -978,7 +987,8 @@
                     <ul class="sidebar-menu">
                         <li><a href="#" class="toggle-settings"><i class="fa-solid fa-gear"></i>Settings</a></li>
                         <li><a href="#" class="toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Game History</a></li>
-                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Customer Service</a></li>
+                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Customer Service</a></li>
+                        <!-- <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Toggle Full</a></li> -->
                         <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
                     </ul>
                 </div>

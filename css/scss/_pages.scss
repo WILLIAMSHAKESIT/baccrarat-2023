@@ -234,12 +234,12 @@
         display: flex;
         height: calc(100% - 255px - 78px);
         >div{
-            width: calc(100% / 2);
             &.left{
                 background-color: #000;
                 background-position: center;
                 background-size: cover;
                 position: relative;
+                width: calc(100% - 45%);
                 .timerParent{
                     position: absolute;
                     right: 27px;
@@ -273,6 +273,7 @@
             &.right{
                 height: 100%;
                 position: relative;
+                width: 45%;
                 &::before{
                     content: "";
                     position: absolute;
@@ -500,6 +501,7 @@
                                 justify-content: space-evenly;
                                 align-content: center;
                                 width: calc(100% - 227px);
+                                position: relative;
                             }
                         }
                         .bottom-control{
@@ -686,6 +688,12 @@
                     gap: 0;
                     width: 100%;
                     height: calc(100% / 4);
+                    .small-road{
+                        border-right: 1px solid #000000 !important;
+                        &:nth-last-child(6),&:nth-last-child(5),&:nth-last-child(4),&:nth-last-child(3),&:nth-last-child(2),&:nth-last-child(1){
+                            border-right: 0;
+                        }
+                    }
                     .small-road,.cock-roach{
                         display: flex;
                         flex-direction: column;

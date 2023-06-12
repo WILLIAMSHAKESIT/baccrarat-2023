@@ -388,6 +388,13 @@
                 }
             }
         }
+        &.side{
+            .modal-container{
+                .modal-body{
+                    height: 100%;
+                }
+            }
+        }
     }
     #contactModal{
         .text-center{
@@ -463,8 +470,14 @@
     .mobile{
         display: block;
     }
+    .mobile-flex{
+        display: flex;
+    }
     .desktop{
         display: none;
+    }
+    .w-full-desktop{
+        width: fit-content;
     }
     .shuffle-board{
         img{
@@ -479,6 +492,7 @@
     header{
         margin-bottom: 4px;
         padding: 10px !important;
+        background-color: rgba(9, 6, 0, 0.6);
         .logo{
             clip-path: unset;
             height: fit-content;
@@ -503,8 +517,11 @@
         }
     }
     .room{
-        height:calc(100% - 77px);
+        height:calc(100% - 44px);
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         &.h-full{
             height: 100%;
         }
@@ -516,6 +533,7 @@
                 width: 100%;
                 height: 100%;
                 &.left{
+                    width: 100%;
                     .count-down{
                         // left: 30px;
                         width: fit-content;
@@ -531,6 +549,7 @@
                     }
                 }
                 &.right{
+                    width: 100%;
                     .header{
                         .room-info{
                             .info{
@@ -568,6 +587,12 @@
                             transform: translateX(-50%);
                             height: 84%;
                             .area{
+                                .btn-chip{
+                                    width: 30px;
+                                    &::after{
+                                        font-size: 10px;
+                                    }
+                                }
                                 .area-info{
                                     .info{
                                         // display: none;
@@ -615,6 +640,7 @@
             }
         }
         .bottom{
+            order: 5;
             height: 117px;
             top: 0;
             background-color: #fff;
@@ -649,11 +675,8 @@
         .mobile-controls{
             display: block;
             height: fit-content;
-            position: absolute;
+            position: relative;
             width: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 8px;
             .control-area-mobile{
                 height: 100%;
                 display: flex;
@@ -746,10 +769,10 @@
         }
     }
     .multi-rooms{
-        height: calc(100% - 168px);
+        height: calc(100% - 117px);
         .control-menu{
             position: fixed;
-            bottom: 60px;
+            bottom: 4px;
             left: 50%;
             transform: translateX(-50%);
             .toggle-chips,a.btn{
@@ -991,7 +1014,7 @@
         }
     }
     .table-grid{
-        max-height: calc(100% - 210.5px);
+        max-height: calc(100% - 151.5px);
         .card-board{
             width: calc(100% / 2 - 8px) !important;
         }
@@ -1378,6 +1401,23 @@
                     .bottom-control{
                         .btns{
                             margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:500px){
+    .room {
+        .upper-most {
+            .upper-content-wrapper{
+                padding: 2px 1px;
+                .left-most{
+                    gap: 0;
+                    .stat-items{
+                        .item{
+                            flex-direction: column !important;
                         }
                     }
                 }

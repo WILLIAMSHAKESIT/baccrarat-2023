@@ -49,7 +49,6 @@ $(document).ready(function(){
     layout.createGrid()
     layout.handleDevicePrompt()
     //modal events
-    // console.log($('.area-info .info').siblings())
     $('.closeModal, .modal-wrapper').on('click',function(e){
         e.stopPropagation()
         layout.modalClose()
@@ -58,14 +57,29 @@ $(document).ready(function(){
         e.stopPropagation()
         return false
     })
-    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchmove',function(e){
+    $('.buttons-chips .chips .btn-chip, .control-area-mobile .chips .btn-chip').on('touchstart',function(e){
+        console.log('click')
+        e.stopImmediatePropagation()
+        layout.chipSelect(this)
+    })
+    $('.buttons-chips .chips, .control-area-mobile .chips, .top-control .chips').on('touchmove',function(e){
+        // e.stopPropagation()
         layout.handleTouchMove(this,e)
     })
-    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchstart',function(e){
+    $('.buttons-chips .chips, .control-area-mobile .chips,  .top-control .chips').on('touchstart',function(e){
         layout.handleTouchStart(this,e)
     })
     $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
         layout.handleTouchEnd()
+    })
+    $('.top-control .chips').on('dragstart',function(e){
+        layout.handleDragStart(this,e)
+    })
+    $('.top-control .chips').on('drag',function(e){
+        layout.handleDragMove(this,e)
+    })
+    $('.top-control .chips').on('dragend',function(e){
+        layout.handleDragEnd(this,e)
     })
     // $('.limit-toggle').on('touchstart',function(e){
     //     e.preventDefault()
@@ -227,7 +241,8 @@ $(document).ready(function(){
         }
     })
 
-    $(document).on('click','button.btn-chip',function(){
+    $(document).on('click','button.btn-chip',function(e){
+        e.stopPropagation()
        layout.chipSelect(this)
     })
 })
@@ -753,29 +768,26 @@ class Layout{
     toggleLimitDetails(_this){  
         $(_this).parent().parent().siblings('.card-body').find('.limit-details').toggle()
     }
-    handleTouchStart(_this,event){
-        this.startX = event.touches[0].clientX;
-        console.log(this.startX,'test')
+    handleDragStart(_this,event){
+        this.chipsOffset = 0
+        this.startX = event.clientX;
     }
-    handleTouchMove(_this,event){
+    handleDragMove(_this,event){
         this.touchMoveThis = _this
         if(this.startX < this.endX){
-            $(_this).css('left',`${this.chipOffset++}px`)
+            $(_this).css('left',`${this.chipsOffset++}px`)
         }else{
-            $(_this).css('left',`${this.chipOffset--}px`)
+            $(_this).css('left',`${this.chipsOffset--}px`)
         }
-        this.endX = event.touches[0].clientX;
+        this.endX = event.clientX;
     }
-    handleTouchEnd() {
-        $(this.touchMoveThis).css('left',`${0}px`)
-        this.chipOffset = 0
+    handleDragEnd() {
         const threshold = 50; // Minimum swipe distance threshold
 
         // Calculate the distance swiped
         const distance = this.endX - this.startX;
-
         if (Math.abs(distance) >= threshold) {
-            if (distance > 0) {
+            if (this.chipsOffset > 0) {
             // Swipe righthandleTouchMove
             console.log('Swipe right');
             this.nextChip()
@@ -783,6 +795,41 @@ class Layout{
             // Swipe left
             console.log('Swipe left');
             this.prevChip()
+            }
+        }
+        $(this.touchMoveThis).css('left',`${0}px`)
+    }
+    handleTouchStart(_this,event){
+        this.chipsOffset = 0
+        this.startX = event.touches[0].clientX;
+    }
+    handleTouchMove(_this,event){
+        this.touchMoveThis = _this
+        if(this.startX < this.endX){
+            $(_this).css('left',`${this.chipsOffset++}px`)
+        }else{
+            $(_this).css('left',`${this.chipsOffset--}px`)
+        }
+        this.endX = event.touches[0].clientX;
+    }
+    handleTouchEnd() {
+        $(this.touchMoveThis).css('left',`${0}px`)
+        const threshold = 100; // Minimum swipe distance threshold
+
+        // Calculate the distance swiped
+        const distance = this.endX - this.startX;
+
+        if(this.chipsOffset != 0){
+            if (Math.abs(distance) >= threshold) {
+                if (distance > 0) {
+                // Swipe righthandleTouchMove
+                console.log('Swipe right');
+                this.nextChip()
+                } else {
+                // Swipe left
+                console.log('Swipe left');
+                this.prevChip()
+                }
             }
         }
     }
