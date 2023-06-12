@@ -517,7 +517,7 @@
         }
     }
     .room{
-        height:calc(100% - 44px);
+        height:calc(100% - 51px);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -528,7 +528,7 @@
         .top{
             flex-direction: column;
             // height: calc(100% - 212px);
-            height: calc(100% - 289px);
+            height: calc(100% - 277px);
             >div{
                 width: 100%;
                 height: 100%;

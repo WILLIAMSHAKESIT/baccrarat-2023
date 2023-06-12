@@ -3565,7 +3565,7 @@ table.stripe tbody tr td:last-child {
     justify-content: space-between;
   }
   .room {
-    height: calc(100% - 44px);
+    height: calc(100% - 51px);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3576,7 +3576,7 @@ table.stripe tbody tr td:last-child {
   }
   .room .top {
     flex-direction: column;
-    height: calc(100% - 289px);
+    height: calc(100% - 277px);
   }
   .room .top > div {
     width: 100%;
