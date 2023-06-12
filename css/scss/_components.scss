@@ -4,6 +4,8 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    background: #09060099;
+    // margin-bottom: 4px;
     .user-info{
         font-size: 20px;
     }
@@ -49,6 +51,9 @@ header{
     .top-menu{
         display: flex;
         gap: 18px;
+    }
+    .toggle-menu{
+        font-size: 18px;
     }
 }
 .btn-circle{

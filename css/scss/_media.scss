@@ -460,6 +460,12 @@
     }
 }
 @media(max-width:935px){
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
     .shuffle-board{
         img{
             width: 68px;
@@ -471,7 +477,7 @@
         }
     }
     header{
-        margin-bottom: 0;
+        margin-bottom: 4px;
         padding: 10px !important;
         .logo{
             clip-path: unset;

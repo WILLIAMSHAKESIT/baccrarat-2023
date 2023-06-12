@@ -381,6 +381,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  background: rgba(9, 6, 0, 0.6);
 }
 header .user-info {
   font-size: 20px;
@@ -429,6 +430,9 @@ header .logo h1 {
 header .top-menu {
   display: flex;
   gap: 18px;
+}
+header .toggle-menu {
+  font-size: 18px;
 }
 
 .btn-circle {
@@ -3171,6 +3175,14 @@ table.stripe tbody tr td:last-child {
   color: #F70849 !important;
 }
 
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
 @media all and (orientation: landscape) {
   body.mobile > div:not(.device-prompt) {
     display: none;
@@ -3470,6 +3482,12 @@ table.stripe tbody tr td:last-child {
   }
 }
 @media (max-width: 935px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
   .shuffle-board img {
     width: 68px;
   }
@@ -3477,7 +3495,7 @@ table.stripe tbody tr td:last-child {
     font-size: 24px;
   }
   header {
-    margin-bottom: 0;
+    margin-bottom: 4px;
     padding: 10px !important;
   }
   header .logo {
