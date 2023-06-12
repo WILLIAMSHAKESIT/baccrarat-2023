@@ -1454,9 +1454,9 @@ table{
             height: calc(100% / 4);
             .small-road{
                 border-right: 1px solid #000000 !important;
-                &:nth-last-child(6),&:nth-last-child(5),&:nth-last-child(4),&:nth-last-child(3),&:nth-last-child(2),&:nth-last-child(1){
-                    border-right: 0;
-                }
+                // &:nth-last-child(6),&:nth-last-child(5),&:nth-last-child(4),&:nth-last-child(3),&:nth-last-child(2),&:nth-last-child(1){
+                //     border-right: 0;
+                // }
             }
             .small-road,.cock-roach{
                 display: flex;

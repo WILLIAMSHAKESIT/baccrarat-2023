@@ -72,13 +72,13 @@ $(document).ready(function(){
     $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
         layout.handleTouchEnd()
     })
-    $('.top-control .chips').on('dragstart',function(e){
+    $('.buttons-chips .chips, .top-control .chips').on('dragstart',function(e){
         layout.handleDragStart(this,e)
     })
-    $('.top-control .chips').on('drag',function(e){
+    $('.buttons-chips .chips, .top-control .chips').on('drag',function(e){
         layout.handleDragMove(this,e)
     })
-    $('.top-control .chips').on('dragend',function(e){
+    $('.buttons-chips .chips, .top-control .chips').on('dragend',function(e){
         layout.handleDragEnd(this,e)
     })
     // $('.limit-toggle').on('touchstart',function(e){
@@ -835,9 +835,9 @@ class Layout{
     }
     handleDevicePrompt(){
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            $('html,body').addClass('mobile')
+            $('html.not-mobile,body.not-mobile').addClass('mobile')
         }else{
-            $('html,body').removeClass('mobile')
+            $('html.not-mobile,body.not-mobile').removeClass('mobile')
         }
     }
 }

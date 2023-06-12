@@ -1761,9 +1761,6 @@ table.stripe tbody tr td:last-child {
 .results-wrapper-card .small-grid .bottom-small .small-road {
   border-right: 1px solid #000000 !important;
 }
-.results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(6), .results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(5), .results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(4), .results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(3), .results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(2), .results-wrapper-card .small-grid .bottom-small .small-road:nth-last-child(1) {
-  border-right: 0;
-}
 .results-wrapper-card .small-grid .bottom-small .small-road, .results-wrapper-card .small-grid .bottom-small .cock-roach {
   display: flex;
   flex-direction: column;
@@ -2960,9 +2957,6 @@ table.stripe tbody tr td:last-child {
 }
 .room .bottom .results-wrapper .small-grid .bottom-small .small-road {
   border-right: 1px solid #000000 !important;
-}
-.room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(6), .room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(5), .room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(4), .room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(3), .room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(2), .room .bottom .results-wrapper .small-grid .bottom-small .small-road:nth-last-child(1) {
-  border-right: 0;
 }
 .room .bottom .results-wrapper .small-grid .bottom-small .small-road, .room .bottom .results-wrapper .small-grid .bottom-small .cock-roach {
   display: flex;
