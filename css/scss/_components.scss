@@ -618,7 +618,7 @@ select{
         height: fit-content;
         &.lg{
             min-width: calc(100% - 520px);
-            height: calc(100% - 135px);
+            height: fit-content;
         }
         .modal-header{
             padding: 10px 15px;
@@ -634,10 +634,10 @@ select{
             padding: 20px;
             padding-top: 0;
             // height: calc(100% - 60px);
-            height: 50%;
+            max-height: 100%;
             .main-content{  
                 overflow: auto;
-                max-height: calc(100% - 150px);
+                max-height: calc(100vh - 297px);
                 &.no-max{
                     max-height:fit-content;
                     overflow: unset;
@@ -686,7 +686,7 @@ select{
             .modal-body{
                 .main-content{  
                     padding-right: 10px;
-                    max-height: calc(100% - 60px);
+                    max-height: calc(100% - 2px);
                 }
             }
         }
@@ -741,7 +741,7 @@ table{
     align-items: center;
     gap:5px;
     position: absolute;
-    bottom: 10px;
+    bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
     a{

@@ -40,8 +40,9 @@
                     <i class="fa-solid fa-user  mr-1"></i>
                     John Doe
                 </div>
-                <div class="user-name font-bold">
-                    <i class="fa-solid fa-won-sign mr-1"></i>
+                <div class="user-name font-bold flex items-center">
+                    <!-- <i class="fa-solid fa-won-sign mr-1"></i> -->
+                    <span class="icon icon-yuan icon-md"></span>
                     100,000,000
                 </div>
             </div>
@@ -201,7 +202,7 @@
                 </div> -->
                 <div class="body">
                     <div class="bet-area">
-                        <div class="area p-pair win">
+                        <div class="area p-pair win" data-area="p-pair">
                             <div class="area-info">
                                 <div class="info">
                                     <div>
@@ -213,14 +214,14 @@
                                         <span>0</span>
                                     </div>
                                     <div>
-                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span class="icon icon-yuan icon-sm"></span>
                                         <span>0</span>
                                     </div>
                                 </div>
                                 <span class="text light-blue">P.PAIR</span>
                             </div>
                         </div>
-                        <div class="area tie">
+                        <div class="area tie" data-area="tie">
                             <div class="area-info">
                                 <div class="info">
                                     <div>
@@ -239,7 +240,7 @@
                                 <span class="text green">TIE</span>
                             </div>
                         </div>
-                        <div class="area b-pair">
+                        <div class="area b-pair" data-area="b-pair">
                             <div class="area-info">
                                 <div class="info">
                                     <div>
@@ -258,7 +259,7 @@
                                 <span class="text red">B.PAIR</span>
                             </div>
                         </div>
-                        <div class="area player">
+                        <div class="area player" data-area="player">
                             <div class="area-info">
                                 <div class="info">
                                     <div>
@@ -277,7 +278,7 @@
                                 <span class="text light-blue">PLAYER</span>
                             </div>
                         </div>
-                        <div class="area banker">
+                        <div class="area banker" data-area="banker">
                             <div class="area-info">
                                 <div class="info">
                                     <div>
@@ -303,12 +304,12 @@
                                 <i class="fa-solid fa-angle-left" id="prevChip"></i>
                             </a>
                             <div class="chips" draggable="true">
-                                <button class="btn-chip chip-1k" value="1k" data-val="1k"></button>
-                                <button class="btn-chip chip-5k" value="5k" data-val="5k"></button>
-                                <button class="btn-chip chip-10k" value="10k" data-val="10k"></button>
-                                <button class="btn-chip chip-50k" value="50k" data-val="50k"></button>
-                                <button class="btn-chip chip-100k" value="100k" data-val="100k"></button>
-                                <button class="btn-chip chip-500k" value="500k" data-val="500k"></button>
+                                <button class="btn-chip chip-1k" draggable="true" value="1k" data-val="1k"></button>
+                                <button class="btn-chip chip-5k" draggable="true" value="5k" data-val="5k"></button>
+                                <button class="btn-chip chip-10k" draggable="true" value="10k" data-val="10k"></button>
+                                <button class="btn-chip chip-50k" draggable="true" value="50k" data-val="50k"></button>
+                                <button class="btn-chip chip-100k" draggable="true" value="100k" data-val="100k"></button>
+                                <button class="btn-chip chip-500k" draggable="true" value="500k" data-val="500k"></button>
                             </div>
                             <a href="#" class="nextChip">
                                 <i class="fa-solid fa-angle-right" id="nextChip"></i>

@@ -48,6 +48,10 @@ $(document).ready(function(){
     layout.logoAnimation()
     layout.createGrid()
     layout.handleDevicePrompt()
+    // disable right click
+    // document.addEventListener("contextmenu", (event) => {
+    //     event.preventDefault();
+    // });
     //modal events
     $('.closeModal, .modal-wrapper').on('click',function(e){
         e.stopPropagation()
@@ -80,6 +84,21 @@ $(document).ready(function(){
     })
     $('.buttons-chips .chips, .top-control .chips').on('dragend',function(e){
         layout.handleDragEnd(this,e)
+    })
+    $('.buttons-chips .chips, .top-control .chips .btn-chip').on('dragstart',function(e){
+        $('.buttons-chips .chips, .top-control .chips').attr('draggable',false)
+        e.stopPropagation()
+    })
+    $('.buttons-chips .chips, .top-control .chips .btn-chip').on('drag',function(e){
+        $('.buttons-chips .chips, .top-control .chips').attr('draggable',false)
+        $('.buttons-chips .chips, .top-control .chips').css('left','0')
+        $('.buttons-chips .chips, .top-control .chips').css('right','0')
+        e.stopPropagation()
+    })
+    $('.bet-area .area').mouseenter(function(){
+        if(layout.selectedChip !== null){
+            layout.detectParentDiv(this)
+        }
     })
     // $('.limit-toggle').on('touchstart',function(e){
     //     e.preventDefault()
@@ -211,7 +230,6 @@ $(document).ready(function(){
             }
         }
     })
-
     $('#soundSettings :checkbox').on('click',function(){
         layout.setupSound(this)
     })
@@ -719,14 +737,14 @@ class Layout{
         $('.chips').html('')
         this.chips.forEach((el,index)=>{
             if(index<6)
-                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInRight" value="${el}" data-val="${el}"></button>`)
+                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInRight" draggable="true" value="${el}" data-val="${el}"></button>`)
         })
     }
     nextChip(){
         $('.chips').html('')
         this.chips.forEach((el,index)=>{
             if(index>3)
-                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInLeft" value="${el}" data-val="${el}"></button>`)
+                $('.chips').append(`<button class="btn-chip chip-${el} animate__animated animate__fadeInLeft" draggable="true" value="${el}" data-val="${el}"></button>`)
         })
     }
     customAlert(){
@@ -835,9 +853,18 @@ class Layout{
     }
     handleDevicePrompt(){
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            $('html.not-mobile,body.not-mobile').addClass('mobile')
+            $('html.not-multi,body.not-multi').addClass('mobile')
         }else{
-            $('html.not-mobile,body.not-mobile').removeClass('mobile')
+            $('html.not-multi,body.not-multi').removeClass('mobile')
         }
+    }
+    detectParentDiv(_this){
+        let chip = JSON.parse(localStorage.getItem("selectedChip"))
+        this.chipStack = this.chipStack+.4
+        $('.chips .btn-chip').removeClass('active')
+        this.selectedChip = null
+        $(_this).append(`<div class="btn-chip chip-${chip}" style="position:absolute;left:50%;top:${75 - this.chipStack}%" value="${chip.chipValue}"></div>`)
+        $(_this).append(`<a style="position:absolute;left:50%;top:${75 - this.chipStack}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
+
     }
 }

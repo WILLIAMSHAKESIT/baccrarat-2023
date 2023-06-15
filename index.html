@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="not-multi">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,14 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-confirm.min.js"></script>
 </head>
-<body>
+<body class="not-multi">
+    <div class="device-prompt">
+        <div class="prompt-content">
+            <h1 class="small"></h1>
+            <img src="img/elements/rotate-device.png" class="animate__animated animate__rotateInDownLeft">
+            <span>Please rotate your device</span>
+        </div>
+    </div>
     <header class="p-5">
         <div class="user-info flex  gap-5">
             <div class="user-name font-bold">
@@ -412,11 +419,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="mb-4 flex ml-auto w-fit gap-10">
+                <div class="mb-4 flex items-center ml-auto w-fit gap-5">
                     <div class="flex items-center gap-2">
                         <label>From</label>
                         <input type="date" class="input">
                     </div>
+                    <span class="font-bold">-</span>
                     <div class="flex items-center gap-2">
                         <label>To</label>
                         <input type="date" class="input">
@@ -435,179 +443,179 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <td colspan="100" class="text-center">
                                     <p class="text-center w-full p-5">No available items to show</p>
                                 </td>
-                            </tr>
-                            <!-- <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
-                            </tr>
-                            <tr>
-                                <td>2022-07-11 11:26:30</td>
-                                <td>ROUND-01</td>
-                                <td>Normal</td>
-                                <td>Tie</td>
-                                <td>100,000,000</td>
                             </tr> -->
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>2022-07-11 11:26:30</td>
+                                <td>ROUND-01</td>
+                                <td>Normal</td>
+                                <td>Tie</td>
+                                <td>100,000,000</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

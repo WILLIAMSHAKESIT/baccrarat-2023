@@ -27,3 +27,22 @@
 .desktop{
     display: block;
 }
+
+
+.icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    display: block;
+    &.icon-md{
+        height: 14px;
+        width: 27px !important;
+    }
+    &.icon-sm{
+        height: 13px;
+        width: 19px !important;
+    }
+    &.icon-yuan{
+        background-image: url(../img/icons/yuan.svg);
+    }
+}

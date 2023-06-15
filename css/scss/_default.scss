@@ -328,6 +328,7 @@ html,body {
   background-image: url(../img/bg/main_bg.png);
   background-size:cover;
   background-position: center;
+  user-select: none !important;
   .device-prompt{
     display: none;
   }

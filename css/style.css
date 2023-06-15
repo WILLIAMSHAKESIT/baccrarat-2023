@@ -234,6 +234,9 @@ html, body {
   background-image: url(../img/bg/main_bg.png);
   background-size: cover;
   background-position: center;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
 }
 html .device-prompt, body .device-prompt {
   display: none;
@@ -970,7 +973,8 @@ select option {
 }
 .modal-wrapper .modal-container.lg {
   min-width: calc(100% - 520px);
-  height: calc(100% - 135px);
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .modal-wrapper .modal-container .modal-header {
   padding: 10px 15px;
@@ -985,11 +989,11 @@ select option {
 .modal-wrapper .modal-container .modal-body {
   padding: 20px;
   padding-top: 0;
-  height: 50%;
+  max-height: 100%;
 }
 .modal-wrapper .modal-container .modal-body .main-content {
   overflow: auto;
-  max-height: calc(100% - 150px);
+  max-height: calc(100vh - 297px);
 }
 .modal-wrapper .modal-container .modal-body .main-content.no-max {
   max-height: -moz-fit-content;
@@ -1037,7 +1041,7 @@ select option {
 }
 .modal-wrapper.side .modal-container .modal-body .main-content {
   padding-right: 10px;
-  max-height: calc(100% - 60px);
+  max-height: calc(100% - 2px);
 }
 
 table.stripe thead {
@@ -1078,7 +1082,7 @@ table.stripe tbody tr td:last-child {
   align-items: center;
   gap: 5px;
   position: absolute;
-  bottom: 10px;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -3087,7 +3091,7 @@ table.stripe tbody tr td:last-child {
 }
 .room.multi .header .room-info .info {
   margin-right: unset;
-  font-size: 10px;
+  font-size: 8px;
 }
 .room.multi .header .logo {
   width: 71px;
@@ -3210,6 +3214,24 @@ table.stripe tbody tr td:last-child {
 
 .desktop {
   display: block;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: block;
+}
+.icon.icon-md {
+  height: 14px;
+  width: 27px !important;
+}
+.icon.icon-sm {
+  height: 13px;
+  width: 19px !important;
+}
+.icon.icon-yuan {
+  background-image: url(../img/icons/yuan.svg);
 }
 
 @media all and (orientation: landscape) {
@@ -3514,6 +3536,10 @@ table.stripe tbody tr td:last-child {
   }
 }
 @media (max-width: 935px) {
+  .icon.icon-sm {
+    height: 8px;
+    width: 14px !important;
+  }
   .mobile {
     display: block;
   }
@@ -3795,7 +3821,7 @@ table.stripe tbody tr td:last-child {
     top: 46%;
   }
   .room.multi .mobile-controls {
-    bottom: 0px;
+    margin: 5px 0;
   }
   .multi-rooms {
     height: calc(100% - 117px);
@@ -3950,12 +3976,13 @@ table.stripe tbody tr td:last-child {
     gap: 0;
     margin: unset;
     margin-bottom: 10px;
-    padding: 0 10px;
+    padding: 0 2px;
   }
   .modal-wrapper#historyModal .modal-container .modal-body > div:first-child div {
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .modal-wrapper#historyModal .modal-container .modal-body > div:first-child div input {
     width: 90%;
@@ -3964,7 +3991,7 @@ table.stripe tbody tr td:last-child {
     height: 33px;
   }
   .modal-wrapper#historyModal .modal-container .modal-body .main-content {
-    max-height: 400px;
+    max-height: calc(100vh - 289px);
     font-size: 10px;
     margin-bottom: 51px;
   }
