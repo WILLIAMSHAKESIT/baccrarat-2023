@@ -61,7 +61,22 @@
         width: 100%;
         background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
         left: 50%;
-        bottom: 0;
+        bottom: -2px;
+        transform: translateX(-50%);    
+    }
+}
+
+.border-fancy-top{
+    position: relative;
+    &::after{
+        content: "";
+        left: 0;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+        left: 50%;
+        top: -2px;
         transform: translateX(-50%);    
     }
 }

@@ -389,7 +389,7 @@ select{
     }
 }
 .card-board{
-    background: linear-gradient(178deg,  #B71010, #480000);
+    background: linear-gradient(114deg,  #6d0000,#c52a2a, #7b0000);
     // border: 1px solid rgb(162 131 85 / 65%);
     height: -moz-fit-content;
     height: fit-content;
@@ -653,7 +653,7 @@ select{
             width: 100%;
             height: 235px;
             border-radius: 5px;
-            background: #231309;
+            background: #350002;
             box-shadow: inset 0 0 6px #000;
             position: relative;
             .screw{
@@ -1785,6 +1785,7 @@ table{
     }
 }
 
+
 .loading-modal{
     display: flex;
     align-items: center;
@@ -2041,7 +2042,7 @@ table{
     border-radius: 50%;
     height: 37px;
     width: 37px;
-    background-color: rgb(44 31 13);
+    background-color: rgb(89 0 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2098,5 +2099,26 @@ table{
             text-align: center;
             font-style: italic;
         }
+    }
+}
+
+
+.fancy-border{
+    position: relative;
+    background: linear-gradient(272deg, #bc2626, #ff6262, #c12e2e);
+    >*{
+        z-index: 100;
+        position: relative;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(360deg, #3e0003, #5d0f0f);
+        width: calc(100% - 7px);
+        height: calc(100% - 7px);
+        box-shadow: 0 0 5px #000;
     }
 }
