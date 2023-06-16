@@ -24,6 +24,16 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
     <script src="js/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <script>
+       
+          $( '#TestChip' ).draggable();
+
+ 
+        </script>
+
 </head>
 <body class="not-multi">
     <div class="device-prompt">
@@ -522,6 +532,7 @@
                 </div>
             </div> -->
         </div>
+
         <div class="mobile-controls">
             <div class="control-area-mobile">
                 <div class="top-control mx-auto">
@@ -530,7 +541,7 @@
                     </a>
                     <div class="chips">
                         <div class="chips-inner">
-                            <button class="btn-chip chip-1k" draggable="true" value="1k" data-val="1k"></button>
+                            <button class="btn-chip chip-1k" draggable="true" value="1k" data-val="1k"   id="TestChip" ondragstart="dragStart(event)"></button>
                             <button class="btn-chip chip-5k" draggable="true" value="5k" data-val="5k"></button>
                             <button class="btn-chip chip-10k" draggable="true" value="10k" data-val="10k"></button>
                             <button class="btn-chip chip-50k" draggable="true" value="50k" data-val="50k"></button>
@@ -556,6 +567,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            function dragStart(event) {
+            event.dataTransfer.setData("Text", event.target.id);
+           
+            console.log("Test")
+        }
+    </script>
     </div>
     <!-- <div class="mobile-menu">
         <button class="btn bnt-primary toggle-tables">
@@ -1344,6 +1362,55 @@
                         </div>
                     </div>
                 </div>
+                <script>
+                    function drop(event) {
+                               
+                    const targetElement = document.getElementById('TestChip');
+                    console.log(targetElement, "ZDXZXCCZCX")
+                    // Create a touch event+
+                            // Get the current position of the mouse cursor+
+
+                    var touch = event.changedTouches[0];  
+                    console.log(touch,"touch")
+                    var lastTouchX =  touch.clientX;
+                    var lastTouchY = touch.clientY;
+                    console.log(lastTouchX)
+                    const touchEvent = new TouchEvent('click', {
+                    bubbles: true,
+                    cancelable: true,
+                    touches: [
+                        new Touch({
+                        identifier: Date.now(),
+                        target: targetElement,
+                        clientX: lastTouchX,
+                        clientY: lastTouchY,
+                        pageX: lastTouchX,
+                        pageY: lastTouchY,
+                        }),
+                    ],
+                    changedTouches: [
+                        new Touch({
+                        identifier: Date.now(),
+                        target: targetElement,
+                        clientX: lastTouchX,
+                        clientY: lastTouchY,
+                        pageX: lastTouchX,
+                        pageY: lastTouchY,
+                        }),
+                    ],
+                    });
+                    // Find the element at the mouse position
+                    var element = document.elementFromPoint(lastTouchX, lastTouchY);
+
+                    // Dispatch the click event on the element
+                    if (element) {
+                        console.log(element)
+                    element.dispatchEvent(touchEvent);
+                }
+                    //Dispatch the touch event to trigger it at the last touch location
+                    targetElement.dispatchEvent(touchEvent);
+                    }
+                </script>
                 <div class="legend-mobile">
                     <div class="right-indi">
                         <div>
@@ -2330,7 +2397,7 @@
                             </a>
                             <div class="chips">
                                 <div class="chips-inner">
-                                    <button class="btn-chip chip-1k" draggable="true" value="1k" data-val="1k"></button>
+                                    <button class="btn-chip chip-1k" draggable="true" value="1k" data-val="1k" touchend="true"></button>
                                     <button class="btn-chip chip-5k" draggable="true" value="5k" data-val="5k"></button>
                                     <button class="btn-chip chip-10k" draggable="true" value="10k" data-val="10k"></button>
                                     <button class="btn-chip chip-50k" draggable="true" value="50k" data-val="50k"></button>
@@ -3034,5 +3101,6 @@
         </div>
     </div>
     <script src="js/main.js" type="text/javascript"></script>
+
 </body>
 </html>

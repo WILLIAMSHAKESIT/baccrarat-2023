@@ -83,15 +83,118 @@ $(document).ready(function(){
         e.stopImmediatePropagation()
         layout.chipSelect(this)
     })
-    // $('.buttons-chips .chips, .control-area-mobile .chips, .top-control .chips').on('touchmove',function(e){
-    //     // e.stopPropagation()
-    //     layout.handleTouchMove(this,e)
-    // })
-    // $('.buttons-chips .chips, .control-area-mobile .chips,  .top-control .chips').on('touchstart',function(e){
-    //     layout.handleTouchStart(this,e)
-    // })
+    $('.buttons-chips .chips, .control-area-mobile .chips, .top-control .chips').on('touchmove',function(e){
+        console.log("MOVING")
+        layout.isDragging = true
+        e.stopPropagation() 
+       layout.handleTouchMove(this,e)
+    })
+    $('.buttons-chips .chips, .control-area-mobile .chips,  .top-control .chips').on('touchstart',function(e){
+        console.log("START")
+      //  layout.handleTouchStart(this,e)
+    })
+    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(e){
+        console.log("END")
+        console.log(e,"EEEEEEEE")
+       
+        
+        const targetElement = document.getElementById('TestChip');
+        console.log(targetElement, "ZDXZXCCZCX")
+        // Create a touch event+
+                // Get the current position of the mouse cursor+
+
+        var touch = e.changedTouches[0];  
+        console.log(touch,"touch")
+        var lastTouchX =  touch.clientX;
+        var lastTouchY = touch.clientY;
+        console.log(lastTouchX)
+        const touchEvent = new TouchEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        touches: [
+            new Touch({
+            identifier: Date.now(),
+            target: targetElement,
+            clientX: lastTouchX,
+            clientY: lastTouchY,
+            pageX: lastTouchX,
+            pageY: lastTouchY,
+            }),
+        ],
+        changedTouches: [
+            new Touch({
+            identifier: Date.now(),
+            target: targetElement,
+            clientX: lastTouchX,
+            clientY: lastTouchY,
+            pageX: lastTouchX,
+            pageY: lastTouchY,
+            }),
+        ],
+        });
+        // Find the element at the mouse position
+        var element = document.elementFromPoint(lastTouchX, lastTouchY);
+
+        // Dispatch the click event on the element
+        if (element) {
+            console.log(element)
+        element.dispatchEvent(touchEvent);
+    }
+        // Dispatch the touch event to trigger it at the last touch location
+        //targetElement.dispatchEvent(touchEvent);
+
+    })
+
+    // function mobileCLick(){
+    //         const targetElement = document.getElementById('TestChip');
+    //         console.log(targetElement, "ZDXZXCCZCX")
+    //         // Create a touch event+
+    //                 // Get the current position of the mouse cursor+
+
+    //         var touch = e.touches[0];   
+    //         console.log(touch,"touch")
+    //         var lastTouchX =  touch.clientX;
+    //         var lastTouchY = touch.clientY;
+    //         console.log(lastTouchX)
+    //         const touchEvent = new TouchEvent('touchstart', {
+    //         bubbles: true,
+    //         cancelable: true,
+    //         touches: [
+    //             new Touch({
+    //             identifier: Date.now(),
+    //             target: targetElement,
+    //             clientX: lastTouchX,
+    //             clientY: lastTouchY,
+    //             pageX: lastTouchX,
+    //             pageY: lastTouchY,
+    //             }),
+    //         ],
+    //         changedTouches: [
+    //             new Touch({
+    //             identifier: Date.now(),
+    //             target: targetElement,
+    //             clientX: lastTouchX,
+    //             clientY: lastTouchY,
+    //             pageX: lastTouchX,
+    //             pageY: lastTouchY,
+    //             }),
+    //         ],
+    //         });
+
+    //         // Dispatch the touch event to trigger it at the last touch location
+    //         targetElement.dispatchEvent(touchEvent);
+    //     }
+    
     // $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
-    //     layout.handleTouchEnd()
+    //     console.log("END")
+    //     $('.bet-area .area').mouseenter(function(){
+            
+    //             layout.isDragging = false
+    //             layout.detectParentDiv(this)
+    //             console.log("ZZZ")
+           
+    //     })
+    //    // layout.handleTouchEnd()
     // })
     // $('.buttons-chips .chips, .top-control .chips').on('dragstart',function(e){
     //     layout.handleDragStart(this,e)
@@ -286,12 +389,36 @@ $(document).ready(function(){
         }
     })
 
+    
     $(document).on('click','button.btn-chip',function(e){
         e.stopPropagation()
        layout.chipSelect(this)
     })
+
+      
+
+    // window.onload = function() {
+    //     // find the element that you want to drag.
+    //     var box = document.getElementById('TestChip');
+        
+    //     /* listen to the touchmove event,
+    //     every time it fires, grab the location
+    //     of touch and assign it to box */
+        
+    //     box.addEventListener('touchmove', function(e) {
+    //         console.log("EYYYY")
+    //       // grab the location of touch
+    //       var touchLocation = e.targetTouches[0];
+          
+    //       // assign box new coordinates based on the touch.
+    //       box.style.left = touchLocation.pageX + 'px';
+    //       box.style.top = touchLocation.pageY + 'px';
+    //     })
+        
+    //   }
     
 })
+   
 
 
 class CountdownTimer {

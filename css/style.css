@@ -2730,6 +2730,7 @@ table.stripe tbody tr td:last-child {
   font-weight: 700;
 }
 .room .top > div.right .body .bet-area .area .btn-chip {
+  position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
