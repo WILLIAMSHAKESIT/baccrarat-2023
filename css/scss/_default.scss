@@ -326,14 +326,18 @@ html,body {
   height: 100%;
   overflow: hidden;
   user-select: none !important;
+  background: radial-gradient(circle, rgb(112 9 9) 0%, rgb(52 1 2) 100%);
   &::before{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(../img/bg/main_bg.jpg);
+    background-image: url(../img/bg/main_bg.png);
     background-size:cover;
     background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
   .device-prompt{
     display: none;
@@ -343,6 +347,11 @@ i{
   background: -webkit-linear-gradient(#FF9700, #F7FF00,#FF9700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  &.icon-gold{
+    background:linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
 }
 ::-webkit-scrollbar {
   width: 10px;
