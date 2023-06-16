@@ -23,6 +23,15 @@ if (progress != 0) {
 }
 }
 
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    // $(event.target).addClass('torn')
+}
+
 function setProgress() {
 document.getElementsByClassName("progress-spinner")[0].style.background =
     "conic-gradient(rgb(0, 219, 57) " +
@@ -48,11 +57,20 @@ $(document).ready(function(){
     layout.logoAnimation()
     layout.createGrid()
     layout.handleDevicePrompt()
+
+    layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
+    layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
+    layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
+    layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
+
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
     //     event.preventDefault();
     // });
     //modal events
+    $('body').click(function(){
+        $('.btn-chip').removeClass('active')
+    })
     $('.closeModal, .modal-wrapper').on('click',function(e){
         e.stopPropagation()
         layout.modalClose()
@@ -62,44 +80,50 @@ $(document).ready(function(){
         return false
     })
     $('.buttons-chips .chips .btn-chip, .control-area-mobile .chips .btn-chip').on('touchstart',function(e){
-        console.log('click')
         e.stopImmediatePropagation()
         layout.chipSelect(this)
     })
-    $('.buttons-chips .chips, .control-area-mobile .chips, .top-control .chips').on('touchmove',function(e){
-        // e.stopPropagation()
-        layout.handleTouchMove(this,e)
-    })
-    $('.buttons-chips .chips, .control-area-mobile .chips,  .top-control .chips').on('touchstart',function(e){
-        layout.handleTouchStart(this,e)
-    })
-    $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
-        layout.handleTouchEnd()
-    })
-    $('.buttons-chips .chips, .top-control .chips').on('dragstart',function(e){
-        layout.handleDragStart(this,e)
-    })
-    $('.buttons-chips .chips, .top-control .chips').on('drag',function(e){
-        layout.handleDragMove(this,e)
-    })
-    $('.buttons-chips .chips, .top-control .chips').on('dragend',function(e){
-        layout.handleDragEnd(this,e)
-    })
+    // $('.buttons-chips .chips, .control-area-mobile .chips, .top-control .chips').on('touchmove',function(e){
+    //     // e.stopPropagation()
+    //     layout.handleTouchMove(this,e)
+    // })
+    // $('.buttons-chips .chips, .control-area-mobile .chips,  .top-control .chips').on('touchstart',function(e){
+    //     layout.handleTouchStart(this,e)
+    // })
+    // $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(){
+    //     layout.handleTouchEnd()
+    // })
+    // $('.buttons-chips .chips, .top-control .chips').on('dragstart',function(e){
+    //     layout.handleDragStart(this,e)
+    // })
+    // $('.buttons-chips .chips, .top-control .chips').on('drag',function(e){
+    //     layout.handleDragMove(this,e)
+    // })
+    // $('.buttons-chips .chips, .top-control .chips').on('dragend',function(e){
+    //     layout.handleDragEnd(this,e)
+    // })
     $('.buttons-chips .chips, .top-control .chips .btn-chip').on('dragstart',function(e){
+        layout.isDragging = true
         $('.buttons-chips .chips, .top-control .chips').attr('draggable',false)
         e.stopPropagation()
     })
     $('.buttons-chips .chips, .top-control .chips .btn-chip').on('drag',function(e){
+        $(this).css('cursor','drag')
         $('.buttons-chips .chips, .top-control .chips').attr('draggable',false)
         $('.buttons-chips .chips, .top-control .chips').css('left','0')
         $('.buttons-chips .chips, .top-control .chips').css('right','0')
         e.stopPropagation()
     })
-    $('.bet-area .area').mouseenter(function(){
-        if(layout.selectedChip !== null){
-            layout.detectParentDiv(this)
-        }
+
+    $('.buttons-chips .chips, .top-control .chips .btn-chip').on('dragend',function(e){
+        $('.bet-area .area').mouseenter(function(){
+            if(layout.selectedChip !== null && layout.isDragging){
+                layout.isDragging = false
+                layout.detectParentDiv(this)
+            }
+        })
     })
+    
     // $('.limit-toggle').on('touchstart',function(e){
     //     e.preventDefault()
     //     layout.showLimitDetails(this)
@@ -235,11 +259,14 @@ $(document).ready(function(){
     })
     //room chips replace
     $('.prevChip').on('click',function(){
-        layout.prevChip()
+        // $('.chips').scrollLeft(0)
+        $('.chips').animate({scrollLeft:0},800)
+        // layout.prevChip()
     })
 
     $('.nextChip').on('click',function(){
-        layout.nextChip()
+        $('.chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
+        // layout.nextChip()
     })
 
     $('.btn, input, select, .card-board').on('click',function(){
@@ -263,6 +290,7 @@ $(document).ready(function(){
         e.stopPropagation()
        layout.chipSelect(this)
     })
+    
 })
 
 
@@ -359,6 +387,7 @@ class CountdownTimer {
     }
 }
 
+
 class Layout{
     constructor(){
         this.fullScreen = document.documentElement, 
@@ -384,7 +413,14 @@ class Layout{
         this.chipsOffset = 0,
         this.startX = 0,
         this.endX = 0,
-        this.touchMoveThis =  null
+        this.touchMoveThis =  null,
+        this.scrollContainer = document.querySelector('.chips');
+        this.startY = null;
+        this.startX = null;
+        this.scrollLeft = null;
+        this.scrollTop = null;
+        this.isDown = null;
+        this.isDragging =false;
     }
     closeFullscreen() {
         if (document.exitFullscreen) {
@@ -866,5 +902,33 @@ class Layout{
         $(_this).append(`<div class="btn-chip chip-${chip}" style="position:absolute;left:50%;top:${75 - this.chipStack}%" value="${chip.chipValue}"></div>`)
         $(_this).append(`<a style="position:absolute;left:50%;top:${75 - this.chipStack}%" class="btn-chip chip-${chip.chipNo}" value="${chip.chipValue}"></a>`)
 
+    }
+    mouseMove(e){
+        if(this.isDown){
+          e.preventDefault();
+          //Move vertcally
+          const y = e.pageY - this.scrollContainer.offsetTop;
+          const walkY = y - this.startY;
+          this.scrollContainer.scrollTop = this.scrollTop - walkY;
+      
+          //Move Horizontally
+          const x = e.pageX - this.scrollContainer.offsetLeft;
+          const walkX = x - this.startX;
+          this.scrollContainer.scrollLeft = this.scrollLeft - walkX;
+      
+        }
+    }
+    mouseIsDown(e){
+        this.isDown = true;
+        this.startY = e.pageY - this.scrollContainer.offsetTop;
+        this.startX = e.pageX - this.scrollContainer.offsetLeft;
+        this.scrollLeft = this.scrollContainer.scrollLeft;
+        this.scrollTop = this.scrollContainer.scrollTop; 
+    }
+    mouseLeave(e){
+        this.isDown = false;
+    }
+    mouseUp(e){
+        this.isDown = false;
     }
 }

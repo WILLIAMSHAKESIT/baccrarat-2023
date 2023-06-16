@@ -75,17 +75,23 @@
                             .top-control{
                                 .chips{
                                     width: calc(100% - 100px);
-                                    .btn-chip{
-                                        width: 57px;
-                                        height: 57px;
-                                        &.active{
-                                            &::before{
-                                                width: 73px;
-                                                height: 66px;
+                                    .chips-inner{
+                                        width: 743px;
+                                        padding: 0;
+                                        .btn-chip{
+                                            width: 57px;
+                                            height: 57px;
+                                            &.active{
+                                                &::before{
+                                                    // width: 55px;
+                                                    // height: 45px;
+                                                    width: 100%;
+                                                    height: 79%;
+                                                }
                                             }
-                                        }
-                                        &::after{
-                                            font-size: 15px;
+                                            &::after{
+                                                font-size: 15px;
+                                            }
                                         }
                                     }
                                 }
@@ -326,8 +332,10 @@
                                         }
                                         &.active{
                                             &::before{
-                                                width: 52px;
-                                                height: 46px;
+                                                // width: 52px;
+                                                // height: 46px;
+                                                width: 100%;
+                                                height: 79%;
                                             }
                                         }
                                     }
@@ -746,22 +754,29 @@
                     }
                     .chips{
                         width: calc(100% - 14px);
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-around;
-                        position: relative;
-                        .btn-chip{
-                            width: 39px;
-                            height: 39px;
-                            &.active{
-                                &::before{
-                                    width: 42px;
-                                    height: 37px;
+                        overflow-x: auto;
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+                        .chips-inner{
+                            display: flex;
+                            justify-content: space-between;
+                            min-width: 700px;
+                            .btn-chip{
+                                width: 39px;
+                                height: 39px;
+                                &.active{
+                                    &::before{
+                                        // width: 42px;
+                                        // height: 37px;
+                                        width: 100%;
+                                        height: 79%;
+                                    }
                                 }
-                            }
-                            &::after{
-                                font-size: 11px;
-                                top: 46%;
+                                &::after{
+                                    font-size: 11px;
+                                    top: 46%;
+                                }
                             }
                         }
                     }

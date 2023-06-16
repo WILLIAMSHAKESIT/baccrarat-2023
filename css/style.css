@@ -536,7 +536,7 @@ header .toggle-menu, header .goto-home {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(1px 6px 7px #000);
+  filter: drop-shadow(0px 0px 4px #000);
 }
 .btn-chip::after {
   content: "" attr(value) "";
@@ -558,11 +558,11 @@ header .toggle-menu, header .goto-home {
 .btn-chip.active::before {
   content: "";
   position: absolute;
-  width: 95px;
-  height: 85px;
+  width: 81px;
+  height: 68px;
   border: 1px solid #fff;
   border-radius: 100%;
-  filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 5px yellow) drop-shadow(0 0 5px yellow);
+  filter: drop-shadow(0 0 1px yellow) drop-shadow(0 0 0px yellow) drop-shadow(0 0 0px yellow);
 }
 .btn-chip span {
   margin-bottom: 6px;
@@ -2772,11 +2772,20 @@ table.stripe tbody tr td:last-child {
   -webkit-text-fill-color: transparent;
 }
 .room .top > div.right .body .control-area .top-control .chips {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  width: calc(100% - 227px);
+  width: calc(100% - 100px);
   position: relative;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+.room .top > div.right .body .control-area .top-control .chips::-webkit-scrollbar {
+  display: none;
+}
+.room .top > div.right .body .control-area .top-control .chips .chips-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1000px;
+  padding: 0 10px;
 }
 .room .top > div.right .body .control-area .bottom-control {
   display: flex;
@@ -3285,15 +3294,19 @@ table.stripe tbody tr td:last-child {
   .room .top > div.right .body .control-area .top-control .chips {
     width: calc(100% - 100px);
   }
-  .room .top > div.right .body .control-area .top-control .chips .btn-chip {
+  .room .top > div.right .body .control-area .top-control .chips .chips-inner {
+    width: 743px;
+    padding: 0;
+  }
+  .room .top > div.right .body .control-area .top-control .chips .chips-inner .btn-chip {
     width: 57px;
     height: 57px;
   }
-  .room .top > div.right .body .control-area .top-control .chips .btn-chip.active::before {
-    width: 73px;
-    height: 66px;
+  .room .top > div.right .body .control-area .top-control .chips .chips-inner .btn-chip.active::before {
+    width: 100%;
+    height: 79%;
   }
-  .room .top > div.right .body .control-area .top-control .chips .btn-chip::after {
+  .room .top > div.right .body .control-area .top-control .chips .chips-inner .btn-chip::after {
     font-size: 15px;
   }
 }
@@ -3450,8 +3463,8 @@ table.stripe tbody tr td:last-child {
     font-size: 13px;
   }
   .room .top > div.right .body .control-area .top-control .chips .btn-chip.active::before {
-    width: 52px;
-    height: 46px;
+    width: 100%;
+    height: 79%;
   }
   .room .top > div.right .body .control-area .bottom-control .btns {
     transform: scale(0.8);
@@ -3803,20 +3816,25 @@ table.stripe tbody tr td:last-child {
   }
   .room .mobile-controls .control-area-mobile .top-control .chips {
     width: calc(100% - 14px);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
+    overflow-x: auto;
   }
-  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip {
+  .room .mobile-controls .control-area-mobile .top-control .chips::-webkit-scrollbar {
+    display: none;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner {
+    display: flex;
+    justify-content: space-between;
+    min-width: 700px;
+  }
+  .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip {
     width: 39px;
     height: 39px;
   }
-  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip.active::before {
-    width: 42px;
-    height: 37px;
+  .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip.active::before {
+    width: 100%;
+    height: 79%;
   }
-  .room .mobile-controls .control-area-mobile .top-control .chips .btn-chip::after {
+  .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip::after {
     font-size: 11px;
     top: 46%;
   }

@@ -156,7 +156,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(1px 6px 7px #000);
+    filter: drop-shadow(0px 0px 4px #000);
     &::after{
         content: ''attr(value)'';
         background: -webkit-linear-gradient(#C2720C,#FFCE8A, #C2720C);
@@ -176,13 +176,11 @@ header{
         &::before{
             content: "";
             position: absolute;
-            width: 95px;
-            height: 85px;
+            width: 81px;
+            height: 68px;
             border: 1px solid #fff;
             border-radius: 100%;
-            filter: drop-shadow(0 0 5px yellow)
-            drop-shadow(0 0 5px yellow)
-            drop-shadow(0 0 5px yellow);
+            filter: drop-shadow(0 0 1px yellow) drop-shadow(0 0 0px yellow) drop-shadow(0 0 0px yellow);
         }
     }
     span{
