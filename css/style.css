@@ -860,7 +860,10 @@ select option {
   width: 114px;
   text-align: center;
   color: #F2BC1A;
-  margin-left: 10px;
+  position: absolute;
+}
+.card-board .fancy-card-body {
+  position: absolute;
 }
 .card-board .card-body {
   display: flex;
@@ -916,13 +919,13 @@ select option {
   font-style: italic;
 }
 .card-board .card-body .table-status.close {
-  background-color: rgba(11, 9, 1, 0.96);
+  background: -webkit-linear-gradient(#3D0003, #540005);
 }
 .card-board .card-body .table-status.close .content div {
-  background-image: url(../img/elements/not_allowed.png);
+  background-image: url(../img/elements/not_allowed2.png);
 }
 .card-board .card-body .table-status.close .content span:before {
-  content: "CLOSED";
+  content: "CLOSE ROOM";
   background: -webkit-linear-gradient(#ff8686, #e50000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2329,6 +2332,7 @@ table.stripe tbody tr td:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 100px;
 }
 
 .progress-spinner {

@@ -476,10 +476,15 @@ select{
             width: 114px;
             text-align: center;
             color: #F2BC1A;
-            margin-left: 10px;
+            position: absolute;
+           
+            
            
             
         }
+    }
+    .fancy-card-body{
+        position: absolute;
     }
     .card-body{
         display: flex;
@@ -535,14 +540,14 @@ select{
                 }
             }
             &.close{
-                background-color: rgba(11, 9, 1, 0.96);
+                background: -webkit-linear-gradient(#3D0003, #540005);
                 .content{
                     div{
-                        background-image: url(../img/elements/not_allowed.png);
+                        background-image: url(../img/elements/not_allowed2.png);
                     }
                     span{
                         &:before{
-                            content: "CLOSED";
+                            content: "CLOSE ROOM";
                             background: -webkit-linear-gradient(#ff8686, #e50000);
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
@@ -2023,6 +2028,7 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 100px;
 }
 .progress-spinner {
     border-radius: 50%;

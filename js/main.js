@@ -33,15 +33,37 @@ function drop(event) {
 }
 
 function setProgress() {
-document.getElementsByClassName("progress-spinner")[0].style.background =
+    document.getElementsByClassName("progress-spinner")[0].style.background =
+        "conic-gradient(rgb(255, 241, 118) " +
+        progress +
+        "%,rgb(242, 242, 242) " +
+        progress +
+        "%)";
+        
+    document.getElementsByClassName("middle-circle")[0].innerHTML =
+        progress.toString();
+        
+    document.getElementsByClassName("progress-spinner")[1].style.background =
     "conic-gradient(rgb(255, 241, 118) " +
     progress +
     "%,rgb(242, 242, 242) " +
     progress +
     "%)";
+        
+    document.getElementsByClassName("middle-circle")[1].innerHTML =
+        progress.toString();
+
+    document.getElementsByClassName("progress-spinner")[2].style.background =
+    "conic-gradient(rgb(255, 241, 118) " +
+    progress +
+    "%,rgb(242, 242, 242) " +
+    progress +
+    "%)";
+        
+    document.getElementsByClassName("middle-circle")[2].innerHTML =
+        progress.toString();    
+
     
-document.getElementsByClassName("middle-circle")[0].innerHTML =
-    progress.toString();
 }
 
 window.onload = function () {
