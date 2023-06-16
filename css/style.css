@@ -253,20 +253,24 @@ html .device-prompt, body .device-prompt {
 }
 
 i {
-  background: -webkit-linear-gradient(#FF9700, #F7FF00, #FF9700);
+  background: linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-i.icon-gold {
-  background: linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
+i.icon-dark {
+  background: -webkit-linear-gradient(#290d0d, #6c3737, #2a0909);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+i.icon-gold-light {
+  background: -webkit-linear-gradient(#FF9700, #F7FF00, #FF9700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
-  background: #000000;
-  border-left: solid 1px rgba(255, 255, 255, 0.1);
+  background: -webkit-linear-gradient(#FF9700, #F7FF00, #FF9700);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -776,7 +780,7 @@ select option {
 }
 
 .card-board {
-  background: linear-gradient(178deg, #B71010, #480000);
+  background: linear-gradient(114deg, #6d0000, #c52a2a, #7b0000);
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 4px;
@@ -1017,7 +1021,7 @@ select option {
   width: 100%;
   height: 235px;
   border-radius: 5px;
-  background: #231309;
+  background: #350002;
   box-shadow: inset 0 0 6px #000;
   position: relative;
 }
@@ -2342,7 +2346,7 @@ table.stripe tbody tr td:last-child {
   border-radius: 50%;
   height: 37px;
   width: 37px;
-  background-color: rgb(44, 31, 13);
+  background-color: rgb(89, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2402,6 +2406,26 @@ table.stripe tbody tr td:last-child {
   font-style: italic;
 }
 
+.fancy-border {
+  position: relative;
+  background: linear-gradient(272deg, #bc2626, #ff6262, #c12e2e);
+}
+.fancy-border > * {
+  z-index: 100;
+  position: relative;
+}
+.fancy-border::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(360deg, #3e0003, #5d0f0f);
+  width: calc(100% - 7px);
+  height: calc(100% - 7px);
+  box-shadow: 0 0 5px #000;
+}
+
 .sub-header {
   display: flex;
   align-items: center;
@@ -2427,7 +2451,7 @@ table.stripe tbody tr td:last-child {
   height: 40px;
 }
 .sub-header .table-filters .table-filter button img.inactive {
-  filter: opacity(0.5);
+  filter: grayscale(10);
 }
 .sub-header .table-filters .table-filter button:last-child img {
   width: 33px;
@@ -2556,7 +2580,7 @@ table.stripe tbody tr td:last-child {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 0 10px;
 }
 .room .upper-most .upper-content-wrapper {
   background: rgba(61, 31, 17, 0.8117647059);
@@ -2621,6 +2645,40 @@ table.stripe tbody tr td:last-child {
 .room .upper-most .upper-content-wrapper .right-most table tbody tr td {
   font-size: 10px;
   padding: 0 5px;
+}
+.room .room-upper-container-left {
+  display: flex;
+  align-items: center;
+}
+.room .room-upper-container-left .logo {
+  width: 200px;
+  margin-right: 20px;
+}
+.room .room-upper-container-left .table-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 14px;
+}
+.room .room-upper-container-left .table-details .detail-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+.room .room-upper-container-left .table-details .detail-item i, .room .room-upper-container-left .table-details .detail-item span {
+  background: linear-gradient(359deg, #F2BC1A, #ffdd77, #F2BC1A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.room .room-upper-container-left .table-details .detail-item .detail-amount {
+  background: radial-gradient(41% 26px at center, #4A0A0A, #110000);
+  min-width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #FFF176;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
 }
 .room .top {
   display: flex;
@@ -3378,7 +3436,22 @@ table.stripe tbody tr td:last-child {
   width: 100%;
   background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250, 243, 179) 51%, rgba(133, 100, 13, 0) 100%);
   left: 50%;
-  bottom: 0;
+  bottom: -2px;
+  transform: translateX(-50%);
+}
+
+.border-fancy-top {
+  position: relative;
+}
+.border-fancy-top::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250, 243, 179) 51%, rgba(133, 100, 13, 0) 100%);
+  left: 50%;
+  top: -2px;
   transform: translateX(-50%);
 }
 

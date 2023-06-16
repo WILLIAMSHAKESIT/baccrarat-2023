@@ -344,19 +344,23 @@ html,body {
   }
 }
 i{
-  background: -webkit-linear-gradient(#FF9700, #F7FF00,#FF9700);
+  background:linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  &.icon-gold{
-    background:linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
+  &.icon-dark{
+    background:-webkit-linear-gradient(#290d0d, #6c3737, #2a0909);
     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  &.icon-gold-light{
+    background:-webkit-linear-gradient(#FF9700, #F7FF00,#FF9700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 ::-webkit-scrollbar {
   width: 10px;
-  background: #000000;
-  border-left: solid 1px rgba(255, 255, 255, 0.1);
+  background: -webkit-linear-gradient(#FF9700, #F7FF00,#FF9700);
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#fcbd65, #362606);
