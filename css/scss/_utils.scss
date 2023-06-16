@@ -28,6 +28,10 @@
     display: block;
 }
 
+.text-highlight{
+    color: #FFF176;
+}
+
 
 .icon{
     background-repeat: no-repeat;
@@ -44,5 +48,20 @@
     }
     &.icon-yuan{
         background-image: url(../img/icons/yuan.svg);
+    }
+}
+
+.border-fancy-bottom{
+    position: relative;
+    &::before{
+        content: "";
+        left: 0;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);    
     }
 }
