@@ -249,7 +249,7 @@ html .device-prompt, body .device-prompt {
 }
 
 i {
-  background: -webkit-linear-gradient(#C39D64, #DBB984, #9C6800);
+  background: -webkit-linear-gradient(#FF9700, #F7FF00, #FF9700);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -609,10 +609,10 @@ header .toggle-menu, header .goto-home {
 }
 
 .input {
-  background: linear-gradient(359deg, #26140b, #552b17);
-  border: 2px solid rgb(255, 199, 116);
-  border-radius: 4px;
+  background: linear-gradient(359deg, #E8A200, #FFF176);
+  border-radius: 5px;
   padding: 5px 10px;
+  color: #000;
 }
 .input:focus-visible {
   outline: 1px solid rgba(196, 158, 101, 0.2);
@@ -620,7 +620,7 @@ header .toggle-menu, header .goto-home {
 }
 
 select option {
-  background-color: #5a2d18;
+  background-color: #E8A200;
   border: unset;
 }
 
@@ -648,11 +648,11 @@ select option {
   width: calc(33.3333333333% - 8px);
 }
 .table-grid.col-four .card-board {
-  width: calc(25% - 8px);
+  width: 469px;
 }
 
 .card-board {
-  background: linear-gradient(178deg, rgba(116, 76, 20, 0.768627451), rgba(41, 25, 1, 0.8392156863));
+  background: linear-gradient(178deg, #B71010, #480000);
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 4px;
@@ -669,16 +669,17 @@ select option {
   gap: 10px;
 }
 .card-board .card-header .logo {
-  background-color: rgba(7, 6, 0, 0.4);
-  border-radius: 4px;
-  width: 100px;
+  background-color: #2E0606;
+  border-radius: 25px;
+  width: 115px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 0;
 }
 .card-board .card-header .logo img {
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
 }
 .card-board .card-header .bet-limit {
   white-space: nowrap;
@@ -686,7 +687,7 @@ select option {
   font-size: 13px;
 }
 .card-board .card-header .bet-limit .amount {
-  color: yellow;
+  color: #FFF176;
   margin-left: 4px;
 }
 .card-board .card-header .bet-limit .limit-toggle {
@@ -724,16 +725,18 @@ select option {
 .card-board .card-header .table-status {
   font-size: 10px;
   line-height: 1.2;
-  background: #73501f;
-  height: 36px;
-  border-radius: 3px;
+  background: #2E0606;
+  height: 25px;
+  border-radius: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
   font-weight: 500;
-  max-width: 44px;
+  width: 114px;
   text-align: center;
+  color: #F2BC1A;
+  margin-left: 10px;
 }
 .card-board .card-body {
   display: flex;
@@ -773,14 +776,14 @@ select option {
   background-repeat: no-repeat;
 }
 .card-board .card-body .table-status.shuffling {
-  background-color: rgba(0, 42, 17, 0.968627451);
+  background: -webkit-linear-gradient(#3D0003, #540005);
 }
 .card-board .card-body .table-status.shuffling .content div {
   background-image: url(../img/elements/card_shuffle.png);
 }
 .card-board .card-body .table-status.shuffling .content span:before {
   content: "SHUFFLING";
-  background: -webkit-linear-gradient(#FDBEFF, #F838FF);
+  background: -webkit-linear-gradient(#FEED6F, #F2BC1A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 40px;
@@ -852,11 +855,11 @@ select option {
   gap: 10px;
 }
 .card-board .card-footer .right-most .table-no {
-  font-weight: 900;
-  color: yellow;
+  font-weight: 600;
+  color: #FFFFFF;
 }
 .card-board .card-footer .right-most .type {
-  font-weight: 900;
+  font-weight: 600;
   display: flex;
   align-items: center;
 }
@@ -1944,26 +1947,6 @@ table.stripe tbody tr td:last-child {
   z-index: 0;
 }
 
-.fancy-border {
-  position: relative;
-  background: linear-gradient(182deg, #fabb64, #c5a172);
-}
-.fancy-border > * {
-  z-index: 100;
-  position: relative;
-}
-.fancy-border::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(360deg, #453219, #9c6d2c);
-  width: calc(100% - 7px);
-  height: calc(100% - 7px);
-  box-shadow: 0 0 5px #000;
-}
-
 .fancy-border-2 {
   background: linear-gradient(182deg, #e0b883, #947040) !important;
 }
@@ -2298,19 +2281,19 @@ table.stripe tbody tr td:last-child {
 .sub-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: right;
+  gap: 30px;
   margin-bottom: 15px;
   margin-top: 15px;
 }
 .sub-header .table-filters {
-  display: flex;
+  display: grid;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 .sub-header .table-filters .table-filter {
   display: flex;
-  gap: 5px;
+  gap: 1px;
   align-items: center;
   overflow: hidden;
 }
@@ -2327,8 +2310,8 @@ table.stripe tbody tr td:last-child {
   margin-left: 5px;
 }
 .sub-header .subhead-inputs {
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-items: e;
   gap: 5px;
 }
 .sub-header .subhead-inputs select {

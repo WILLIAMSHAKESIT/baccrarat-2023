@@ -27,7 +27,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-confirm.min.js"></script>
 </head>
-<body class="not-multi">
+<body class="not-multi" style="background-color: rgb(0, 0, 0);">
     <div class="device-prompt">
         <div class="prompt-content">
             <h1 class="small"></h1>
@@ -74,23 +74,24 @@
     </header>
     <div class="sub-header container">
         <div class="subhead-inputs">
+            <span >Casino:</span>
             <select class="input">
                 <option>All Casino</option>
                 <option>Solaire Casino</option>
                 <option>D'Heights Casino</option>
             </select>
-            <select class="input">
+            <!-- <select class="input">
                 <option>Any Limit</option>
                 <option>High To low</option>
                 <option>Low to high</option>
-            </select>
+            </select> -->
             <!-- <button class="btn primary">
                 <input type="checkbox" id="music" name="radio-group">
                 <label for="music">Hide Close tables</label>
             </button> -->
         </div>
-        <div class="table-filters">
-            <span>Total Tables: <span class="font-bold text-yellow-300">50</span></span>
+        <div class="table-filters" >
+            <span >Tables: <span class="font-bold text-yellow-300">50</span></span>
             <div class="table-filter mr-4">
                 <button class="btn normal p-0 no-outlines" data-tval="two"> 
                     <img src="img/icons/grid-two.svg" class="inactive">
@@ -225,7 +226,7 @@
                 <div class="logo">
                     <img src="img/casino/solaire.png">
                 </div>
-                <span class="bet-limit">BET LIMIT:
+                <span class="bet-limit">LIMIT:
                     <span class="amount">10K - 10M</span>
                     <i class="fa-solid fa-caret-down limit-toggle"></i>
                 </span>

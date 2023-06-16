@@ -220,18 +220,19 @@ header{
     }
 } 
 .input{
-    background: linear-gradient(359deg, #26140b, #552b17);
-    border: 2px solid rgb(255, 199, 116);
-    border-radius: 4px;
+    background: linear-gradient(359deg, #E8A200, #FFF176);
+    
+    border-radius: 5px;
     padding: 5px 10px;
     &:focus-visible{
         outline: 1px solid rgb(196 158 101 / 20%);
         box-shadow: 0 0 5px 1px rgb(245 207 148 / 28%);
     }
+    color: #000;
 }
 select{
     option{
-        background-color: #5a2d18;
+        background-color: #E8A200;
         border: unset;
     }
 }
@@ -268,16 +269,17 @@ select{
     }
     &.col-four{
         .card-board{
-            width: calc(100% / 4 - 8px);
+            width: 469px;
         }
     }
 }
 .card-board{
-    background: linear-gradient(178deg, #744c14c4, #291901d6);
+    background: linear-gradient(178deg,  #B71010, #480000);
     // border: 1px solid rgb(162 131 85 / 65%);
     height: -moz-fit-content;
     height: fit-content;
     border-radius: 4px;
+  
     overflow: hidden;
     .card-header{
         height: fit-content;
@@ -288,15 +290,16 @@ select{
         padding:6px;
         gap: 10px;
         .logo{
-            background-color: #07060066;
-            border-radius: 4px;
-            width: 100px;
+            background-color: #2E0606;
+            border-radius:25px;
+            width: 115px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 5px 0;
             img{
-                width: calc(100% - 10px);
+                width: calc(100% - 20px);
             }
         }
         .bet-limit{
@@ -305,7 +308,7 @@ select{
             font-weight: 700;
             font-size: 13px;
             .amount{
-                color: yellow;
+                color: #FFF176;
                 margin-left: 4px;
             }
             .limit-toggle{
@@ -347,16 +350,20 @@ select{
         .table-status{
             font-size: 10px;
             line-height: 1.2;
-            background: #73501f;
-            height: 36px;
-            border-radius: 3px;
+            background: #2E0606;
+            height: 25px;
+            border-radius: 33px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 4px;
             font-weight: 500;
-            max-width: 44px;
+            width: 114px;
             text-align: center;
+            color: #F2BC1A;
+            margin-left: 10px;
+           
+            
         }
     }
     .card-body{
@@ -393,7 +400,7 @@ select{
                 }
             }
             &.shuffling{
-                background-color: #002a11f7;
+                background: -webkit-linear-gradient(#3D0003, #540005);
                 .content{
                     div{
                         background-image: url(../img/elements/card_shuffle.png);
@@ -401,7 +408,7 @@ select{
                     span{
                         &:before{
                             content: "SHUFFLING";
-                            background: -webkit-linear-gradient(#FDBEFF, #F838FF);
+                            background: -webkit-linear-gradient(#FEED6F, #F2BC1A);
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                             font-size: 40px;
@@ -483,11 +490,11 @@ select{
             align-items: center;
             gap: 10px;
             .table-no{
-                font-weight: 900;
-                color: yellow;
+                font-weight: 600;
+                color: #FFFFFF;
             }
             .type{
-                font-weight: 900;
+                font-weight: 600;
                 display: flex;
                 align-items: center;
                 i{
@@ -1638,25 +1645,6 @@ table{
 }
 
 
-.fancy-border{
-    position: relative;
-    background: linear-gradient(182deg, #fabb64, #c5a172);
-    >*{
-        z-index: 100;
-        position: relative;
-    }
-    &::before{
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        background: linear-gradient(360deg, #453219, #9c6d2c);
-        width: calc(100% - 7px);
-        height: calc(100% - 7px);
-        box-shadow: 0 0 5px #000;
-    }
-}
 .fancy-border-2{
     background: linear-gradient(182deg, #e0b883, #947040) !important;
     >*{

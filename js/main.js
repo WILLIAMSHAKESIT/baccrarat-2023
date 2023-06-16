@@ -34,7 +34,7 @@ function drop(event) {
 
 function setProgress() {
 document.getElementsByClassName("progress-spinner")[0].style.background =
-    "conic-gradient(rgb(0, 219, 57) " +
+    "conic-gradient(rgb(255, 241, 118) " +
     progress +
     "%,rgb(242, 242, 242) " +
     progress +
