@@ -76,6 +76,9 @@
                 <i class="fa-solid fa-gear  icon-dark"></i>
             </button>
         </div>
+        <button class="btn btn-rounded primary toggle-menu">
+            <i class="fa-solid fa-bars icon-dark"></i>
+        </button>
     </header>
     <div class="sub-header container">
         <div class="subhead-inputs">
@@ -818,21 +821,22 @@
         </div>
     </div>
     <div class="modal-wrapper side" id="menuModal">
-        <div class="modal-container animate__animated animate__slideInRight">
+        <div class="modal-container fancy-border-2 no-radius animate__animated animate__slideInRight">
+            <div class="border-fancy-left border-md"></div>
             <div class="modal-header">
                 <h2></h2>
-                <button class="btn btn-red closeModal">
+                <button class="btn btn-rounded btn-red closeModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="main-content">
                     <ul class="sidebar-menu">
-                        <li><a href="#" class="toggle-settings"><i class="fa-solid fa-gear"></i>Settings</a></li>
-                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Game History</a></li>
-                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Customer Service</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-settings"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Game History</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-history"><i class="fa-solid fa-phone"></i>Customer Service</a></li>
                         <!-- <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Toggle Full</a></li> -->
-                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>

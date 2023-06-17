@@ -84,28 +84,13 @@
         </div>
     </header> -->
     <header class="p-5 border-fancy-bottom">
-        <!-- <div class="user-info flex  gap-5">
-            <div class="user-name font-bold">
-                <i class="fa-solid fa-user  mr-1"></i>
-                John Doe
-            </div>
-            <div class="flex gap-3 items-center">
-                <div class="user-name font-bold">
-                    <i class="fa-solid fa-won-sign mr-1"></i>
-                    100,000,000
-                </div>
-                <div class="toggle-menu mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-        </div> -->
         <div class="logo-wrapper">
             <img src="img/elements/hilton_logo.png" alt="Hilton Casino Logo">
         </div>
         <div class="header-bg">
             <div class="notif">
                 <div class="notif-icon">
-                    <i class="fa-solid fa-bell icon-gold"></i>
+                    <i class="fa-solid fa-bell "></i>
                 </div>
                 <div class="notif-text">
                     🎉 Table 10 is under maintenance
@@ -113,7 +98,7 @@
             </div>
             <div class="header-mid-right-most">
                 <div class="users">
-                    <i class="fa-solid fa-users icon-gold mr-1"></i>
+                    <i class="fa-solid fa-users  mr-1"></i>
                     <span>2,500</span>
                 </div>
                 <div class="user-content">
@@ -132,13 +117,16 @@
             <button class="btn btn-rounded primary toggleFull">
                 <i class="fa-solid fa-expand  icon-dark"></i>
             </button>
-            <button class="btn btn-rounded  primary toggle-contact">
+            <button class="btn btn-rounded primary toggle-contact">
                 <i class="fa-solid fa-phone  icon-dark"></i>
             </button>
             <button class="btn btn-rounded  primary toggle-settings">
                 <i class="fa-solid fa-gear  icon-dark"></i>
             </button>
         </div>
+        <button class="btn btn-rounded primary toggle-menu">
+            <i class="fa-solid fa-bars icon-dark"></i>
+        </button>
     </header>
     <div class="container room">
         <div class="upper-most">
@@ -146,8 +134,10 @@
                 <img class="logo" src="img/casino/solaire.png">
                 <div class="table-details">
                     <div class="detail-item">
-                        <i class="fa-solid fa-table"></i>
-                        <span>TABLE</span>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-table"></i>
+                            <span>TABLE</span>
+                        </div>
                         <div class="detail-amount border-fancy-bottom border-fancy-top">
                             10
                         </div>
@@ -155,8 +145,10 @@
                 </div>
                 <div class="table-details">
                     <div class="detail-item">
-                        <i class="fa fa-bolt"></i>
-                        <span>TYPE</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-bolt"></i>
+                            <span>TYPE</span>
+                        </div>
                         <div class="detail-amount border-fancy-bottom border-fancy-top">
                             10
                         </div>
@@ -165,8 +157,10 @@
                 <div class="table-details">
                     <div class="detail-item">
                         <!-- <i class="fa-solid fa-hashtag"></i> -->
-                        <div class="icon icon-card icon-md"></div>
-                        <span>GAME ID</span>
+                        <div class="flex items-center">
+                            <div class="icon icon-card icon-md"></div>
+                            <span>GAME ID</span>
+                        </div>
                         <div class="detail-amount border-fancy-bottom border-fancy-top">
                             S033456453434343343464
                         </div>
@@ -393,43 +387,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="legend-mobile">
-                    <div class="right-indi">
-                        <div>
-                            <div class="result red"></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"></div>
-                            <span class="blue">0</span>
-                        </div>
-                        <div>
-                            <div class="result green"></div>
-                            <span class="green">0</span>
-                        </div>
-                        <div>
-                            <div class="result red"><div class="pair-banker"></div></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"><div class="pair-player"></div></div>
-                            <span class="blue">0</span>
-                        </div>
-                    </div>
-                    <div class="indicators">
-                        <div class="indi indi-one">
-                            <div class="result red"></div>
-                            <div class="result outline-dark"></div>
-                            <div class="result fill-black"></div>
-                            <div class="result line-black"></div>
-                        </div>
-                        <div class="indi indi-two">
-                            <div class="result blue"></div>
-                            <div class="result outline-blue"></div>
-                            <div class="result fill-blue"></div>
-                            <div class="result line-red"></div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="legend-mobile">
+            <div class="right-indi">
+                <div>
+                    <div class="result red"></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"></div>
+                    <span class="blue">0</span>
+                </div>
+                <div>
+                    <div class="result green"></div>
+                    <span class="green">0</span>
+                </div>
+                <div>
+                    <div class="result red"><div class="pair-banker"></div></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"><div class="pair-player"></div></div>
+                    <span class="blue">0</span>
+                </div>
+            </div>
+            <div class="indicators">
+                <div class="indi indi-one">
+                    <div class="result red"></div>
+                    <div class="result outline-dark"></div>
+                    <div class="result fill-black"></div>
+                    <div class="result line-black"></div>
+                </div>
+                <div class="indi indi-two">
+                    <div class="result blue"></div>
+                    <div class="result outline-blue"></div>
+                    <div class="result fill-blue"></div>
+                    <div class="result line-red"></div>
                 </div>
             </div>
         </div>
@@ -618,16 +612,26 @@
                 </div>
                 <div class="bottom-control">
                     <div class="btns">
-                        <button class="btn cancel">Cancel Bets</button>
-                        <button class="btn bet">Place Bet</button>
-                        <button class="btn-circle btn-gray toggle-tables"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
-                        <button class="btn-circle btn-gray toggle-tables">
-                            <i class="fa-solid fa-arrows-rotate"></i>
+                        <button class="btn btn-custom-red2 btn-sm toggle-tables">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>CANCEL BETS</span>
                         </button>
-                        <button class="btn-circle btn-gray toggle-tables">
-                            <i class="fa-solid fa-rotate-right"></i>
+                        <button class="btn btn-rounded primary">
+                            <i class="fa-solid fa-repeat icon-dark"></i>
                         </button>
-                        <button class="btn-circle btn-gray chip-settings"><i class="fa-solid fa-gear"></i></button>
+                        <button class="btn btn-rounded primary toggle-tables">
+                            <i class="fa-solid fa-rotate-right icon-dark"></i>
+                        </button>
+                        <button class="btn btn-rounded primary toggle-tables">
+                            <i class="fa-solid fa-arrow-right-arrow-left icon-dark"></i>
+                        </button>
+                        <button class="btn btn-rounded primary toggle-tables">
+                            <i class="fa-solid fa-gear icon-dark"></i>
+                        </button>
+                        <button class="btn btn-custom-blue2 btn-sm toggle-tables">
+                            <i class="fa-solid fa-check"></i>
+                            <span>PLACE BETS</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1072,21 +1076,22 @@
         </div>
     </div>
     <div class="modal-wrapper side" id="menuModal">
-        <div class="modal-container animate__animated animate__slideInRight">
+        <div class="modal-container fancy-border-2 no-radius animate__animated animate__slideInRight">
+            <div class="border-fancy-left border-md"></div>
             <div class="modal-header">
                 <h2></h2>
-                <button class="btn btn-red closeModal">
+                <button class="btn btn-rounded btn-red closeModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="main-content">
                     <ul class="sidebar-menu">
-                        <li><a href="#" class="toggle-settings"><i class="fa-solid fa-gear"></i>Settings</a></li>
-                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Game History</a></li>
-                        <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Customer Service</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-settings"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-history"><i class="fa-solid fa-clock-rotate-left"></i>Game History</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md toggle-history"><i class="fa-solid fa-phone"></i>Customer Service</a></li>
                         <!-- <li><a href="#" class="toggle-history"><i class="fa-solid fa-phone"></i>Toggle Full</a></li> -->
-                        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                        <li><a href="#" class="btn btn-primary btn-custom-red2 btn-md"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -1477,44 +1482,6 @@
                     targetElement.dispatchEvent(touchEvent);
                     }
                 </script>
-                <div class="legend-mobile">
-                    <div class="right-indi">
-                        <div>
-                            <div class="result red"></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"></div>
-                            <span class="blue">0</span>
-                        </div>
-                        <div>
-                            <div class="result green"></div>
-                            <span class="green">0</span>
-                        </div>
-                        <div>
-                            <div class="result red"><div class="pair-banker"></div></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"><div class="pair-player"></div></div>
-                            <span class="blue">0</span>
-                        </div>
-                    </div>
-                    <div class="indicators">
-                        <div class="indi indi-one">
-                            <div class="result red"></div>
-                            <div class="result outline-dark"></div>
-                            <div class="result fill-black"></div>
-                            <div class="result line-black"></div>
-                        </div>
-                        <div class="indi indi-two">
-                            <div class="result blue"></div>
-                            <div class="result outline-blue"></div>
-                            <div class="result fill-blue"></div>
-                            <div class="result line-red"></div>
-                        </div>
-                    </div>
-                </div>
                 <img class="bg-border" src="img/bg/betting_bg.png" alt="Hilton Casino Betting Background">
             </div>
         </div>
@@ -2489,45 +2456,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="legend-mobile">
-                    <div class="right-indi">
-                        <div>
-                            <div class="result red"></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"></div>
-                            <span class="blue">0</span>
-                        </div>
-                        <div>
-                            <div class="result green"></div>
-                            <span class="green">0</span>
-                        </div>
-                        <div>
-                            <div class="result red"><div class="pair-banker"></div></div>
-                            <span class="red">0</span>
-                        </div>
-                        <div>
-                            <div class="result blue"><div class="pair-player"></div></div>
-                            <span class="blue">0</span>
-                        </div>
-                    </div>
-                    <div class="indicators">
-                        <div class="indi indi-one">
-                            <div class="result red"></div>
-                            <div class="result outline-dark"></div>
-                            <div class="result fill-black"></div>
-                            <div class="result line-black"></div>
-                        </div>
-                        <div class="indi indi-two">
-                            <div class="result blue"></div>
-                            <div class="result outline-blue"></div>
-                            <div class="result fill-blue"></div>
-                            <div class="result line-red"></div>
-                        </div>
-                    </div>
-                </div>
-                <img class="bg-border" src="img/bg/betting_bg.png" alt="Hilton Casino Betting Background">
             </div>
         </div>
         <div class="bottom">
@@ -2679,6 +2607,44 @@
                 </div>
             </div> -->
         </div>
+        <!-- <div class="legend-mobile">
+            <div class="right-indi">
+                <div>
+                    <div class="result red"></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"></div>
+                    <span class="blue">0</span>
+                </div>
+                <div>
+                    <div class="result green"></div>
+                    <span class="green">0</span>
+                </div>
+                <div>
+                    <div class="result red"><div class="pair-banker"></div></div>
+                    <span class="red">0</span>
+                </div>
+                <div>
+                    <div class="result blue"><div class="pair-player"></div></div>
+                    <span class="blue">0</span>
+                </div>
+            </div>
+            <div class="indicators">
+                <div class="indi indi-one">
+                    <div class="result red"></div>
+                    <div class="result outline-dark"></div>
+                    <div class="result fill-black"></div>
+                    <div class="result line-black"></div>
+                </div>
+                <div class="indi indi-two">
+                    <div class="result blue"></div>
+                    <div class="result outline-blue"></div>
+                    <div class="result fill-blue"></div>
+                    <div class="result line-red"></div>
+                </div>
+            </div>
+        </div> -->
         <div class="mobile-controls">
             <div class="control-area-mobile">
                 <div class="top-control mx-auto">

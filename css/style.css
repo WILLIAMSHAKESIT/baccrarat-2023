@@ -3870,6 +3870,21 @@ table.table-fancy tbody tr td:last-child {
     display: none;
   }
 }
+@media (max-width: 1757px) {
+  html, body {
+    font-size: 13px;
+  }
+  .room .room-upper-container-left .logo {
+    width: 133px;
+  }
+  .room .room-upper-container-left .table-details {
+    margin-left: 8px;
+  }
+  .room .room-upper-container-left .table-details .detail-item .detail-amount {
+    min-width: 44px;
+    font-size: 13px;
+  }
+}
 @media (max-width: 1602px) {
   .room .top > div.right .header .room-info .info {
     font-size: 12px;
@@ -3931,6 +3946,19 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .upper-most .upper-content-wrapper .left-most .stat-items .item:first-child i {
     margin-right: 3px;
+  }
+}
+@media (max-width: 1495px) {
+  header .header-bg {
+    width: calc(100% - 212px);
+    padding-left: 277px;
+    padding-right: 63px;
+  }
+  header .header-bg .header-mid-right-most {
+    gap: 8px;
+  }
+  header .header-bg .header-mid-right-most .user-content {
+    gap: 8px;
   }
 }
 @media only screen and (max-device-width: 1342px) {
@@ -4004,8 +4032,26 @@ table.table-fancy tbody tr td:last-child {
   }
 }
 @media (max-width: 1280px) {
+  header .logo-wrapper {
+    width: 341px;
+    height: 91px;
+  }
+  header .logo-wrapper img {
+    width: calc(100% - 194px);
+    position: absolute;
+    left: 49%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+  }
+  header .header-bg {
+    width: 100%;
+    padding-left: 194px;
+  }
   header .user-info {
     font-size: 15px;
+  }
+  header .top-menu {
+    display: none;
   }
   .room .upper-most .upper-content-wrapper {
     margin-bottom: 3px;
@@ -4056,6 +4102,17 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .top > div.right .body .control-area .bottom-control .btns {
     transform: scale(0.8);
+    gap: 4px;
+  }
+  .room .room-upper-container-left {
+    width: 52%;
+    justify-content: space-between;
+  }
+  .room .room-upper-container-left .logo {
+    margin-right: 0;
+  }
+  .room .room-upper-container-left .table-details .detail-item {
+    flex-direction: column;
   }
   .multi-rooms {
     height: calc(100% - 169px);
@@ -4135,11 +4192,76 @@ table.table-fancy tbody tr td:last-child {
   .table-grid.col-two .card-board {
     width: calc(50% - 5px) !important;
   }
+  #menuModal .modal-body .main-content ul.sidebar-menu li {
+    background-color: unset;
+  }
+  #menuModal .modal-body .main-content ul.sidebar-menu li a {
+    height: 60px;
+  }
+}
+@media (max-width: 988px) {
+  header .header-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 86px;
+    top: 7px;
+    padding-top: 9px;
+    background-position: inherit;
+  }
+  header .header-bg .notif {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  header .header-bg .notif .notif-icon {
+    height: 30px;
+    width: 30px;
+  }
+  header .header-bg .header-mid-right-most {
+    height: 25px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
+  header .header-bg .header-mid-right-most .user-content {
+    gap: 18px;
+  }
+  header .header-bg .header-mid-right-most .user-content .money-icon {
+    min-width: 19px;
+    font-size: 12px;
+  }
+  .room .top {
+    padding: 0;
+    gap: 0;
+  }
+  .room .top > div.right .body .bet-area {
+    height: 77%;
+  }
+  .room .top > div.right .body .control-area {
+    height: 23%;
+  }
+  .room .top > div.right .body .control-area .bottom-control .btns {
+    transform: scale(0.65);
+  }
 }
 @media (max-width: 935px) {
+  .sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sub-header .table-filters {
+    display: none;
+  }
+  .sub-header .subhead-inputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
   .icon.icon-sm {
-    height: 8px;
-    width: 14px !important;
+    height: 30px !important;
+    width: 22px !important;
   }
   .mobile {
     display: block;
@@ -4161,38 +4283,20 @@ table.table-fancy tbody tr td:last-child {
     font-size: 24px;
   }
   header {
-    margin-bottom: 4px;
-    padding: 10px !important;
-    background-color: rgba(9, 6, 0, 0.6);
+    height: 72px;
+    margin-bottom: 5px;
   }
-  header .logo {
-    -webkit-clip-path: unset;
-            clip-path: unset;
-    height: -moz-fit-content;
-    height: fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+  header .header-bg {
+    background: unset;
+    padding-top: 0;
     padding-bottom: 0;
-    font-size: 23px;
-    padding: 0 11px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  header .logo::before {
-    -webkit-clip-path: unset;
-            clip-path: unset;
-    width: calc(100% - 5px);
-    height: calc(100% - 2px);
-  }
-  header .top-menu {
-    display: none;
-  }
-  header .user-info {
-    width: 100%;
-    justify-content: space-between;
+    padding-right: 0;
+    padding-left: 223px;
+    top: 1px;
+    height: 68px;
   }
   .room {
-    height: calc(100% - 51px);
+    height: calc(100% - 78px);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4203,7 +4307,13 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .top {
     flex-direction: column;
-    height: calc(100% - 277px);
+    height: calc(100% - 418px);
+  }
+  .room .top .border-fancy-right, .room .top .border-fancy-left {
+    display: none;
+  }
+  .room .top .border-fancy-top::after {
+    display: none;
   }
   .room .top > div {
     width: 100%;
@@ -4225,8 +4335,15 @@ table.table-fancy tbody tr td:last-child {
     width: 35px;
     height: 35px;
   }
+  .room .top > div.left iframe {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
   .room .top > div.right {
     width: 100%;
+  }
+  .room .top > div.right .border-fancy-top-orig, .room .top > div.right .border-fancy-right, .room .top > div.right .border-fancy-left {
+    display: none;
   }
   .room .top > div.right .header .room-info .info {
     flex-direction: row;
@@ -4248,15 +4365,20 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .top > div.right .body {
     width: 100%;
+    height: 100%;
     left: 0;
     bottom: 6px;
+    top: 0;
+    left: 0;
+    transform: unset;
   }
   .room .top > div.right .body .bet-area {
-    width: calc(100% - 29px);
+    width: 100%;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 84%;
+    left: 0;
+    transform: 0;
+    height: 100%;
+    border: 4px solid #275F7E;
   }
   .room .top > div.right .body .bet-area .area .btn-chip {
     width: 30px;
@@ -4265,7 +4387,8 @@ table.table-fancy tbody tr td:last-child {
     font-size: 10px;
   }
   .room .top > div.right .body .bet-area .area .area-info .info {
-    font-size: 8px;
+    font-size: 17px;
+    height: 29px;
   }
   .room .top > div.right .body .bet-area .area .area-info .info div i {
     margin-right: 2px;
@@ -4299,6 +4422,19 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.right .body .control-area .top-control .chips {
     width: calc(100% - 144px);
   }
+  .room .legend-mobile {
+    position: relative;
+    height: 40px;
+    width: 100%;
+  }
+  .room .legend-mobile .right-indi > div {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+  }
+  .room .legend-mobile .right-indi > div div {
+    width: 29px;
+  }
   .room .bottom {
     order: 5;
     height: 117px;
@@ -4316,8 +4452,17 @@ table.table-fancy tbody tr td:last-child {
     width: 98px;
     min-width: 98px;
   }
+  .room .bottom .results-wrapper .bead-road::before {
+    font-size: 15px;
+  }
   .room .bottom .results-wrapper .small-grid {
     width: 100%;
+  }
+  .room .bottom .results-wrapper .small-grid .bigeye-road::before {
+    font-size: 20px;
+  }
+  .room .bottom .results-wrapper .small-grid .bottom-small .small-road::before, .room .bottom .results-wrapper .small-grid .bottom-small .cock-roach::before {
+    font-size: 17px;
   }
   .room .bottom .legend {
     display: none;
@@ -4371,11 +4516,22 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) {
     font-size: 14px;
-    border-radius: 50px;
-    padding: 5px 15px;
     font-weight: 500;
     position: relative;
-    width: calc(100% - 10px);
+    width: 160px;
+    height: 37px;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) i {
+    margin-right: 5px;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded {
+    min-width: 43px !important;
+    min-height: 43px !important;
+    max-width: 43px !important;
+    max-height: 43px !important;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded i {
+    margin-right: 0;
   }
   .room .mobile-controls .control-area-mobile .top-control {
     display: flex;
@@ -4448,6 +4604,10 @@ table.table-fancy tbody tr td:last-child {
   }
   .multi-rooms {
     height: calc(100% - 117px);
+  }
+  .multi-rooms .icon.icon-sm {
+    height: 8px;
+    width: 14px !important;
   }
   .multi-rooms .control-menu {
     position: fixed;
@@ -4647,7 +4807,7 @@ table.table-fancy tbody tr td:last-child {
     display: none;
   }
   .table-grid {
-    max-height: calc(100% - 151.5px);
+    max-height: calc(100% - 163.5px);
   }
   .table-grid .card-board {
     width: calc(50% - 8px) !important;
@@ -4659,6 +4819,29 @@ table.table-fancy tbody tr td:last-child {
   }
 }
 @media (max-width: 697px) {
+  header .logo-wrapper {
+    width: 195px;
+    background: unset;
+    display: none;
+  }
+  header .logo-wrapper img {
+    width: calc(100% - 82px);
+    position: absolute;
+    left: 74%;
+    top: 51%;
+  }
+  header .header-bg {
+    padding-left: 27px;
+    padding-top: 6px;
+  }
+  header .header-bg .notif .notif-icon {
+    height: 23px;
+    width: 23px;
+    font-size: 14px;
+  }
+  header .header-bg .header-mid-right-most .user-content {
+    background: unset;
+  }
   .upper-most .upper-content-wrapper {
     flex-direction: column;
     justify-content: space-between;
@@ -4929,6 +5112,53 @@ table.table-fancy tbody tr td:last-child {
   }
 }
 @media (max-width: 405px) {
+  .progress-spinner {
+    height: 42px;
+    width: 42px;
+  }
+  .progress-spinner .middle-circle {
+    height: 31px;
+    width: 31px;
+  }
+  header {
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+  header .header-bg {
+    left: 0;
+    padding-left: 4px;
+    width: 87%;
+  }
+  header .header-bg .notif .notif-text {
+    font-size: 13px;
+  }
+  header .header-bg .header-mid-right-most .user-content {
+    gap: 6px !important;
+  }
+  header .btn {
+    margin-right: 4px;
+  }
+  header .btn.btn-rounded {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+  }
+  .sub-header {
+    margin-top: 0;
+  }
+  .sub-header .subhead-inputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .sub-header .subhead-inputs span {
+    font-size: 20px;
+  }
+  .sub-header .subhead-inputs select {
+    width: 100% !important;
+  }
   .board-overlay .mid-result {
     transform: translate(-50%, -50%) scale(0.3);
   }
