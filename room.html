@@ -142,59 +142,6 @@
     </header>
     <div class="container room">
         <div class="upper-most">
-            <!-- <div class="upper-content-wrapper">
-                <div class="left-most">
-                    <img class="logo" src="img/casino/solaire.png">
-                    <div class="stat-items">
-                        <div class="item mobile">
-                            <span><i class="fa-solid fa-heart"></i>GAME No:</span>
-                            <span>10</span>
-                        </div>
-                        <div class="item">
-                            <span><i class="fa-solid fa-table"></i>TABLE:</span>
-                            <span>10</span>
-                        </div>
-                        <div class="item">
-                            <span><i class="fa-solid fa-bolt"></i>TYPE:</span>
-                            <span>SPEED</span>
-                        </div>
-                        <div class="item">
-                            <span><i class="fa-solid fa-gamepad"></i>GAME:</span>
-                            <span>S033456453434343343464</span>
-                        </div>
-                        <div class="item">
-                            <span><i class="fa-solid fa-filter-circle-dollar"></i>LIMIT:</span>
-                            <span>10K ~ 5M</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-most">
-                    <table class="stripe">
-                        <thead>
-                            <th>Area</th>
-                            <th>User limit</th>
-                            <th>Table limit</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>B/P</td>
-                                <td>10K-10M</td>
-                                <td>5K-600M</td>
-                            </tr>
-                            <tr>
-                                <td>T</td>
-                                <td>10K-10M</td>
-                                <td>5K-600M</td>
-                            </tr>
-                            <tr>
-                                <td>Pair</td>
-                                <td>10K-10M</td>
-                                <td>5K-600M</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
             <div class="room-upper-container-left">
                 <img class="logo" src="img/casino/solaire.png">
                 <div class="table-details">
@@ -208,7 +155,7 @@
                 </div>
                 <div class="table-details">
                     <div class="detail-item">
-                        <i class="fa-solid fa-table"></i>
+                        <i class="fa fa-bolt"></i>
                         <span>TYPE</span>
                         <div class="detail-amount border-fancy-bottom border-fancy-top">
                             10
@@ -217,7 +164,8 @@
                 </div>
                 <div class="table-details">
                     <div class="detail-item">
-                        <i class="fa-solid fa-heart"></i>
+                        <!-- <i class="fa-solid fa-hashtag"></i> -->
+                        <div class="icon icon-card icon-md"></div>
                         <span>GAME ID</span>
                         <div class="detail-amount border-fancy-bottom border-fancy-top">
                             S033456453434343343464
@@ -225,27 +173,53 @@
                     </div>
                 </div>
             </div>
+            <div class="bet-limit-table">
+                <table class="table-fancy">
+                    <thead>
+                        <th>Area</th>
+                        <th>User limit</th>
+                        <th>Table limit</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B/P</td>
+                            <td>10K-10M</td>
+                            <td>5K-600M</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>10K-10M</td>
+                            <td>5K-600M</td>
+                        </tr>
+                        <tr>
+                            <td>Pair</td>
+                            <td>10K-10M</td>
+                            <td>5K-600M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="top">
-            <div class="left">
+            <div class="left border-fancy-top border-fancy-bottom border-md">
+                <div class="border-fancy-right border-md"></div>
+                <div class="border-fancy-left border-md"></div>
                 <div class="video-prompt red-color">Stop Betting.</div>
                 <div class="timerParent room-timer">
                     <div class="middle-circle"></div>
                     <div class="progress-spinner"></div>
                 </div>
-                <!-- <div class="count-down">
-                    <span class="timerValue"></span>
-                    <canvas class="timer" width="50" height="50"></canvas>
-                </div> -->
                 <div class="vid-controls">
                     <button><i class="fa-solid fa-wifi"></i></button>
                     <button id="toggleVideo"><i class="fa-solid fa-video-slash"></i></button>
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>
-                <!-- <img class="bg-border" src="img/bg/video_bg.png" alt="Hilton Casino Betting Background"> -->
-                <!-- <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <div class="right">
+            <div class="right border-fancy-top border-md">
+                <div class="border-fancy-top-orig"></div>
+                <div class="border-fancy-right border-md"></div>
+                <div class="border-fancy-left border-md"></div>
                 <!-- <div class="waiting-prompt">
                     <div class="prompt-with-img">
                         <img class="animate__animated animate__flipInY" src="../img/elements/card_shuffle.png" alt="Deck cards image">
@@ -300,103 +274,73 @@
                         <div class="area p-pair" data-area="p-pair" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div class="area-info">
                                 <div class="info">
-                                    <div>
-                                        <i class="fa-solid fa-users"></i>
-                                        <span>0</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span>0</span>
+                                    <div class="area-name area-blue text-highlight">
+                                        P.PAIR
                                     </div>
                                     <div>
                                         <span class="icon icon-yuan icon-sm"></span>
                                         <span>0</span>
                                     </div>
                                 </div>
-                                <span class="text light-blue">P.PAIR</span>
                             </div>
                         </div>
                         <div class="area tie" data-area="tie" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div class="area-info">
                                 <div class="info">
-                                    <div>
-                                        <i class="fa-solid fa-users"></i>
-                                        <span>0</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span>0</span>
+                                    <div class="area-name area-green text-highlight">
+                                        TIE
                                     </div>
                                     <div>
                                         <i class="fa-solid fa-dollar-sign"></i>
                                         <span>0</span>
                                     </div>
                                 </div>
-                                <span class="text green">TIE</span>
                             </div>
                         </div>
                         <div class="area b-pair" data-area="b-pair" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div class="area-info">
                                 <div class="info">
-                                    <div>
-                                        <i class="fa-solid fa-users"></i>
-                                        <span>0</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span>0</span>
+                                    <div class="area-name area-red text-highlight">
+                                        B.PAIR
                                     </div>
                                     <div>
                                         <i class="fa-solid fa-dollar-sign"></i>
                                         <span>0</span>
                                     </div>
                                 </div>
-                                <span class="text red">B.PAIR</span>
                             </div>
                         </div>
                         <div class="area player" data-area="player" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div class="area-info">
                                 <div class="info">
-                                    <div>
-                                        <i class="fa-solid fa-users"></i>
-                                        <span>0</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span>0</span>
+                                    <div class="area-name area-blue text-highlight">
+                                        PLAYER
                                     </div>
                                     <div>
                                         <i class="fa-solid fa-dollar-sign"></i>
                                         <span>0</span>
                                     </div>
                                 </div>
-                                <span class="text light-blue">PLAYER</span>
                             </div>
                         </div>
                         <div class="area banker" data-area="banker" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div class="area-info">
                                 <div class="info">
-                                    <div>
-                                        <i class="fa-solid fa-users"></i>
-                                        <span>0</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-coins"></i>
-                                        <span>0</span>
+                                    <div class="area-name area-red text-highlight">
+                                        BANKER
                                     </div>
                                     <div>
                                         <i class="fa-solid fa-dollar-sign"></i>
                                         <span>0</span>
                                     </div>
                                 </div>
-                                <span class="text red">BANKER</span>
                             </div>
                         </div>
                     </div>
                     <div class="control-area">
                         <div class="top-control mx-auto">
-                            <a href="#" class="prevChip">
-                                <i class="fa-solid fa-angle-left" id="prevChip"></i>
+                            <a href="#" class="prevChip btn btn-rounded primary">
+                                <i class="fa-solid fa-angle-left icon-dark" id="prevChip"></i>
                             </a>
                             <div class="chips">
                                 <div class="chips-inner">
@@ -413,22 +357,37 @@
                                     <button class="btn-chip chip-50m" draggable="true" value="50m" data-val="50m"></button>
                                 </div>
                             </div>
-                            <a href="#" class="nextChip">
-                                <i class="fa-solid fa-angle-right" id="nextChip"></i>
+                            <a href="#" class="nextChip  btn btn-rounded primary">
+                                <i class="fa-solid fa-angle-right icon-dark" id="nextChip"></i>
                             </a>
                         </div>
                         <div class="bottom-control">
                             <div class="btns">
-                                <button class="btn-circle btn-gray toggle-tables">
+                                <!-- <button class="btn-circle btn-gray toggle-tables">
                                     <i class="fa-solid fa-arrows-rotate"></i>
-                                </button>
-                                <button class="btn-circle btn-gray toggle-tables">
+                                </button> -->
+                                <!-- <button class="btn-circle btn-gray toggle-tables">
                                     <i class="fa-solid fa-rotate-right"></i>
+                                </button> -->
+                                <!-- <button class="btn cancel">Cancel Bets</button>
+                                <button class="btn bet">Place Bet</button> -->
+                                <!-- <button class="btn-circle btn-gray toggle-chips">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button> -->
+                                <button class="btn btn-custom-blue">
+                                    PLACE BETS
                                 </button>
-                                <button class="btn cancel">Cancel Bets</button>
-                                <button class="btn bet">Place Bet</button>
-                                <button class="btn-circle btn-gray toggle-chips">
-                                    <i class="fa-solid fa-gear"></i>
+                                <button class="btn btn-rounded primary">
+                                    <i class="fa-solid fa-arrows-rotate icon-dark"></i>
+                                </button>
+                                <button class="btn btn-rounded primary toggle-tables">
+                                    <i class="fa-solid fa-rotate-right icon-dark"></i>
+                                </button>
+                                <button class="btn btn-rounded primary toggle-chips">
+                                    <i class="fa-solid fa-gear icon-dark"></i>
+                                </button>
+                                <button class="btn btn-custom-red">
+                                    CANCEL BETS
                                 </button>
                             </div>
                         </div>
@@ -472,7 +431,6 @@
                         </div>
                     </div>
                 </div>
-                <img class="bg-border" src="img/bg/betting_bg.png" alt="Hilton Casino Betting Background">
             </div>
         </div>
         <div class="bottom">
@@ -532,24 +490,34 @@
                         <span>50</span>
                     </li>
                     <li>
-                        <div class="result red"></div>
-                        <span class="red">0</span>
+                        <div>
+                            <div class="result red"></div>
+                            <span class="red">0</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="result blue"></div>
-                        <span class="blue">0</span>
+                        <div>
+                            <div class="result blue"></div>
+                            <span class="blue">0</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="result green"></div>
-                        <span class="green">0</span>
+                        <div>
+                            <div class="result green"></div>
+                            <span class="green">0</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="result red"><div class="pair-banker"></div></div>
-                        <span class="red">0</span>
+                        <div>
+                            <div class="result red"><div class="pair-banker"></div></div>
+                            <span class="red">0</span>
+                        </div>
                     </li>
                     <li>
-                        <div class="result blue"><div class="pair-player"></div></div>
-                        <span class="blue">0</span>
+                        <div>
+                            <div class="result blue"><div class="pair-player"></div></div>
+                            <span class="blue">0</span>
+                        </div>
                     </li>
                 </ul>
                 <div class="indicators">
@@ -584,14 +552,14 @@
                     </div>
                 </div>
                 <div class="legend-controls">
-                    <button class="toggle-tables">
+                    <a href="" class="toggle-tables">
                         <i class="fa-solid fa-arrow-right-arrow-left"></i>
                         <span>Change Table</span>
-                    </button>
-                    <button class="">
-                        <i class="fa-solid fa-table-cells-large"></i>
+                    </a>
+                    <a href="index.html" class="">
+                        <i class="fa-solid fa-house"></i>
                         <span>Return to lobby</span>
-                    </button>
+                    </a>
                 </div>
             </div>
             <!-- <div class="bottom-menu">
@@ -624,7 +592,6 @@
                 </div>
             </div> -->
         </div>
-
         <div class="mobile-controls">
             <div class="control-area-mobile">
                 <div class="top-control mx-auto">
@@ -1278,7 +1245,7 @@
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>
                 <!-- <img class="bg-border" src="img/bg/video_bg.png" alt="Hilton Casino Betting Background"> -->
-                <!-- <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="right">
                 <!-- <div class="waiting-prompt">
@@ -1665,7 +1632,7 @@
                         <span>Change Table</span>
                     </button>
                     <button class="">
-                        <i class="fa-solid fa-table-cells-large"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span>Return to lobby</span>
                     </button>
                 </div>
@@ -2324,7 +2291,7 @@
             </div>
         </div>
         <div class="top">
-            <div class="left">
+            <div class="left border-fancy-top">
                 <div class="video-prompt red-color">Stop Betting</div>
                 <div class="timerParent room-timer">
                     <div class="middle-circle"></div>
@@ -2340,7 +2307,7 @@
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>
                 <!-- <img class="bg-border" src="img/bg/video_bg.png" alt="Hilton Casino Betting Background"> -->
-                <!-- <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                <iframe id="roomVideo" width="1000" height="500" src="https://www.youtube.com/embed/ITgcLG6Lf0I?&autoplay=1&showinfo=0&controls=0" title="1K Start Live Casino Baccarat Big Bets Sesh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="right">
                 <!-- <div class="waiting-prompt">
@@ -2677,7 +2644,7 @@
                         <span>Change Table</span>
                     </button>
                     <button class="">
-                        <i class="fa-solid fa-table-cells-large"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span>Return to lobby</span>
                     </button>
                 </div>

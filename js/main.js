@@ -34,7 +34,7 @@ function drop(event) {
 
 function setProgress() {
     document.getElementsByClassName("progress-spinner")[0].style.background =
-        "conic-gradient(rgb(255, 241, 118) " +
+        "conic-gradient(rgb(0, 175, 39) " +
         progress +
         "%,rgb(242, 242, 242) " +
         progress +
@@ -44,7 +44,7 @@ function setProgress() {
         progress.toString();
         
     document.getElementsByClassName("progress-spinner")[1].style.background =
-    "conic-gradient(rgb(255, 241, 118) " +
+    "conic-gradient(rgb(0, 175, 39) " +
     progress +
     "%,rgb(242, 242, 242) " +
     progress +
@@ -54,7 +54,7 @@ function setProgress() {
         progress.toString();
 
     document.getElementsByClassName("progress-spinner")[2].style.background =
-    "conic-gradient(rgb(255, 241, 118) " +
+    "conic-gradient(rgb(0, 175, 39) " +
     progress +
     "%,rgb(242, 242, 242) " +
     progress +
@@ -80,10 +80,10 @@ $(document).ready(function(){
     layout.createGrid()
     layout.handleDevicePrompt()
 
-    layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
-    layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
-    layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
-    layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
+    // layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
+    // layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
+    // layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
+    // layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
 
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
@@ -308,6 +308,7 @@ $(document).ready(function(){
 
     //modal open
     $('.toggle-history').on('click',function(){
+
         layout.historyModal()
     })
     $('.toggle-contact').on('click',function(){
@@ -678,24 +679,24 @@ class Layout{
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                // $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
-                $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
+                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                $(`${bigBoxElOne}`).append(`<li></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                // $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                $(`${bigBoxElThree}`).append(`<li></li>`)
+                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                // $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
-                $( `${bigBoxElFour}`).append(`<li></li>`)
+                $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
+                // $( `${bigBoxElFour}`).append(`<li></li>`)
             }
         }
         else{
@@ -816,11 +817,11 @@ class Layout{
         if(!this.fsBool){
             this.fsBool = true
             this.openFullscreen()
-            $(_this).html('<i class="fa-solid fa-compress"></i>')
+            $(_this).html('<i class="fa-solid fa-compress icon-dark"></i>')
         }else{
             this.fsBool = false
             this.closeFullscreen()
-            $(_this).html('<i class="fa-solid fa-expand"></i>')
+            $(_this).html('<i class="fa-solid fa-expand icon-dark"></i>')
         }
     }
     modalClose(){

@@ -359,12 +359,13 @@ i{
   }
 }
 ::-webkit-scrollbar {
-  width: 10px;
-  background: -webkit-linear-gradient(#FF9700, #F7FF00,#FF9700);
+  width: 8px;
+  background: -webkit-linear-gradient(#232222, #000000, #000000);
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#fcbd65, #362606);
-  border: solid 2px #000000;
+  background: linear-gradient(#362606,#fcbd65 ,#362606);
+  border: 1px solid #000;
   border-radius: 5px;
 }
 
@@ -476,7 +477,8 @@ input[type="checkbox"]:disabled{
   background-color: #cccccc;
   +{
     label{
-      color: #3d3d3d !important;
+      color: #979797 !important;
+      font-weight: 700;
     }
   }
 }

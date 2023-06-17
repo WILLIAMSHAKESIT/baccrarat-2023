@@ -68,57 +68,108 @@
             </button>
         </div>
     </header> -->
-    <header class="p-5">
-        <div class="user-info flex  gap-5">
-            <div class="flex gap-2 items-center">
-                <div class="user-name font-bold">
-                    <i class="fa-solid fa-user  mr-1"></i>
-                    John Doe
-                </div>
+    <header class="p-5 border-fancy-bottom">
+        <!-- <div class="user-info flex  gap-5">
+            <div class="user-name font-bold">
+                <i class="fa-solid fa-user  mr-1"></i>
+                John Doe
+            </div>
+            <div class="flex gap-3 items-center">
                 <div class="user-name font-bold">
                     <i class="fa-solid fa-won-sign mr-1"></i>
                     100,000,000
                 </div>
-            </div>
-            <div class="flex gap-2 items-center mobile-flex">
-                <a href="index.html" class="goto-home mobile">
-                    <i class="fa-solid fa-house"></i>
-                </a>
-                <a href="#" class="toggle-menu mobile">
+                <div class="toggle-menu mobile">
                     <i class="fa-solid fa-bars"></i>
-                </a>
+                </div>
             </div>
+        </div> -->
+        <div class="logo-wrapper">
+            <img src="img/elements/hilton_logo.png" alt="Hilton Casino Logo">
+        </div>
+        <div class="header-bg">
+            <div class="notif">
+                <div class="notif-icon">
+                    <i class="fa-solid fa-bell "></i>
+                </div>
+                <div class="notif-text">
+                    🎉 Table 10 is under maintenance
+                </div>
+            </div>
+            <div class="header-mid-right-most">
+                <div class="users">
+                    <i class="fa-solid fa-users  mr-1"></i>
+                    <span>2,500</span>
+                </div>
+                <div class="user-content">
+                    <div class="money-icon">
+                        <i class="fa-solid fa-won-sign  icon-dark"></i>
+                    </div>
+                    <span class="text-highlight font-bold">999,999,999</span>
+                    <div class="user">Mike Shinoda</div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu">
+            <button class="btn btn-rounded primary toggle-history">
+                <i class="fa-solid fa-clock-rotate-left  icon-dark"></i>
+            </button>
+            <button class="btn btn-rounded primary toggleFull">
+                <i class="fa-solid fa-expand  icon-dark"></i>
+            </button>
+            <button class="btn btn-rounded primary toggle-contact">
+                <i class="fa-solid fa-phone  icon-dark"></i>
+            </button>
+            <button class="btn btn-rounded  primary toggle-settings">
+                <i class="fa-solid fa-gear  icon-dark"></i>
+            </button>
         </div>
     </header>
     <div class="container multi-rooms">
         <div class="h-full flex gap-10">
             <div class="room" data-room="room-1">
-                <button class="btn btn-red close-room hide"><i class="fa-solid fa-xmark"></i>Close Room</button>
+                <div class="border-fancy-top-orig"></div>
+                <div class="border-fancy-bottom-orig"></div>
+                <div class="border-fancy-right"></div>
+                <div class="border-fancy-left left-0"></div>
+                <button class="btn btn-rounded btn-red close-room hide"><i class="fa-solid fa-xmark"></i></button>
                 <div class="room-content">
-                    <button class="btn btn-blue toggle-tables"><i class="fa-solid fa-plus"></i>Add Table</button>
+                    <button class="btn btn-md btn-custom-blue blue toggle-tables"><i class="fa-solid fa-plus"></i><span>Add Table</span></button>
                 </div>
             </div>
             <div class="room" data-room="room-2">
-                <button class="btn btn-red close-room hide"><i class="fa-solid fa-xmark"></i>Close Room</button>
+                <div class="border-fancy-top-orig"></div>
+                <div class="border-fancy-bottom-orig"></div>
+                <div class="border-fancy-right"></div>
+                <div class="border-fancy-left left-0"></div>
+                <button class="btn btn-rounded btn-red close-room hide"><i class="fa-solid fa-xmark"></i></button>
                 <div class="room-content">
-                    <button class="btn btn-blue toggle-tables"><i class="fa-solid fa-plus"></i>Add Table</button>
+                    <button class="btn btn-md btn-custom-blue blue toggle-tables"><i class="fa-solid fa-plus"></i><span>Add Table</span></button>
                 </div>
             </div>
             <div class="room" data-room="room-3">
-                <button class="btn btn-red close-room hide"><i class="fa-solid fa-xmark"></i>Close Room</button>
+                <div class="border-fancy-top-orig"></div>
+                <div class="border-fancy-bottom-orig"></div>
+                <div class="border-fancy-right"></div>
+                <div class="border-fancy-left left-0"></div>
+                <button class="btn btn-rounded btn-red close-room hide"><i class="fa-solid fa-xmark"></i></button>
                 <div class="room-content">
-                    <button class="btn btn-blue toggle-tables"><i class="fa-solid fa-plus"></i>Add Table</button>
+                    <button class="btn btn-md btn-custom-blue blue toggle-tables"><i class="fa-solid fa-plus"></i><span>Add Table</span></button>
                 </div>
             </div>
             <div class="room" data-room="room-4">
-                <button class="btn btn-red close-room hide"><i class="fa-solid fa-xmark"></i>Close Room</button>
+                <div class="border-fancy-top-orig"></div>
+                <div class="border-fancy-bottom-orig"></div>
+                <div class="border-fancy-right"></div>
+                <div class="border-fancy-left left-0"></div>
+                <button class="btn btn-rounded btn-red close-room hide"><i class="fa-solid fa-xmark"></i></button>
                 <div class="room-content">
-                    <button class="btn btn-blue toggle-tables"><i class="fa-solid fa-plus"></i>Add Table</button>
+                    <button class="btn btn-md btn-custom-blue blue toggle-tables"><i class="fa-solid fa-plus"></i><span>Add Table</span></button>
                 </div>
             </div>
         </div>
         <div class="control-menu">
-            <button class="btn primary items-center toggle-chips"><i class="fa-solid fa-gear mr-2"></i> Chip Settings</button>
+            <button class="btn btn-md btn-custom-red toggle-tables"><i class="fa-solid fa-gear mr-2"></i><span>Chip Settings</span></button>
             <div class="buttons-chips">
                 <a href="#" class="prevChip">
                     <i class="fa-solid fa-angle-left" class="prevChip"></i>
@@ -139,7 +190,7 @@
                     <i class="fa-solid fa-angle-right" class="nextChip"></i>
                 </a>
             </div>
-            <a href="index.html" class="btn primary items-center"><i class="fa-solid fa-table mr-2"></i>Return to Lobby</a>
+            <button class="btn btn-md btn-custom-red toggle-tables"><i class="fa-solid fa-house mr-2"></i>Return to Lobby</button>
         </div>
     </div>
     <!-- <div class="mobile-menu">
@@ -522,16 +573,17 @@
         </div>
     </div>
     <div class="modal-wrapper side" id="tablesModal">
-        <div class="modal-container animate__animated animate__slideInRight">
+        <div class="modal-container fancy-border-2 no-radius animate__animated animate__slideInRight">
+            <div class="border-fancy-left border-md"></div>
             <div class="modal-header">
                 <h2>Choose a table</h2>
-                <button class="btn btn-red closeModal">
+                <button class="btn btn-rounded btn-red closeModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="main-content">
-                    <div class="card-board fancy-border mb-2">
+                    <div class="card-board border-fancy-bottom border-fancy-top mb-2">
                         <div class="card-header">
                             <div class="logo">
                                 <img src="img/casino/solaire.png">
@@ -541,11 +593,7 @@
                                 <i class="fa-solid fa-caret-down limit-toggle"></i>
                             </span>
                             <div class="flex items-center gap-2">
-                                <div class="table-status">Stop Betting</div>
-                                <!-- <div class="timerParent">
-                                    <div class="middle-circle"></div>
-                                    <div class="progress-spinner"></div>
-                                </div> -->
+                                <div class="table-status relative">Stop Betting</div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -591,7 +639,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="table-status shuffling">
+                            <div class="table-status close">
+                                <img src="img/Fancy Cards/close_room4.png" class="fancy-card-body">
                                 <div class="content">
                                     <div></div>
                                     <span></span>
@@ -614,7 +663,7 @@
                         <div class="card-footer">
                             <div class="right-most">
                                 <span class="table-no">S01</span>
-                                <span class="type"><i class="fa-solid fa-bolt"></i>SPEED</span>
+                                <span class="type"><i class="fa-solid fa-bolt -light"></i>SPEED</span>
                             </div>
                             <div class="results">
                                 <div class="item">

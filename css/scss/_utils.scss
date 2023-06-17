@@ -49,6 +49,9 @@
     &.icon-yuan{
         background-image: url(../img/icons/yuan.svg);
     }
+    &.icon-card{
+        background-image: url(../img/icons/card.svg);
+    }
 }
 
 .border-fancy-bottom{
@@ -79,4 +82,65 @@
         top: -2px;
         transform: translateX(-50%);    
     }
+    &.border-md{
+        &::after{ 
+            height: 5px; 
+        }
+    }
+}
+
+.border-fancy-left{
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+    left: 3px;
+    top: 0;
+    transform: translateX(-50%);    
+    &.border-md{
+        width: 5px; 
+    }
+}
+
+.border-fancy-right{
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+    right: -2px;
+    top: 0;
+    transform: translateX(-50%);    
+    &.border-md{
+        width: 5px; 
+    }
+}
+
+.border-fancy-top-orig{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);      
+    &.border-md{
+        height: 5px; 
+    }
+}
+.border-fancy-bottom-orig{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250 243 179) 51%, rgba(133, 100, 13, 0) 100%);
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);      
+    &.border-md{
+        height: 5px; 
+    }
+}
+
+.left-0{
+    left: 0;
 }
