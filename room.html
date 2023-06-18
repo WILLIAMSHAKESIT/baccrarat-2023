@@ -28,11 +28,8 @@
     <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
     <script>
-       
-          $( '#TestChip' ).draggable();
-
- 
-        </script>
+        $( '#TestChip' ).draggable();
+    </script>
 
 </head>
 <body class="not-multi">
@@ -124,9 +121,12 @@
                 <i class="fa-solid fa-gear  icon-dark"></i>
             </button>
         </div>
-        <button class="btn btn-rounded primary toggle-menu">
+        <a href="index.html" class="btn to-home btn-rounded primary mr-2">
+            <i class="fa-solid fa-house icon-dark"></i>
+        </a>
+        <a class="btn btn-rounded primary toggle-menu">
             <i class="fa-solid fa-bars icon-dark"></i>
-        </button>
+        </a>
     </header>
     <div class="container room">
         <div class="upper-most">
@@ -204,7 +204,7 @@
                     <div class="progress-spinner"></div>
                 </div>
                 <div class="vid-controls">
-                    <button><i class="fa-solid fa-wifi"></i></button>
+                    <!-- <button><i class="fa-solid fa-wifi"></i></button> -->
                     <button id="toggleVideo"><i class="fa-solid fa-video-slash"></i></button>
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>
@@ -368,7 +368,7 @@
                                 <!-- <button class="btn-circle btn-gray toggle-chips">
                                     <i class="fa-solid fa-rotate-right"></i>
                                 </button> -->
-                                <button class="btn btn-custom-blue">
+                                <button class="btn btn-custom-blue bet">
                                     PLACE BETS
                                 </button>
                                 <button class="btn btn-rounded primary">
@@ -380,7 +380,7 @@
                                 <button class="btn btn-rounded primary toggle-chips">
                                     <i class="fa-solid fa-gear icon-dark"></i>
                                 </button>
-                                <button class="btn btn-custom-red">
+                                <button class="btn btn-custom-red cancel">
                                     CANCEL BETS
                                 </button>
                             </div>
@@ -612,9 +612,9 @@
                 </div>
                 <div class="bottom-control">
                     <div class="btns">
-                        <button class="btn btn-custom-red2 btn-sm toggle-tables">
-                            <i class="fa-solid fa-xmark"></i>
-                            <span>CANCEL BETS</span>
+                        <button class="btn btn-custom-blue2 btn-sm toggle-tables">
+                            <i class="fa-solid fa-check"></i>
+                            <span>PLACE BETS</span>
                         </button>
                         <button class="btn btn-rounded primary">
                             <i class="fa-solid fa-repeat icon-dark"></i>
@@ -628,9 +628,9 @@
                         <button class="btn btn-rounded primary toggle-tables">
                             <i class="fa-solid fa-gear icon-dark"></i>
                         </button>
-                        <button class="btn btn-custom-blue2 btn-sm toggle-tables">
-                            <i class="fa-solid fa-check"></i>
-                            <span>PLACE BETS</span>
+                        <button class="btn btn-custom-red2 btn-sm toggle-tables">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>CANCEL BETS</span>
                         </button>
                     </div>
                 </div>
@@ -667,9 +667,13 @@
     </div> -->
     <div class="modal-wrapper" id="chipModal">
         <div class="modal-container fancy-border-2">
+            <div class="border-fancy-top-orig"></div>
+            <div class="border-fancy-bottom-orig"></div>
+            <div class="border-fancy-right border-md"></div>
+            <div class="border-fancy-left border-md"></div>
             <div class="modal-header">
                 <h2>Chip Settings</h2>
-                <button class="btn btn-red closeModal">
+                <button class="btn btn-rounded btn-red closeModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -1245,7 +1249,7 @@
                     <canvas class="timer" width="50" height="50"></canvas>
                 </div> -->
                 <div class="vid-controls">
-                    <button><i class="fa-solid fa-wifi"></i></button>
+                    <!-- <button><i class="fa-solid fa-wifi"></i></button> -->
                     <button id="toggleVideo"><i class="fa-solid fa-video-slash"></i></button>
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>
@@ -2269,7 +2273,7 @@
                     <canvas class="timer" width="50" height="50"></canvas>
                 </div> -->
                 <div class="vid-controls">
-                    <button><i class="fa-solid fa-wifi"></i></button>
+                    <!-- <button><i class="fa-solid fa-wifi"></i></button> -->
                     <button id="toggleVideo"><i class="fa-solid fa-video-slash"></i></button>
                     <button id="videoExpand"><i class="fa-solid fa-expand"></i></button>
                 </div>

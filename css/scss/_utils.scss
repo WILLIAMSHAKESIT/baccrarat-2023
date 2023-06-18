@@ -49,6 +49,9 @@
     &.icon-yuan{
         background-image: url(../img/icons/yuan.svg);
     }
+    &.icon-yuan-dark{
+        background-image: url(../img/icons/yuan-dark.svg);
+    }
     &.icon-card{
         background-image: url(../img/icons/card.svg);
     }
@@ -143,4 +146,10 @@
 
 .left-0{
     left: 0;
+}
+
+.btn-rounded{
+    &.toggle-menu,&.to-home{
+        display: none;
+    }
 }

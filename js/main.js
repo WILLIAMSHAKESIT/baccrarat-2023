@@ -80,10 +80,10 @@ $(document).ready(function(){
     layout.createGrid()
     // layout.handleDevicePrompt()
 
-    // layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
-    // layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
-    // layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
-    // layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
+    layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
+    layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
+    layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
+    layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
 
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
@@ -295,7 +295,7 @@ $(document).ready(function(){
         layout.setUpChips()
     })
     $(window).on('resize',function(){
-        // layout.createGrid()
+        layout.createGrid()
     })
     //filter table
     $('.table-filter button').on('click',function(){
@@ -1001,7 +1001,7 @@ class Layout{
             this.prevChip()
             }
         }
-        $(this.touchMoveThis).css('left',`${0}px`)
+        // $(this.touchMoveThis).css('left',`${0}px`)
     }
     handleTouchStart(_this,event){
         this.chipsOffset = 0
@@ -1009,15 +1009,15 @@ class Layout{
     }
     handleTouchMove(_this,event){
         this.touchMoveThis = _this
-        if(this.startX < this.endX){
-            $(_this).css('left',`${this.chipsOffset++}px`)
-        }else{
-            $(_this).css('left',`${this.chipsOffset--}px`)
-        }
+        // if(this.startX < this.endX){
+        //     $(_this).css('left',`${this.chipsOffset++}px`)
+        // }else{
+        //     $(_this).css('left',`${this.chipsOffset--}px`)
+        // }
         this.endX = event.touches[0].clientX;
     }
     handleTouchEnd() {
-        $(this.touchMoveThis).css('left',`${0}px`)
+        // $(this.touchMoveThis).css('left',`${0}px`)
         const threshold = 100; // Minimum swipe distance threshold
 
         // Calculate the distance swiped

@@ -69,21 +69,6 @@
         </div>
     </header> -->
     <header class="p-5 border-fancy-bottom">
-        <!-- <div class="user-info flex  gap-5">
-            <div class="user-name font-bold">
-                <i class="fa-solid fa-user  mr-1"></i>
-                John Doe
-            </div>
-            <div class="flex gap-3 items-center">
-                <div class="user-name font-bold">
-                    <i class="fa-solid fa-won-sign mr-1"></i>
-                    100,000,000
-                </div>
-                <div class="toggle-menu mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-        </div> -->
         <div class="logo-wrapper">
             <img src="img/elements/hilton_logo.png" alt="Hilton Casino Logo">
         </div>
@@ -124,6 +109,12 @@
                 <i class="fa-solid fa-gear  icon-dark"></i>
             </button>
         </div>
+        <a href="index.html" class="btn to-home btn-rounded primary mr-1">
+            <i class="fa-solid fa-house icon-dark"></i>
+        </a>
+        <a class="btn btn-rounded primary toggle-menu">
+            <i class="fa-solid fa-bars icon-dark"></i>
+        </a>
     </header>
     <div class="container multi-rooms">
         <div class="h-full flex gap-10">
@@ -171,23 +162,26 @@
         <div class="control-menu">
             <button class="btn btn-md btn-custom-red toggle-tables"><i class="fa-solid fa-gear mr-2"></i><span>Chip Settings</span></button>
             <div class="buttons-chips">
-                <a href="#" class="prevChip">
-                    <i class="fa-solid fa-angle-left" class="prevChip"></i>
+                <a href="#" class="prevChip btn btn-rounded btn-sm primary">
+                    <i class="fa-solid fa-angle-left icon-dark" class="prevChip"></i>
                 </a>
-               <div class="chips" draggable="true">
-                    <button class="btn-chip chip-1k" value="1k" data-val="1k"></button>
-                    <button class="btn-chip chip-5k" value="5k" data-val="5k"></button>
-                    <button class="btn-chip chip-10k" value="10k" data-val="10k"></button>
-                    <button class="btn-chip chip-50k" value="50k" data-val="50k"></button>
-                    <button class="btn-chip chip-100k" value="100k" data-val="100k"></button>
-                    <button class="btn-chip chip-500k" value="500k" data-val="500k"></button>
-                    <button class="btn-chip chip-1m" value="1M" data-val="1m"></button>
-                    <button class="btn-chip chip-5m" value="5M" data-val="5m"></button>
-                    <button class="btn-chip chip-10m" value="10M" data-val="10m"></button>
-                    <button class="btn-chip chip-50m" value="50M" data-val="50m"></button>
+               <div class="chips">
+                    <div class="inner-chips">
+                        <button class="btn-chip chip-500" value="500" data-val="500"></button>
+                        <button class="btn-chip chip-1k" value="1k" data-val="1k"></button>
+                        <button class="btn-chip chip-5k" value="5k" data-val="5k"></button>
+                        <button class="btn-chip chip-10k" value="10k" data-val="10k"></button>
+                        <button class="btn-chip chip-50k" value="50k" data-val="50k"></button>
+                        <button class="btn-chip chip-100k" value="100k" data-val="100k"></button>
+                        <button class="btn-chip chip-500k" value="500k" data-val="500k"></button>
+                        <button class="btn-chip chip-1m" value="1M" data-val="1m"></button>
+                        <button class="btn-chip chip-5m" value="5M" data-val="5m"></button>
+                        <button class="btn-chip chip-10m" value="10M" data-val="10m"></button>
+                        <button class="btn-chip chip-50m" value="50M" data-val="50m"></button>
+                    </div>
                </div>
-                <a href="#" class="nextChip">
-                    <i class="fa-solid fa-angle-right" class="nextChip"></i>
+                <a href="#" class="nextChip btn btn-rounded btn-sm primary">
+                    <i class="fa-solid fa-angle-right icon-dark" class="nextChip"></i>
                 </a>
             </div>
             <button class="btn btn-md btn-custom-red toggle-tables"><i class="fa-solid fa-house mr-2"></i>Return to Lobby</button>
@@ -573,7 +567,7 @@
         </div>
     </div>
     <div class="modal-wrapper side" id="tablesModal">
-        <div class="modal-container fancy-border-2 no-radius animate__animated animate__slideInRight">
+        <div class="modal-container fancy-border-2 dim no-radius animate__animated animate__slideInRight">
             <div class="border-fancy-left border-md"></div>
             <div class="modal-header">
                 <h2>Choose a table</h2>
@@ -593,7 +587,7 @@
                                 <i class="fa-solid fa-caret-down limit-toggle"></i>
                             </span>
                             <div class="flex items-center gap-2">
-                                <div class="table-status relative">Stop Betting</div>
+                                <div class="table-status relative side-card">Stop Betting</div>
                             </div>
                         </div>
                         <div class="card-body">
