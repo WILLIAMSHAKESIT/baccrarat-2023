@@ -287,14 +287,14 @@
     }
     .card-board{
         .card-header{
-            .flex{
-                .timerParent{
-                    margin-left: 77px;
-                }
-            }
             .logo{
-                img{
-                    width: calc(100% - 10px);
+                width: 68px;
+            }
+            .bet-limit{
+                left: 38%;
+                font-size: 10px;
+                i{
+                    font-size: 16px !important;
                 }
             }
         }
@@ -760,35 +760,6 @@
         }
     }
 }
-@media(max-width:1148px){
-    .card-board{
-        .card-header{
-            .logo{
-                width: 115px;
-                padding: 5px;
-                height: 35px;
-                img{
-                    width: calc(100% - 4px);
-                }
-            }
-        }
-        .flex{
-            .timerParent{
-                margin-left: 70px;
-            }
-        }
-    }
-    .table-grid{
-        .card-board{
-            width: calc(100% / 2 - 10px) !important;
-        }
-    }
-    .sub-header{
-        .table-filters{
-            display: none;
-        }
-    }
-}
 @media(max-width:988px){
     header{
         .header-bg{
@@ -863,19 +834,15 @@
             }
         }
     }
-}
-@media(max-width:935px){
     .card-board{
-        &.multi-bet{
-            .card-body{
-                .content{
-                    h1{
-                        font-size: 35px;
-                    }
-                }
+        .card-header{
+            .logo{
+                width: 54px;
             }
         }
     }
+}
+@media(max-width:935px){
     ::-webkit-scrollbar {
         width: 0px;
     }
@@ -1641,6 +1608,30 @@
             width: calc(100% / 2 - 8px) !important;
         }
     }
+    .card-board{
+        .card-header{
+            .bet-limit{
+                left: 38%;
+                font-size: 13px;
+                i{
+                    font-size: 16px !important;
+                }
+            }
+            .logo{
+                width: 54px;
+            }
+        }
+    }
+}
+@media(max-width:766px){
+    .card-board{
+        .card-header{
+            .bet-limit{
+                left: 42%;
+                font-size: 10px;
+            }
+        }
+    }
 }
 @media only screen and (max-device-width : 697px) {
     .room{
@@ -1661,11 +1652,6 @@
     }
 }
 @media(max-width:697px){
-    .table-grid{
-        .card-board{
-            width: 100% !important;
-        }
-    }
     header{
         .logo-wrapper{
             width: 195px;
@@ -1889,6 +1875,11 @@
                 }
             }  
         } 
+        .card-header{
+            .bet-limit{
+                left: 36%;
+            }
+        }
     }
     .multi-rooms{
         max-width: calc(100% - 13px);
@@ -2153,6 +2144,20 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    .card-board{
+        .card-header{
+            .bet-limit{
+                left: 42%;
+                font-size: 15px;
+            }
+            .logo{
+                width: 60px;
+            }
+            .table-status{
+                right: 34px;
             }
         }
     }

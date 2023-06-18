@@ -473,7 +473,7 @@ select{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     max-height: calc(100% - 200.5px);
     overflow-y: auto;
     padding: 20px 0;
@@ -499,7 +499,7 @@ select{
     &.col-four{
         .card-board{
             // width: 469px;
-            width: calc(100% / 4 - 8px);
+            width: calc(100% / 4 - 4px);
             .card-header{
                 .bet-limit{
                     // font-size: 12px;
@@ -517,7 +517,7 @@ select{
     height: -moz-fit-content;
     height: fit-content;
     border-radius: 4px;
-  
+
     overflow: hidden;
     .card-header{
         height: fit-content;
@@ -527,24 +527,27 @@ select{
         justify-content: space-between;
         padding:6px;
         gap: 10px;
+        position: relative;
         .logo{
             background-color: #2E0606;
             border-radius:25px;
             width: 115px;
-            height: 35px;
+            height: 33px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 5px 0;
             img{
-                width: calc(100% - 20px);
+                width: calc(100% - 10px);
             }
         }
         .bet-limit{
-            // color:#ACE9FF;
             white-space: nowrap;
             font-weight: 700;
             font-size: 13px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             .amount{
                 color: #FFF176;
                 margin-left: 4px;
@@ -865,6 +868,17 @@ select{
             .modal-body{
                 height: calc(100% - 60px);
                 padding: 10px;
+                .card-board{
+                    .card-header{
+                        .logo{
+                            width: 84px !important;
+                        }
+                        .bet-limit{
+                            font-size: 12px;
+                            left: 50% !important;
+                        }
+                    }
+                }
             }
         }
     }

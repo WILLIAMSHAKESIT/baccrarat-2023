@@ -865,7 +865,7 @@ select option {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   max-height: calc(100% - 200.5px);
   overflow-y: auto;
   padding: 20px 0;
@@ -880,7 +880,7 @@ select option {
   width: calc(33.3333333333% - 8px);
 }
 .table-grid.col-four .card-board {
-  width: calc(25% - 8px);
+  width: calc(25% - 4px);
 }
 .card-board {
   background: linear-gradient(114deg, #6d0000, #c52a2a, #7b0000);
@@ -898,24 +898,28 @@ select option {
   justify-content: space-between;
   padding: 6px;
   gap: 10px;
+  position: relative;
 }
 .card-board .card-header .logo {
   background-color: #2E0606;
   border-radius: 25px;
   width: 115px;
-  height: 35px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 0;
 }
 .card-board .card-header .logo img {
-  width: calc(100% - 20px);
+  width: calc(100% - 10px);
 }
 .card-board .card-header .bet-limit {
   white-space: nowrap;
   font-weight: 700;
   font-size: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .card-board .card-header .bet-limit .amount {
   color: #FFF176;
@@ -1219,6 +1223,13 @@ select option {
 .modal-wrapper.side .modal-container .modal-body {
   height: calc(100% - 60px);
   padding: 10px;
+}
+.modal-wrapper.side .modal-container .modal-body .card-board .card-header .logo {
+  width: 84px !important;
+}
+.modal-wrapper.side .modal-container .modal-body .card-board .card-header .bet-limit {
+  font-size: 12px;
+  left: 50% !important;
 }
 .modal-wrapper .modal-container {
   background: linear-gradient(178deg, rgba(43, 27, 19, 0.88), rgba(22, 17, 13, 0.9215686275));
@@ -3667,7 +3678,7 @@ table.table-fancy tbody tr td:last-child {
   height: 31px;
 }
 .room.multi .top > div.right .body .bet-area .area .area-info .info .area-name {
-  width: 66px;
+  width: 100%;
 }
 .room.multi .top > div.left iframe {
   width: 100%;
@@ -4052,11 +4063,15 @@ table.table-fancy tbody tr td:last-child {
   .room .upper-most .upper-content-wrapper .left-most .stat-items .item:first-child i {
     margin-right: 3px;
   }
-  .card-board .card-header .flex .timerParent {
-    margin-left: 77px;
+  .card-board .card-header .logo {
+    width: 68px;
   }
-  .card-board .card-header .logo img {
-    width: calc(100% - 10px);
+  .card-board .card-header .bet-limit {
+    left: 38%;
+    font-size: 10px;
+  }
+  .card-board .card-header .bet-limit i {
+    font-size: 16px !important;
   }
 }
 @media (max-width: 1495px) {
@@ -4358,25 +4373,6 @@ table.table-fancy tbody tr td:last-child {
     height: 60px;
   }
 }
-@media (max-width: 1148px) {
-  .card-board .card-header .logo {
-    width: 115px;
-    padding: 5px;
-    height: 35px;
-  }
-  .card-board .card-header .logo img {
-    width: calc(100% - 4px);
-  }
-  .card-board .flex .timerParent {
-    margin-left: 70px;
-  }
-  .table-grid .card-board {
-    width: calc(50% - 10px) !important;
-  }
-  .sub-header .table-filters {
-    display: none;
-  }
-}
 @media (max-width: 988px) {
   header .header-bg {
     display: flex;
@@ -4435,11 +4431,11 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.right .body .control-area .bottom-control .btns {
     transform: scale(0.65);
   }
+  .card-board .card-header .logo {
+    width: 54px;
+  }
 }
 @media (max-width: 935px) {
-  .card-board.multi-bet .card-body .content h1 {
-    font-size: 35px;
-  }
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -5088,6 +5084,22 @@ table.table-fancy tbody tr td:last-child {
   .table-grid .card-board {
     width: calc(50% - 8px) !important;
   }
+  .card-board .card-header .bet-limit {
+    left: 38%;
+    font-size: 13px;
+  }
+  .card-board .card-header .bet-limit i {
+    font-size: 16px !important;
+  }
+  .card-board .card-header .logo {
+    width: 54px;
+  }
+}
+@media (max-width: 766px) {
+  .card-board .card-header .bet-limit {
+    left: 42%;
+    font-size: 10px;
+  }
 }
 @media only screen and (max-device-width: 697px) {
   .room.multi .top > div.right .body {
@@ -5098,9 +5110,6 @@ table.table-fancy tbody tr td:last-child {
   }
 }
 @media (max-width: 697px) {
-  .table-grid .card-board {
-    width: 100% !important;
-  }
   header .logo-wrapper {
     width: 195px;
     background: unset;
@@ -5251,6 +5260,9 @@ table.table-fancy tbody tr td:last-child {
   }
   .card-board.multi-bet .card-body .content h1 {
     font-size: 34px;
+  }
+  .card-board .card-header .bet-limit {
+    left: 36%;
   }
   .multi-rooms {
     max-width: calc(100% - 13px);
@@ -5471,6 +5483,16 @@ table.table-fancy tbody tr td:last-child {
   }
   .multi-rooms .control-menu .btn.btn-custom-red.btn-md i {
     margin-right: 0;
+  }
+  .card-board .card-header .bet-limit {
+    left: 42%;
+    font-size: 15px;
+  }
+  .card-board .card-header .logo {
+    width: 60px;
+  }
+  .card-board .card-header .table-status {
+    right: 34px;
   }
 }
 @media only screen and (max-device-width: 450px) {
