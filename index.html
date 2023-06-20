@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <title>Hilton Casino</title>
     <link href="css/jquery-confirm.min.css" rel="stylesheet">
     <link href="css/tailwind.min.css" rel="stylesheet">
@@ -45,7 +36,7 @@
                     <i class="fa-solid fa-bell "></i>
                 </div>
                 <div class="notif-text text-center">
-                    🎉 Table 10 is under 
+                    <marquee class="mt-2">Some tables are under maintenance.</marquee>
                 </div>
             </div>
             <div class="header-mid-right-most">
@@ -116,6 +107,8 @@
     </div>
     <div class="table-grid container col-four">
         <div class="card-board multi-bet fancy-border">
+            <div class="border-fancy-top-orig"></div>
+            <div class="border-fancy-bottom-orig"></div>
             <div class="card-body">
                 <img src="img/icons/screw.png" class="screw one" alt="Screw Icon">
                 <img src="img/icons/screw.png" class="screw two" alt="Screw Icon">
@@ -129,7 +122,9 @@
                 </div>
             </div>
         </div>
-        <a href="room.html" class="card-board border-fancy-bottom border-fancy-top">
+        <a href="room.html" class="card-board">
+            <div class="border-fancy-top-orig"></div>
+            <div class="border-fancy-bottom-orig"></div>
             <div class="card-header">
                 <div class="logo">
                     <img src="img/casino/solaire.png">
@@ -232,7 +227,9 @@
             </div>
         </a>
 
-        <a href="room.html" class="card-board border-fancy-bottom border-fancy-top">
+        <a href="room.html" class="card-board">
+            <div class="border-fancy-top-orig"></div>
+            <div class="border-fancy-bottom-orig"></div>
             <div class="card-header">
                 <div class="logo">
                     <img src="img/casino/solaire.png">
@@ -334,7 +331,9 @@
                 </div>
             </div>
         </a>
-        <a href="room.html" class="card-board border-fancy-bottom border-fancy-top">
+        <a href="room.html" class="card-board">
+            <div class="border-fancy-top-orig"></div>
+            <div class="border-fancy-bottom-orig"></div>
             <div class="card-header">
                 <div class="logo">
                     <img src="img/casino/solaire.png">
@@ -843,6 +842,11 @@
             </div>
         </div>
     </div>
+    <!-- <div class="modal-wrapper show">
+        <div class="loading-modal animate__animated animate__pulse">
+            <img src="img/loader.gif">
+        </div>
+    </div> -->
     <script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>

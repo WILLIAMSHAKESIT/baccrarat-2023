@@ -62,8 +62,6 @@ function setProgress() {
         
     document.getElementsByClassName("middle-circle")[2].innerHTML =
         progress.toString();    
-
-    
 }
 
 window.onload = function () {
@@ -78,13 +76,21 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-    // layout.handleDevicePrompt()
-
-    layout.scrollContainer.addEventListener('mousedown',e => layout.mouseIsDown(e));  
-    layout.scrollContainer.addEventListener('mouseup',e => layout.mouseUp(e))
-    layout.scrollContainer.addEventListener('mouseleave',e=>layout.mouseLeave(e));
-    layout.scrollContainer.addEventListener('mousemove',e=>layout.mouseMove(e));
-
+    layout.handleDevicePrompt()
+    layout.handleLoadingPage()
+    
+    $('.chips').on('mousedown',function(e){
+        layout.mouseIsDown(e)
+    })
+    $('.chips').on('mouseup',function(e){
+        layout.mouseUp(e)
+    })
+    $('.chips').on('mouseleave',function(e){
+        layout.mouseLeave(e)
+    })
+    $('.chips').on('mousemove',function(e){
+        layout.mouseMove(e)
+    })
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
     //     event.preventDefault();
@@ -335,6 +341,7 @@ $(document).ready(function(){
         layout.closeMultiRoom(this)
     })
     $('.toggle-menu').on('click',function(){
+        console.log('test')
         layout.toggleMenu()
     })
     $('.toggle-chips').on('click',function(){
@@ -571,6 +578,18 @@ class Layout{
         this.scrollTop = null;
         this.isDown = null;
         this.isDragging =false;
+        this.loadingWidth = 0 
+    }
+    handleLoadingPage(){
+        let loadingInterval = setInterval(()=>{
+            this.loadingWidth += 0.1
+            $('.loading-page-wrapper .loading-bar-bg .loading-bar').css('width',`${this.loadingWidth}%`)
+            if(Math.round(this.loadingWidth) >= 100){
+                clearInterval(loadingInterval)
+                this.loadingWidth = 0
+                this.handleLoadingPage()
+            }
+        },10)
     }
     closeFullscreen() {
         if (document.exitFullscreen) {
@@ -679,16 +698,16 @@ class Layout{
             let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
             for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                // $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
-                $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
+                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                $(`${bigBoxElOne}`).append(`<li></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                // $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
                 // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)

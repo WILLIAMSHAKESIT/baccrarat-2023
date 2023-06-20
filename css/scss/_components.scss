@@ -4,10 +4,16 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    background: #260000;
+    background-image: url(../img/bg/header_bg2.png);
+    background-size: cover;
+    background-position: center;
     height: 65px;
+    position: relative;
     .user-info{
         font-size: 20px;
+    }
+    .border-fancy-bottom-orig{
+        transform: unset;  
     }
     .logo{
         background: linear-gradient(359deg, #CCBF8B, #8B7350);
@@ -88,7 +94,7 @@ header{
         background-size: 100%;
         background-repeat: no-repeat;
         left: -24px;
-        top: -1px;
+        top: 2px;
         background-position: bottom;
         padding-left: 300px;
         display: flex;
@@ -348,6 +354,9 @@ header{
             width: 300px;
             height: 52px;
         }
+        &::before{
+            display: none;
+        }
     }
     &.btn-custom-red2{
         background-image: url(../img/elements/red-btn-simp.png) !important;
@@ -369,6 +378,9 @@ header{
         &.btn-md{
             width: 300px;
             height: 52px;
+        }
+        &::before{
+            display: none;
         }
     }
 }
@@ -447,6 +459,29 @@ header{
     &.chip-50m{
         background-image: url(../img/chips/chip10-1.png);
     }
+    // PHP
+    &.chip-20{
+        background-image: url(../img/chips/chip8-1.png);
+    }
+    &.chip-50{
+        background-image: url(../img/chips/chip9-1.png);
+    }
+    &.chip-100{
+        background-image: url(../img/chips/chip10-1.png);
+    }
+    &.chip-200{
+        background-image: url(../img/chips/chip5.png);
+    }
+    //USD EUR
+    &.chip-1{
+        background-image: url(../img/chips/chip4.png);
+    }
+    &.chip-5{
+        background-image: url(../img/chips/chip5-1.png);
+    }
+    &.chip-10{
+        background-image: url(../img/chips/chip7-1.png);
+    }
 } 
 .input{
     background: linear-gradient(359deg, #E8A200, #FFF176);
@@ -517,8 +552,22 @@ select{
     height: -moz-fit-content;
     height: fit-content;
     border-radius: 4px;
-
     overflow: hidden;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../img/bg/card_bg.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        // opacity: 0.5;
+        z-index: -1;
+    }
     .card-header{
         height: fit-content;
         width: 100%;
@@ -537,6 +586,7 @@ select{
             align-items: center;
             justify-content: center;
             padding: 5px 0;
+            border: 1px solid #e2ad1833;
             img{
                 width: calc(100% - 10px);
             }
@@ -607,6 +657,7 @@ select{
             text-align: right;
             padding: 0 10px;
             padding-right: 17px;
+            border: 1px solid #e2ad1833;
             &.relative{
                 position: relative;
             }
@@ -761,9 +812,10 @@ select{
             display: flex;
             align-items: center;
             gap: 20px;
-            background: #4d0e0e;
+            background: #2e0606;
             border-radius: 100px;
             padding: 2px 5px;
+            border: 1px solid #e2ad1833;
             .item{
                 display: flex;
                 align-items: center;
@@ -791,7 +843,7 @@ select{
             width: 100%;
             height: 235px;
             border-radius: 5px;
-            background: #350002;
+            background-image: url(../img/bg/multi_card_texture.jpg);
             box-shadow: inset 0 0 6px #000;
             position: relative;
             .screw{
@@ -958,12 +1010,12 @@ select{
                             &.btn-chip{
                                 padding: 0;
                                 &::after{
-                                    left: 46px;
-                                    top: 96px;
+                                    left: 34px;
+                                    top: 90px;
                                 }
                                 &::before{
-                                    left: 37px;
-                                    top: 87px;
+                                    left: 25px;
+                                    top: 81px;
                                 }
                             }
                         }
@@ -1009,7 +1061,8 @@ table{
                     padding: 5px 10px;
                     font-weight: 700;
                     text-align: center;
-                    color: #000 !important;
+                    color: #fff !important;
+                    text-shadow: 0 0 5px BLACK;
                     &:first-child{
                         text-align: left;
                     }
@@ -1043,6 +1096,8 @@ table{
     &.table-fancy{
         thead{
             background: linear-gradient(86deg, #F2BC1A 0%, #DFB842 51%, #F2BC1A 100%);
+            position: relative;
+            z-index: 20;
             tr{
                 th{
                     color: #000;
@@ -1061,8 +1116,25 @@ table{
             }
         }
         tbody{
-            background: linear-gradient(180deg, #6f0000 0%, #450000 100%);
+            background: linear-gradient(180deg, #6f0000 0%, #120000 100%);
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                background-image: url(../img/bg/card_bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                left: 50%;
+                top: 50%;
+                width: 100%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                opacity: 0.5;
+                z-index: 0;
+            }
             tr{
+                position: relative;
+                z-index: 2;
                 border-bottom: 1px solid #FFF176;
                 td{
                     padding: 0 10px;
@@ -2040,12 +2112,8 @@ table{
     justify-content: center;
     position: absolute;
     animation-iteration-count: infinite;
-    span{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        font-family: 700;
+    img{
+        width: 130px;
     }
 }
 
@@ -2110,10 +2178,10 @@ table{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(44 15 0 / 81%);
+    background-color: rgb(103 0 0 / 79%);
     z-index: 600;
     -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(7px);
     .prompt-with-img{
         display: flex;
         flex-direction: column;
@@ -2242,7 +2310,7 @@ table{
         align-items: center;
         h1{
             color: #fff;
-            font-size: 10rem;
+            font-size: 150px;
             text-transform: uppercase;
             white-space: nowrap;
             line-height: 1;
@@ -2250,11 +2318,11 @@ table{
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             &.small{
-                font-size: 4rem;
+                font-size: 72px;
             }
         }
         h5{
-            font-size: 1.5rem;
+            font-size:27px;
             line-height: 1;
             color: #FDF1CF;
             margin-bottom: 10px;
@@ -2371,3 +2439,13 @@ table{
     }
 }
 
+.betting-area-texture{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    opacity: 0.6;
+    object-fit: cover;
+}

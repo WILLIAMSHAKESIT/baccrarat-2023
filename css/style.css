@@ -1,4 +1,100 @@
 @charset "UTF-8";
+/* noto-sans-kr-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/noto-sans-kr-v27-latin-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/noto-sans-kr-v27-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/noto-sans-kr-v27-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/noto-sans-kr-v27-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/noto-sans-kr-v27-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/noto-sans-kr-v27-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/noto-sans-tc-v26-latin-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/noto-sans-tc-v26-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/noto-sans-tc-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/noto-sans-tc-v26-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/noto-sans-tc-v26-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/noto-sans-tc-v26-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /* cinzel-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -215,6 +311,126 @@
   src: url("fonts/poppins-v20-latin-900italic.eot"); /* IE9 Compat Modes */
   src: url("fonts/poppins-v20-latin-900italic.eot?#iefix") format("embedded-opentype"), url("fonts/poppins-v20-latin-900italic.woff2") format("woff2"), url("fonts/poppins-v20-latin-900italic.woff") format("woff"), url("fonts/poppins-v20-latin-900italic.ttf") format("truetype"), url("fonts/poppins-v20-latin-900italic.svg#Poppins") format("svg"); /* Legacy iOS */
 }
+/* noto-sans-tc-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/noto-sans-tc-v26-latin-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/noto-sans-tc-v26-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/noto-sans-tc-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/noto-sans-tc-v26-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/noto-sans-tc-v26-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-tc-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/noto-sans-tc-v26-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/noto-sans-jp-v52-latin-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/noto-sans-jp-v52-latin-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/noto-sans-jp-v52-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/noto-sans-jp-v52-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/noto-sans-jp-v52-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/noto-sans-jp-v52-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/noto-sans-jp-v52-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/noto-sans-jp-v52-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/noto-sans-jp-v52-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 * {
   box-sizing: border-box;
 }
@@ -250,6 +466,21 @@ html::before, body::before {
 }
 html .device-prompt, body .device-prompt {
   display: none;
+}
+html.room-page::before, body.room-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../img/bg/main_bg2.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+html.loading-page::before, body.loading-page::before {
+  background-image: url(../img/bg/bg_loading.png);
 }
 
 i {
@@ -405,11 +636,17 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  background: #260000;
+  background-image: url(../img/bg/header_bg2.png);
+  background-size: cover;
+  background-position: center;
   height: 65px;
+  position: relative;
 }
 header .user-info {
   font-size: 20px;
+}
+header .border-fancy-bottom-orig {
+  transform: unset;
 }
 header .logo {
   background: linear-gradient(359deg, #CCBF8B, #8B7350);
@@ -489,7 +726,7 @@ header .header-bg {
   background-size: 100%;
   background-repeat: no-repeat;
   left: -24px;
-  top: -1px;
+  top: 2px;
   background-position: bottom;
   padding-left: 300px;
   display: flex;
@@ -740,6 +977,9 @@ header .header-bg .header-mid-right-most .user-content .user {
   width: 300px;
   height: 52px;
 }
+.btn.btn-custom-blue2::before {
+  display: none;
+}
 .btn.btn-custom-red2 {
   background-image: url(../img/elements/red-btn-simp.png) !important;
   background-size: cover;
@@ -761,6 +1001,9 @@ header .header-bg .header-mid-right-most .user-content .user {
 .btn.btn-custom-red2.btn-md {
   width: 300px;
   height: 52px;
+}
+.btn.btn-custom-red2::before {
+  display: none;
 }
 
 .btn-chip {
@@ -839,6 +1082,27 @@ header .header-bg .header-mid-right-most .user-content .user {
 .btn-chip.chip-50m {
   background-image: url(../img/chips/chip10-1.png);
 }
+.btn-chip.chip-20 {
+  background-image: url(../img/chips/chip8-1.png);
+}
+.btn-chip.chip-50 {
+  background-image: url(../img/chips/chip9-1.png);
+}
+.btn-chip.chip-100 {
+  background-image: url(../img/chips/chip10-1.png);
+}
+.btn-chip.chip-200 {
+  background-image: url(../img/chips/chip5.png);
+}
+.btn-chip.chip-1 {
+  background-image: url(../img/chips/chip4.png);
+}
+.btn-chip.chip-5 {
+  background-image: url(../img/chips/chip5-1.png);
+}
+.btn-chip.chip-10 {
+  background-image: url(../img/chips/chip7-1.png);
+}
 
 .input {
   background: linear-gradient(359deg, #E8A200, #FFF176);
@@ -888,6 +1152,20 @@ select option {
   height: fit-content;
   border-radius: 4px;
   overflow: hidden;
+  position: relative;
+}
+.card-board::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../img/bg/card_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 .card-board .card-header {
   height: -moz-fit-content;
@@ -909,6 +1187,7 @@ select option {
   align-items: center;
   justify-content: center;
   padding: 5px 0;
+  border: 1px solid rgba(226, 173, 24, 0.2);
 }
 .card-board .card-header .logo img {
   width: calc(100% - 10px);
@@ -977,6 +1256,7 @@ select option {
   text-align: right;
   padding: 0 10px;
   padding-right: 17px;
+  border: 1px solid rgba(226, 173, 24, 0.2);
 }
 .card-board .card-header .table-status.relative {
   position: relative;
@@ -1122,9 +1402,10 @@ select option {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #4d0e0e;
+  background: #2e0606;
   border-radius: 100px;
   padding: 2px 5px;
+  border: 1px solid rgba(226, 173, 24, 0.2);
 }
 .card-board .card-footer .results .item {
   display: flex;
@@ -1148,7 +1429,7 @@ select option {
   width: 100%;
   height: 235px;
   border-radius: 5px;
-  background: #350002;
+  background-image: url(../img/bg/multi_card_texture.jpg);
   box-shadow: inset 0 0 6px #000;
   position: relative;
 }
@@ -1317,12 +1598,12 @@ select option {
   padding: 0;
 }
 .modal-wrapper .modal-container .modal-body .main-content.chip-settings div label.btn-chip::after {
-  left: 46px;
-  top: 96px;
+  left: 34px;
+  top: 90px;
 }
 .modal-wrapper .modal-container .modal-body .main-content.chip-settings div label.btn-chip::before {
-  left: 37px;
-  top: 87px;
+  left: 25px;
+  top: 81px;
 }
 .modal-wrapper.side.show {
   display: flex;
@@ -1355,7 +1636,8 @@ table.stripe thead tr th {
   padding: 5px 10px;
   font-weight: 700;
   text-align: center;
-  color: #000 !important;
+  color: #fff !important;
+  text-shadow: 0 0 5px BLACK;
 }
 table.stripe thead tr th:first-child {
   text-align: left;
@@ -1381,6 +1663,8 @@ table.stripe tbody tr td:last-child {
 }
 table.table-fancy thead {
   background: linear-gradient(86deg, #F2BC1A 0%, #DFB842 51%, #F2BC1A 100%);
+  position: relative;
+  z-index: 20;
 }
 table.table-fancy thead tr th {
   color: #000;
@@ -1397,9 +1681,26 @@ table.table-fancy thead tr th:last-child {
   border-top-right-radius: 5px;
 }
 table.table-fancy tbody {
-  background: linear-gradient(180deg, #6f0000 0%, #450000 100%);
+  background: linear-gradient(180deg, #6f0000 0%, #120000 100%);
+  position: relative;
+}
+table.table-fancy tbody::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/bg/card_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  z-index: 0;
 }
 table.table-fancy tbody tr {
+  position: relative;
+  z-index: 2;
   border-bottom: 1px solid #FFF176;
 }
 table.table-fancy tbody tr td {
@@ -2320,12 +2621,8 @@ table.table-fancy tbody tr td:last-child {
   position: absolute;
   animation-iteration-count: infinite;
 }
-.loading-modal span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 700;
+.loading-modal img {
+  width: 130px;
 }
 
 .video-prompt {
@@ -2389,10 +2686,10 @@ table.table-fancy tbody tr td:last-child {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(44, 15, 0, 0.81);
+  background-color: rgba(103, 0, 0, 0.79);
   z-index: 600;
   -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(7px);
 }
 .waiting-prompt .prompt-with-img {
   display: flex;
@@ -2517,7 +2814,7 @@ table.table-fancy tbody tr td:last-child {
 }
 .errorpage .error-content h1 {
   color: #fff;
-  font-size: 10rem;
+  font-size: 150px;
   text-transform: uppercase;
   white-space: nowrap;
   line-height: 1;
@@ -2526,10 +2823,10 @@ table.table-fancy tbody tr td:last-child {
   -webkit-text-fill-color: transparent;
 }
 .errorpage .error-content h1.small {
-  font-size: 4rem;
+  font-size: 72px;
 }
 .errorpage .error-content h5 {
-  font-size: 1.5rem;
+  font-size: 27px;
   line-height: 1;
   color: #FDF1CF;
   margin-bottom: 10px;
@@ -2643,6 +2940,55 @@ table.table-fancy tbody tr td:last-child {
   width: calc(100% - 7px);
   height: calc(100% - 7px);
   box-shadow: 0 0 5px #000;
+}
+
+.betting-area-texture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+  opacity: 0.6;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.loading-page-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.loading-page-wrapper .loading-bar-bg {
+  background: radial-gradient(41% 26px at center, #2d2d2d, #000000);
+  width: 85%;
+  height: 5px;
+  border: 1px solid rgba(253, 232, 159, 0.3882352941);
+}
+.loading-page-wrapper .loading-bar-bg .loading-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(268deg, #ffe688, #ffd951);
+  position: relative;
+}
+.loading-page-wrapper .loading-bar-bg .loading-bar::before {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  background-image: url(../img/elements/loading-shine.png);
+  background-size: cover;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  transform: translateY(-50%);
+  animation: rotation 2s infinite linear;
 }
 
 .sub-header {
@@ -2941,6 +3287,9 @@ table.table-fancy tbody tr td:last-child {
   border-radius: 7px;
   overflow: hidden;
 }
+.room .top > div.left .betting-area-texture {
+  opacity: 0.4 !important;
+}
 .room .top > div.left::before {
   content: "";
   position: absolute;
@@ -2990,6 +3339,9 @@ table.table-fancy tbody tr td:last-child {
   border-radius: 7px;
   overflow: hidden;
 }
+.room .top > div.right .border-fancy-right {
+  opacity: 0.3 !important;
+}
 .room .top > div.right::before {
   content: "";
   position: absolute;
@@ -3028,7 +3380,7 @@ table.table-fancy tbody tr td:last-child {
   background: url(../img/bg/table.jpg);
   box-shadow: inset 0 0 13px #000;
   border-radius: 7px;
-  border: 9px solid #275F7E;
+  border: 9px solid #650a0a;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3092,11 +3444,28 @@ table.table-fancy tbody tr td:last-child {
   box-shadow: 0 0 5px #000;
   background: linear-gradient(90deg, rgb(38, 0, 0) 0%, rgb(145, 0, 0) 47%, rgb(38, 0, 0) 100%);
   padding: 2px 10px;
+  position: relative;
+  overflow: hidden;
+}
+.room .top > div.right .body .bet-area .area .area-info .info::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/bg/card_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  z-index: 0;
 }
 .room .top > div.right .body .bet-area .area .area-info .info .area-name {
   height: 87%;
   width: 103px;
   border-radius: 3px;
+  position: relative;
 }
 .room .top > div.right .body .bet-area .area .area-info .info .area-name.area-blue {
   border: 2px solid #134178;
@@ -3114,6 +3483,10 @@ table.table-fancy tbody tr td:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.room .top > div.right .body .bet-area .area .area-info .info div:last-child {
+  position: relative;
+  z-index: 100;
 }
 .room .top > div.right .body .bet-area .area .area-info .info div i {
   margin-right: 7px;
@@ -3552,6 +3925,11 @@ table.table-fancy tbody tr td:last-child {
   color: #000 !important;
   -webkit-text-fill-color: unset;
 }
+.room .bottom .legend .legend-controls button span, .room .bottom .legend .legend-controls a span {
+  max-width: 78px;
+  line-height: 1;
+  text-align: center;
+}
 .room .mobile-controls {
   display: none;
 }
@@ -3811,7 +4189,7 @@ table.table-fancy tbody tr td:last-child {
   position: absolute;
   height: 3px;
   width: 100%;
-  background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250, 243, 179) 51%, rgba(133, 100, 13, 0) 100%);
+  background: linear-gradient(86deg, rgba(161, 127, 35, 0) 0%, rgb(250, 243, 179) 51%, rgba(133, 100, 13, 0.4) 100%);
   left: 50%;
   bottom: -2px;
   transform: translateX(-50%);
@@ -3896,6 +4274,14 @@ table.table-fancy tbody tr td:last-child {
   display: none;
 }
 
+@keyframes rotation {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(359deg);
+  }
+}
 @media all and (orientation: landscape) {
   body.mobile > div:not(.device-prompt) {
     display: none;
@@ -3908,6 +4294,7 @@ table.table-fancy tbody tr td:last-child {
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
     display: block;
+    z-index: 100;
   }
   body.mobile .device-prompt .prompt-content {
     text-align: center;
@@ -4127,7 +4514,7 @@ table.table-fancy tbody tr td:last-child {
     width: -moz-fit-content;
     width: fit-content;
     padding: 0 3px;
-    font-size: 10px;
+    font-size: 7px;
   }
   .room.multi .top > div.right .waiting-prompt .prompt-with-img img {
     width: 30%;
@@ -4683,7 +5070,7 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .bottom .results-wrapper .bead-road::before {
     font-size: 15px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.4117647059);
     line-height: 1;
   }
   .room .bottom .results-wrapper .small-grid {
@@ -4691,19 +5078,19 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .bottom .results-wrapper .small-grid .main-road::before {
     font-size: 15px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.4117647059);
     text-align: center;
     line-height: 1;
   }
   .room .bottom .results-wrapper .small-grid .bigeye-road::before {
     font-size: 15px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.4117647059);
     text-align: center;
     line-height: 1;
   }
   .room .bottom .results-wrapper .small-grid .bottom-small .small-road::before, .room .bottom .results-wrapper .small-grid .bottom-small .cock-roach::before {
     font-size: 12px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.4117647059);
     text-align: center;
     line-height: 1;
   }
@@ -4731,8 +5118,10 @@ table.table-fancy tbody tr td:last-child {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 16px;
+    margin-bottom: 9px;
+    background-image: url(../img/bg/header_bg2.png);
+    background-size: cover;
+    background-position: center;
   }
   .room .mobile-controls .control-area-mobile .bottom-control {
     display: flex;
@@ -4784,6 +5173,7 @@ table.table-fancy tbody tr td:last-child {
     max-width: calc(100% - 10px);
     width: 100%;
     top: 35px;
+    margin-bottom: 7px;
   }
   .room .mobile-controls .control-area-mobile .top-control a {
     border-radius: 100%;
@@ -4812,15 +5202,20 @@ table.table-fancy tbody tr td:last-child {
   .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     min-width: 500px;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 27px;
+    height: 42px;
   }
   .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip {
-    width: 39px;
-    height: 39px;
+    width: 47px;
+    height: 38px;
   }
   .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip.active::before {
     width: 100%;
-    height: 79%;
+    height: 98%;
   }
   .room .mobile-controls .control-area-mobile .top-control .chips .chips-inner .btn-chip::after {
     font-size: 11px;
@@ -5022,6 +5417,9 @@ table.table-fancy tbody tr td:last-child {
     height: -moz-fit-content;
     height: fit-content;
   }
+  .modal-wrapper#historyModal .modal-container span.font-bold {
+    margin-right: 11px;
+  }
   .modal-wrapper#historyModal .modal-container .modal-body > div:first-child {
     transform: unset;
     width: 100%;
@@ -5042,7 +5440,11 @@ table.table-fancy tbody tr td:last-child {
     width: 90%;
   }
   .modal-wrapper#historyModal .modal-container .modal-body > div:first-child button {
-    height: 33px;
+    min-width: 35px !important;
+    min-height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+    margin-right: 10px;
   }
   .modal-wrapper#historyModal .modal-container .modal-body .main-content {
     max-height: calc(100vh - 289px);
@@ -5158,7 +5560,7 @@ table.table-fancy tbody tr td:last-child {
     font-size: 8px !important;
   }
   .room {
-    height: calc(100% - 20px);
+    height: calc(100% - 22px);
   }
   .room .upper-most {
     flex-direction: column;
@@ -5223,6 +5625,10 @@ table.table-fancy tbody tr td:last-child {
     flex-direction: column;
     gap: 3px;
     font-size: 13px;
+    overflow: visible;
+  }
+  .room .top > div.right .body .bet-area .area .area-info .info::before {
+    display: none;
   }
   .room .top > div.right .body .bet-area .area .area-info .info .icon.icon-sm {
     height: 17px !important;
@@ -5419,13 +5825,13 @@ table.table-fancy tbody tr td:last-child {
     height: 183px;
   }
   .errorpage .error-content h1 {
-    font-size: 8rem;
+    font-size: 123px;
   }
   .errorpage .error-content h1.small {
-    font-size: 2.5rem;
+    font-size: 32px;
   }
   .errorpage .error-content h5 {
-    font-size: 1.5rem;
+    font-size: 20px;
     line-height: 1;
     color: #FDF1CF;
     margin-bottom: 10px;
@@ -5636,7 +6042,7 @@ table.table-fancy tbody tr td:last-child {
     height: 43px;
   }
   .room {
-    height: calc(100% - 35px);
+    height: calc(100% - 39px);
   }
   .room .upper-most {
     margin-bottom: 18px;
@@ -5648,7 +6054,7 @@ table.table-fancy tbody tr td:last-child {
     font-size: 5px;
   }
   .room .top > div.right .body {
-    top: 4px;
+    top: 0px;
     bottom: unset;
     height: 100%;
   }
