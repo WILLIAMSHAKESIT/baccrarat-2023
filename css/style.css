@@ -1255,7 +1255,7 @@ select option {
   right: 42px;
   text-align: right;
   padding: 0 10px;
-  padding-right: 17px;
+  padding-right: 25px;
   border: 1px solid rgba(226, 173, 24, 0.2);
 }
 .card-board .card-header .table-status.relative {
