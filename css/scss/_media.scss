@@ -583,6 +583,16 @@
                         }
                     }
                 }
+                &.left{
+                    .iframe-wrapper{
+                        height: calc(100% - 20px);
+                        width: calc(100% - 20px);
+                        iframe{          
+                            width: 174%;
+                            height: 241%;
+                        }
+                    }
+                }
             }
         }
         .room-upper-container-left{
@@ -965,9 +975,14 @@
                         width: fit-content;
                     }
                     .timerParent{
+                        // position: absolute;
+                        // right: 17px;
+                        // top: 9px;
                         position: absolute;
-                        right: 17px;
+                        left: 17px;
                         top: 9px;
+                        margin-left: 0;
+                        width: fit-content;
                     }
                     .vid-controls{
                         right: 28px;
@@ -978,9 +993,13 @@
                             height: 35px;
                         }
                     }
-                    iframe{
-                        width: calc(100% - 4px);
-                        height: calc(100% - 4px);
+                    .iframe-wrapper{
+                        height: 100%;
+                        width: 100%;
+                        iframe{           
+                            width: 100%;
+                            height: 233%;
+                        }
                     }
                 }
                 &.right{
@@ -1695,9 +1714,17 @@
                 }
             }
             .header-mid-right-most{
-                 .user-content{
+                .user-content{
                     background: unset;
-                 }
+                    .user{
+                        white-space: nowrap;
+                    }
+                }
+                .users{
+                    display: flex;
+                    align-items: center;
+                    white-space: nowrap;
+                }
             }
         }
     }
@@ -1771,6 +1798,8 @@
                         tr{
                             th{
                                 font-size: 10px;
+                                color: #000000;
+                                font-weight: 700;
                             }
                         }
                     }
@@ -1778,6 +1807,13 @@
                         tr{
                             td{
                                 font-size: 10px;
+                                color: #fff5d8;
+                                font-weight: 700;
+                                font-size: 10px;
+                                color: #fff5d8;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                text-shadow: 0 0 2px #000;
                             }
                         }
                     }
@@ -1812,6 +1848,13 @@
                                 font-size: 10px;
                                 i{
                                     font-size: 15px;
+                                }
+                                span{
+                                    color: #fff5d8;
+                                    font-weight: 700;
+                                    background: unset;
+                                    -webkit-background-clip: unset;
+                                    -webkit-text-fill-color: unset;
                                 }
                             }
                         }
@@ -2329,6 +2372,20 @@
 }
 @media(max-width:445px){
     .room{
+        .top{
+            >div{
+                &.left{
+                    .iframe-wrapper{
+                        height: 100%;
+                        width: 100%;
+                        iframe{           
+                            width: 141%;
+                            height: 163%;
+                        }
+                    }
+                }
+            }
+        }
         .mobile-controls{
             .control-area-mobile{
                 .bottom-control{
@@ -2468,6 +2525,25 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:327px){
+    .room{
+        .top{
+            >div{
+                &.left{
+                    .iframe-wrapper{
+                        height: 100%;
+                        width: 100%;
+                        iframe{          
+                            width: 153%;
+                            height: 107%;
                         }
                     }
                 }

@@ -363,14 +363,23 @@
                     position: absolute;
                     display: flex;
                 }
-                iframe{
-                    height: calc(100% - 20px);
-                    width: calc(100% - 20px);
+                .iframe-wrapper{
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    transform: translate(-50%,-50%);
+                    transform: translate(-50%, -50%);
+                    height: calc(100% - 20px);
+                    width: calc(100% - 20px);
                     border-radius: 7px;
+                    overflow: hidden;
+                    iframe{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        height: 144%;
+                        width: 245%;
+                    }   
                 }
                 &.full-screen{
                     position: fixed;
