@@ -994,6 +994,9 @@
                 height: 100%;
                 &.left{
                     width: 100%;
+                    &::before{
+                        display: none;
+                    }
                     .count-down{
                         // left: 30px;
                         width: fit-content;

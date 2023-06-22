@@ -4964,6 +4964,9 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.left {
     width: 100%;
   }
+  .room .top > div.left::before {
+    display: none;
+  }
   .room .top > div.left .count-down {
     width: -moz-fit-content;
     width: fit-content;
