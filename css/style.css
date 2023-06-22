@@ -1661,30 +1661,10 @@ table.stripe tbody tr td:first-child {
 table.stripe tbody tr td:last-child {
   text-align: right;
 }
-table.table-fancy thead {
-  background: linear-gradient(86deg, #F2BC1A 0%, #DFB842 51%, #F2BC1A 100%);
-  position: relative;
-  z-index: 20;
-}
-table.table-fancy thead tr th {
-  color: #000;
-  padding: 0 10px;
-  text-align: center;
-  font-size: 13px;
-}
-table.table-fancy thead tr th:first-child {
-  text-align: left;
-  border-top-left-radius: 5px;
-}
-table.table-fancy thead tr th:last-child {
-  text-align: right;
-  border-top-right-radius: 5px;
-}
-table.table-fancy tbody {
-  background: linear-gradient(180deg, #6f0000 0%, #120000 100%);
+table.table-fancy {
   position: relative;
 }
-table.table-fancy tbody::before {
+table.table-fancy::before {
   content: "";
   position: absolute;
   background-image: url(../img/bg/card_bg.png);
@@ -1698,10 +1678,35 @@ table.table-fancy tbody::before {
   opacity: 0.5;
   z-index: 0;
 }
+table.table-fancy thead {
+  background: linear-gradient(86deg, #F2BC1A 0%, #DFB842 51%, #F2BC1A 100%);
+  position: relative;
+  z-index: 30;
+}
+table.table-fancy thead tr th {
+  color: #000;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 13px;
+  position: relative;
+  z-index: 30;
+}
+table.table-fancy thead tr th:first-child {
+  text-align: left;
+  border-top-left-radius: 5px;
+}
+table.table-fancy thead tr th:last-child {
+  text-align: right;
+  border-top-right-radius: 5px;
+}
+table.table-fancy tbody {
+  background: linear-gradient(180deg, #6f0000 0%, #120000 100%);
+}
 table.table-fancy tbody tr {
   position: relative;
   z-index: 2;
   border-bottom: 1px solid #FFF176;
+  z-index: 30;
 }
 table.table-fancy tbody tr td {
   padding: 0 10px;
