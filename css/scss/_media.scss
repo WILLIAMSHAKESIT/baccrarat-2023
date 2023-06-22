@@ -961,11 +961,13 @@
         flex-direction: column;
         justify-content: unset;
         .upper-most{
+            height: 78px;
             .bet-limit-table{
                 background-image: url(../img/bg/card_bg.png);
                 background-size: cover;
                 .table-fancy{
                     height: 100% !important;
+                    width: 100%;
                     &::before{
                         display: none;
                     }
@@ -1802,6 +1804,7 @@
             gap: 3px;
             .room-upper-container-left{
                 width: 100%;
+                height: 100%;
                 .table-details{
                     .detail-item{
                         flex-direction: row;
@@ -2521,7 +2524,7 @@
     .room {
         height: calc(100% - 39px);
         .upper-most{
-            margin-bottom: 18px;
+            height: 96px;
         }
         .top{
             >{

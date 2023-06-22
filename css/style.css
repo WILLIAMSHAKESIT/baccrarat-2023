@@ -4935,12 +4935,16 @@ table.table-fancy tbody tr td:last-child {
     flex-direction: column;
     justify-content: unset;
   }
+  .room .upper-most {
+    height: 78px;
+  }
   .room .upper-most .bet-limit-table {
     background-image: url(../img/bg/card_bg.png);
     background-size: cover;
   }
   .room .upper-most .bet-limit-table .table-fancy {
     height: 100% !important;
+    width: 100%;
   }
   .room .upper-most .bet-limit-table .table-fancy::before {
     display: none;
@@ -5623,6 +5627,7 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .upper-most .room-upper-container-left {
     width: 100%;
+    height: 100%;
   }
   .room .upper-most .room-upper-container-left .table-details .detail-item {
     flex-direction: row;
@@ -6119,7 +6124,7 @@ table.table-fancy tbody tr td:last-child {
     height: calc(100% - 39px);
   }
   .room .upper-most {
-    margin-bottom: 18px;
+    height: 96px;
   }
   .room .top > div.right .header {
     height: 32px;
