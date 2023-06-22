@@ -4829,6 +4829,9 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.right .body .control-area .bottom-control .btns {
     transform: scale(0.65);
   }
+  .room.multi .mobile-controls .control-area-mobile {
+    margin-bottom: 0 !important;
+  }
   .card-board .card-header .logo {
     width: 54px;
   }
@@ -4841,6 +4844,7 @@ table.table-fancy tbody tr td:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px !important;
   }
   .sub-header .table-filters {
     display: none;
@@ -4849,6 +4853,9 @@ table.table-fancy tbody tr td:last-child {
     align-items: center;
     display: flex;
     flex-direction: column;
+  }
+  .sub-header .subhead-inputs span {
+    display: none;
   }
   .icon.icon-sm {
     height: 30px !important;
@@ -5499,7 +5506,7 @@ table.table-fancy tbody tr td:last-child {
     display: none;
   }
   .table-grid {
-    max-height: calc(100% - 130.5px);
+    max-height: calc(100% - 108px);
   }
   .table-grid .card-board {
     width: calc(50% - 8px) !important;

@@ -844,6 +844,13 @@
                 }
             }
         }
+        &.multi{
+            .mobile-controls {
+                .control-area-mobile{
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
     }
     .card-board{
         .card-header{
@@ -861,6 +868,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 15px !important;
         .table-filters{
             display: none;
         }
@@ -868,6 +876,9 @@
             align-items: center;
             display: flex;
             flex-direction: column;
+            span{
+                display: none;
+            }
         }
     }
     .icon{
@@ -1642,7 +1653,7 @@
         }
     }
     .table-grid{
-        max-height: calc(100% - 130.5px);
+        max-height: calc(100% - 108px);
         .card-board{
             width: calc(100% / 2 - 8px) !important;
         }
