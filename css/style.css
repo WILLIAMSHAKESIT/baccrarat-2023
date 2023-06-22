@@ -4937,6 +4937,10 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .upper-most .bet-limit-table {
     background-image: url(../img/bg/card_bg.png);
+    background-size: cover;
+  }
+  .room .upper-most .bet-limit-table .table-fancy {
+    height: 100% !important;
   }
   .room .upper-most .bet-limit-table .table-fancy::before {
     display: none;

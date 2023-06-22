@@ -963,7 +963,9 @@
         .upper-most{
             .bet-limit-table{
                 background-image: url(../img/bg/card_bg.png);
+                background-size: cover;
                 .table-fancy{
+                    height: 100% !important;
                     &::before{
                         display: none;
                     }
