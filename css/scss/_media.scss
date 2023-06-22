@@ -960,6 +960,19 @@
         display: flex;
         flex-direction: column;
         justify-content: unset;
+        .upper-most{
+            .bet-limit-table{
+                background-image: url(../img/bg/card_bg.png);
+                .table-fancy{
+                    &::before{
+                        display: none;
+                    }
+                    tbody{
+                        background: unset !important;
+                    }
+                }
+            }
+        }
         &.h-full{
             height: 100%;
         }
