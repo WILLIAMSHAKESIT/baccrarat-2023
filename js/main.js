@@ -78,7 +78,10 @@ $(document).ready(function(){
     layout.createGrid()
     layout.handleDevicePrompt()
     layout.handleLoadingPage()
-    
+
+    $('.toggle-limit').click(function(){
+        layout.toggleRoomLimit()
+    })
     $('.chips').on('mousedown',function(e){
         layout.mouseIsDown(e)
     })
@@ -836,11 +839,11 @@ class Layout{
         if(!this.fsBool){
             this.fsBool = true
             this.openFullscreen()
-            $(_this).html('<i class="fa-solid fa-compress icon-dark"></i>')
+            $(_this).html('<i class="fa-solid fa-compress"></i>Exit Full</a>')
         }else{
             this.fsBool = false
             this.closeFullscreen()
-            $(_this).html('<i class="fa-solid fa-expand icon-dark"></i>')
+            $(_this).html('<i class="fa-solid fa-expand"></i>Toggle Full</a>')
         }
     }
     modalClose(){
@@ -981,6 +984,9 @@ class Layout{
                 }
             }
         });
+    }
+    toggleRoomLimit(){
+        $('.bet-limit-table').toggle()
     }
     showLimitDetails(_this){
         $(_this).parent().parent().siblings('.card-body').find('.limit-details').show()

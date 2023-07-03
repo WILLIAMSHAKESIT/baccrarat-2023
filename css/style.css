@@ -3271,6 +3271,9 @@ table.table-fancy tbody tr td:last-child {
   text-align: center;
   font-size: 18px;
 }
+.room .room-upper-container-left .table-details:last-child {
+  display: none;
+}
 .room .top {
   display: flex;
   gap: 5px;
@@ -4674,6 +4677,9 @@ table.table-fancy tbody tr td:last-child {
     margin-right: 0;
     display: none;
   }
+  .room .room-upper-container-left .table-details {
+    margin-left: 0;
+  }
   .room .room-upper-container-left .table-details .detail-item {
     flex-direction: column;
   }
@@ -4936,11 +4942,23 @@ table.table-fancy tbody tr td:last-child {
     justify-content: unset;
   }
   .room .upper-most {
-    height: 78px;
+    height: 75px;
+  }
+  .room .upper-most .room-upper-container-left {
+    width: 99% !important;
+  }
+  .room .upper-most .room-upper-container-left .table-details:last-child {
+    display: flex;
   }
   .room .upper-most .bet-limit-table {
     background-image: url(../img/bg/card_bg.png);
     background-size: cover;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    z-index: 10000;
+    width: 100%;
+    display: none;
   }
   .room .upper-most .bet-limit-table .table-fancy {
     height: 100% !important;
@@ -4957,7 +4975,7 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .top {
     flex-direction: column;
-    height: calc(100% - 340px);
+    height: calc(100% - 357px);
   }
   .room .top .border-fancy-right, .room .top .border-fancy-left {
     display: none;
@@ -5103,7 +5121,7 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .bottom {
     order: 5;
-    height: 117px;
+    height: 134px;
     top: 0;
     background-color: #fff;
   }
@@ -5115,8 +5133,8 @@ table.table-fancy tbody tr td:last-child {
     background-color: unset;
   }
   .room .bottom .results-wrapper .bead-road {
-    width: 98px;
-    min-width: 98px;
+    width: 112px;
+    min-width: 112px;
   }
   .room .bottom .results-wrapper .bead-road::before {
     font-size: 15px;
@@ -5177,10 +5195,10 @@ table.table-fancy tbody tr td:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 4px);
+    width: 100%;
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns {
-    width: 100%;
+    width: 99%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -5624,20 +5642,25 @@ table.table-fancy tbody tr td:last-child {
     flex-direction: column;
     padding: 0;
     gap: 3px;
+    height: 33px;
   }
   .room .upper-most .room-upper-container-left {
     width: 100%;
     height: 100%;
   }
   .room .upper-most .room-upper-container-left .table-details .detail-item {
-    flex-direction: row;
     font-size: 10px;
+    gap: 0;
   }
   .room .upper-most .room-upper-container-left .table-details .detail-item .icon-card {
     display: none !important;
   }
-  .room .upper-most .room-upper-container-left .table-details .detail-item .fa {
+  .room .upper-most .room-upper-container-left .table-details .detail-item i {
     display: none;
+  }
+  .room .upper-most .room-upper-container-left .table-details .detail-item i.fa-caret-down {
+    display: block !important;
+    font-size: 18px;
   }
   .room .upper-most .room-upper-container-left .table-details .detail-item .detail-amount {
     padding: 0 10px;
@@ -5645,6 +5668,7 @@ table.table-fancy tbody tr td:last-child {
   }
   .room .upper-most .bet-limit-table {
     width: 100%;
+    top: 34px;
   }
   .room .upper-most .bet-limit-table .table-fancy {
     width: 100%;
@@ -5689,6 +5713,9 @@ table.table-fancy tbody tr td:last-child {
     background: unset;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
+  }
+  .room .top {
+    height: calc(100% - 313px);
   }
   .room .top > div.right .body .bet-area .area .area-info .info {
     background: unset;
@@ -6005,14 +6032,22 @@ table.table-fancy tbody tr td:last-child {
     margin-right: 0;
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
-    width: 114px;
-    height: 28px;
+    width: 115px !important;
+    height: 42px !important;
+    font-size: 12px;
+    border: 1px solid #d6bd78;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded).btn-custom-red2 {
+    background-image: linear-gradient(359deg, #2d0a0a, #811d1d) !important;
+  }
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded).btn-custom-blue2 {
+    background-image: linear-gradient(359deg, #0a0a29, #1a3667) !important;
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) i {
     display: none;
   }
   .room .top {
-    height: calc(100% - 333px);
+    height: calc(100% - 317px);
   }
   .room .top > div.right .body .bet-area .area .area-info {
     height: 21px;
@@ -6124,7 +6159,10 @@ table.table-fancy tbody tr td:last-child {
     height: calc(100% - 39px);
   }
   .room .upper-most {
-    height: 96px;
+    height: 32px;
+  }
+  .room .top {
+    height: calc(100% - 269px);
   }
   .room .top > div.right .header {
     height: 32px;

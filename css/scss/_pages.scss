@@ -325,6 +325,9 @@
                     font-size: 18px;
                 }
             }
+            &:last-child{
+                display: none;
+            }
         }
     }
     .top{

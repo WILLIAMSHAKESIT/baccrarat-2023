@@ -603,6 +603,7 @@
                 display: none;
             }
             .table-details{
+                margin-left: 0;
                 .detail-item{
                     flex-direction: column;
                 }
@@ -961,10 +962,24 @@
         flex-direction: column;
         justify-content: unset;
         .upper-most{
-            height: 78px;
+            height: 75px;
+            .room-upper-container-left{
+                width: 99% !important; 
+                .table-details{
+                    &:last-child{
+                        display: flex;
+                    }
+                }
+            }
             .bet-limit-table{
                 background-image: url(../img/bg/card_bg.png);
                 background-size: cover;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                z-index: 10000;
+                width: 100%;
+                display: none;
                 .table-fancy{
                     height: 100% !important;
                     width: 100%;
@@ -982,9 +997,7 @@
         }
         .top{
             flex-direction: column;
-            // height: calc(100% - 212px);
-            // height: calc(100% - 277px);
-            height: calc(100% - 340px);
+            height: calc(100% - 357px);
             .border-fancy-right,.border-fancy-left{
                 display: none;
             }
@@ -1151,7 +1164,7 @@
         }
         .bottom{
             order: 5;
-            height: 117px;
+            height: 134px;
             top: 0;
             background-color: #fff;
             &::-webkit-scrollbar{
@@ -1161,8 +1174,8 @@
                 width: 100%;
                 background-color: unset;
                 .bead-road{
-                    width: 98px;
-                    min-width: 98px;
+                    width: 112px;
+                    min-width: 112px;
                     &::before{
                         font-size: 15px;
                         color: #00000069;
@@ -1231,9 +1244,9 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: calc(100% - 4px);
+                    width: 100%;
                     .btns{
-                        width: 100%;
+                        width: 99%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
@@ -1760,7 +1773,6 @@
         }
     }
     .upper-most{
-        
         .upper-content-wrapper{
             flex-direction: column;
             justify-content: space-between;
@@ -1802,18 +1814,24 @@
             flex-direction: column;
             padding: 0;
             gap: 3px;
+            height: 33px;
             .room-upper-container-left{
                 width: 100%;
                 height: 100%;
                 .table-details{
                     .detail-item{
-                        flex-direction: row;
+                        // flex-direction: row;
                         font-size: 10px;
+                        gap: 0;
                         .icon-card{
                             display: none !important;
                         }
-                        .fa{
+                        i{
                             display: none;
+                            &.fa-caret-down{
+                                display: block !important;
+                                font-size: 18px;
+                            }
                         }
                         .detail-amount{
                             padding: 0 10px;
@@ -1824,6 +1842,7 @@
             }
             .bet-limit-table{
                 width: 100%;
+                top: 34px;
                 .table-fancy{
                     width: 100%;
                     thead{
@@ -1891,6 +1910,7 @@
             }
         }
         .top {
+            height: calc(100% - 313px);
             > div{
                 &.right{
                     .body{
@@ -2340,8 +2360,16 @@
                         button{
                             margin-right:0;
                             &:not(.btn-rounded){
-                                width: 114px;
-                                height: 28px;
+                                width: 115px !important;
+                                height: 42px !important;
+                                font-size: 12px;
+                                border: 1px solid #d6bd78;
+                                &.btn-custom-red2{
+                                    background-image: linear-gradient(359deg, #2d0a0a, #811d1d) !important;
+                                }
+                                &.btn-custom-blue2{
+                                    background-image: linear-gradient(359deg, #0a0a29, #1a3667) !important;
+                                }
                                 i{
                                     display: none;
                                 }
@@ -2352,7 +2380,7 @@
             }
         }
         .top{
-            height: calc(100% - 333px);
+            height: calc(100% - 317px);
             >{
                 div{
                     &.right{
@@ -2524,9 +2552,10 @@
     .room {
         height: calc(100% - 39px);
         .upper-most{
-            height: 96px;
+            height: 32px;
         }
         .top{
+            height: calc(100% - 269px);
             >{
                 div{
                     &.right{
