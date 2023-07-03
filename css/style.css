@@ -5184,7 +5184,7 @@ table.table-fancy tbody tr td:last-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 0px;
     transform: scale(1);
     margin-bottom: 0px !important;
   }
