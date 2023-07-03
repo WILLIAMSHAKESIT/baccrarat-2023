@@ -587,10 +587,10 @@
                     .iframe-wrapper{
                         height: calc(100% - 20px);
                         width: calc(100% - 20px);
-                        iframe{          
-                            width: 174%;
-                            height: 241%;
-                        }
+                        // iframe{          
+                        //     width: 174%;
+                        //     height: 241%;
+                        // }
                     }
                 }
             }
@@ -1040,10 +1040,10 @@
                     .iframe-wrapper{
                         height: 100%;
                         width: 100%;
-                        iframe{           
-                            width: 100%;
-                            height: 233%;
-                        }
+                        // iframe{           
+                        //     width: 132%;
+                        //     height: 233%;
+                        // }
                     }
                 }
                 &.right{
@@ -1706,12 +1706,36 @@
         }
     }
 }
+@media(max-width:768px){
+    .room{
+        .top{
+            >{
+                div{
+                    &.left{
+                        height: 600px;
+                    }
+                }
+            }
+        }
+    }
+}
 @media(max-width:766px){
     .card-board{
         .card-header{
             .bet-limit{
                 left: 42%;
                 font-size: 10px;
+            }
+        }
+    }
+    .room{
+        .top{
+            >{
+                div{
+                    &.left{
+                        height: 415px !important;
+                    }
+                }
             }
         }
     }
@@ -2434,10 +2458,10 @@
                     .iframe-wrapper{
                         height: 100%;
                         width: 100%;
-                        iframe{           
-                            width: 141%;
-                            height: 163%;
-                        }
+                        // iframe{           
+                        //     width: 141%;
+                        //     height: 163%;
+                        // }
                     }
                 }
             }
@@ -2598,10 +2622,10 @@
                     .iframe-wrapper{
                         height: 100%;
                         width: 100%;
-                        iframe{          
-                            width: 153%;
-                            height: 107%;
-                        }
+                        // iframe{          
+                        //     width: 153%;
+                        //     height: 107%;
+                        // }
                     }
                 }
             }

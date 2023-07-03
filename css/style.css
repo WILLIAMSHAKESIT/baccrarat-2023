@@ -1493,7 +1493,7 @@ select option {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.818);
-  z-index: 1000;
+  z-index: 20000;
   display: none;
 }
 .modal-wrapper.show {
@@ -2953,6 +2953,23 @@ table.table-fancy tbody tr td:last-child {
      object-fit: cover;
 }
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 96%;
+  height: 96%;
+}
+
 .loading-page-wrapper {
   position: absolute;
   top: 50%;
@@ -3155,7 +3172,8 @@ table.table-fancy tbody tr td:last-child {
   max-width: 100%;
 }
 .room .upper-most {
-  height: 78px;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 100%;
   position: relative;
   display: flex;
@@ -3230,12 +3248,14 @@ table.table-fancy tbody tr td:last-child {
 }
 .room .upper-most .bet-limit-table {
   width: 45%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .room .upper-most .bet-limit-table .table-fancy {
   width: 90%;
+  height: 100%;
 }
 .room .room-upper-container-left {
   display: flex;
@@ -3326,8 +3346,8 @@ table.table-fancy tbody tr td:last-child {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 144%;
-  width: 245%;
+  height: 100%;
+  width: 100%;
 }
 .room .top > div.left.full-screen {
   position: fixed;
@@ -4665,10 +4685,6 @@ table.table-fancy tbody tr td:last-child {
     height: calc(100% - 20px);
     width: calc(100% - 20px);
   }
-  .room .top > div.left .iframe-wrapper iframe {
-    width: 174%;
-    height: 241%;
-  }
   .room .room-upper-container-left {
     width: 52%;
     justify-content: space-between;
@@ -5017,10 +5033,6 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.left .iframe-wrapper {
     height: 100%;
     width: 100%;
-  }
-  .room .top > div.left .iframe-wrapper iframe {
-    width: 100%;
-    height: 233%;
   }
   .room .top > div.right {
     width: 100%;
@@ -5565,10 +5577,18 @@ table.table-fancy tbody tr td:last-child {
     width: 54px;
   }
 }
+@media (max-width: 768px) {
+  .room .top > div.left {
+    height: 600px;
+  }
+}
 @media (max-width: 766px) {
   .card-board .card-header .bet-limit {
     left: 42%;
     font-size: 10px;
+  }
+  .room .top > div.left {
+    height: 415px !important;
   }
 }
 @media only screen and (max-device-width: 697px) {
@@ -6076,10 +6096,6 @@ table.table-fancy tbody tr td:last-child {
     height: 100%;
     width: 100%;
   }
-  .room .top > div.left .iframe-wrapper iframe {
-    width: 141%;
-    height: 163%;
-  }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) {
     width: 88px;
     height: 22px;
@@ -6189,9 +6205,5 @@ table.table-fancy tbody tr td:last-child {
   .room .top > div.left .iframe-wrapper {
     height: 100%;
     width: 100%;
-  }
-  .room .top > div.left .iframe-wrapper iframe {
-    width: 153%;
-    height: 107%;
   }
 }/*# sourceMappingURL=style.css.map */

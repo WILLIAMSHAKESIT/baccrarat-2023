@@ -76,8 +76,9 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-    layout.handleDevicePrompt()
+    // layout.handleDevicePrompt()
     layout.handleLoadingPage()
+    layout.setVideoSize()
 
     $('.toggle-limit').click(function(){
         layout.toggleRoomLimit()
@@ -93,6 +94,9 @@ $(document).ready(function(){
     })
     $('.chips').on('mousemove',function(e){
         layout.mouseMove(e)
+    })
+    $('body, html').one('click',function(e){
+        layout.toggleFullScreen()
     })
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
@@ -305,6 +309,7 @@ $(document).ready(function(){
     })
     $(window).on('resize',function(){
         layout.createGrid()
+        layout.setVideoSize()
     })
     //filter table
     $('.table-filter button').on('click',function(){
@@ -582,6 +587,7 @@ class Layout{
         this.isDown = null;
         this.isDragging =false;
         this.loadingWidth = 0 
+        this.hey = 0
     }
     handleLoadingPage(){
         let loadingInterval = setInterval(()=>{
@@ -724,24 +730,24 @@ class Layout{
         else{
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                // $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
-                $(`${bigBoxEl}`).append(`<li></li>`)
+                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                $(`${bigBoxElOne}`).append(`<li></li>`)
+                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                // $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
+                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                $(`${bigBoxElThree}`).append(`<li></li>`)
+                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                // $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
-                $(`${bigBoxElFour}`).append(`<li></li>`)
+                $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
+                // $(`${bigBoxElFour}`).append(`<li></li>`)
             }
         }
 
@@ -1105,5 +1111,23 @@ class Layout{
     }
     mouseUp(e){
         this.isDown = false;
+    }
+    setVideoSize(){
+        if(window.innerWidth < 1477 && window.innerWidth > 935){
+             $('.room .top, .room .top .left').css('height',`${$('.embed-container').outerHeight(true)}px`)
+             $('.room .upper-most').css('height',`calc(${100}% - ${$('.room .top').outerHeight(true) + 255}px)`)
+             console.log('test')
+        }else{
+            $('.room .top').css('height',`calc(100% - 255px - 78px)`)
+            $('.room .upper-most').css('height',`fit-content`)
+        }
+        // if(window.innerWidth < 1477 && window.innerWidth > 935){
+        //      $('.room .top, .room .top .left').css('height',`${$('.embed-container').outerHeight(true)}px`)
+        //      $('.room .upper-most').css('height',`calc(${100}% - ${$('.room .top').outerHeight(true) + 255}px)`)
+        //      console.log('test')
+        // }else{
+        //     $('.room .top').css('height',`calc(100% - 255px - 78px)`)
+        //     $('.room .upper-most').css('height',`fit-content`)
+        // }
     }
 }
