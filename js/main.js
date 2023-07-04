@@ -1,11 +1,5 @@
-var progress = 20;
 
-// document
-//   .getElementById("incbtn")
-//   .addEventListener("click", incrementProgress);
-// document
-//   .getElementById("decbtn")
-//   .addEventListener("click", decrementProgress);
+var progress = 20;
 
 function incrementProgress() {
 if (progress != 100) {
@@ -74,13 +68,12 @@ $(document).ready(function(){
     });
     layout.logoAnimation()
     layout.createGrid()
-    // layout.handleDevicePrompt()
     layout.handleLoadingPage()
     layout.handleMobileLandscape()
 
     $(window).on('resize',function(){
         layout.createGrid()
-        layout.handleMobileLandscape()
+        setTimeout(layout.handleMobileLandscape(), 300); 
     })
       
     $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
@@ -430,28 +423,6 @@ $(document).ready(function(){
        layout.chipSelect(this)
     })
 
-      
-
-    // window.onload = function() {
-    //     // find the element that you want to drag.
-    //     var box = document.getElementById('TestChip');
-        
-    //     /* listen to the touchmove event,
-    //     every time it fires, grab the location
-    //     of touch and assign it to box */
-        
-    //     box.addEventListener('touchmove', function(e) {
-    //         console.log("EYYYY")
-    //       // grab the location of touch
-    //       var touchLocation = e.targetTouches[0];
-          
-    //       // assign box new coordinates based on the touch.
-    //       box.style.left = touchLocation.pageX + 'px';
-    //       box.style.top = touchLocation.pageY + 'px';
-    //     })
-        
-    //   }
-    
 })
    
 
@@ -1127,10 +1098,9 @@ class Layout{
             var scale;
 
             scale = Math.min(
-                this.$wrapper.width() / this.$el.outerWidth(true),    
-                this.$wrapper.height() / this.$el.outerHeight(true)
+                this.$wrapper.width() / 1920,    
+                this.$wrapper.height() / 1080
             );
-            console.log(scale)
             this.$el.css({
                 transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%',maxWidth:'100%',maxHeight:'100%',zoom: '1'
             });
