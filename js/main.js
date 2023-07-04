@@ -82,6 +82,7 @@ $(document).ready(function(){
         layout.createGrid()
         layout.handleMobileLandscape()
     })
+      
     $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
     $('.toggle-limit').click(function(){
         layout.toggleRoomLimit()
@@ -709,57 +710,9 @@ class Layout{
         let bigBoxElThree = '.room .bottom .results-wrapper ul.small-road'
         let bigBoxElFour = '.room .bottom .results-wrapper ul.cock-roach'
 
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             if(window.innerWidth > window.innerHeight){
+                console.log('test')
                 //land
-                let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
-                    let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
-                    for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                        $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
-                        // $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                        // $(`${bigBoxElOne}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                        $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                        // $(`${bigBoxElTwo}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                        $(`${bigBoxElThree}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
-                        $( `${bigBoxElFour}`).append(`<li></li>`)
-                    }
-            }else{
-                //por
-                let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
-                    for(let i=0;i<30;i++){
-                        $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
-                        // $(`${bigBoxEl}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                        // $(`${bigBoxElOne}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                        $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                        // $(`${bigBoxElTwo}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                        // $(`${bigBoxElThree}`).append(`<li></li>`)
-                    }
-                    for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                        $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
-                        // $(`${bigBoxElFour}`).append(`<li></li>`)
-                    }
-            }
-        }else{
-            if(window.innerWidth > 935){
                 let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
                 let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
                 for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
@@ -782,8 +735,9 @@ class Layout{
                     // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
                     $( `${bigBoxElFour}`).append(`<li></li>`)
                 }
-            }
-            else{
+            }else{
+                //por
+                console.log('test por')
                 let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
                 for(let i=0;i<30;i++){
                     $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
@@ -806,7 +760,6 @@ class Layout{
                     // $(`${bigBoxElFour}`).append(`<li></li>`)
                 }
             }
-        }
 
         let bigBeadRoadItemSize = Math.round($(`${bigBoxEl} li`).outerHeight() - 2)
         let bigMainRoadItemSize = Math.round($(`${bigBoxElOne} li`).outerHeight() - 1)
@@ -1170,28 +1123,24 @@ class Layout{
         this.isDown = false;
     }
     handleMobileLandscape(){
-        // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            $('body.room-page').addClass('mobile-device')
-            if(window.innerHeight < window.innerWidth){
-                $('.mobileCss').attr('href','#')
-                var scale;
-    
-                scale = Math.min(
-                    this.$wrapper.width() / this.$el.outerWidth(true),    
-                    this.$wrapper.height() / this.$el.outerHeight(true)
-                );
-                this.$el.css({
-                    transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%',maxWidth:'100%',maxHeight:'100%',zoom: '1'
-                });
-            }else{
-                $('.mobileCss').attr('href','css/mobile.css')
-                this.$el.css({
-                    transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxHeight:'100%',left:'0',top:'0',zoom: '1'
-                });
-            }
+        $('body.room-page').addClass('mobile-device')
+        if(window.innerHeight < window.innerWidth){
+            $('.mobileCss').attr('href','#')
+            var scale;
+
+            scale = Math.min(
+                this.$wrapper.width() / this.$el.outerWidth(true),    
+                this.$wrapper.height() / this.$el.outerHeight(true)
+            );
+            console.log(scale)
+            this.$el.css({
+                transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%',maxWidth:'100%',maxHeight:'100%',zoom: '1'
+            });
+        }else{
+            $('.mobileCss').attr('href','css/mobile.css')
+            this.$el.css({
+                transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxHeight:'100%',left:'0',top:'0',zoom: '1'
+            });
         }
-    //     else{
-    //         $('body.room-page').removeClass('mobile-device')
-    //     }
-    // }
+    }
 }
