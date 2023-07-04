@@ -653,7 +653,7 @@
     font-size: 13px;
   }
   .room {
-    height: calc(100% - 31px);
+    height: calc(100% - 26px);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -836,7 +836,7 @@
   }
   .room .bottom {
     order: 3;
-    height: 134px;
+    height: 127px;
     top: 0;
     background-color: #fff;
   }
@@ -1360,7 +1360,7 @@
     font-size: 8px !important;
   }
   .room {
-    height: calc(100% - 14px);
+    height: calc(100% - 6px);
   }
   .room .upper-most {
     flex-direction: column;

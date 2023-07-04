@@ -973,7 +973,7 @@
         }
     }
     .room{
-        height:calc(100% - 31px);
+        height:calc(100% - 26px);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -1182,7 +1182,7 @@
         }
         .bottom{
             order: 3;
-            height: 134px;
+            height: 127px;
             top: 0;
             background-color: #fff;
             &::-webkit-scrollbar{
@@ -1857,7 +1857,7 @@
         }
     }
     .room{
-        height:calc(100% - 14px);
+        height:calc(100% - 6px);
         .upper-most{
             flex-direction: column;
             padding: 0;
