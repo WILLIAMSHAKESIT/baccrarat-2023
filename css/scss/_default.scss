@@ -588,6 +588,11 @@ html,body {
     }
   }
 }
+html{
+  &::before{
+    background: #000 !important;
+  }
+}
 i{
   background:linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
   -webkit-background-clip: text;
