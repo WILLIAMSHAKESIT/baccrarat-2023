@@ -403,7 +403,7 @@ $(document).ready(function(){
     })
 
     $('.nextChip').on('click',function(){
-        $('chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
+        $('.chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
     })
 
     $('.btn, input, select, .card-board').on('click',function(){
