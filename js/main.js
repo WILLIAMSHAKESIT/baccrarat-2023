@@ -15,10 +15,10 @@ if (progress != 100) {
 }
 }
 
+
 function decrementProgress() {
 if (progress != 0) {
     progress = progress - 10;
-    console.log(progress);
     setProgress();
 }
 }
@@ -99,8 +99,8 @@ $(document).ready(function(){
     $('.chips').on('mousemove',function(e){
         layout.mouseMove(e)
     })
-    $('body, html').one('click',function(e){
-        layout.toggleFullScreen()
+    $('body, html').on('click',function(e){
+        layout.openFullscreen()
     })
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
@@ -711,7 +711,6 @@ class Layout{
         let bigBoxElFour = '.room .bottom .results-wrapper ul.cock-roach'
 
             if(window.innerWidth > window.innerHeight){
-                console.log('test')
                 //land
                 let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth() / 7) / 2)
                 let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (7.5/2) /2)
@@ -737,7 +736,6 @@ class Layout{
                 }
             }else{
                 //por
-                console.log('test por')
                 let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth() / (3.5/2) /2)
                 for(let i=0;i<30;i++){
                     $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
