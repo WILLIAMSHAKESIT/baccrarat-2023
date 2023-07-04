@@ -23,7 +23,7 @@
     </script>
 
 </head>
-<body class="not-multi room-page">
+<body class="not-multi room-page" id="body">
     <div class="device-prompt">
         <div class="prompt-content">
             <h1 class="small"></h1>
@@ -112,9 +112,6 @@
                 <i class="fa-solid fa-gear  icon-dark"></i>
             </button>
         </div>
-        <a href="index.html" class="btn to-home btn-rounded primary ml-2 mr-2">
-            <i class="fa-solid fa-house icon-dark"></i>
-        </a>
         <a class="btn btn-rounded primary toggle-menu">
             <i class="fa-solid fa-bars icon-dark"></i>
         </a>
@@ -277,7 +274,7 @@
                             <div class="area-info">
                                 <div class="info">
                                     <div class="area-name area-blue text-highlight">
-                                        P.PAIRP.PAIRP.PAIRP
+                                        P.PAIR
                                     </div>
                                     <div>
                                         <span class="icon icon-yuan icon-sm"></span>
@@ -620,7 +617,7 @@
         </div>
         <div class="mobile-controls">
             <div class="control-area-mobile">
-                <div class="top-control mx-auto">
+                <!-- <div class="top-control mx-auto">
                     <a href="#" class="prevChip">
                         <i class="fa-solid fa-angle-left" class="prevChip"></i>
                     </a>
@@ -642,14 +639,34 @@
                     <a href="#" class="nextChip">
                         <i class="fa-solid fa-angle-right" class="nextChip"></i>
                     </a>
-                </div>
-                <div class="bottom-control">
+                </div> -->
+                <div class="bottom-control-new">
                     <div class="btns">
-                        <button class="btn btn-custom-blue2 btn-sm toggle-tables bet">
-                            <i class="fa-solid fa-check"></i>
-                            <span>PLACE BETS</span>
-                        </button>
-                        <button class="btn btn-rounded primary">
+                        <div class="flex">
+                            <button class="btn btn-custom-blue2 btn-sm toggle-tables bet">
+                                <i class="fa-solid fa-check"></i>
+                                <span>PLACE BETS</span>
+                            </button>
+                            <button class="btn primary btn-sm prevChip">
+                                <i class="fa-solid fa-angle-left icon-dark"></i>
+                            </button>
+                        </div>
+                        <div class="chips">
+                            <div class="chips-inner">
+                                <button class="btn-chip chip-20" draggable="true" value="1k" data-val="1k"   id="TestChip" ondragstart="dragStart(event)"></button>
+                                <button class="btn-chip chip-50" draggable="true" value="5k" data-val="5k"></button>
+                                <button class="btn-chip chip-100" draggable="true" value="10k" data-val="10k"></button>
+                                <button class="btn-chip chip-200" draggable="true" value="50k" data-val="50k"></button>
+                                <button class="btn-chip chip-500" draggable="true" value="100k" data-val="100k"></button>
+                                <button class="btn-chip chip-1k" draggable="true" value="500k" data-val="500k"></button>
+                                <button class="btn-chip chip-10k" draggable="true" value="1m" data-val="1m"></button>
+                                <button class="btn-chip chip-50k" draggable="true" value="5m" data-val="5m"></button>
+                                <button class="btn-chip chip-100k" draggable="true" value="10m" data-val="10m"></button>
+                                <button class="btn-chip chip-500k" draggable="true" value="50m" data-val="50m"></button>
+                                <button class="btn-chip chip-1m" draggable="true" value="50m" data-val="50m"></button>
+                            </div>
+                        </div>
+                        <!-- <button class="btn btn-rounded primary">
                             <i class="fa-solid fa-repeat icon-dark"></i>
                         </button>
                         <button class="btn btn-rounded primary toggle-tables">
@@ -657,26 +674,50 @@
                         </button>
                         <button class="btn btn-rounded primary toggle-tables">
                             <i class="fa-solid fa-arrow-right-arrow-left icon-dark"></i>
-                        </button>
+                        </button> -->
                         <!-- <button class="btn btn-rounded primary toggle-tables">
                             <i class="fa-solid fa-gear icon-dark"></i>
                         </button> -->
-                        <button class="btn btn-rounded primary toggle-tables">
+                        <!-- <button class="btn btn-rounded primary toggle-tables">
                             <i class="fa-solid fa-gear icon-dark"></i>
-                        </button>
-                        <button class="btn btn-custom-red2 btn-sm toggle-tables cancel">
-                            <i class="fa-solid fa-xmark"></i>
-                            <span>CANCEL BETS</span>
-                        </button>
+                        </button> -->
+                        <div class="flex">
+                            <button class="btn primary btn-sm nextChip">
+                                <i class="fa-solid fa-angle-right icon-dark"></i>
+                            </button>
+                            <button class="btn btn-custom-red2 btn-sm toggle-tables cancel">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>CANCEL BETS</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="mobile-bottom-menu">
+            <button class="btn primary">
+                <i class="fa-solid fa-repeat"></i>
+                <span>Repeat bet</span>
+            </button>
+            <button class="btn primary toggle-tables">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Undo</span>
+            </button>
+            <button href="index.html" class="btn to-home btn-rounded primary ml-2 mr-2">
+                <i class="fa-solid fa-house icon-dark"></i>
+            </button>
+            <button class="btn primary toggle-tables">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <span>Change table</span>
+            </button>
+            <button class="btn primary toggle-tables">
+                <i class="fa-solid fa-gear"></i>
+                <span>Chip settings</span>
+            </button>
+        </div>
         <script>
             function dragStart(event) {
             event.dataTransfer.setData("Text", event.target.id);
-           
-            console.log("Test")
         }
     </script>
     </div>

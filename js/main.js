@@ -77,7 +77,7 @@ $(document).ready(function(){
     // layout.handleDevicePrompt()
     layout.handleLoadingPage()
     layout.handleMobileLandscape()
-    
+
     $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
     $('.toggle-limit').click(function(){
         layout.toggleRoomLimit()
@@ -308,6 +308,7 @@ $(document).ready(function(){
     })
     $(window).on('resize',function(){
         layout.createGrid()
+        layout.scaleDivToScreen()
     })
     //filter table
     $('.table-filter button').on('click',function(){
@@ -398,14 +399,11 @@ $(document).ready(function(){
     })
     //room chips replace
     $('.prevChip').on('click',function(){
-        // $('.chips').scrollLeft(0)
         $('.chips').animate({scrollLeft:0},800)
-        // layout.prevChip()
     })
 
     $('.nextChip').on('click',function(){
-        $('.chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
-        // layout.nextChip()
+        $('chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
     })
 
     $('.btn, input, select, .card-board').on('click',function(){
@@ -1112,7 +1110,14 @@ class Layout{
     }
     handleMobileLandscape(){
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            alert('test')
+            if(window.innerHeight > window.innerWidth){
+                // alert("Please use Landscape!");
+            }else{
+                // alert('landscape')
+                if(window.innerWidth <= 1475){
+
+                }
+            }
         }
     }
 }

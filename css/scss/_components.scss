@@ -2455,19 +2455,7 @@ table{
 }
 
 .embed-container {
-	// position: relative;
-	// padding-bottom: 56.25%;
-	// height: 0;
-	// overflow: hidden;
-	// max-width: 100%;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%,-50%);
     position: relative;
-    /* padding-bottom: 56.25%; */
-    /* height: 0; */
-    /* overflow: hidden; */
-    /* max-width: 100%; */
     width: 100%;
     height: 100%;
 	iframe {
@@ -2479,4 +2467,145 @@ table{
 		width: 96%;
 		height: 96%;
 	}
+}
+
+.bottom-control-new{
+    .btns{
+        display: flex;
+        justify-content: space-between;
+        button{
+            margin-right:0;
+            filter: unset;
+            box-shadow: unset;
+            border-radius: unset;
+            &:not(.btn-rounded){
+                width: 70px !important;
+                height: 42px !important;
+                font-size: 10px;
+                border: 1px solid #d6bd78;
+                font-weight: 900;
+                &.btn-custom-red2{
+                    background-image: linear-gradient(359deg, #2d0a0a, #811d1d) !important;
+                    i{
+                        display: none;
+                    }
+                }
+                &.btn-custom-blue2{
+                    background-image: linear-gradient(359deg, #0a0a29, #1a3667) !important;
+                    i{
+                        display: none;
+                    }
+                }
+            }
+            &.primary{
+                max-width: 30px !important;
+            }
+        }
+        .chips{
+            width: calc(100% - 14px);
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+                display: none !important;
+            }
+            .chips-inner{
+                display: flex;
+                gap: 5px;
+                min-width: 500px;
+                .btn-chip{
+                    width: 91px !important;
+                    height: 42px !important;
+                    border: unset;
+                    &::after{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-bottom-menu{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    order: 5;
+    background-image: url(../img/bg/header_bg2.png);
+    background-size: cover;
+    background-position: center;
+    .btn{
+        box-shadow: unset;
+        width: calc(100% / 4);
+        display: flex;
+        flex-direction: column;
+        i{
+            font-size: 15px;
+        }
+        span{
+            font-size: 8px;
+        }
+        &.primary{
+            &:not(:nth-child(3)){
+                background: unset;
+                border: unset;
+            }
+        }
+        &.to-home{
+            min-width: 33px !important;
+            min-height: 33px !important;
+            max-width: 33px !important;
+            max-height: 33px !important;
+        }
+    }
+}
+
+.input-label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .form-group{
+        &.form-icon{
+            position: relative;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            overflow: hidden;
+            .form-control{
+                border: unset !important;
+                background-color: unset;
+                width: calc(100% - 43px) !important;
+                padding: 0 5px;
+                font-weight: 700;
+                color: #000;
+                &:focus{
+                    color: #000000;
+                    background-color: #ffffff !important;
+                    box-shadow: unset;
+                    border: unset;
+                    outline: unset;
+                }
+            }
+            .icon{
+                position: relative;
+                height: 100%;
+                width: 43px;
+                top: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #000000;
+                background: linear-gradient(359deg, rgb(59 0 0), rgb(173 26 26));
+                height: 42px;
+            }
+        }
+    }
+    select{
+        color: #000 !important;
+        option{
+            border: unset;
+            color: #000 !important;
+        }
+    }
 }

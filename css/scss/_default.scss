@@ -577,6 +577,11 @@ html,body {
       background-image: url(../img/bg/bg_loading.png);
     }
   }
+  &.login-page{
+    &::before{
+      background-image: url(../img/bg/bg_loading.png);
+    }
+  }
 }
 i{
   background:linear-gradient(359deg, #c8a44e, #f9f3ca, #c39e49);
