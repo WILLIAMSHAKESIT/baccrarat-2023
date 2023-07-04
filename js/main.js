@@ -584,7 +584,7 @@ class Layout{
         this.isDragging =false;
         this.loadingWidth = 0 
         this.hey = 0
-        this.$el = $('#body')
+        this.$el = $('body')
         this.elHeight = this.$el.outerHeight()
         this.elWidth = this.$el.outerWidth()
         this.$wrapper = $('html')
