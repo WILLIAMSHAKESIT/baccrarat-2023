@@ -830,11 +830,19 @@ class Layout{
         if(!this.fsBool){
             this.fsBool = true
             this.openFullscreen()
-            $(_this).html('<i class="fa-solid fa-compress"></i>Exit Full</a>')
+            if(window.innerWidth < window.innerHeight){
+                $(_this).html('<i class="fa-solid fa-compress"></i>Exit Full</a>')
+            }else{
+                $(_this).html('<i class="fa-solid fa-compress"></i></a>')
+            }
         }else{
             this.fsBool = false
             this.closeFullscreen()
-            $(_this).html('<i class="fa-solid fa-expand"></i>Toggle Full</a>')
+            if(window.innerWidth < window.innerHeight){
+                $(_this).html('<i class="fa-solid fa-expand"></i>Toggle Full</a>')
+            }else{
+                $(_this).html('<i class="fa-solid fa-expand"></i></a>')
+            }
         }
     }
     modalClose(){
@@ -977,7 +985,11 @@ class Layout{
         });
     }
     toggleRoomLimit(){
-        $('.bet-limit-table').toggle()
+        if(window.innerWidth > window.innerHeight){
+            $('.room .upper-most .bet-limit-table').toggle()
+        }else{
+            $('.room .upper-most.mobile .bet-limit-table').toggle()
+        }
     }
     showLimitDetails(_this){
         $(_this).parent().parent().siblings('.card-body').find('.limit-details').show()
@@ -1100,6 +1112,9 @@ class Layout{
     handleMobileLandscape(){
         if(window.innerHeight < window.innerWidth){
             $('.mobileCss').attr('href','#')
+            $('.upper-most').show()
+            $('.upper-most.mobile').hide()
+            $('.upper-most.mobile .logo').show()
             var scale;
 
             scale = Math.min(
@@ -1111,6 +1126,9 @@ class Layout{
             });
         }else{
             $('.mobileCss').attr('href','css/mobile.css')
+            $('.upper-most').hide()
+            $('.upper-most.mobile').show()
+            $('.upper-most.mobile .logo').hide()
             this.$el.css({
                 transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxHeight:'100%',left:'0',top:'0',zoom: '1'
             });

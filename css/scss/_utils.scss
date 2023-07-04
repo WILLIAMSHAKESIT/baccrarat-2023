@@ -163,3 +163,30 @@
       transform: translateY(-50%) rotate(359deg);
     }
   }
+.room{
+    .upper-most{
+        &.mobile{
+            display: none;
+        }
+        .bet-limit-table{
+            background-image: url(../img/bg/card_bg.png);
+            background-size: cover;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            z-index: 10000;
+            width: 100%;
+            display: none;
+            .table-fancy{
+                height: 100% !important;
+                width: 100%;
+                &::before{
+                    display: none;
+                }
+                tbody{
+                    background: unset !important;
+                }
+            }
+        }
+    }
+}

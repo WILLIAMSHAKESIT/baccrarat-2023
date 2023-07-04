@@ -306,7 +306,7 @@
         .header-bg{
             width: calc(100% - 212px);
             padding-left: 277px;
-            padding-right: 63px;
+            padding-right: 131px;
             .header-mid-right-most{
                 gap: 8px;
                 .user-content{
@@ -610,11 +610,11 @@
             }
         }
         .room-upper-container-left{
-            width: calc(100% - 48%);
+            // width: calc(100% - 48%);
             justify-content: space-between;
             .logo{
                 margin-right: 0;
-                display: none;
+                // display: none;
             }
             .table-details{
                 margin-left: 0;
@@ -979,7 +979,8 @@
         flex-direction: column;
         justify-content: unset;
         .upper-most{
-            height: 75px;
+            height: 64px;
+            padding-top: 5px;
             .room-upper-container-left{
                 width: 99% !important; 
                 .table-details{
@@ -992,7 +993,7 @@
                 background-image: url(../img/bg/card_bg.png);
                 background-size: cover;
                 position: absolute;
-                top: 75px;
+                top: 65px;
                 left: 0;
                 z-index: 10000;
                 width: 100%;

@@ -356,8 +356,10 @@
     .room-upper-container-left{
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
         .logo{
-            width: 200px;
+            width: 122px;
             margin-right: 20px;
         }
         .table-details{
@@ -368,6 +370,7 @@
             .detail-item{
                 display: flex;
                 align-items: center;
+                flex-direction: column;
                 gap: 5px;
                 font-weight: 500;
                 i,span{
@@ -383,20 +386,22 @@
                     border-radius: 4px;
                     text-align: center;
                     font-size: 18px;
+                    width: 100%;
+                    justify-content: center;
                     i{
                         font-size: 14px !important;
                     }
                 }
             }
             &:last-child{
-                display: none;
+                // display: none;
             }
         }
     }
     .top{
         display: flex;
         gap: 5px;
-        height: calc(100% - 255px - 78px);
+        height: calc(100% - 176px - 78px);
         padding: 0 5px;
         >div{
             &.left{
@@ -641,7 +646,7 @@
                         }
                     }
                     .control-area{
-                        height: calc(100% - 71%);
+                        height: calc(100% - 71% - 45px);
                         position: relative;
                         display: flex;
                         flex-direction: column;

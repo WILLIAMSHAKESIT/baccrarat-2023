@@ -181,7 +181,7 @@
   header .header-bg {
     width: calc(100% - 212px);
     padding-left: 277px;
-    padding-right: 63px;
+    padding-right: 131px;
   }
   header .header-bg .header-mid-right-most {
     gap: 8px;
@@ -385,12 +385,10 @@
     width: calc(100% - 20px);
   }
   .room .room-upper-container-left {
-    width: 52%;
     justify-content: space-between;
   }
   .room .room-upper-container-left .logo {
     margin-right: 0;
-    display: none;
   }
   .room .room-upper-container-left .table-details {
     margin-left: 0;
@@ -660,7 +658,8 @@
     justify-content: unset;
   }
   .room .upper-most {
-    height: 75px;
+    height: 64px;
+    padding-top: 5px;
   }
   .room .upper-most .room-upper-container-left {
     width: 99% !important;
@@ -672,7 +671,7 @@
     background-image: url(../img/bg/card_bg.png);
     background-size: cover;
     position: absolute;
-    top: 75px;
+    top: 65px;
     left: 0;
     z-index: 10000;
     width: 100%;
