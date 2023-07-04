@@ -29,7 +29,6 @@ function allowDrop(event) {
 
 function drop(event) {
     event.preventDefault();
-    // $(event.target).addClass('torn')
 }
 
 function setProgress() {
@@ -63,7 +62,6 @@ function setProgress() {
     document.getElementsByClassName("middle-circle")[2].innerHTML =
         progress.toString();    
 }
-
 window.onload = function () {
     setProgress();
 };
@@ -78,8 +76,9 @@ $(document).ready(function(){
     layout.createGrid()
     // layout.handleDevicePrompt()
     layout.handleLoadingPage()
-    layout.setVideoSize()
-
+    layout.handleMobileLandscape()
+    
+    $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
     $('.toggle-limit').click(function(){
         layout.toggleRoomLimit()
     })
@@ -309,7 +308,6 @@ $(document).ready(function(){
     })
     $(window).on('resize',function(){
         layout.createGrid()
-        layout.setVideoSize()
     })
     //filter table
     $('.table-filter button').on('click',function(){
@@ -1112,22 +1110,9 @@ class Layout{
     mouseUp(e){
         this.isDown = false;
     }
-    setVideoSize(){
-        if(window.innerWidth < 1477 && window.innerWidth > 935){
-             $('.room .top, .room .top .left').css('height',`${$('.embed-container').outerHeight(true)}px`)
-             $('.room .upper-most').css('height',`calc(${100}% - ${$('.room .top').outerHeight(true) + 255}px)`)
-             console.log('test')
-        }else{
-            $('.room .top').css('height',`calc(100% - 255px - 78px)`)
-            $('.room .upper-most').css('height',`fit-content`)
+    handleMobileLandscape(){
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            alert('test')
         }
-        // if(window.innerWidth < 1477 && window.innerWidth > 935){
-        //      $('.room .top, .room .top .left').css('height',`${$('.embed-container').outerHeight(true)}px`)
-        //      $('.room .upper-most').css('height',`calc(${100}% - ${$('.room .top').outerHeight(true) + 255}px)`)
-        //      console.log('test')
-        // }else{
-        //     $('.room .top').css('height',`calc(100% - 255px - 78px)`)
-        //     $('.room .upper-most').css('height',`fit-content`)
-        // }
     }
 }

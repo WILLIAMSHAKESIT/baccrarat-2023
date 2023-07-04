@@ -316,6 +316,14 @@
         }
     }
 }
+@media(max-width:1252px){
+    .embed-container{
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
 @media only screen and (max-device-width : 1342px) {
     .room{
         &.multi{
@@ -549,6 +557,12 @@
                                 .area-info{
                                     .info{
                                         width: calc(100% - 10px);
+                                        .area-name{
+                                            white-space: nowrap;
+                                            width: fit-content;
+                                            font-size: 10px;
+                                            padding: 0 2px;
+                                        }
                                     }
                                 }
                             }
@@ -2510,7 +2524,7 @@
             }
             .header-mid-right-most{
                 .user-content{
-                    gap: 6px !important;
+                    gap: 4px !important;
                 }
             }
         }

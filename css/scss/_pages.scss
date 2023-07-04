@@ -285,7 +285,7 @@
         }
         .bet-limit-table{
             width: calc(100% - 55%);
-            height: 100%;
+            height: fit-content;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -325,6 +325,9 @@
                     border-radius: 4px;
                     text-align: center;
                     font-size: 18px;
+                    i{
+                        font-size: 14px !important;
+                    }
                 }
             }
             &:last-child{
@@ -353,7 +356,7 @@
                     content: "";
                     position: absolute;
                     left: -12%;
-                    top: -144%;
+                    top: -160%;
                     width: 100%;
                     height: 200%;
                     background: linear-gradient(179deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4784313725) 100%);
@@ -535,6 +538,7 @@
                                         border-radius: 3px;
                                         position: relative;
                                         // line-height: 0 !important;
+                                        white-space: nowrap;
                                         &.area-blue{
                                             border: 2px solid #134178;
                                             background: radial-gradient(circle, rgb(45 43 89) 0%, #080e16 100%);
