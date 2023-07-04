@@ -467,11 +467,6 @@ html::before, body::before {
 html .device-prompt, body .device-prompt {
   display: none;
 }
-html.room-page.mobile-device, body.room-page.mobile-device {
-  min-width: 1920px;
-  min-height: 1080px;
-  transform-origin: center;
-}
 html.room-page::before, body.room-page::before {
   content: "";
   position: absolute;

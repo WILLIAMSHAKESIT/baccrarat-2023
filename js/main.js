@@ -62,9 +62,9 @@ function setProgress() {
     document.getElementsByClassName("middle-circle")[2].innerHTML =
         progress.toString();    
 }
-window.onload = function () {
-    setProgress();
-};
+// window.onload = function () {
+//     setProgress();
+// };
 $(document).ready(function(){
     const layout = new Layout()
     const timers = document.querySelectorAll('.count-down .timer')
@@ -1170,7 +1170,7 @@ class Layout{
         this.isDown = false;
     }
     handleMobileLandscape(){
-        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             $('body.room-page').addClass('mobile-device')
             if(window.innerHeight < window.innerWidth){
                 $('.mobileCss').attr('href','#')
@@ -1181,16 +1181,17 @@ class Layout{
                     this.$wrapper.height() / this.$el.outerHeight(true)
                 );
                 this.$el.css({
-                    transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%'
+                    transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%',maxWidth:'100%',maxHeight:'100%',zoom: '1'
                 });
             }else{
                 $('.mobileCss').attr('href','css/mobile.css')
                 this.$el.css({
-                    transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxWidth:'100%',left:'0',top:'0'
+                    transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxHeight:'100%',left:'0',top:'0',zoom: '1'
                 });
             }
-        }else{
-            $('body.room-page').removeClass('mobile-device')
         }
-    }
+    //     else{
+    //         $('body.room-page').removeClass('mobile-device')
+    //     }
+    // }
 }
