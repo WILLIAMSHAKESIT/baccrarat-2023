@@ -3017,11 +3017,12 @@ table.table-fancy tbody tr td:last-child {
 }
 .bottom-control-new .btns .chips .chips-inner {
   display: flex;
+  justify-content: space-around;
   gap: 5px;
   min-width: 500px;
 }
 .bottom-control-new .btns .chips .chips-inner .btn-chip {
-  width: 91px !important;
+  width: 41px !important;
   height: 42px !important;
   border: unset;
 }

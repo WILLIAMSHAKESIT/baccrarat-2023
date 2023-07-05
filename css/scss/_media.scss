@@ -1195,6 +1195,7 @@
                 .bead-road{
                     width: 112px;
                     min-width: 112px;
+                    border-right: 1px solid #00000069;
                     &::before{
                         font-size: 15px;
                         color: #00000069;
@@ -1204,6 +1205,7 @@
                 .small-grid{
                     width: 100%;
                     .main-road{
+                        border-bottom: 1px solid #00000069;
                         &::before{
                             font-size: 15px;
                             color: #00000069;
@@ -1212,6 +1214,7 @@
                         }
                     }
                     .bigeye-road{
+                        border-bottom: 1px solid #00000069;
                         &::before{
                             font-size: 15px;
                             color: #00000069;
@@ -1227,6 +1230,9 @@
                                 text-align: center;
                                 line-height: 1;
                             }
+                        }
+                        .small-road{
+                            border-right: 1px solid #00000069 !important;
                         }
                     }
                 }
@@ -2389,7 +2395,7 @@
 }
 @media(max-width:500px){
     .room {
-        height: calc(100% - 3px);
+        height: calc(100% + 2px);
         .upper-most {
             .upper-content-wrapper{
                 padding: 2px 1px;

@@ -2509,10 +2509,13 @@ table{
             }
             .chips-inner{
                 display: flex;
+                justify-content: space-around;
                 gap: 5px;
                 min-width: 500px;
                 .btn-chip{
-                    width: 91px !important;
+                    // width: 91px !important;
+                    // height: 42px !important;
+                    width: 41px !important;
                     height: 42px !important;
                     border: unset;
                     &::after{

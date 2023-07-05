@@ -831,7 +831,7 @@ class Layout{
             this.fsBool = true
             this.openFullscreen()
             if(window.innerWidth < window.innerHeight){
-                $(_this).html('<i class="fa-solid fa-compress"></i>Exit Full</a>')
+                $(_this).html('<i class="fa-solid fa-compress"></i>EXIT FULLSIZE</a>')
             }else{
                 $(_this).html('<i class="fa-solid fa-compress"></i></a>')
             }
@@ -839,7 +839,7 @@ class Layout{
             this.fsBool = false
             this.closeFullscreen()
             if(window.innerWidth < window.innerHeight){
-                $(_this).html('<i class="fa-solid fa-expand"></i>Toggle Full</a>')
+                $(_this).html('<i class="fa-solid fa-expand"></i>FULLSIZE</a>')
             }else{
                 $(_this).html('<i class="fa-solid fa-expand"></i></a>')
             }
