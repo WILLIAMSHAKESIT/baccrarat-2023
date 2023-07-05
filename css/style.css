@@ -1350,7 +1350,7 @@ select option {
 .card-board .card-body .bead-road {
   height: 100%;
   width: 40%;
-  border-right: 1px solid #000000;
+  border-right: 1px solid rgba(0, 0, 0, 0.5490196078);
 }
 .card-board .card-body .bead-road canvas {
   max-width: 100%;
@@ -2377,7 +2377,7 @@ table.table-fancy tbody tr td:last-child {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5490196078);
 }
 .results-wrapper-card .small-grid .main-road li {
   border-right: 1px solid rgba(0, 0, 0, 0.278);
@@ -2395,7 +2395,7 @@ table.table-fancy tbody tr td:last-child {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5490196078);
 }
 .results-wrapper-card .small-grid .bigeye-road li {
   border-right: 1px solid rgba(0, 0, 0, 0.278);
@@ -2415,7 +2415,7 @@ table.table-fancy tbody tr td:last-child {
   height: 25%;
 }
 .results-wrapper-card .small-grid .bottom-small .small-road {
-  border-right: 1px solid #000000 !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.5490196078) !important;
 }
 .results-wrapper-card .small-grid .bottom-small .small-road, .results-wrapper-card .small-grid .bottom-small .cock-roach {
   display: flex;
@@ -3011,6 +3011,8 @@ table.table-fancy tbody tr td:last-child {
 .bottom-control-new .btns .chips {
   width: calc(100% - 14px);
   overflow-x: auto;
+  display: flex;
+  align-items: center;
 }
 .bottom-control-new .btns .chips::-webkit-scrollbar {
   display: none !important;
@@ -3743,7 +3745,7 @@ table.table-fancy tbody tr td:last-child {
   font-size: 14px;
 }
 .room .top > div.right .body .control-area {
-  height: calc(29% - 45px);
+  height: calc(29% - 56px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3767,6 +3769,8 @@ table.table-fancy tbody tr td:last-child {
   justify-content: center;
 }
 .room .top > div.right .body .control-area .top-control .chips {
+  display: flex;
+  align-content: center;
   width: calc(100% - 100px);
   position: relative;
   overflow-x: auto;

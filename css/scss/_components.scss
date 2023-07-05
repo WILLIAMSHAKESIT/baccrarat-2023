@@ -750,7 +750,7 @@ select{
         .bead-road{
             height: 100%;
             width: 40%;
-            border-right: 1px solid #000000;
+            border-right: 1px solid #0000008c;
             canvas{
                 max-width: 100%;
             }
@@ -1848,7 +1848,7 @@ table{
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid #0000008c;
             li{
                 border-right: 1px solid rgba(0, 0, 0, 0.278);
                 border-bottom: 1px solid rgba(0, 0, 0, 0.278);
@@ -1866,7 +1866,7 @@ table{
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid #0000008c;
             li{
                 border-right: 1px solid rgba(0, 0, 0, 0.278);
                 border-bottom: 1px solid rgba(0, 0, 0, 0.278);
@@ -1885,7 +1885,7 @@ table{
             width: 100%;
             height: calc(100% / 4);
             .small-road{
-                border-right: 1px solid #000000 !important;
+                border-right: 1px solid #0000008c !important;
                 // &:nth-last-child(6),&:nth-last-child(5),&:nth-last-child(4),&:nth-last-child(3),&:nth-last-child(2),&:nth-last-child(1){
                 //     border-right: 0;
                 // }
@@ -2504,6 +2504,9 @@ table{
         .chips{
             width: calc(100% - 14px);
             overflow-x: auto;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
             &::-webkit-scrollbar {
                 display: none !important;
             }

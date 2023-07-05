@@ -69,6 +69,7 @@ $(document).ready(function(){
     layout.logoAnimation()
     layout.handleLoadingPage()
     layout.handleMobileLandscape()
+    layout.handleChipsPosition()
     let timingGrid = setTimeout(function(){
         layout.createGrid()
         clearTimeout(timingGrid)
@@ -719,8 +720,8 @@ class Layout{
             //por
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                // $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
-                $(`${bigBoxEl}`).append(`<li></li>`)
+                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+                // $(`${bigBoxEl}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
                 // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
@@ -1137,6 +1138,15 @@ class Layout{
             this.$el.css({
                 transform: "translate(0, 0) scale(1)",minWidth:'100%',minHeight:'100%',maxWidth:'100%',maxHeight:'100%',left:'0',top:'0',zoom: '1'
             });
+        }
+    }
+    handleChipsPosition(){
+        let el = $('.bottom-control-new .btns .chips .chips-inner')
+        let chipCount = el.children().length
+        if(chipCount <= 3){
+            el.css('min-width','100%')
+        }else{
+            el.css('min-width','500px')
         }
     }
 }
