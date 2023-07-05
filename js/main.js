@@ -98,9 +98,9 @@ $(document).ready(function(){
     $('.chips').on('mousemove',function(e){
         layout.mouseMove(e)
     })
-    $('body, html').on('click',function(e){
-        layout.openFullscreen()
-    })
+    // $('body, html').on('click',function(e){
+    //     layout.openFullscreen()
+    // })
     // disable right click
     // document.addEventListener("contextmenu", (event) => {
     //     event.preventDefault();
@@ -109,7 +109,7 @@ $(document).ready(function(){
     $('body').click(function(){
         $('.btn-chip').removeClass('active')
     })
-    $('.closeModal, .modal-wrapper').on('click',function(e){
+    $('.closeModal, .modal-wrapper:not(.loading-modal)').on('click',function(e){
         // e.stopPropagation()
         layout.modalClose()
     })
@@ -132,9 +132,6 @@ $(document).ready(function(){
       //  layout.handleTouchStart(this,e)
     })
     $('.buttons-chips .chips, .control-area-mobile .chips').on('touchend',function(e){
-        console.log("END")
-        console.log(e,"EEEEEEEE")
-       
         
         const targetElement = document.getElementById('TestChip');
         console.log(targetElement, "ZDXZXCCZCX")
@@ -415,11 +412,18 @@ $(document).ready(function(){
         $(this).html($('#roomVideo').is(":hidden")?'<i class="fa-solid fa-video"></i>':'<i class="fa-solid fa-video-slash"></i>')
     })
     $('#videoExpand').on('click',function(){
-        $('.room .top .left').toggleClass('full-screen')
+        $('.embed-container').css('height','100%')
+        if(window.innerWidth > window.innerHeight){
+            $('.room .top .left').toggleClass('full-screen')
+        }else{
+            $('.room .top .left').toggleClass('fullscreen-mobile')
+            $('.embed-container').css('height','39%')
+        }
         if($('.room .top .left').css('position') == 'fixed'){
             $(this).html('<i class="fa-solid fa-compress"></i>')
         }else{
             $(this).html('<i class="fa-solid fa-expand"></i>')
+            $('.embed-container').css('height','100%')
         }
     })
 
@@ -715,24 +719,24 @@ class Layout{
             //por
             let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (3.5/2) /2)
             for(let i=0;i<30;i++){
-                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
-                // $(`${bigBoxEl}`).append(`<li></li>`)
+                // $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+                $(`${bigBoxEl}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                // $(`${bigBoxElOne}`).append(`<li></li>`)
+                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+                $(`${bigBoxElOne}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                // $(`${bigBoxElTwo}`).append(`<li></li>`)
+                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+                $(`${bigBoxElTwo}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                // $(`${bigBoxElThree}`).append(`<li></li>`)
+                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+                $(`${bigBoxElThree}`).append(`<li></li>`)
             }
             for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
-                // $(`${bigBoxElFour}`).append(`<li></li>`)
+                // $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
+                $(`${bigBoxElFour}`).append(`<li></li>`)
             }
         }
 
@@ -1111,6 +1115,7 @@ class Layout{
     }
     handleMobileLandscape(){
         if(window.innerHeight < window.innerWidth){
+            $('.embed-container').css('height','100%')
             $('.mobileCss').attr('href','#')
             $('.upper-most').show()
             $('.upper-most.mobile').hide()

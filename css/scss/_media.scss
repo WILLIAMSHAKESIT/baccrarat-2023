@@ -328,7 +328,7 @@
     .room{
         &.multi{
             .top{
-                height: calc(100% - 210px);
+                height: calc(100% - 258px);
                 >div{
                     &.right{
                         .waiting-prompt{
@@ -633,7 +633,7 @@
                 max-height: calc(100% - -32px);
                 overflow: auto;
                 .room{
-                    width: calc(100% / 2  - 5px);
+                    width: calc(100% / 2  - 5px) !important;
                     height: calc(100% / 1.6);
                 }
             }
@@ -1058,10 +1058,14 @@
                     .iframe-wrapper{
                         height: 100%;
                         width: 100%;
-                        // iframe{           
-                        //     width: 132%;
-                        //     height: 233%;
-                        // }
+                    }
+                    &.fullscreen-mobile{
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100% !important;
+                        z-index: 2000;
                     }
                 }
                 &.right{
@@ -1404,6 +1408,9 @@
             }
             .top > div.right .body{
                 height: 100% !important;
+            }
+            .top > div.left{
+                height: 100%;
             }
             .header{
                 .header-top{
@@ -1758,7 +1765,7 @@
             >{
                 div{
                     &.left{
-                        height: 415px !important;
+                        height: 415px;
                     }
                 }
             }
@@ -2059,7 +2066,7 @@
                 gap: 5px;
                 .room{
                     width: 100%;
-                    height: 397px;
+                    height: 460px;
                 }
             }
         }
@@ -2144,6 +2151,17 @@
                         .bet-area{
                             height: 100%;
                             width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &.multi{
+            .top{
+                >{
+                    div{
+                        &.left{
+                            height: 100%;
                         }
                     }
                 }
@@ -2316,6 +2334,14 @@
                 }
             }
         }
+        >div{
+            &:first-child{
+                .room{
+                    height: 550px;
+                    width: 100% !important;
+                }
+            }
+        }
     }
     .card-board{
         .card-header{
@@ -2371,10 +2397,30 @@
                 }
             }
         }
+        &.multi{
+            .top{
+                >{
+                    div{
+                        &.left{
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
     #tablesModal{
         .modal-container{
             width: 320px;
+        }
+    }
+    .multi-rooms{
+        >div{
+            &:first-child{
+                .room{
+                    height: 432px;
+                }
+            }
         }
     }
 }
@@ -2641,6 +2687,15 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    .multi-rooms{
+        >div{
+            &:first-child{
+                .room{
+                    height: 396px;
                 }
             }
         }

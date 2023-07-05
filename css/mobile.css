@@ -199,7 +199,7 @@
 }
 @media only screen and (max-device-width: 1342px) {
   .room.multi .top {
-    height: calc(100% - 210px);
+    height: calc(100% - 258px);
   }
   .room.multi .top > div.right .waiting-prompt .prompt-with-img img {
     width: 30%;
@@ -406,7 +406,7 @@
     overflow: auto;
   }
   .multi-rooms > div:first-child .room {
-    width: calc(50% - 5px);
+    width: calc(50% - 5px) !important;
     height: 62.5%;
   }
   .multi-rooms .buttons-chips .chips .inner-chips {
@@ -735,6 +735,14 @@
     height: 100%;
     width: 100%;
   }
+  .room .top > div.left.fullscreen-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    z-index: 2000;
+  }
   .room .top > div.right {
     width: 100%;
   }
@@ -1032,6 +1040,9 @@
   .room.multi .top > div.right .body {
     height: 100% !important;
   }
+  .room.multi .top > div.left {
+    height: 100%;
+  }
   .room.multi .header .header-top .game-no {
     font-size: 10px;
   }
@@ -1295,7 +1306,7 @@
     font-size: 10px;
   }
   .room .top > div.left {
-    height: 415px !important;
+    height: 415px;
   }
 }
 @media only screen and (max-device-width: 697px) {
@@ -1510,7 +1521,7 @@
   }
   .multi-rooms > div:first-child .room {
     width: 100%;
-    height: 397px;
+    height: 460px;
   }
 }
 @media (max-width: 600px) {
@@ -1575,6 +1586,9 @@
   .room .top > div.right .body .bet-area {
     height: 100%;
     width: 100%;
+  }
+  .room.multi .top > div.left {
+    height: 100%;
   }
   .legend-mobile {
     width: calc(100% - 4px);
@@ -1721,6 +1735,10 @@
   .multi-rooms .control-menu .btn.btn-custom-red.btn-md i {
     margin-right: 0;
   }
+  .multi-rooms > div:first-child .room {
+    height: 550px;
+    width: 100% !important;
+  }
   .card-board .card-header .bet-limit {
     left: 42%;
     font-size: 15px;
@@ -1742,8 +1760,14 @@
     min-width: 110px;
     font-size: 14px;
   }
+  .room.multi .top > div.left {
+    height: 100%;
+  }
   #tablesModal .modal-container {
     width: 320px;
+  }
+  .multi-rooms > div:first-child .room {
+    height: 432px;
   }
 }
 @media only screen and (max-device-width: 442px) {
@@ -1916,6 +1940,9 @@
   }
   .room .top > div.right .body .bet-area .area .area-info .text {
     font-size: 9px;
+  }
+  .multi-rooms > div:first-child .room {
+    height: 396px;
   }
 }
 @media (max-width: 327px) {
