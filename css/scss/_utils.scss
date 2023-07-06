@@ -29,7 +29,7 @@
 }
 
 .text-highlight{
-    color: #FFF176;
+    color: #ffd972;
 }
 
 
@@ -149,7 +149,7 @@
     left: 0;
 }
 
-.btn-rounded{
+.btn-small{
     &.toggle-menu,&.to-home{
         display: none;
     }
@@ -163,6 +163,48 @@
       transform: translateY(-50%) rotate(359deg);
     }
   }
+  @keyframes rotationTwo {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    //   left: 7px;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform:rotate(359deg);
+        opacity: 0;
+        // left: 200px;
+    }
+  }
+  @keyframes rotationThree {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    //   left: 7px;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform:rotate(359deg);
+        opacity: 0;
+        // left: 200px;
+    }
+  }
 .room{
     .upper-most{
         &.mobile{
@@ -172,7 +214,7 @@
             background-image: url(../img/bg/card_bg.png);
             background-size: cover;
             position: absolute;
-            top: 75px;
+            top: 68px;
             left: 0;
             z-index: 10000;
             width: 100%;

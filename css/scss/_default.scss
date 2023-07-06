@@ -542,7 +542,7 @@ html,body {
   height: 100%;
   overflow: hidden;
   user-select: none !important;
-  background: radial-gradient(circle, rgb(112 9 9) 0%, rgb(52 1 2) 100%);
+  background: radial-gradient(circle, rgb(31 24 8) 0%, rgb(0, 0, 0) 100%);
   &::before{
     content: "";
     position: absolute;
@@ -598,7 +598,7 @@ i{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   &.icon-dark{
-    background:-webkit-linear-gradient(#290d0d, #6c3737, #2a0909);
+    background:-webkit-linear-gradient(#000, #000, #000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

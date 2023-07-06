@@ -39,7 +39,7 @@
   }
 }
 @media only screen and (max-device-width: 1666px) {
-  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) {
     height: 34px !important;
   }
   .room.multi .legend-mobile {
@@ -50,7 +50,7 @@
   }
 }
 @media only screen and (max-device-width: 1440px) {
-  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) {
     height: 29px !important;
   }
   .room.multi .top > div.right .body .bet-area .area .area-info .info {
@@ -214,9 +214,6 @@
   }
 }
 @media only screen and (max-device-width: 1280px) {
-  .room.multi .top {
-    flex-direction: row;
-  }
   .room.multi .top > div.left .count-down {
     left: 0;
   }
@@ -262,7 +259,7 @@
   .room.multi > .legend-mobile .indicators {
     gap: 5px;
   }
-  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) {
     height: 32px !important;
     width: 147px !important;
   }
@@ -298,8 +295,12 @@
   }
 }
 @media (max-width: 1280px) {
-  .btn-rounded.toggle-menu, .btn-rounded.to-home {
+  .btn-small.toggle-menu, .btn-small.to-home {
     display: flex;
+  }
+  .btn-small.to-home {
+    border-radius: 100px;
+    border: 1px solid #e6d9a2;
   }
   header .logo-wrapper {
     width: 341px;
@@ -385,7 +386,7 @@
     width: calc(100% - 20px);
   }
   .room .room-upper-container-left {
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .room .room-upper-container-left .logo {
     margin-right: 0;
@@ -632,22 +633,22 @@
   header .btn:last-child {
     margin-right: 10px;
   }
-  header .btn.btn-rounded {
+  header .btn.btn-small {
     min-width: 30px !important;
     min-height: 30px !important;
     max-width: 30px !important;
     max-height: 30px !important;
   }
-  header .btn.btn-rounded i {
+  header .btn.btn-small i {
     font-size: 13px;
   }
-  header .btn.btn-rounded.toggle-menu {
+  header .btn.btn-small.toggle-menu {
     min-width: 30px !important;
     min-height: 30px !important;
     max-width: 30px !important;
     max-height: 30px !important;
   }
-  header .btn.btn-rounded.toggle-menu i {
+  header .btn.btn-small.toggle-menu i {
     font-size: 13px;
   }
   .room {
@@ -662,7 +663,7 @@
     padding-top: 5px;
   }
   .room .upper-most .room-upper-container-left {
-    width: 99% !important;
+    width: 100% !important;
   }
   .room .upper-most .room-upper-container-left .table-details:last-child {
     display: flex;
@@ -782,7 +783,6 @@
     left: 0;
     transform: 0;
     height: 100%;
-    border: 4px solid #275F7E;
     margin-top: 0;
   }
   .room .top > div.right .body .bet-area .area .btn-chip {
@@ -953,13 +953,13 @@
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) i {
     margin-right: 5px;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-small {
     min-width: 43px !important;
     min-height: 43px !important;
     max-width: 43px !important;
     max-height: 43px !important;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded i {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-small i {
     margin-right: 0;
   }
   .room .mobile-controls .control-area-mobile .top-control {
@@ -1023,7 +1023,7 @@
     width: 40px;
     height: 40px;
   }
-  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) {
     font-size: 13px;
     border-radius: 50px;
     padding: 5px 15px;
@@ -1033,7 +1033,7 @@
     height: 42px;
     border-radius: 0;
   }
-  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) i {
+  .room.multi .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) i {
     font-size: 16px;
     margin-right: 2px !important;
   }
@@ -1042,6 +1042,12 @@
   }
   .room.multi .top > div.left {
     height: 100%;
+  }
+  .room.multi .top > div.left .video-prompt {
+    font-size: 13px;
+    height: -moz-fit-content;
+    height: fit-content;
+    text-align: center;
   }
   .room.multi .header .header-top .game-no {
     font-size: 10px;
@@ -1079,7 +1085,7 @@
   .multi-rooms .buttons-chips a {
     display: block;
   }
-  .multi-rooms .buttons-chips .btn-rounded.btn-sm {
+  .multi-rooms .buttons-chips .btn-small.btn-sm {
     min-width: 40px !important;
     min-height: 40px !important;
     max-width: 40px !important;
@@ -1295,6 +1301,11 @@
     width: 54px;
   }
 }
+@media only screen and (max-device-width: 902px) {
+  .room.multi .top {
+    flex-direction: row;
+  }
+}
 @media (max-width: 768px) {
   .room .top > div.left {
     height: 600px;
@@ -1434,13 +1445,13 @@
   .room .waiting-prompt .video-prompt span {
     font-size: 16px;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-small {
     min-width: 30px !important;
     min-height: 30px !important;
     max-width: 30px !important;
     max-height: 30px !important;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-rounded i {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button.btn-small i {
     font-size: 13px;
   }
   .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-circle) {
@@ -1475,6 +1486,15 @@
   .room .top > div.right .body .bet-area .area .area-info .info .icon.icon-sm {
     height: 17px !important;
     width: 15px !important;
+  }
+  .room.multi > .legend-mobile .right-indi > div div {
+    width: 16px;
+  }
+  .room.multi > .legend-mobile .right-indi > div span {
+    font-size: 16px;
+  }
+  .room.multi > .legend-mobile .indicators .indi .result {
+    width: 15px;
   }
   .card {
     width: 40px;
@@ -1693,7 +1713,7 @@
   .multi-rooms .buttons-chips {
     width: calc(100% - 53px);
   }
-  .multi-rooms .buttons-chips .btn-rounded.btn-sm {
+  .multi-rooms .buttons-chips .btn-small.btn-sm {
     min-width: 30px !important;
     min-height: 30px !important;
     max-width: 30px !important;
@@ -1791,19 +1811,19 @@
   .room .mobile-controls .control-area-mobile .bottom-control .btns button {
     margin-right: 0;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) {
     width: 91px !important;
     height: 42px !important;
     font-size: 12px;
     border: 1px solid #d6bd78;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded).btn-custom-red2 {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small).btn-custom-red2 {
     background-image: linear-gradient(359deg, #2d0a0a, #811d1d) !important;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded).btn-custom-blue2 {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small).btn-custom-blue2 {
     background-image: linear-gradient(359deg, #0a0a29, #1a3667) !important;
   }
-  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-rounded) i {
+  .room .mobile-controls .control-area-mobile .bottom-control .btns button:not(.btn-small) i {
     display: none;
   }
   .room .top {

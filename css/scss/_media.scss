@@ -60,7 +60,7 @@
                     .bottom-control{
                         .btns{
                             button{
-                                &:not(.btn-rounded){
+                                &:not(.btn-small){
                                     height: 34px !important;
                                 }
                             }
@@ -87,7 +87,7 @@
                     .bottom-control{
                         .btns{
                             button{
-                                &:not(.btn-rounded){
+                                &:not(.btn-small){
                                     height: 29px !important;
                                 }
                             }
@@ -357,7 +357,7 @@
     .room{
         &.multi{
             .top{
-                flex-direction: row;
+                // flex-direction: row;
                 >div{
                     &.left{
                         .count-down{
@@ -426,7 +426,7 @@
                     .bottom-control{
                         .btns{
                             button{
-                                &:not(.btn-rounded){
+                                &:not(.btn-small){
                                     height: 32px !important;
                                     width: 147px !important;
                                 }
@@ -483,9 +483,13 @@
     }
 }
 @media(max-width:1280px){
-    .btn-rounded{
+    .btn-small{
         &.toggle-menu,&.to-home{
             display: flex;
+        }
+        &.to-home{
+            border-radius: 100px;
+            border:1px solid #e6d9a2;
         }
     }
     header{
@@ -611,7 +615,7 @@
         }
         .room-upper-container-left{
             // width: calc(100% - 48%);
-            justify-content: space-between;
+            justify-content: space-around;
             .logo{
                 margin-right: 0;
                 // display: none;
@@ -952,7 +956,7 @@
             &:last-child{
                 margin-right: 10px;
             }
-            &.btn-rounded{
+            &.btn-small{
                 min-width: 30px !important;
                 min-height: 30px !important;
                 max-width: 30px !important;
@@ -982,7 +986,7 @@
             height: 64px;
             padding-top: 5px;
             .room-upper-container-left{
-                width: 99% !important; 
+                width: 100% !important; 
                 .table-details{
                     &:last-child{
                         display: flex;
@@ -1113,7 +1117,7 @@
                             left: 0;
                             transform: 0;
                             height: 100%;
-                            border: 4px solid #275F7E;
+                            // border: 4px solid #275F7E;
                             margin-top: 0;
                             .area{
                                 .btn-chip{
@@ -1300,7 +1304,7 @@
                                     margin-right: 5px;
                                 }
                             }
-                            &.btn-rounded{
+                            &.btn-small{
                                 min-width: 43px !important;
                                 min-height: 43px !important;
                                 max-width: 43px !important;
@@ -1387,7 +1391,7 @@
                                     width: 40px;
                                     height: 40px;
                                 }
-                                &:not(.btn-rounded){
+                                &:not(.btn-small){
                                     font-size: 13px;
                                     border-radius: 50px;
                                     padding: 5px 15px;
@@ -1411,6 +1415,11 @@
             }
             .top > div.left{
                 height: 100%;
+                .video-prompt{
+                    font-size: 13px;
+                    height: fit-content;
+                    text-align: center;
+                }
             }
             .header{
                 .header-top{
@@ -1465,7 +1474,7 @@
             a{  
                 display: block;
             }
-            .btn-rounded{
+            .btn-small{
                 &.btn-sm{
                     min-width: 40px !important;
                     min-height: 40px !important;
@@ -1738,6 +1747,15 @@
         }
     }
 }
+@media only screen and (max-device-width : 902px) {
+    .room{
+        &.multi{
+            .top{
+                flex-direction: row;
+            }
+        }
+    }
+}
 @media(max-width:768px){
     .room{
         .top{
@@ -1942,7 +1960,7 @@
                 .bottom-control{
                     .btns{
                         button{
-                            &.btn-rounded{
+                            &.btn-small{
                                 min-width: 30px !important;
                                 min-height: 30px !important;
                                 max-width: 30px !important;
@@ -1995,6 +2013,31 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.multi{
+            > {
+                .legend-mobile{
+                    .right-indi{
+                        >{
+                            div{
+                                div{
+                                    width: 16px;   
+                                }
+                                span{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                    .indicators{
+                        .indi{
+                            .result{
+                                width: 15px;
                             }
                         }
                     }
@@ -2283,7 +2326,7 @@
     .multi-rooms{
         .buttons-chips{
             width: calc(100% - 53px);
-            .btn-rounded{
+            .btn-small{
                 &.btn-sm{
                     min-width: 30px !important;
                     min-height: 30px !important;
@@ -2461,7 +2504,7 @@
                     .btns{
                         button{
                             margin-right:0;
-                            &:not(.btn-rounded){
+                            &:not(.btn-small){
                                 width: 91px !important;
                                 height: 42px !important;
                                 font-size: 12px;
@@ -2595,7 +2638,7 @@
         }
         // .btn{
         //     margin-right: 4px;
-        //     &.btn-rounded{
+        //     &.btn-small{
         //         min-width: 40px !important;
         //         min-height: 40px !important;
         //         max-width: 40px !important;
