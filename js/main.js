@@ -70,17 +70,18 @@ $(document).ready(function(){
     layout.handleLoadingPage()
     layout.handleMobileLandscape()
     layout.handleChipsPosition()
+    layout.appendTables()
     let timingGrid = setTimeout(function(){
         layout.createGrid()
         clearTimeout(timingGrid)
     },100)
 
     $(window).on('resize',function(){
+        // layout.debounce(layout.handleMobileLandscape());
         layout.handleMobileLandscape()
-        let timingGrid = setTimeout(function(){
-            layout.createGrid()
-            clearTimeout(timingGrid)
-        },100)
+        layout.debounce((layout.createGrid()));
+            // layout.handleMobileLandscape()
+            // layout.createGrid()
     })
       
     $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
@@ -437,7 +438,6 @@ $(document).ready(function(){
 })
    
 
-
 class CountdownTimer {
     constructor(canvasId, timerDivId, totalTime) {
       this.canvas = canvasId;
@@ -577,6 +577,7 @@ class Layout{
                 height:this.$wrapper.width()
             }
         }
+        this.index = 0
     }
     handleLoadingPage(){
         let loadingInterval = setInterval(()=>{
@@ -673,6 +674,13 @@ class Layout{
             }, 1000);
         })
     }
+    debounce(func, timeout = 1000){
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { this.createGrid().apply(this, args); }, timeout);
+        };
+    }
     createGrid(){
         $( "ul.bead-road").html('')
         $( "ul.main-road").html('')
@@ -692,54 +700,54 @@ class Layout{
         let bigBoxElThree = '.room .bottom .results-wrapper ul.small-road'
         let bigBoxElFour = '.room .bottom .results-wrapper ul.cock-roach'
         
-        if(window.innerWidth > window.innerHeight){
-            //land
-            let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth(true) / 7) / 2)
-            let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (7.5/2) /2)
-            for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
-                $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
-                // $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                // $(`${bigBoxElOne}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                // $(`${bigBoxElTwo}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                $(`${bigBoxElThree}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
-                $( `${bigBoxElFour}`).append(`<li></li>`)
-            }
-        }else{
-            //por
-            let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (3.5/2) /2)
-            for(let i=0;i<30;i++){
-                $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
-                // $(`${bigBoxEl}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
-                $(`${bigBoxElOne}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
-                // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
-                $(`${bigBoxElTwo}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
-                $(`${bigBoxElThree}`).append(`<li></li>`)
-            }
-            for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
-                // $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
-                $(`${bigBoxElFour}`).append(`<li></li>`)
-            }
-        }
+        // if(window.innerWidth > window.innerHeight){
+        //     //land
+        //     let breadRoadCol = 2 * Math.round(( $('ul.bead-road').outerWidth(true) / 7) / 2)
+        //     let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (7.5/2) /2)
+        //     for(let i=0;i<this.makeDivisibleBySix(breadRoadCol);i++){
+        //         $(`${bigBoxEl}`).append(`<li class="blink"><div class="result red"><div class="pair-banker"></div></div></li>`)
+        //         // $(`${bigBoxEl}`).append(`<li class="blink"></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+        //         // $(`${bigBoxElOne}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
+        //         $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+        //         // $(`${bigBoxElTwo}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+        //         $(`${bigBoxElThree}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         // $( `${bigBoxElFour}`).append(`<li><div class="result line-red"></div></li>`)
+        //         $( `${bigBoxElFour}`).append(`<li></li>`)
+        //     }
+        // }else{
+        //     //por
+        //     let mainRoadCol = 2 * Math.round( $('ul.main-road').outerWidth(true) / (3.5/2) /2)
+        //     for(let i=0;i<30;i++){
+        //         $(`${bigBoxEl}`).append(`<li><div class="result red"><div class="pair-banker"></div></div></li>`)
+        //         // $(`${bigBoxEl}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         // $(`${bigBoxElOne}`).append(`<li><div class="result outline-blue"><div class="tie-result"></div></div></li>`)
+        //         $(`${bigBoxElOne}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol)*2;i++){
+        //         // $(`${bigBoxElTwo}`).append(`<li><div class="result outline-red-small"></div></li>`)
+        //         $(`${bigBoxElTwo}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         // $(`${bigBoxElThree}`).append(`<li><div class="result fill-blue"></div></li>`)
+        //         $(`${bigBoxElThree}`).append(`<li></li>`)
+        //     }
+        //     for(let i=0;i<this.makeDivisibleBySix(mainRoadCol);i++){
+        //         // $(`${bigBoxElFour}`).append(`<li><div class="result line-blue"></div></li>`)
+        //         $(`${bigBoxElFour}`).append(`<li></li>`)
+        //     }
+        // }
 
         let bigBeadRoadItemSize = Math.round($(`${bigBoxEl} li`).outerHeight(true) - 2)
         let bigMainRoadItemSize = Math.round($(`${bigBoxElOne} li`).outerHeight(true) - 1)
@@ -783,7 +791,8 @@ class Layout{
         $(`${smallBoxElOne} li`).find('.result').css({width:`${mainRoadItemSize}px`,height:`${mainRoadItemSize}px`})
         $(`${smallBoxElTwo} li`).find('.result').css({width:`${bigeyeRoadItemSize}px`,height:`${bigeyeRoadItemSize}px`})
         $(`${smallBoxElThree} li`).find('.result').css({width:`${smallRoadItemSize}px`,height:`${smallRoadItemSize}px`})
-        $(`${smallBoxElFour} li`).find('.result').css({width:`${cockRoadItemSize}px`,height:`${cockRoadItemSize}px`})
+        $(`${smallBoxElFour} li`).find('.result').css({width:`${cockRoadItemSize}px`,height:`${cockRoadItemSize}px`})   
+        
     }
     chipSelect(_this){
         this.chipValue = $(_this).data("val")
@@ -1131,6 +1140,7 @@ class Layout{
                 transform: "translate(-50%, -50%) " + "scale(" + scale + ")",minWidth:'1920px',minHeight:'1080px',left:'50%',top:'50%',maxWidth:'100%',maxHeight:'100%',zoom: '1'
             });
         }else{
+            $('.embed-container').css('height','100%')
             $('.mobileCss').attr('href','css/mobile.css')
             $('.upper-most').hide()
             $('.upper-most.mobile').show()
@@ -1147,6 +1157,115 @@ class Layout{
             el.css('min-width','100%')
         }else{
             el.css('min-width','500px')
+        }
+    }
+    appendTables(){ 
+        var delay = 200; 
+        var cardAmount = 12
+        if (this.index < cardAmount) {
+            $('.table-grid').append(
+                `<a href="room.html" class="card-board">
+                    <div class="border-fancy-top-orig"></div>
+                    <div class="border-fancy-bottom-orig"></div>
+                    <div class="card-header">
+                        <div class="logo">
+                            <img src="img/casino/solaire.png">
+                        </div>
+                        <span class="bet-limit">LIMIT:
+                            <span class="amount">10K - 10M</span>
+                            <i class="fa-solid fa-caret-down limit-toggle "></i>
+                        </span>
+                        <div class="flex items-center gap-0">
+                            <div class="table-status" >Stop Betting</div>
+                            <div class="timerParent">
+                                
+                                <div class="middle-circle"></div>
+                                <div class="progress-spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="limit-details">
+                            <table class="stripe">
+                                <thead>
+                                    <th>Area</th>
+                                    <th>User limit</th>
+                                    <th>Table limit</th>
+                                    <th>Limit range</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>B/P</td>
+                                        <td>10K-10M</td>
+                                        <td>5K-600M</td>
+                                        <td>10K-10M</td>
+                                    </tr>
+                                    <tr>
+                                        <td>T</td>
+                                        <td>10K-10M</td>
+                                        <td>5K-600M</td>
+                                        <td>10K-10M</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pair</td>
+                                        <td>10K-10M</td>
+                                        <td>5K-600M</td>
+                                        <td>10K-10M</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pair</td>
+                                        <td>10K-10M</td>
+                                        <td>5K-600M</td>
+                                        <td>10K-10M</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pair</td>
+                                        <td>10K-10M</td>
+                                        <td>5K-600M</td>
+                                        <td>10K-10M</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="results-wrapper-card">
+                            <ul class="bead-road">
+                            </ul>
+                            <div class="small-grid">
+                                <ul class="main-road">
+                                </ul>
+                                <ul class="bigeye-road"></ul>
+                                <div class="bottom-small">
+                                    <ul class="small-road"></ul>
+                                    <ul class="cock-roach"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="right-most">
+                            <span class="table-no">S01</span>
+                            <span class="type"><i class="fa-solid fa-bolt -light"></i>SPEED</span>
+                        </div>
+                        <div class="results">
+                            <div class="item">
+                                <img src="img/results/red-b.png">
+                                <span>30</span>
+                            </div>
+                            <div class="item">
+                                <img src="img/results/blue-p.png">
+                                <span>30</span>
+                            </div>
+                            <div class="item">
+                                <img src="img/results/green-t.png">
+                                <span>30</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>`
+            )
+            this.createGrid()
+            this.index++;
+            setTimeout(this.appendTables(), delay);
         }
     }
 }

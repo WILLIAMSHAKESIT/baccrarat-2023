@@ -214,9 +214,6 @@
   }
 }
 @media only screen and (max-device-width: 1280px) {
-  .room.multi .top {
-    flex-direction: row;
-  }
   .room.multi .top > div.left .count-down {
     left: 0;
   }
@@ -385,7 +382,7 @@
     width: calc(100% - 20px);
   }
   .room .room-upper-container-left {
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .room .room-upper-container-left .logo {
     margin-right: 0;
@@ -662,7 +659,7 @@
     padding-top: 5px;
   }
   .room .upper-most .room-upper-container-left {
-    width: 99% !important;
+    width: 100% !important;
   }
   .room .upper-most .room-upper-container-left .table-details:last-child {
     display: flex;
@@ -1043,6 +1040,12 @@
   .room.multi .top > div.left {
     height: 100%;
   }
+  .room.multi .top > div.left .video-prompt {
+    font-size: 13px;
+    height: -moz-fit-content;
+    height: fit-content;
+    text-align: center;
+  }
   .room.multi .header .header-top .game-no {
     font-size: 10px;
   }
@@ -1295,6 +1298,11 @@
     width: 54px;
   }
 }
+@media only screen and (max-device-width: 902px) {
+  .room.multi .top {
+    flex-direction: row;
+  }
+}
 @media (max-width: 768px) {
   .room .top > div.left {
     height: 600px;
@@ -1475,6 +1483,15 @@
   .room .top > div.right .body .bet-area .area .area-info .info .icon.icon-sm {
     height: 17px !important;
     width: 15px !important;
+  }
+  .room.multi > .legend-mobile .right-indi > div div {
+    width: 16px;
+  }
+  .room.multi > .legend-mobile .right-indi > div span {
+    font-size: 16px;
+  }
+  .room.multi > .legend-mobile .indicators .indi .result {
+    width: 15px;
   }
   .card {
     width: 40px;

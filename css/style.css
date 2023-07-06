@@ -2972,7 +2972,7 @@ table.table-fancy tbody tr td:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  width: 96%;
+  width: 97%;
   height: 96%;
 }
 
@@ -3380,7 +3380,8 @@ table.table-fancy tbody tr td:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0;
+  margin-bottom: 10px;
 }
 .room .upper-most .upper-content-wrapper {
   background: rgba(61, 31, 17, 0.8117647059);
@@ -3462,18 +3463,28 @@ table.table-fancy tbody tr td:last-child {
 .room .room-upper-container-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
-.room .room-upper-container-left .logo {
+.room .room-upper-container-left .logo-wrapper {
+  background: url(../img/bg/multi_card_texture.jpg);
+  min-height: 57px;
+  max-height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  border: 1px solid rgba(248, 240, 174, 0.8705882353);
+  padding: 10px;
+}
+.room .room-upper-container-left .logo-wrapper .logo {
   width: 122px;
-  margin-right: 20px;
 }
 .room .room-upper-container-left .table-details {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 14px;
+  margin-left: 6px;
 }
 .room .room-upper-container-left .table-details .detail-item {
   display: flex;
@@ -3487,6 +3498,9 @@ table.table-fancy tbody tr td:last-child {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.room .room-upper-container-left .table-details .detail-item span {
+  line-height: 1;
+}
 .room .room-upper-container-left .table-details .detail-item .detail-amount {
   background: radial-gradient(41% 26px at center, #4A0A0A, #110000);
   min-width: 100px;
@@ -3494,7 +3508,7 @@ table.table-fancy tbody tr td:last-child {
   border: 1px solid #FFF176;
   border-radius: 4px;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   width: 100%;
   justify-content: center;
 }
@@ -3512,7 +3526,7 @@ table.table-fancy tbody tr td:last-child {
   background-position: center;
   background-size: cover;
   position: relative;
-  width: 55%;
+  width: 60%;
   border-radius: 7px;
   overflow: hidden;
 }
@@ -3573,7 +3587,7 @@ table.table-fancy tbody tr td:last-child {
 .room .top > div.right {
   height: 100%;
   position: relative;
-  width: 45%;
+  width: 40%;
   border-radius: 7px;
   overflow: hidden;
 }
@@ -3612,7 +3626,7 @@ table.table-fancy tbody tr td:last-child {
 .room .top > div.right .body .bet-area {
   display: flex;
   flex-wrap: wrap;
-  height: 71%;
+  height: 67%;
   overflow: hidden;
   margin-top: 3px;
   background: url(../img/bg/table.jpg);
@@ -3745,7 +3759,7 @@ table.table-fancy tbody tr td:last-child {
   font-size: 14px;
 }
 .room .top > div.right .body .control-area {
-  height: calc(29% - 56px);
+  height: calc(37% - 108px);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3917,6 +3931,7 @@ table.table-fancy tbody tr td:last-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: none;
 }
 .room .bottom .results-wrapper .bead-road li {
   border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -3950,6 +3965,7 @@ table.table-fancy tbody tr td:last-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: none;
 }
 .room .bottom .results-wrapper .small-grid .main-road li {
   border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -3980,6 +3996,7 @@ table.table-fancy tbody tr td:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  display: none;
 }
 .room .bottom .results-wrapper .small-grid .bigeye-road li {
   border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -4012,6 +4029,7 @@ table.table-fancy tbody tr td:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  display: none;
 }
 .room .bottom .results-wrapper .small-grid .bottom-small .small-road, .room .bottom .results-wrapper .small-grid .bottom-small .cock-roach {
   display: flex;
@@ -4041,6 +4059,7 @@ table.table-fancy tbody tr td:last-child {
   transform: translate(-50%, -50%);
   text-align: center;
   line-height: 1;
+  display: none;
 }
 .room .bottom .legend {
   width: 300px;
@@ -4530,7 +4549,7 @@ table.table-fancy tbody tr td:last-child {
   background-image: url(../img/bg/card_bg.png);
   background-size: cover;
   position: absolute;
-  top: 75px;
+  top: 68px;
   left: 0;
   z-index: 10000;
   width: 100%;

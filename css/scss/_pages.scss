@@ -270,7 +270,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 10px;
+        padding: 0;
+        margin-bottom: 10px;
         .upper-content-wrapper{
             // background: linear-gradient(359deg, #211209, #5a2d18);
             background: rgba(61, 31, 17, 0.8117647059);
@@ -356,17 +357,27 @@
     .room-upper-container-left{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
-        .logo{
-            width: 122px;
-            margin-right: 20px;
+        .logo-wrapper{
+            background: url(../img/bg/multi_card_texture.jpg);
+            min-height: 57px;
+            max-height: 57px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            border: 1px solid #f8f0aede;
+            padding: 10px;
+            .logo{
+                width: 122px;
+            }
         }
         .table-details{
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-left: 14px;
+            margin-left: 6px;
             .detail-item{
                 display: flex;
                 align-items: center;
@@ -378,6 +389,9 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+                span{
+                    line-height: 1;
+                }
                 .detail-amount{
                     background: radial-gradient(41% 26px at center, #4A0A0A, #110000);
                     min-width: 100px;
@@ -385,7 +399,7 @@
                     border: 1px solid #FFF176;
                     border-radius: 4px;
                     text-align: center;
-                    font-size: 18px;
+                    font-size: 14px;
                     width: 100%;
                     justify-content: center;
                     i{
@@ -409,7 +423,7 @@
                 background-position: center;
                 background-size: cover;
                 position: relative;
-                width: calc(100% - 45%);
+                width: calc(100% - 40%);
                 border-radius: 7px;
                 overflow: hidden;
                 .betting-area-texture{   
@@ -472,7 +486,7 @@
             &.right{
                 height: 100%;
                 position: relative;
-                width: 45%;
+                width: 40%;
                 border-radius: 7px;
                 overflow: hidden;
                 .border-fancy-right{
@@ -511,7 +525,7 @@
                         // background: radial-gradient(circle, #275F7E 0%, #0f2235 100%);
                         display: flex;
                         flex-wrap: wrap;
-                        height: 71%;
+                        height: 67%;
                         overflow: hidden;
                         margin-top: 3px;
                         background: url(../img/bg/table.jpg);
@@ -646,7 +660,7 @@
                         }
                     }
                     .control-area{
-                        height: calc(100% - 71% - 56px);
+                        height: calc(100% - 63% - 108px);
                         position: relative;
                         display: flex;
                         flex-direction: column;
@@ -825,6 +839,7 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%,-50%);
+                    display: none;
                 }
                 li{
                     border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -857,6 +872,7 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%,-50%);
+                        display: none;
                     }
                     li{
                         border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -887,6 +903,7 @@
                         left: 50%;
                         transform: translate(-50%,-50%);
                         text-align: center;
+                        display: none;
                     }
                     li{
                         border-left: 1px solid rgba(0, 0, 0, 0.278);
@@ -921,6 +938,7 @@
                             left: 50%;
                             transform: translate(-50%,-50%);
                             text-align: center;
+                            display: none;
                         }
                     }
                     .small-road,.cock-roach{
@@ -950,6 +968,7 @@
                             transform: translate(-50%,-50%);
                             text-align: center;
                             line-height: 1;
+                            display: none;
                         }
                     }
                 }

@@ -357,7 +357,7 @@
     .room{
         &.multi{
             .top{
-                flex-direction: row;
+                // flex-direction: row;
                 >div{
                     &.left{
                         .count-down{
@@ -611,7 +611,7 @@
         }
         .room-upper-container-left{
             // width: calc(100% - 48%);
-            justify-content: space-between;
+            justify-content: space-around;
             .logo{
                 margin-right: 0;
                 // display: none;
@@ -982,7 +982,7 @@
             height: 64px;
             padding-top: 5px;
             .room-upper-container-left{
-                width: 99% !important; 
+                width: 100% !important; 
                 .table-details{
                     &:last-child{
                         display: flex;
@@ -1411,6 +1411,11 @@
             }
             .top > div.left{
                 height: 100%;
+                .video-prompt{
+                    font-size: 13px;
+                    height: fit-content;
+                    text-align: center;
+                }
             }
             .header{
                 .header-top{
@@ -1738,6 +1743,15 @@
         }
     }
 }
+@media only screen and (max-device-width : 902px) {
+    .room{
+        &.multi{
+            .top{
+                flex-direction: row;
+            }
+        }
+    }
+}
 @media(max-width:768px){
     .room{
         .top{
@@ -1995,6 +2009,31 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.multi{
+            > {
+                .legend-mobile{
+                    .right-indi{
+                        >{
+                            div{
+                                div{
+                                    width: 16px;   
+                                }
+                                span{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                    .indicators{
+                        .indi{
+                            .result{
+                                width: 15px;
                             }
                         }
                     }
