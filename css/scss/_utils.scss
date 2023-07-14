@@ -190,3 +190,22 @@
         }
     }
 }
+
+.hide-content{
+    visibility: hidden;
+    pointer-events: none;
+}
+.no-events{
+    pointer-events: none;
+}
+
+.w-full{
+    width: 100%;
+}
+button{
+    color: inherit;
+}
+
+.hidden{
+    display: none !important;
+}

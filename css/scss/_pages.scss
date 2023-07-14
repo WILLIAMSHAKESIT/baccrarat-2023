@@ -271,7 +271,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
         .upper-content-wrapper{
             // background: linear-gradient(359deg, #211209, #5a2d18);
             background: rgba(61, 31, 17, 0.8117647059);
@@ -378,6 +378,16 @@
             align-items: center;
             gap: 10px;
             margin-left: 6px;
+            &.avatar{
+                font-size: 22px;
+                .detail-item{
+                    flex-direction: row;
+                    white-space: nowrap;
+                    .detail-amount{
+                        font-size: 17px;
+                    }
+                }
+            }
             .detail-item{
                 display: flex;
                 align-items: center;
@@ -426,6 +436,9 @@
                 width: calc(100% - 40%);
                 border-radius: 7px;
                 overflow: hidden;
+                &.avatar{
+                    display: none;
+                }
                 .betting-area-texture{   
                     opacity: 0.4 !important;
                 }
@@ -489,6 +502,9 @@
                 width: 40%;
                 border-radius: 7px;
                 overflow: hidden;
+                &.avatar{
+                    width: 100%;
+                }
                 .border-fancy-right{
                     opacity: 0.3 !important;
                 }
@@ -658,6 +674,9 @@
                                 }
                             }
                         }
+                        &.full{
+                            height: 91%;
+                        }
                     }
                     .control-area{
                         height: calc(100% - 63% - 108px);
@@ -666,6 +685,47 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: space-around;
+                        &.avatar{
+                            height: calc(37% - 74px);
+                            .top-control {
+                                .prevChip,.nextChip{
+                                    display: none;
+                                }
+                                .chips{
+                                    width: 100%;
+                                    .btn-chip{
+                                       &::after{
+                                           font-size: 27px;
+                                       }
+                                   }
+                                   .chips-inner{
+                                        width: 100% !important;
+                                        .btn-chip{
+                                            width: 97px !important;
+                                            height: 84px !important;
+                                        }
+                                   }
+                                }
+                            }
+                            .bottom-control{
+                                .btns{
+                                    button{
+                                        &:not(.btn-circle){
+                                            height: 56px;
+                                            width: 336px;
+                                        }
+                                    }
+                                    .btn{
+                                        &.btn-rounded{
+                                            min-width: 60px !important;
+                                            min-height: 60px !important;
+                                            max-width: 60px !important;
+                                            max-height: 60px !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         .top-control{
                             display: flex;
                             justify-content: space-between;
@@ -698,6 +758,9 @@
                                     gap: 10px;
                                     width: 1150px;
                                     padding: 0 10px;
+                                    &.avatar{
+                                        width: 100%;
+                                    }
                                 }
                             }
                         }
@@ -1286,6 +1349,9 @@
                             }
                         }
                     }
+                }
+                &.hide{
+                    display: none;
                 }
             }
         }

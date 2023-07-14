@@ -77,11 +77,8 @@ $(document).ready(function(){
     },100)
 
     $(window).on('resize',function(){
-        // layout.debounce(layout.handleMobileLandscape());
         layout.handleMobileLandscape()
         layout.debounce((layout.createGrid()));
-            // layout.handleMobileLandscape()
-            // layout.createGrid()
     })
       
     $("iframe#roomVideo").contents().find("remoteVideo").css("object-fit", "fill");
@@ -274,19 +271,18 @@ $(document).ready(function(){
     // })
     $('.limit-toggle').on('click',function(e){
         e.preventDefault()
-        // e.stopPropagation()
         layout.toggleLimitDetails(this)
     })
-    $('.limit-toggle').mouseenter(function(event){
-        event.preventDefault()
-        event.stopPropagation()
-        layout.showLimitDetails(this)
-    })
-    $('.limit-toggle').mouseleave(function(event){
-        event.preventDefault()
-        event.stopPropagation()
-        layout.hideLimitDetails(this)
-    })
+    // $('.limit-toggle').mouseenter(function(event){
+    //     event.preventDefault()
+    //     event.stopPropagation()
+    //     layout.showLimitDetails(this)
+    // })
+    // $('.limit-toggle').mouseleave(function(event){
+    //     event.preventDefault()
+    //     event.stopPropagation()
+    //     layout.hideLimitDetails(this)
+    // })
     $('a.card-board').click(function(e){
         // e.preventDefault()
         // e.stopPropagation()
@@ -401,8 +397,12 @@ $(document).ready(function(){
         $('.chips').animate({scrollLeft:0},800)
     })
 
-    $('.nextChip').on('click',function(){
+    $('.control-area .nextChip, .multi-rooms .buttons-chips .nextChip').on('click',function(){
         $('.chips').animate({scrollLeft:$('.chips')[0].scrollWidth},800)
+    })
+
+    $('.mobile-controls .bottom-control-new .nextChip').on('click',function(){
+        $('.chips').animate({scrollLeft:$('.chips')[1].scrollWidth},800)
     })
 
     $('.btn, input, select, .card-board').on('click',function(){
@@ -1004,15 +1004,27 @@ class Layout{
         }else{
             $('.room .upper-most.mobile .bet-limit-table').toggle()
         }
+        let element = $('.toggle-limit').find('i').hasClass("fa-caret-down")
+        if(element){
+            $('.toggle-limit').find('i').attr('class','fa-solid fa-caret-up mb-1')
+        }else{
+            $('.toggle-limit').find('i').attr('class','fa-solid fa-caret-down mb-1')
+        }
     }
     showLimitDetails(_this){
-        $(_this).parent().parent().siblings('.card-body').find('.limit-details').show()
+        // $(_this).parent().parent().siblings('.card-body').find('.limit-details').show()
     }
     hideLimitDetails(_this){
-        $(_this).parent().parent().siblings('.card-body').find('.limit-details').hide()
+        // $(_this).parent().parent().siblings('.card-body').find('.limit-details').hide()
     }
     toggleLimitDetails(_this){  
-        $(_this).parent().parent().siblings('.card-body').find('.limit-details').toggle()
+        let element = $(_this).find('i').hasClass("fa-caret-down")
+        if(element){
+            $(_this).find('i').attr('class','fa-solid fa-caret-up')
+        }else{
+            $(_this).find('i').attr('class','fa-solid fa-caret-down')
+        }
+        $(_this).parent().siblings('.card-body').find('.limit-details').toggle()
     }
     handleDragStart(_this,event){
         this.chipsOffset = 0
@@ -1156,12 +1168,20 @@ class Layout{
         if(chipCount <= 3){
             el.css('min-width','100%')
         }else{
-            el.css('min-width','500px')
+            if(window.innerHeight > window.innerWidth){
+                if(window.innerWidth > 684){
+                    el.css('min-width','100%')
+                }else{
+                    el.css('min-width','500px')
+                }
+            }else{
+                el.css('min-width','500px')
+            }
         }
     }
     appendTables(){ 
         var delay = 200; 
-        var cardAmount = 12
+        var cardAmount = 0
         if (this.index < cardAmount) {
             $('.table-grid').append(
                 `<a href="room.html" class="card-board">

@@ -121,6 +121,13 @@
     }
 }
 @media(max-width:1757px){
+    .login-page-wrapper{
+        padding: 10px;
+        min-width: calc(100% - 32px) !important;
+        .inputs{
+            width: 100%;
+        }
+    }
     html,body{
         font-size: 13px;
     }
@@ -137,6 +144,11 @@
                         font-size: 13px;
                     }
                 }
+            }
+        }
+        .top{
+            &.avatar{
+                height: calc(100% - 358px) !important;
             }
         }
     }  
@@ -328,7 +340,7 @@
     .room{
         &.multi{
             .top{
-                height: calc(100% - 258px);
+                height: calc(100% - 250px);
                 >div{
                     &.right{
                         .waiting-prompt{
@@ -337,7 +349,7 @@
                                     width: 30%;
                                 }
                                 .video-prompt{
-                                    font-size: 15px;
+                                    font-size: 15px !important;
                                     text-align: center;
                                     height: 30px;
                                     span{
@@ -483,6 +495,9 @@
     }
 }
 @media(max-width:1280px){
+    .room .top > div.right .body .bet-area.full{
+        height: 100%;
+    }
     .btn-rounded{
         &.toggle-menu,&.to-home{
             display: flex;
@@ -620,6 +635,29 @@
                 margin-left: 0;
                 .detail-item{
                     flex-direction: column;
+                }
+                &.avatar{
+                    .detail-item{
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        &.multi{
+            .top{
+                >div{
+                    &.right{
+                        .waiting-prompt{
+                            .video-prompt{
+                                font-size: 10px !important;
+                                text-align: center;
+                                height: 30px;
+                                span{
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1016,6 +1054,9 @@
         .top{
             flex-direction: column;
             height: calc(100% - 335px);
+            &.full{
+                height: calc(100% - 306px);
+            }
             .border-fancy-right,.border-fancy-left{
                 display: none;
             }
@@ -1806,7 +1847,7 @@
 }
 @media(max-width:697px){
     .login-page-wrapper{
-        min-width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
         .inputs{
             width: calc(100% - 10px);
         }
@@ -1886,6 +1927,11 @@
     }
     .room{
         height:calc(100% - 6px);
+        .top{
+            &.avatar{
+                height: calc(100% - 336px) !important;
+            }
+        }
         .upper-most{
             flex-direction: column;
             padding: 0;
@@ -1904,7 +1950,7 @@
                         }
                         i{
                             display: none;
-                            &.fa-caret-down{
+                            &.fa-caret-down,&.fa-caret-up{
                                 display: block !important;
                                 font-size: 18px;
                             }
@@ -1987,6 +2033,9 @@
         }
         .top {
             height: calc(100% - 313px);
+            &.full{
+                height: calc(100% - 275px);
+            }
             > div{
                 &.right{
                     .body{
@@ -2297,7 +2346,7 @@
         }
         .error-content{
             h1{
-                font-size: 123px;
+                font-size: 59px;
                 &.small{
                     font-size: 32px;
                 }
@@ -2547,6 +2596,9 @@
                     }
                 }
             }
+            &.full{
+                height: calc(100% - 276px);
+            }
         }
         .legend-mobile{
             height: 28px;
@@ -2693,6 +2745,20 @@
     }
     .room {
         height: calc(100% - 39px);
+        .top{
+            &.avatar{
+                height: calc(100% - 295px) !important;
+            }
+        }
+        &.multi{
+            .header{
+                .header-top{
+                    .logo-wrapper{
+                        width: 74px;
+                    }
+                }
+            }
+        }
         .upper-most{
             height: 32px;
         }
@@ -2727,6 +2793,9 @@
                         }
                     }
                 }
+            }
+            &.full{
+                height: calc(100% - 233px);
             }
         }
     }

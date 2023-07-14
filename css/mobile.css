@@ -61,6 +61,13 @@
   }
 }
 @media (max-width: 1757px) {
+  .login-page-wrapper {
+    padding: 10px;
+    min-width: calc(100% - 32px) !important;
+  }
+  .login-page-wrapper .inputs {
+    width: 100%;
+  }
   html, body {
     font-size: 13px;
   }
@@ -73,6 +80,9 @@
   .room .room-upper-container-left .table-details .detail-item .detail-amount {
     min-width: 44px;
     font-size: 13px;
+  }
+  .room .top.avatar {
+    height: calc(100% - 358px) !important;
   }
   .multi-rooms .control-menu .btn.btn-custom-red.btn-md {
     width: 234px;
@@ -199,13 +209,13 @@
 }
 @media only screen and (max-device-width: 1342px) {
   .room.multi .top {
-    height: calc(100% - 258px);
+    height: calc(100% - 250px);
   }
   .room.multi .top > div.right .waiting-prompt .prompt-with-img img {
     width: 30%;
   }
   .room.multi .top > div.right .waiting-prompt .prompt-with-img .video-prompt {
-    font-size: 15px;
+    font-size: 15px !important;
     text-align: center;
     height: 30px;
   }
@@ -295,6 +305,9 @@
   }
 }
 @media (max-width: 1280px) {
+  .room .top > div.right .body .bet-area.full {
+    height: 100%;
+  }
   .btn-rounded.toggle-menu, .btn-rounded.to-home {
     display: flex;
   }
@@ -392,6 +405,17 @@
   }
   .room .room-upper-container-left .table-details .detail-item {
     flex-direction: column;
+  }
+  .room .room-upper-container-left .table-details.avatar .detail-item {
+    flex-direction: column;
+  }
+  .room.multi .top > div.right .waiting-prompt .video-prompt {
+    font-size: 10px !important;
+    text-align: center;
+    height: 30px;
+  }
+  .room.multi .top > div.right .waiting-prompt .video-prompt span {
+    font-size: 15px;
   }
   .multi-rooms {
     height: calc(100% - 150px);
@@ -690,6 +714,9 @@
   .room .top {
     flex-direction: column;
     height: calc(100% - 335px);
+  }
+  .room .top.full {
+    height: calc(100% - 306px);
   }
   .room .top .border-fancy-right, .room .top .border-fancy-left {
     display: none;
@@ -1327,7 +1354,7 @@
 }
 @media (max-width: 697px) {
   .login-page-wrapper {
-    min-width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
   }
   .login-page-wrapper .inputs {
     width: calc(100% - 10px);
@@ -1390,6 +1417,9 @@
   .room {
     height: calc(100% - 6px);
   }
+  .room .top.avatar {
+    height: calc(100% - 336px) !important;
+  }
   .room .upper-most {
     flex-direction: column;
     padding: 0;
@@ -1410,7 +1440,7 @@
   .room .upper-most .room-upper-container-left .table-details .detail-item i {
     display: none;
   }
-  .room .upper-most .room-upper-container-left .table-details .detail-item i.fa-caret-down {
+  .room .upper-most .room-upper-container-left .table-details .detail-item i.fa-caret-down, .room .upper-most .room-upper-container-left .table-details .detail-item i.fa-caret-up {
     display: block !important;
     font-size: 18px;
   }
@@ -1468,6 +1498,9 @@
   }
   .room .top {
     height: calc(100% - 313px);
+  }
+  .room .top.full {
+    height: calc(100% - 275px);
   }
   .room .top > div.right .body .bet-area .area .area-info .info {
     background: unset;
@@ -1687,7 +1720,7 @@
     height: 183px;
   }
   .errorpage .error-content h1 {
-    font-size: 123px;
+    font-size: 59px;
   }
   .errorpage .error-content h1.small {
     font-size: 32px;
@@ -1838,6 +1871,9 @@
   .room .top > div.right .body .bet-area .area .area-info .info span {
     line-height: 0;
   }
+  .room .top.full {
+    height: calc(100% - 276px);
+  }
   .room .legend-mobile {
     height: 28px;
     border-radius: unset;
@@ -1932,6 +1968,12 @@
   .room {
     height: calc(100% - 39px);
   }
+  .room .top.avatar {
+    height: calc(100% - 295px) !important;
+  }
+  .room.multi .header .header-top .logo-wrapper {
+    width: 74px;
+  }
   .room .upper-most {
     height: 32px;
   }
@@ -1957,6 +1999,9 @@
   }
   .room .top > div.right .body .bet-area .area .area-info .text {
     font-size: 9px;
+  }
+  .room .top.full {
+    height: calc(100% - 233px);
   }
   .multi-rooms > div:first-child .room {
     height: 396px;
